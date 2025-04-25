@@ -1,19 +1,39 @@
 {% extends "layouts/main.html" %}
 
 {% set pageName="Home" %}
+{% block header %}
+
+  <header class="defra-internal-header" role="banner">
+    <div class="govuk-width-container">
+      <div class="defra-logo">
+          <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" title="Go to the Defra Design Library homepage" class="defra-logo__link">
+            <span class="c-defra-logo__title govuk-visually-hidden">Department for Environment Food &amp; Rural Affairs</span>
+          </a>
+      </div>
+
+      <div class="defra-internal-service-name">
+          <a href="/" title="Go to the homepage" class="defra-internal-service-name__link">
+            {{DefraServiceName}}
+          </a>
+      </div>
+    </div>
+  </header>
+  
+{% endblock %}
+
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+
 
     <h1 class="govuk-heading-xl">
-      {{ serviceName }}
+      caseworking tool prototytpe
     </h1>
+<p><a href="login">start</a></p>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
   </div>
 </div>
 
