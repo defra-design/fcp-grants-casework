@@ -41,6 +41,12 @@
 
 
 {% block content %}
+<div class="tabs my-custom-tab govuk-!-margin-bottom-5">
+  <a href="#ingredients" class="tab active govuk-link">Ingredients</a>
+  <a href="#method" class="tab govuk-link">Method</a>
+  <a href="#history" class="tab govuk-link">History</a>
+</div>
+
 <form action="test4" method="post">
 
 <div class="govuk-grid-row">
@@ -174,10 +180,6 @@
           </div>
         </dl>
 
-
-
-
-
       <div class="govuk-button-group">
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Continue
@@ -191,4 +193,6 @@
 </div>
 
 
+
 {% endblock %}
+

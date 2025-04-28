@@ -96,3 +96,52 @@
 }
   
 
+
+
+
+/* Styles for the tabs container */
+.tabs {
+ display: flex;
+ border-bottom: 2px solid #dcdcdc;
+}
+
+/* Styles for each tab */
+.tab {
+ padding: 10px 20px;
+ text-decoration: none; /* Remove underline from links */
+ border: 1px solid transparent;
+ border-bottom: 5px solid white; /* Default border for inactive tabs */
+ background-color: #fff; /* White background */
+ font-family: 'GDS Transport', Arial, sans-serif; /* Ensure fallback fonts */
+ cursor: pointer; /* Make tabs interactive-looking */
+ transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Active tab styles */
+.tab.active {
+ border-color: #fff; /* Maintain outer border color */
+ border-bottom: 5px solid #285aa9; /* Strong blue bottom border */
+ background-color: #fff; /* Light blue background color for distinction */
+ color: #000; /* Force black text for readability */
+ font-weight: bold;
+}
+
+/* Hover effect for links */
+.tab:hover {
+ background-color: #f0f7ff; /* Even lighter shade for hover effect */
+ color: #000; /* Maintain text color during hover */
+}
+
+/* Override GOV.UK link active styles with specificity */
+.tabs.my-custom-tab .tab.govuk-link:active {
+ background-color: transparent; /* Remove yellow background */
+ outline: none; /* Remove yellow outline */
+ box-shadow: none; /* Remove black underline */
+}
+
+
+
+
+
+
+
