@@ -41,11 +41,42 @@
 
 
 {% block content %}
+<div class="govuk-service-navigation-white"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="#">
+              Ingredients
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Method</strong>
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="#">
+              History
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<!--
 <div class="tabs my-custom-tab govuk-!-margin-bottom-5">
   <a href="#ingredients" class="tab active govuk-link">Ingredients</a>
   <a href="#method" class="tab govuk-link">Method</a>
   <a href="#history" class="tab govuk-link">History</a>
 </div>
+-->
 
 <form action="test4" method="post">
 
@@ -55,7 +86,7 @@
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
     Application
       </h1>
     </legend>

@@ -95,49 +95,54 @@
   background-color: #E7F4EB;
 }
   
-
-
-
-
-/* Styles for the tabs container */
-.tabs {
- display: flex;
- border-bottom: 2px solid #dcdcdc;
+.govuk-service-navigation-white {
+  border-bottom: 1px solid #b1b4b6;
+  background-color: #fff;
 }
 
-/* Styles for each tab */
-.tab {
- padding: 10px 20px;
- text-decoration: none; /* Remove underline from links */
- border: 1px solid transparent;
- border-bottom: 5px solid white; /* Default border for inactive tabs */
- background-color: #fff; /* White background */
- font-family: 'GDS Transport', Arial, sans-serif; /* Ensure fallback fonts */
- cursor: pointer; /* Make tabs interactive-looking */
- transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+
+
+  .govuk-service-navigation__item-c,
+.govuk-service-navigation__service-name {
+  position: relative;
+  margin: 10px 0;
+  border: 0 solid rgb(26.1, 100.8, 165.6);
+}
+@media (min-width: 40.0625em) {
+  .govuk-service-navigation__item-c,
+  .govuk-service-navigation__service-name {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px 0;
+  }
+  .govuk-service-navigation__item-c:not(:last-child),
+  .govuk-service-navigation__service-name:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+@media (min-width: 40.0625em) and (min-width: 40.0625em) {
+  .govuk-service-navigation__item-c:not(:last-child),
+  .govuk-service-navigation__service-name:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
-/* Active tab styles */
-.tab.active {
- border-color: #fff; /* Maintain outer border color */
- border-bottom: 5px solid #285aa9; /* Strong blue bottom border */
- background-color: #fff; /* Light blue background color for distinction */
- color: #000; /* Force black text for readability */
- font-weight: bold;
+@media (max-width: 40.0525em) {
+  .govuk-service-navigation__item--active {
+    margin-left: -15px;
+    padding-left: 10px;
+    border-left-width: 5px;
+  }
+}
+@media (min-width: 40.0625em) {
+  .govuk-service-navigation__item--active {
+    padding-bottom: 15px;
+    border-bottom-width: 5px;
+  }
 }
 
-/* Hover effect for links */
-.tab:hover {
- background-color: #f0f7ff; /* Even lighter shade for hover effect */
- color: #000; /* Maintain text color during hover */
-}
 
-/* Override GOV.UK link active styles with specificity */
-.tabs.my-custom-tab .tab.govuk-link:active {
- background-color: transparent; /* Remove yellow background */
- outline: none; /* Remove yellow outline */
- box-shadow: none; /* Remove black underline */
-}
+
 
 
 
