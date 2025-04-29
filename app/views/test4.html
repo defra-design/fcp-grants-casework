@@ -43,7 +43,35 @@
 
 {% block content %}
 
-
+<div class="govuk-service-navigation-white"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="test2">
+              Tasks
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="test3">
+              Application
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Land details</strong>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
 <form action="/keeper1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -51,7 +79,7 @@
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
     Land details
       </h1>
     </legend>
@@ -90,12 +118,7 @@
 
 
 
-      <div class="govuk-button-group">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Continue
-    </button>
-    
-</div>
+
     </form>
 
   </div>
