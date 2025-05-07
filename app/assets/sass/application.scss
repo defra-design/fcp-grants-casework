@@ -141,6 +141,33 @@
   }
 }
 
+.small-text {
+  font-size: 16px !important;
+}
+
+.radio-container {
+  display: flex;
+  gap: 20px; /* Adjust spacing between columns */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-width {
+  width: 250px;
+}
+.custom-width-table {
+  width: 90px;
+}
+
+.custom-width-table-approved {
+  width: 120px;
+}
+
+
+
 
 
 
