@@ -71,50 +71,37 @@
     </div>
   </div>
 </div>
-<form action="test3" method="post">
+<form action="tasklist1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-     
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Tasks
-      </h1>
-    </legend>
-    <h2 class="govuk-heading-m">1. Make application decision</h2>
-<ul class="govuk-task-list">
-  <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
-        Approve or reject application
-      </a>
-    </div>
-    <div class="govuk-task-list__status" id="company-details-1-status">
-      <strong class="govuk-tag govuk-tag--blue">
-        Not started
-      </strong>
-    </div>
-  </li>
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-    <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
-        Approve or reject application (completed styling)
-      </a>
-    </div>
-    <div class="govuk-task-list__status" id="company-details-1-status">   
-        Completed
-    </div>
-  </li>
-</ul>
-          
-
-
-
-
-
-
-
+     <h1 class="govuk-heading-l govuk-!-margin-top-8">Can the case proceed?</h1>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Able to proceed
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['proceed'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="your-name">Change<span class="govuk-visually-hidden"> Change Business name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Case note
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['moreDetail'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="business-structure">Change<span class="govuk-visually-hidden"> Change Business name</span></a>
+        </dd>
+      </div>
+    </dl>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
     </form>
 
   </div>

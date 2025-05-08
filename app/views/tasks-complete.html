@@ -36,13 +36,11 @@
     </div>
 
   </div>
-
   
 {% endblock %}
 
 
 {% block content %}
-
 <div class="govuk-service-navigation-white"
   data-module="govuk-service-navigation">
   <div class="govuk-width-container">
@@ -52,19 +50,20 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          <li class="govuk-service-navigation__item-c">
-            <a class="govuk-service-navigation__link" href="tasklist1">
-              Tasks
+          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
-          </li>
+          </li> 
           <li class="govuk-service-navigation__item-c">
             <a class="govuk-service-navigation__link" href="test3">
               Application
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="#" aria-current="true">
-              <strong class="govuk-service-navigation__active-fallback">Land details</strong>
+
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="test4">
+              Land details
             </a>
           </li>
         </ul>
@@ -72,48 +71,24 @@
     </div>
   </div>
 </div>
-<form action="/keeper1" method="post">
+<form action="tasks-complete" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
      
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Land details
-      </h1>
-    </legend>
-    <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Parcel and area</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel</th>
-      <th scope="col" class="govuk-table__header">Area</th>
-      <th scope="col" class="govuk-table__header">Intersections</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8566</th>
-      <td class="govuk-table__cell">1.9165 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8726</th>
-      <td class="govuk-table__cell">0.5654 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-      <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8878</th>
-      <td class="govuk-table__cell">2.1723 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-  </tbody>
-</table>
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-8">
+            <h1 class="govuk-panel__title">
+              Application approved
+            </h1>
+         
+          
+          <div class="govuk-panel__body">
+            subtext here
+          </div>
+        </div>
+
+          
+
+
 
 
 
@@ -124,6 +99,9 @@
   </div>
 
 </div>
+
+
+
 
 
 {% endblock %}

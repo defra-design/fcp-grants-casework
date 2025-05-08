@@ -36,13 +36,11 @@
     </div>
 
   </div>
-
   
 {% endblock %}
 
 
 {% block content %}
-
 <div class="govuk-service-navigation-white"
   data-module="govuk-service-navigation">
   <div class="govuk-width-container">
@@ -52,19 +50,20 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          <li class="govuk-service-navigation__item-c">
-            <a class="govuk-service-navigation__link" href="tasklist1">
-              Tasks
+          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
-          </li>
+          </li> 
           <li class="govuk-service-navigation__item-c">
             <a class="govuk-service-navigation__link" href="test3">
               Application
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="#" aria-current="true">
-              <strong class="govuk-service-navigation__active-fallback">Land details</strong>
+
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="test4">
+              Land details
             </a>
           </li>
         </ul>
@@ -72,58 +71,55 @@
     </div>
   </div>
 </div>
-<form action="/keeper1" method="post">
+<form action="/question1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
      
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
+  <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Land details
+        Reviewing the application
       </h1>
     </legend>
-    <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Parcel and area</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel</th>
-      <th scope="col" class="govuk-table__header">Area</th>
-      <th scope="col" class="govuk-table__header">Intersections</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8566</th>
-      <td class="govuk-table__cell">1.9165 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8726</th>
-      <td class="govuk-table__cell">0.5654 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-      <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8878</th>
-      <td class="govuk-table__cell">2.1723 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-
-
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="proceed" name="proceed" type="radio" value="can proceed">
+        <label class="govuk-label govuk-radios__label" for="proceed">
+          The application is reviewed and can proceed
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="proceed-2" name="proceed" type="radio" value="cannot proceed">
+        <label class="govuk-label govuk-radios__label" for="proceed-2">
+          The application is reviewed and cannot proceed
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="more-detail">
+      Case note
+    </label>
+  </h1>
+  <div id="more-detail-hint" class="govuk-hint">
+    Record the reason for your decision
+  </div>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
     </form>
 
   </div>
 
 </div>
+
+
+
 
 
 {% endblock %}
