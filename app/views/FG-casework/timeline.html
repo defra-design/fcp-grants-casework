@@ -41,6 +41,57 @@
 
 
 {% block content %}
+<div class="govuk-service-navigation-white"
+  data-module="govuk-service-navigation">
+  <div class="govuk-width-container">
+    <div class="govuk-service-navigation__container">
+      <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+        <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
+          Menu
+        </button>
+        <ul class="govuk-service-navigation__list" id="navigation">
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="tasklist">
+              Tasks
+            </a>
+          </li> 
+          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Timeline</strong>
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="application-data">
+              Application
+            </a>
+          </li>
+
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="documents">
+              Documents
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="notes">
+              Case notes
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="messages">
+              Customer communication
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="assignment">
+              Assignment history
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
 <form action="test2" method="post">
 
 <div class="govuk-grid-row">
@@ -49,98 +100,19 @@
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-    Are you the registered keeper of at least 1000 laying hens or pullets?
+      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
+    Timeline
       </h1>
     </legend>
     
-<div class="moj-timeline">
+
+
+
+    <div class="moj-timeline">
   <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application requires confirmation</h2>
-
-      <p class="moj-timeline__byline">by Joe Bloggs</p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non felis risus. Curabitur nec ante vitae felis ullamcorper tincidunt.</p>
-      <a class="govuk-button govuk-!-margin-bottom-0" href="#">Continue</a>
-    </div>
-
-  </div>
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application review in progress</h2>
-
-      <p class="moj-timeline__byline">by Caseworker 1</p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-07T12:32:00.000Z">7 June 2019 at 12:32pm</time>
-    </p>
-
-    <div class="moj-timeline__description">Your application is being reviewed by one of our case workers.</div>
-
-  </div>
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application received</h2>
-
-      <p class="moj-timeline__byline">by Caseworker 1</p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
-    </p>
-
-    <div class="moj-timeline__description">Your application has been received – reference MOJ-1234-5678</div>
-
-  </div>
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application submitted</h2>
-
-      <p class="moj-timeline__byline">by Joe Bloggs</p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <details class="govuk-details govuk-!-margin-bottom-0">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Application details
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Ut quam nunc, vulputate ac metus pharetra, posuere maximus velit. <a class="govuk-link" href="#">Etiam nec interdum velit.</a> Suspendisse molestie lectus in eros ornare
-        </div>
-      </details>
-    </div>
-
-  </div>
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Documents uploaded</h2>
+      <h2 class="moj-timeline__title">Documents received</h2>
 
       <p class="moj-timeline__byline">by Joe Bloggs</p>
 
@@ -149,7 +121,10 @@
     <p class="moj-timeline__date">
       <time datetime="2019-05-28T10:15:00.000Z">28 May 2019 at 10:15am</time>
     </p>
-
+    <div class="moj-timeline__description">
+      <p><a class="govuk-link" href="notes#note2">View applicant message</a></p>
+      
+    </div>
     <div class="moj-timeline__description">
       <ul class="moj-timeline__documents">
         <li class="moj-timeline__document-item">
@@ -170,28 +145,108 @@
         </li>
       </ul>
     </div>
+  </div>
+
+    <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Customer communication</h2>
+
+      <p class="moj-timeline__byline">by Emily Carter</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">27 Nov 2024 at 11:02pm</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <p><a class="govuk-link" href="notes#note2">View caseworker message</a></p>
+      
+    </div>
 
   </div>
 
   <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application started</h2>
+      <h2 class="moj-timeline__title">Note added</h2>
 
-      <p class="moj-timeline__byline">by Joe Bloggs</p>
+      <p class="moj-timeline__byline">by Emily Carter</p>
 
     </div>
 
     <p class="moj-timeline__date">
-      <time datetime="2019-05-21T13:15:00.000Z">21 May 2019 at 1:15pm</time>
+      <time datetime="2019-06-14T14:01:00.000Z">26 Nov 2024 at 4:47pm</time>
     </p>
 
     <div class="moj-timeline__description">
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a class="govuk-link" href="#">Item 1</a></li>
-        <li><a class="govuk-link" href="#">Item 2</a></li>
-      </ul>
+      <p><a class="govuk-link" href="notes#note2">View note</a></p>
+      
     </div>
+
+  </div>
+
+
+    <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Emily Carter assigned to case</h2>
+
+      <p class="moj-timeline__byline">by Allan Fullerton</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-07T12:32:00.000Z">25 Nov 2024 at 11:52am</time>
+    </p>
+
+  </div>
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Sophia Johnson assigned to case</h2>
+
+      <p class="moj-timeline__byline">by Allan Fullerton</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-07T12:32:00.000Z">25 Nov 2024 at 10:13am</time>
+    </p>
+
+  </div>
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Automatic checks completed</h2>
+
+      <p class="moj-timeline__byline">by System</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-05-28T10:45:00.000Z">23 Nov 2024 at 3:10pm</time>
+    </p>
+
+  </div>
+
+
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Application received</h2>
+
+      <p class="moj-timeline__byline">by System</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-05-21T13:15:00.000Z">23 Nov 2024 at 3:05pm</time>
+    </p>
+
 
   </div>
 </div>
@@ -199,17 +254,6 @@
 </div>
           
 
-
-
-
-
-
-      <div class="govuk-button-group">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Continue
-    </button>
-    
-</div>
     </form>
 
   </div>

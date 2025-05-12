@@ -167,6 +167,65 @@
 }
 
 
+.tick-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.reduced-width {
+  width: 350px;
+}
+
+.moj-messages-container-local {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+@media print {
+  .moj-messages-container {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .moj-messages-container {
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+  }
+}
+@media print {
+  .moj-messages-container {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+.moj-message-list-local {
+  min-height: 200px;
+  padding: 5px;
+}
+
+.moj-message-item--sent-local {
+    background-color: #1d70b8;
+    color: #fff;
+    float: right;
+    margin-right: 10px;
+    padding-right: 25px;
+}
+
+.name-right {
+  text-align: right;
+}
+    
+
+
+
+
+
 
 
 
