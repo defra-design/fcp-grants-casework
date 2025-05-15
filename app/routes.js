@@ -15,3 +15,8 @@ router.get('/question1', function (req, res) {
   else 
     res.redirect('/ftf/steel/keeper-no');
 });
+
+router.get('/questionFull1', function (req, res) {
+  req.session.data.eligibleTask = 'done';
+  res.redirect('/FG-casework/tasklist');
+});

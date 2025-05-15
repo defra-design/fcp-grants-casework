@@ -182,28 +182,53 @@
           
   <h2 class="govuk-heading-m">3. Carry out quality checks</h2>
   <ul class="govuk-task-list">
+    {% if (data.eligibleTask == 'done') %} 
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="c-house-check" aria-describedby="company-details-1-status">
+        <a class="govuk-link govuk-task-list__link" href="task-check" aria-describedby="company-details-1-status">
           First quality check
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-        <strong class="govuk-tag govuk-tag--light-blue">
-          In progress
-        </strong>
+        
+          Complete
+        
       </div>
     </li>
-      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
           Second quality check
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
+        <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+      </div>
+    </li>
+    {% else %}
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="task1" aria-describedby="company-details-1-status">
+          First quality check
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      </div>
+    </li>
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+          Second quality check
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
         Cannot start yet
       </div>
     </li>
+    {% endif %}
 </ul>
 
   <h2 class="govuk-heading-m">4. Make application decision</h2>

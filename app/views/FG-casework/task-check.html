@@ -50,9 +50,9 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          <li class="govuk-service-navigation__item-c">
-            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
-              Tasks
+          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li> 
           <li class="govuk-service-navigation__item-c">
@@ -71,9 +71,9 @@
               Documents
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c  govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="#">
-              <strong class="govuk-service-navigation__active-fallback">Case notes</strong>
+          <li class="govuk-service-navigation__item-c">
+            <a class="govuk-service-navigation__link" href="notes">
+              Case notes
             </a>
           </li>
           <li class="govuk-service-navigation__item-c">
@@ -92,111 +92,66 @@
     </div>
   </div>
 </div>
-<form action="test3" method="post">
+<form action="tasklist" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
      
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
+  <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Case notes
+        Check your application and document check answers
       </h1>
     </legend>
-    <h2 class="govuk-heading-m">Add note</h2>
-    <div class="govuk-form-group">
-  <label class="govuk-label govuk-label--s" for="sort">
-    Type
-  </label>
-  <select class="govuk-select" id="sort" name="sort">
-    <option value="published">Call to applicant</option>
-    <option value="updated" selected>Type 2</option>
-    <option value="views">Type 3</option>
-    <option value="comments">Type 4</option>
-  </select>
-</div>
-<div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--s" for="more-detail">
-      Can you provide more detail?
-    </label>
-  </h1>
-
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Called applicant to chase up email sent about prep work for the project.</textarea>
-</div>
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-  Create note
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is the organisation and project eligible for funding?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['eligible'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="task1">Change<span class="govuk-visually-hidden"> Change Organisation name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Does the project meet funding priorities?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['meetPriorities'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="task1">Change<span class="govuk-visually-hidden"> Change Organisation name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Is funding available for the project?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['funding'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="task1">Change<span class="govuk-visually-hidden"> Change Organisation name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Option note
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['moreDetail1'] | default('No note added') }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="task1">Change<span class="govuk-visually-hidden"> Change Organisation name</span></a>
+        </dd>
+      </div>
+    </dl>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Continue
 </button>
-
-<h2 class="govuk-heading-m">All notes</h2>
-<table class="govuk-table" data-module="moj-sortable-table">
-
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
-
-      <th scope="col" class="govuk-table__header reduced-width">Note</th>
-
-      <th scope="col" class="govuk-table__header" aria-sort="none">Added by</th>
-
-    </tr>
-  </thead> 
-
-  <tbody class="govuk-table__body">
-
-    <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">27 Nov 24</td>
-
-      <td class="govuk-table__cell">
-        <details class="govuk-details">        
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Documentation request
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            Two of the pictures of the original site were blurred so these were sent to the applicant with a request to resupply.
-          </div>
-        </details>
-      </td>
-
-      <td class="govuk-table__cell">Emily Carter</td>
-
-    </tr>
-    <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">25 Nov 24</td>
-
-      <td class="govuk-table__cell">
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Reassigned application handover
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          I have barely looked at this so there is nothing to hand over. You are starting afresh! 
-        </div>
-      </details>
-      </td>
-
-      <td class="govuk-table__cell">Sophia Johnson</td>
-
-
-    </tr>
-
-  </tbody>
-</table>
-
-
-
-
-
-
-
     </form>
 
   </div>
