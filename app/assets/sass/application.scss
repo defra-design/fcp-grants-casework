@@ -127,6 +127,34 @@
   }
 }
 
+  .govuk-service-navigation__item-c2,
+.govuk-service-navigation__service-name {
+  position: relative;
+  margin: 10px 0;
+  border: 0 solid rgb(26.1, 100.8, 165.6);
+}
+@media (min-width: 40.0625em) {
+  .govuk-service-navigation__item-c2,
+  .govuk-service-navigation__service-name {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 5px 0;
+  }
+  .govuk-service-navigation__item-c2:not(:last-child),
+  .govuk-service-navigation__service-name:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+@media (min-width: 40.0625em) and (min-width: 40.0625em) {
+  .govuk-service-navigation__item-c2:not(:last-child),
+  .govuk-service-navigation__service-name:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+
+
+
 @media (max-width: 40.0525em) {
   .govuk-service-navigation__item--active {
     margin-left: -15px;
