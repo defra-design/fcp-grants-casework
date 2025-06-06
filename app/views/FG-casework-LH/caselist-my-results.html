@@ -24,22 +24,14 @@
 
 
 <form action="task1" method="post">
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Find an application
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <div class="moj-search">
 
-      <form action="/search1" method="post">
+      <div class="moj-search">
 
         <div class="govuk-form-group">
         <h2 class="govuk-heading-m">Search for cases</h2>
 
           <div id="search-hint" class="govuk-hint moj-search__hint ">
-            Search by project reference number, SBI or business name
+            You can search by project ID, business name, status or assignee.
           </div>
 
           <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
@@ -49,17 +41,226 @@
         <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
           Search
         </button>
-      </form>
+
     </div>
+<details class="govuk-details govuk-!-margin-top-4">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Filter applications
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+
       
       <br>
         <h2 class="govuk-heading-m">Apply filters</h2>
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Apply
-        </button>
+
       <div class="govuk-form-group radio-container">
 
-        <div class="govuk-form-group column govuk-!-margin-bottom-0">
+
+      <div class="govuk-form-group column govuk-!-margin-bottom-0">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+            Grant
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type1-1" name="type1" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type1-1">
+                Adding Value (AV)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type1-2" name="type1" type="checkbox" value="2" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type1-2">
+                Calf Housing for Health and Welfare (CHHW)
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type1-3" name="type1" type="checkbox" value="3">
+              <label class="govuk-label govuk-checkboxes__label" for="type1-3">
+                Improving Farm Productivity round 2 (IFP R2)
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type1-4" name="type1" type="checkbox" value="4">
+              <label class="govuk-label govuk-checkboxes__label" for="type1-3">
+                Laying Hen Housing for Health and Welfare round 1 (LHHHW R1)
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type1-4" name="type1" type="checkbox" value="4">
+              <label class="govuk-label govuk-checkboxes__label" for="type1-4">
+                Slurry Infrastructure round 2 (SIG R2)
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type1-5" name="type1" type="checkbox" value="5">
+              <label class="govuk-label govuk-checkboxes__label" for="type1-5">
+                Water Management round 2 (WM R2)
+              </label>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+      </div>
+      <div class="govuk-form-group column govuk-!-margin-bottom-0">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+            Stage
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type2-1" name="type2" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type2-1">
+                EOI
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type2-2" name="type2" type="checkbox" value="2" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type2-2">
+                ECR
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type2-3" name="type2" type="checkbox" value="3">
+              <label class="govuk-label govuk-checkboxes__label" for="type2-3">
+                Full appraisal
+              </label>
+
+            </div>
+          </div>
+
+        </fieldset>
+
+      </div>
+      <div class="govuk-form-group column govuk-!-margin-bottom-0">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+            Status
+
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-1" name="type3" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type3-1">
+                Approved 
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-2" name="type3" type="checkbox" value="2" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type3-2">
+                Approved for invite
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-3" name="type3" type="checkbox" value="3">
+              <label class="govuk-label govuk-checkboxes__label" for="type3-3">
+                Contracted
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-4" name="type3" type="checkbox" value="4">
+              <label class="govuk-label govuk-checkboxes__label" for="type3-4">
+                In review
+              </label>
+            </div>
+                        <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-5" name="type3" type="checkbox" value="5" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type3-5">
+                Not started
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-6" name="type3" type="checkbox" value="6" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type3-6">
+                On hold
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-7" name="type3" type="checkbox" value="7">
+              <label class="govuk-label govuk-checkboxes__label" for="type3-7">
+                QC
+              </label>
+
+            </div>
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-8" name="type3" type="checkbox" value="8">
+              <label class="govuk-label govuk-checkboxes__label" for="type3-8">
+                Rejected
+              </label>
+            </div>
+                        <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-9" name="type3" type="checkbox" value="9" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type3-9">
+                In tech review
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-10" name="type3" type="checkbox" value="10" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type3-10">
+                Second QC
+              </label>
+
+            </div>
+
+            <div class="govuk-checkboxes__item custom-width">
+              <input class="govuk-checkboxes__input" id="type3-11" name="type3" type="checkbox" value="11">
+              <label class="govuk-label govuk-checkboxes__label" for="type3-11">
+                Withdrawn
+              </label>
+
+            </div>
+
+
+          </div>
+
+        </fieldset>
+
+      </div>
+      <div class="govuk-form-group column govuk-!-margin-bottom-0">
 
         <fieldset class="govuk-fieldset">
 
@@ -107,102 +308,11 @@
         </fieldset>
 
       </div>
-      <div class="govuk-form-group column govuk-!-margin-bottom-0">
 
-        <fieldset class="govuk-fieldset">
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-
-            Grant
-
-          </legend>
-
-          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-
-            <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2" name="type2" type="checkbox" value="1" checked>
-              <label class="govuk-label govuk-checkboxes__label" for="type2">
-                Adding value (2)
-              </label>
-
-            </div>
-
-            <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2-2" name="type2" type="checkbox" value="2" checked>
-              <label class="govuk-label govuk-checkboxes__label" for="type2-2">
-                Improving farm productivity (1) 
-              </label>
-
-            </div>
-
-            <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2-3" name="type2" type="checkbox" value="3">
-              <label class="govuk-label govuk-checkboxes__label" for="type2-3">
-                Slurry <br>infrastructure (2)
-              </label>
-
-            </div>
-            <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2-3" name="type2" type="checkbox" value="3">
-              <label class="govuk-label govuk-checkboxes__label" for="type2-3">
-                Water <br>management (14)
-              </label>
-
-            </div>
-
-          </div>
-
-        </fieldset>
-
-      </div>
-           <div class="govuk-form-group column govuk-!-margin-bottom-0">
-
-        <fieldset class="govuk-fieldset">
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-
-            Status
-
-          </legend>
-
-          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-
-            <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2" name="type2" type="checkbox" value="1" checked>
-              <label class="govuk-label govuk-checkboxes__label" for="type2">
-                Not started (9)
-              </label>
-
-            </div>
-
-            <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2-2" name="type2" type="checkbox" value="2" checked>
-              <label class="govuk-label govuk-checkboxes__label" for="type2-2">
-                In progress (8)
-              </label>
-
-            </div>
-
-            <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2-3" name="type2" type="checkbox" value="3">
-              <label class="govuk-label govuk-checkboxes__label" for="type2-3">
-                At QC (1)
-              </label>
-
-            </div>
-            <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2-3" name="type2" type="checkbox" value="3">
-              <label class="govuk-label govuk-checkboxes__label" for="type2-3">
-                At decision (1)
-              </label>
-            </div>
-
-          </div>
-
-        </fieldset>
-
-      </div>
     </div>
+                  <button type="submit" class="govuk-button" data-module="govuk-button">
+          Apply
+        </button>
   </div>
 </details>
 
