@@ -269,6 +269,33 @@
     width: 10px;
 }
 
+.moj-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust spacing between elements */
+}
+
+.moj-filter-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px; /* Adjust spacing between items */
+}
+
+.moj-filter__selected {
+    background-color: #e8f1f8;
+    box-shadow: inset 0 0 0 1px #b1b4b6;
+    padding: 20px;
+}
+
+.moj-filter__header {
+    padding: 10px 20px;
+    background-color: #bbd4ea;
+    font-size: 0;
+    text-align: justify;
+}
+
 
 
 
