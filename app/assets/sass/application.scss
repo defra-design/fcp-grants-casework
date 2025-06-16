@@ -194,6 +194,10 @@
   width: 110px;
 }
 
+.custom-width-130 {
+  width: 130px;
+}
+
 .custom-width-table-approved {
   width: 120px;
 }
@@ -322,6 +326,15 @@
 
 .moj-message-item__text.moj-message-item__text--received a {
     color: black;
+}
+
+.govuk-radios__input_s {
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
 }
 
 
