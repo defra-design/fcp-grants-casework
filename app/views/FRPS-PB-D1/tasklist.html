@@ -36,13 +36,11 @@
     </div>
 
   </div>
-
   
 {% endblock %}
 
 
 {% block content %}
-
 <div class="govuk-service-navigation-white"
   data-module="govuk-service-navigation">
   <div class="govuk-width-container">
@@ -52,43 +50,45 @@
           Menu
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link"  href="tasklist" aria-current="true">
-              Tasks
+          <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+              <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li> 
-          <li class="govuk-service-navigation__item-c2">
+          <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="application-data">
               Application
             </a>
           </li>
 
-          <li class="govuk-service-navigation__item-c2 govuk-service-navigation__item--active">
+          <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="land">
-              <strong class="govuk-service-navigation__active-fallback">Land</strong>
+              Land
             </a>
           </li>
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="timeline">
+            <a class="govuk-service-navigation__link" href="timeline" aria-current="true">
               Timeline
             </a>
-          </li>          
+          </li>
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="notes">
               Notes
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="#">
+
+          <li class="govuk-service-navigation__item-c2">
+            <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
           </li>
+
         </ul>
       </nav>
     </div>
   </div>
 </div>
-<form action="/keeper1" method="post">
+<form action="test3" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
      
@@ -96,40 +96,68 @@
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Land details
+    Tasks
       </h1>
     </legend>
-    <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Parcel and area</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel</th>
-      <th scope="col" class="govuk-table__header">Area</th>
-      <th scope="col" class="govuk-table__header">Intersections</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8566</th>
-      <td class="govuk-table__cell">1.9165 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8726</th>
-      <td class="govuk-table__cell">0.5654 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-      <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SU5407 8878</th>
-      <td class="govuk-table__cell">2.1723 ha</td>
-      <td class="govuk-table__cell">-</td>
-      <td class="govuk-table__cell">-</td>
-    </tr>
-  </tbody>
-</table>
+    
+
+
+
+   <h2 class="govuk-heading-m">1. Check application</h2>
+  <ul class="govuk-task-list">
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="c-house-check" aria-describedby="company-details-1-status">
+          Check application and documents
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+        Completed
+      </div>
+    </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="#" aria-describedby="company-details-1-status">
+          Check for dual funding 
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+        Completed
+      </div>
+    </li>
+  </ul>
+          
+
+
+  <h2 class="govuk-heading-m">2. Make application decision</h2>
+  <ul class="govuk-task-list">
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="c-house-check" aria-describedby="company-details-1-status">
+          Decide on outcome
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+        Cannot start yet
+      </div>
+    </li>
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="c-house-check" aria-describedby="company-details-1-status">
+          Send approval for GFA or rejection message
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+        Cannot start yet
+      </div>
+    </li>
+</ul>
+
+  <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
+  Approve application
+</button>
+
+
 
 
 
@@ -140,6 +168,9 @@
   </div>
 
 </div>
+
+
+
 
 
 {% endblock %}
