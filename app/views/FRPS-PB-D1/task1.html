@@ -104,16 +104,14 @@
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="c-house-check" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task2" aria-describedby="company-details-1-status">
         Available area
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status">
-      <strong class="govuk-tag govuk-tag--green">      
-      <svg class="tick-icon" width="20" height="20" viewBox="0 0 24 24" fill="green" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 16.2L4.8 12L3.4 13.4L9 19L21 7L19.6 5.6L9 16.2Z"/>
-      </svg>
-        Passed
+      <strong class="govuk-tag govuk-tag--red-new">      
+
+        Failed
       </strong>
     </div>
   </li>
@@ -331,9 +329,9 @@
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision1">
-            <p>Once you approve this application, an agreement will be generated</p>
+            <p> Add note</p>
             <div id="more-detail-hint" class="govuk-hint">
-              Add note
+              Once you approve this application, an agreement will be generated
             </div>
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
           </div>
@@ -344,11 +342,11 @@
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision2">
-            
+            <p>Add note</p>
             <div id="more-detail-hint" class="govuk-hint">
-              Add note
+              For example, you need to request more information
             </div>
-            <p>For example, you need to request more information</p>
+            
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1`']}}</textarea>
           </div>
           <div class="govuk-radios__item">
@@ -358,8 +356,9 @@
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
+            <p>Add note</p>
             <div id="more-detail-hint" class="govuk-hint">
-              Add reason 
+              
             </div>
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
           </div>
@@ -371,7 +370,7 @@
 </div>
 
 <button type="submit" class="govuk-button" data-module="govuk-button">
-  Save and continue
+  Save
 </button>
     </form>
 

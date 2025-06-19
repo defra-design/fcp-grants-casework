@@ -336,6 +336,22 @@
     opacity: 0;
     cursor: pointer;
 }
+.govuk-tag--red-new {
+    color: rgb(42.4, 10.6, 5.6);
+    background-color: rgb(244.25, 204.5, 198.25);
+}
+
+.govuk-tag--red-new:before {
+    background-image: url(/public/images/icon-tag-remove-cross.svg);
+    content: "";
+    display: inline-block;
+    font-weight: 700;
+    height: 10px;
+    margin-left: 5px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 10px;
+}
 
 
 
