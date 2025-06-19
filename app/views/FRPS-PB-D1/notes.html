@@ -62,8 +62,8 @@
           </li>
 
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="documents">
-              Documents
+            <a class="govuk-service-navigation__link" href="land">
+              Land
             </a>
           </li>
           <li class="govuk-service-navigation__item-c2">
@@ -105,7 +105,7 @@
     Type
   </label>
   <select class="govuk-select" id="sort" name="sort">
-    <option value="published">Call to applicant</option>
+    <option value="published">Type 1</option>
     <option value="updated" selected>Type 2</option>
     <option value="views">Type 3</option>
     <option value="comments">Type 4</option>
@@ -114,14 +114,14 @@
 <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--s" for="more-detail">
-      Can you provide more detail?
+      Note
     </label>
   </h1>
 
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Called applicant to chase up email sent about prep work for the project.</textarea>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Sent email in CRM to ask if applicant had SSSI consent for their land parcel.</textarea>
 </div>
   <button type="submit" class="govuk-button" data-module="govuk-button">
-  Create note
+  Save
 </button>
 
 <h2 class="govuk-heading-m">All notes</h2>
@@ -141,48 +141,40 @@
   </thead> 
 
   <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
 
-    <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">27 Nov 24</td>
-
-      <td class="govuk-table__cell">
-        <details class="govuk-details">        
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Documentation request
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            Two of the pictures of the original site were blurred so these were sent to the applicant with a request to resupply.
-          </div>
-        </details>
-      </td>
-
-      <td class="govuk-table__cell">Emily Carter</td>
-
-    </tr>
-    <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">25 Nov 24</td>
+      <td class="govuk-table__cell">25 Nov 2025</td>
 
       <td class="govuk-table__cell">
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Reassigned application handover
+            Example note
           </span>
         </summary>
         <div class="govuk-details__text">
-          I have barely looked at this so there is nothing to hand over. You are starting afresh! 
+          Example message here to show how user would see the note 
         </div>
       </details>
       </td>
 
-      <td class="govuk-table__cell">Sophia Johnson</td>
+      <td class="govuk-table__cell">Emily Carter</td>
 
 
     </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">10 Sept 2025</td>
+
+      <td class="govuk-table__cell">
+        Assignment 
+      </td>
+
+      <td class="govuk-table__cell">Emily Carter</td>
+
+    </tr>
+
 
   </tbody>
 </table>
