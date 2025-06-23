@@ -50,19 +50,18 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link"  href="tasklist" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
               Tasks
-            </a>
-          </li> 
-
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="application-data">
-              Application
             </a>
           </li>
           <li class="govuk-service-navigation__item-c2">
+            <a class="govuk-service-navigation__link" href="#">
+              Application
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c2  govuk-service-navigation__item--active">
             <a class="govuk-service-navigation__link" href="known-data">
-              Applicant data
+              <strong class="govuk-service-navigation__active-fallback">Applicant data</strong>
             </a>
           </li>
           <li class="govuk-service-navigation__item-c2">
@@ -71,28 +70,31 @@
             </a>
           </li>
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="timeline">
+            <a class="govuk-service-navigation__link" href="timeline" aria-current="true">
               Timeline
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c2  govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="#">
-              <strong class="govuk-service-navigation__active-fallback">Notes</strong>
+          <li class="govuk-service-navigation__item-c2">
+            <a class="govuk-service-navigation__link" href="notes">
+              Notes
             </a>
           </li>
+
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
           </li>
 
-
         </ul>
       </nav>
     </div>
   </div>
 </div>
-<form action="test3" method="post">
+
+
+<form action="test4" method="post">
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
      
@@ -100,94 +102,79 @@
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Case notes
+    About Sarah Watson and Berkshire Estate Limited
       </h1>
     </legend>
-    <h2 class="govuk-heading-m">Add note</h2>
-    <div class="govuk-form-group">
-  <label class="govuk-label govuk-label--s" for="sort">
-    Type
-  </label>
-  <select class="govuk-select" id="sort" name="sort">
-    <option value="published">Type 1</option>
-    <option value="updated" selected>Type 2</option>
-    <option value="views">Type 3</option>
-    <option value="comments">Type 4</option>
-  </select>
-</div>
-<div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--s" for="more-detail">
-      Note
-    </label>
-  </h1>
+    <p>Application submitted: <strong>10 Sept 2025</strong></p>
 
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint">Sent email in CRM to ask if applicant had SSSI consent for their land parcel.</textarea>
-</div>
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-  Save
-</button>
+    <h2 class="govuk-heading-m">
+    Applicant details
+    </h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Sarah
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Watson
+        </dd>
 
-<h2 class="govuk-heading-m">All notes</h2>
-<table class="govuk-table" data-module="moj-sortable-table">
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          20 Nov 1978
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="govuk-summary-list__value">
+          sarahfarmer@gmail.com
+        </dd>
 
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
-
-      <th scope="col" class="govuk-table__header reduced-width">Note</th>
-
-      <th scope="col" class="govuk-table__header" aria-sort="none">Added by</th>
-
-    </tr>
-  </thead> 
-
-  <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">25 Nov 2025</td>
-
-      <td class="govuk-table__cell">
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Example note
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Example message here to show how user would see the note 
-        </div>
-      </details>
-      </td>
-
-      <td class="govuk-table__cell">Emily Carter</td>
+      </div>
 
 
-    </tr>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Phone
+            </dt>
+            <dd class="govuk-summary-list__value">
+              077 1234 5678
+            </dd>
+          </div>
+        </dl>
 
-    <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">10 Sept 2025</td>
-
-      <td class="govuk-table__cell">
-        Assignment 
-      </td>
-
-      <td class="govuk-table__cell">Emily Carter</td>
-
-    </tr>
-
-
-  </tbody>
-</table>
-
-
-
-
-
-
+        <h2 class="govuk-heading-m">
+    Business details
+    </h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Business
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Berkshire Estate Limited<br>
+            2 Toomers Wharf<br>
+            Canal Walk<br>
+            Newbury<br>
+            Berkshire<br>
+            RG14 1DY
+            </dd>
+          </div>
+          
 
     </form>
 
@@ -197,6 +184,5 @@
 
 
 
-
-
 {% endblock %}
+
