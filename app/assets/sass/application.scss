@@ -353,6 +353,27 @@
     width: 10px;
 }
 
+.gem-c-button--secondary-quiet {
+    padding: 8px 10px;
+    border-color: #505a5f;
+    color: #505a5f;
+    background-color: #fff;
+    box-shadow: none;
+    margin-left: 20px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.gem-c-button--secondary-quiet:hover,
+.gem-c-button--secondary-quiet:focus {
+  background-color: #f3f2f1; /* Light grey instead of green */
+  color: #0b0c0c;             /* Dark grey for contrast */
+  border-color: #0b0c0c;      /* Subtle but defined */
+  text-decoration: none;      /* Optional: remove underline on focus */
+}
+
+
+
 
 
 
