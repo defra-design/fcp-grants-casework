@@ -372,6 +372,23 @@
   text-decoration: none;      /* Optional: remove underline on focus */
 }
 
+.radio-flex-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Adjust spacing between label and radio group */
+  margin-bottom: 1rem; /* Add vertical rhythm */
+}
+
+.radio-flex-box2 {
+  display: flex;
+  align-items: center;
+   margin-left: 215px;
+    margin-top: 60px;
+  gap: 1rem; /* Adjust spacing between label and radio group */
+  margin-bottom: 1rem; /* Add vertical rhythm */
+}
+
+
 
 
 
