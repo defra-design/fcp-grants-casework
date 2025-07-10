@@ -23,5 +23,5 @@ router.get('/questionFull1', function (req, res) {
 
 router.get('/failTest1', function (req, res) {
   req.session.data.failTest = 'yes';
-  res.redirect('/FG-casework/home');
+  res.redirect('/FRPS-PB-D1/home');
 });
