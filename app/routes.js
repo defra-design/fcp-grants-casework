@@ -20,3 +20,8 @@ router.get('/questionFull1', function (req, res) {
   req.session.data.eligibleTask = 'done';
   res.redirect('/FG-casework/tasklist');
 });
+
+router.get('/failTest1', function (req, res) {
+  req.session.data.failTest = 'yes';
+  res.redirect('/FG-casework/home');
+});
