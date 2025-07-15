@@ -163,26 +163,21 @@
 
     <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        Mark as resolved
-      </h1>
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Task outcome
+      </h2>
     </legend>
 
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          Issue resolved
-        </label>
-      </div>
 
-      <div id="more-detail-hint" class="govuk-hint">Describe what you did to resolve this error
+
+
+      <div id="more-detail-hint" class="govuk-hint">Describe what you did to resolve this task
       </div>
       <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
     </div>
   </fieldset>
-</div>
+
 
   </fieldset>
 </div>
@@ -191,10 +186,10 @@
   
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
-    Issue resolved
+    Mark as resolved
   </button>
   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Return to tasklist
+    Go back to tasks
   </button>
 </div>
 
