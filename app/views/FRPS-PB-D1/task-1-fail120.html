@@ -93,7 +93,7 @@
     </div>
   </div>
 </div>
-<form action="review-Passeded2" method="post">
+<form action="/review-Passed2" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -141,56 +141,47 @@
 
 <h2 class="govuk-heading-m">What you need to do</h2>
 
-<p>Put the application on hold, and contact the applicant to ask if they want to change the area.</p>
-
-<h3 class="govuk-heading-s">If they want to change the area</h3>
-<ol class="govuk-list govuk-list--number govuk-!-margin-left-4">
+<ol class="govuk-list govuk-list--number">
+  <li>Put the application on hold.</li>
+    <li>Contact the applicant to ask if they want to change the area.</li>
   <li>Go to the Revenue ELMS screen in SITI Agri and change the 'Applied for' area to the full eligible area of the land parcels.</li>
-  <li>Mark the task as resolved and describe what you did to resolve the task. </li>
-</ol>
-<p class="govuk-!-margin-left-4">We'll run the check again once you mark the task as resolved.</p>
-
-<h3 class="govuk-heading-s">If they do not want to change the area</h3>
-<ol class="govuk-list govuk-list--number govuk-!-margin-left-4">
-  <li>Reject the application and add the rejection reason.</li>
-  <li>Contact the applicant to tell them their application has been rejected due to the parcel not meeting the action requirements.</li>
+  <li>Mark the task as resolved. We'll run the check again after you do this.</li>
 </ol>
 
- 
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+       If the applicant does not want to change the area
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    
+    <p class="govuk-body">You'll need to:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>reject the application and add the rejection reason</li>
+  <li>contact the applicant to tell them their application has been rejected due to the parcel not meeting the action requirements</li>
+</ul>
+  </div>
+</details>
 
- 
-
-
-    <div class="govuk-form-group">
+<div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
         Task outcome
       </h2>
     </legend>
-
-
-
-
       <div id="more-detail-hint" class="govuk-hint">Describe what you did to resolve this task
       </div>
-      <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
-    </div>
-  </fieldset>
+      <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </fieldset>
+  </div>
 
-
-  </fieldset>
-</div>
-
-
-  
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Mark as resolved
   </button>
-  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Go back to tasks
-  </button>
+  <a class="govuk-link" href="tasklist-test">Go back to tasks</a>
 </div>
 
  

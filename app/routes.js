@@ -32,3 +32,8 @@ router.get('/app-approve1', function (req, res) {
     }
    res.redirect('/FRPS-PB-D1/caselist-team');
 });
+
+router.get('/review-Passed2', function (req, res) { 
+    req.session.data.issueResolved = 'yes';
+   res.redirect('/FRPS-PB-D1/tasklist-test');
+});
