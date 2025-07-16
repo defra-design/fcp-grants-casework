@@ -103,95 +103,60 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Available area check
+        Intersecting data layers check
       </h1>
     </legend>
 
-<h2 class="govuk-heading-m">Result</h2>
-<p>Fail</p>
+    <h2 class="govuk-heading-m">Result</h2>
+
+    <p>Failed</p>
 
     <h2 class="govuk-heading-m">Fail reason</h2>
 
-    <p>The area applied for in these actions is not 100% of the total available area for the land parcels listed below.</p>
+    <p>Less than 50% of parcel ID0120 selected for this action is on moorland.</p>
 
 
-<h2 class="govuk-heading-m">Check details</h2>
+
 <table class="govuk-table">
-
+  <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">ParcelID</th>
-      <td class="govuk-table__cell"> ID0120</td>
+      <th scope="row" class="govuk-table__header">Parcel ID</th>
+      <td class="govuk-table__cell">ID0120</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Area applied for</th>
-      <td class="govuk-table__cell">4 hectares</td>
+      <th scope="row" class="govuk-table__header">Parcel area</th>
+      <td class="govuk-table__cell">10 ha</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Available area</th>
-      <td class="govuk-table__cell">5 hectares</td>
+      <th scope="row" class="govuk-table__header">Area on moorland</th>
+      <td class="govuk-table__cell">4 ha</td>
     </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">% applied for</th>
-      <td class="govuk-table__cell">80%</td>
+     <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Percentage on moorland</th>
+      <td class="govuk-table__cell">40%</td>
     </tr>
   </tbody>
 </table>
 
 <h2 class="govuk-heading-m">What you need to do</h2>
 
-<p>Put the application on hold, and contact the applicant to ask if they want to change the area.</p>
-
-<h3 class="govuk-heading-s">If they want to change the area</h3>
-<ol class="govuk-list govuk-list--number govuk-!-margin-left-4">
-  <li>Go to the Revenue ELMS screen in SITI Agri and change the 'Applied for' area to the full eligible area of the land parcels.</li>
-  <li>Mark the task as resolved and describe what you did to resolve the task. </li>
-</ol>
-<p class="govuk-!-margin-left-4">We'll run the check again once you mark the task as resolved.</p>
-
-<h3 class="govuk-heading-s">If they do not want to change the area</h3>
-<ol class="govuk-list govuk-list--number govuk-!-margin-left-4">
+<ol class="govuk-list govuk-list--number">
   <li>Reject the application and add the rejection reason.</li>
-  <li>Contact the applicant to tell them their application has been rejected due to the parcel not meeting the action requirements.</li>
+  <li>Contact the applicant to tell them their application has been rejected due to the parcel not meeting the eligible land type requirements.</li>
 </ol>
-
-
-
- 
-
-
-    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-        Task outcome
-      </h2>
-    </legend>
-
-
-
-
-      <div id="more-detail-hint" class="govuk-hint">Describe what you did to resolve this task
-      </div>
-      <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
-    </div>
-  </fieldset>
-
-
-  </fieldset>
-</div>
-
 
   
-<div class="govuk-button-group">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Mark as resolved
-  </button>
-  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Go back to tasks
-  </button>
+
+  </fieldset>
 </div>
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Record decision
+</button>
+  
+
 
  
     </form>
