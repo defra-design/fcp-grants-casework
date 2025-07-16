@@ -80,9 +80,10 @@
               <td class="govuk-table__cell">Berkshire Estate Limited</td>
               <td class="govuk-table__cell">112849012</td>
               <td class="govuk-table__cell">10 Sept 2025</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
-                Received
-              </strong>
+              <td class="govuk-table__cell">
+                {% if (data.caseApproved === 'yes') %}<strong class="govuk-tag govuk-tag--green">Approved</strong>
+                {% else %}<strong class="govuk-tag govuk-tag--grey">Received</strong>
+                {% endif %}
               </td>
               <td class="govuk-table__cell">Not assigned</td>
   </tr>
@@ -102,7 +103,8 @@
               <td class="govuk-table__cell">DAVID ROGER-HOGGS</td>
               <td class="govuk-table__cell">112849000</td>
               <td class="govuk-table__cell">11 Sept 2025</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--grey">
                 Received
               </strong>
               </td>

@@ -25,3 +25,10 @@ router.get('/failTest1', function (req, res) {
   req.session.data.failTest = 'yes';
   res.redirect('/FRPS-PB-D1/home');
 });
+
+router.get('/app-approve1', function (req, res) {
+  if (req.session.data.decision === 'Approve') {
+    req.session.data.caseApproved = 'yes';
+    }
+   res.redirect('/FRPS-PB-D1/caselist-team');
+});

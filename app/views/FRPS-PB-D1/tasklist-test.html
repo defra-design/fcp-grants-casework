@@ -92,7 +92,7 @@
     </div>
   </div>
 </div>
-<form action="test3" method="post">
+<form action="/app-approve1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
      
@@ -359,7 +359,7 @@
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Passed" data-aria-controls="conditional-decision1" {{ checked("decision", "Passed") }}>
+            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Approve
             </label>
@@ -367,7 +367,7 @@
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision1">
             <p> Add note</p>
             <div id="more-detail-hint" class="govuk-hint">
-              Once you approve this application, an agreement will be generated
+              After you approve this application, you'll need to send the agreement
             </div>
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
           </div>
