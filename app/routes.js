@@ -37,3 +37,8 @@ router.get('/review-Passed2', function (req, res) {
     req.session.data.issueResolved = 'yes';
    res.redirect('/FRPS-PB-D1/tasklist-test');
 });
+
+router.get('/readMore1', function (req, res) { 
+    req.session.data.readMore = 'Yes';
+   res.redirect('/FRPS-PB-D1/notes3#task1');
+});

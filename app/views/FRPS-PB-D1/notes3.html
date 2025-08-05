@@ -73,7 +73,7 @@
             </a>
           </li>
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="timeline2">
+            <a class="govuk-service-navigation__link" href="timeline3">
               Timeline
             </a>
           </li>
@@ -113,9 +113,9 @@
   </ul>
   <div class="govuk-tabs__panel" id="Notes">
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full-width">
      
-<div class="govuk-form-group">
+<div class="govuk-form-group govuk-!-padding-left-3 govuk-!-padding-right-2">
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
@@ -126,80 +126,18 @@
     
 <div class="govuk-form-group">
 
-
-
-    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">
-    Approval reason
-    </h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Added by
-        </dt>
-        <dd class="govuk-summary-list__value">
-          A Jones
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12 Sept 2025
-        </dd>
-
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Note
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Approved application as passed available area, intersecting data layers and supplement actions checks. Ready for agreement offer. 
-        </dd>
-      </div>
-    </dl>
-
-    <h2 class="govuk-heading-m govuk-!-margin-top-5 govuk-!-margin-bottom-1">
-    Task
-    </h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Added by
-        </dt>
-        <dd class="govuk-summary-list__value">
-          A Jones
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12 Sept 2025
-        </dd>
-
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Note
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Sent Sally an email to check if she wanted to apply for full eligible area for land parcel SO3757 ID0120 on 12 September. Sally responded on 12 September (see 'customer contact') and said yes. Checked in LIPIS, and updated map in Siti Agri with full eligible area to 3.5125 ha. 
-        </dd>
-      </div>
-    </dl>
 <table class="govuk-table" data-module="moj-sortable-table">
 
 
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
+      <th scope="col" class="govuk-table__header custom-width-120" aria-sort="ascending">Date</th>
+      <th scope="col" class="govuk-table__header " aria-sort="none">Type</th>
 
-      <th scope="col" class="govuk-table__header reduced-width">Note</th>
+      <th scope="col" class="govuk-table__header notes-width">Note</th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="none">Added by</th>
+      <th scope="col" class="govuk-table__header custom-width-110" aria-sort="none">Added by</th>
 
     </tr>
   </thead> 
@@ -210,16 +148,10 @@
       <td class="govuk-table__cell">12 Sept 2025</td>
 
       <td class="govuk-table__cell">
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Approval reason
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Approved application as passed available area, intersecting data layers and supplement actions checks. Ready for agreement offer.
-        </div>
-      </details>
+        Approval reason
+      </td>
+      <td class="govuk-table__cell">
+        Approved application as passed available area, intersecting data layers and supplement actions checks. Ready for agreement offer.
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>
@@ -232,16 +164,10 @@
       <td class="govuk-table__cell">12 Sept 2025</td>
 
       <td class="govuk-table__cell">
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Task
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-           Sent Sally an email to check if she wanted to apply for full eligible area for land parcel SO3757 ID0120 on 12 September. Sally responded on 12 September (see 'customer contact') and said yes. Checked in LIPIS, and updated map in Siti Agri with full eligible area to 3.5125 ha. 
-        </div>
-      </details>
+        Task<a href="#task1"></a>
+      </td>
+      <td class="govuk-table__cell">
+        Sent Sally an email to check if she wanted to apply for full eligible area for land parcel SO3757 ID0120 on 12 September. Sally {% if (data.readMore === 'Yes') %}  responded on 12 September (see 'customer contact') and said yes. Checked in LIPIS, and updated map in Siti Agri with full eligible area to 3.5125 ha. {% else %} ... <br> <a href="/readMore1">read full text</a>{% endif %}
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>
@@ -254,16 +180,10 @@
       <td class="govuk-table__cell">11 Sept 2025</td>
 
       <td class="govuk-table__cell">
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            General
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Reviewed submitted SFI application
-        </div>
-      </details>
+        General
+      </td>
+      <td class="govuk-table__cell">
+        Reviewed submitted SFI application
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>
@@ -276,16 +196,10 @@
       <td class="govuk-table__cell">10 Sept 2025</td>
 
       <td class="govuk-table__cell">
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Assignment
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Assigned application to myself
-        </div>
-      </details>
+        Assignment
+      </td>
+      <td class="govuk-table__cell">
+        Assigned application to myself
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>
