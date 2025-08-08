@@ -42,3 +42,25 @@ router.get('/readMore1', function (req, res) {
     req.session.data.readMore = 'Yes';
    res.redirect('/FRPS-PB-D1/notes3#task1');
 });
+
+router.get('/task1Agree1', function (req, res) { 
+    req.session.data.customerCheck = 'yes';
+   res.redirect('/FRPS-PB-D1/tasklist-agree');
+});
+
+router.get('/task2aAgree1', function (req, res) { 
+    req.session.data.areaChecks = 'yes';
+   res.redirect('/FRPS-PB-D1/tasklist-agree');
+});
+
+router.get('/task2bAgree1', function (req, res) { 
+    req.session.data.intersectingData = 'yes';
+   res.redirect('/FRPS-PB-D1/tasklist-agree');
+});
+
+router.get('/task3Agree1', function (req, res) { 
+    req.session.data.budgetCheck = 'yes';
+   res.redirect('/FRPS-PB-D1/tasklist-agree');
+});
+
+
