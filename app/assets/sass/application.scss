@@ -405,6 +405,23 @@
   margin-bottom: 1rem; /* Add vertical rhythm */
 }
 
+.govuk-notification-banner--fail {
+  border-color: #d4351c;
+  background-color: #d4351c;
+}
+.govuk-notification-banner--fail .govuk-notification-banner__link:link, .govuk-notification-banner--success .govuk-notification-banner__link:visited {
+  color: #d4351c;
+}
+.govuk-notification-banner--fail .govuk-notification-banner__link:hover {
+  color: #d4351c;
+}
+.govuk-notification-banner--fail .govuk-notification-banner__link:active {
+  color: #d4351c;
+}
+.govuk-notification-banner--fail .govuk-notification-banner__link:focus {
+  color: #d4351c;
+}
+
 
 
 

@@ -20,7 +20,7 @@
     <div class="govuk-width-container">
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist-team"
+        href: "javascript:history.back()"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
      
@@ -34,7 +34,7 @@
 
     </div>
 
-  </div>
+  </div> 
   
 {% endblock %}
 
@@ -93,7 +93,7 @@
     </div>
   </div>
 </div>
-<form action="review-Passeded2" method="post">
+<form action="/review-Passeded2" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -101,92 +101,78 @@
      
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
+    <span class="govuk-caption-l">Parcel ID SO3757 3059</span>
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
         Available area check
       </h1>
     </legend>
 
-<h2 class="govuk-heading-m">Result</h2>
-<p>Fail</p>
+    <h2 class="govuk-heading-m">Result</h2>
 
-    <h2 class="govuk-heading-m">Fail reason</h2>
+    <p>Passed</p>
 
-    <p>The area applied for in these actions is not 100% of the total available area for the land parcels listed below.</p>
+    <h2 class="govuk-heading-m">Pass reason</h2>
+
+    <p>Applicant has applied for the total available area in the land parcel for this action.</p>
 
 
-<h2 class="govuk-heading-m">Check details</h2>
+
 <table class="govuk-table">
-
+  <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">ParcelID</th>
-      <td class="govuk-table__cell"> ID0120</td>
+      <th scope="row" class="govuk-table__header">Parcel ID</th>
+      <td class="govuk-table__cell">SO3757 3059</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Area applied for</th>
-      <td class="govuk-table__cell">4 hectares</td>
+      <th scope="row" class="govuk-table__header">Total size</th>
+      <td class="govuk-table__cell">100 ha</td>
+    </tr>  
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Land covers</th>
+      <td class="govuk-table__cell">SSI 40%, Historic 10%, moorland 70%</td>
+    </tr>  
+
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Action applied for </th>
+      <td class="govuk-table__cell">Moderate livestock grazing on moorland - UPL1</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Available area</th>
-      <td class="govuk-table__cell">5 hectares</td>
+      <th scope="row" class="govuk-table__header">Eligible land covers for this action</th>
+      <td class="govuk-table__cell">Moorland 70%, SSI 40%</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Existing actions</th>
+      <td class="govuk-table__cell">none</td>
+    </tr>
+
+        <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Available area you can enter into this action</th>
+      <td class="govuk-table__cell">90 ha</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">% applied for</th>
-      <td class="govuk-table__cell">80%</td>
+      <th scope="row" class="govuk-table__header">Total available area for action </th>
+      <td class="govuk-table__cell">90 ha</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Available area applied for</th>
+      <td class="govuk-table__cell">90 ha (100%)</td>
     </tr>
   </tbody>
 </table>
+<p><a href="/public/images/Land_Calculation_Output.pdf">View detailed check data (PDF)</a></p>
 
 <h2 class="govuk-heading-m">What you need to do</h2>
 
-<p>Put the application on hold, and contact the applicant to ask if they want to change the area.</p>
-
-<h3 class="govuk-heading-s">If they want to change the area</h3>
-<ol class="govuk-list govuk-list--number govuk-!-margin-left-4">
-  <li>Go to the Revenue ELMS screen in SITI Agri and change the 'Applied for' area to the full eligible area of the land parcels.</li>
-  <li>Mark the task as resolved and describe what you did to resolve the task. </li>
+<ol class="govuk-list govuk-list--number">
+  <li>Go to Notes to add information for this check (if you need to).</li>
+  <li>Continue reviewing the application.</li>
 </ol>
-<p class="govuk-!-margin-left-4">We'll run the check again once you mark the task as resolved.</p>
-
-<h3 class="govuk-heading-s">If they do not want to change the area</h3>
-<ol class="govuk-list govuk-list--number govuk-!-margin-left-4">
-  <li>Reject the application and add the rejection reason.</li>
-  <li>Contact the applicant to tell them their application has been rejected due to the parcel not meeting the action requirements.</li>
-</ol>
-
-
-
- 
-
-
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-        Task outcome
-      </h2>
-    </legend>
-      <div id="more-detail-hint" class="govuk-hint">Describe what you did to resolve this task
-      </div>
-      <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
-    </div>
-  </fieldset>
-</div>
-
-
-  
-<div class="govuk-button-group">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Mark as resolved
-  </button>
-  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Go back to tasks
-  </button>
-</div>
-
- 
     </form>
 
   </div>

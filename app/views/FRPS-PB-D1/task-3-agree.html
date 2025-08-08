@@ -93,7 +93,7 @@
     </div>
   </div>
 </div>
-<form action="review-Passeded2" method="post">
+<form action="/task1Agree1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -103,87 +103,53 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Available area check
+        Check budget
       </h1>
     </legend>
 
-<h2 class="govuk-heading-m">Result</h2>
-<p>Fail</p>
 
-    <h2 class="govuk-heading-m">Fail reason</h2>
-
-    <p>The area applied for in these actions is not 100% of the total available area for the land parcels listed below.</p>
+You must check there is enough budget left for the total yearly payment the customer has applied for.
 
 
-<h2 class="govuk-heading-m">Check details</h2>
-<table class="govuk-table">
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Total yearly payment applied for</th>
+    <td class="govuk-table__cell">£1,000</td>
+  </tr>
+</tbody>
 
-
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">ParcelID</th>
-      <td class="govuk-table__cell"> ID0120</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Area applied for</th>
-      <td class="govuk-table__cell">4 hectares</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Available area</th>
-      <td class="govuk-table__cell">5 hectares</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">% applied for</th>
-      <td class="govuk-table__cell">80%</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 class="govuk-heading-m">What you need to do</h2>
-
-<p>Put the application on hold, and contact the applicant to ask if they want to change the area.</p>
-
-<h3 class="govuk-heading-s">If they want to change the area</h3>
-<ol class="govuk-list govuk-list--number govuk-!-margin-left-4">
-  <li>Go to the Revenue ELMS screen in SITI Agri and change the 'Applied for' area to the full eligible area of the land parcels.</li>
-  <li>Mark the task as resolved and describe what you did to resolve the task. </li>
-</ol>
-<p class="govuk-!-margin-left-4">We'll run the check again once you mark the task as resolved.</p>
-
-<h3 class="govuk-heading-s">If they do not want to change the area</h3>
-<ol class="govuk-list govuk-list--number govuk-!-margin-left-4">
-  <li>Reject the application and add the rejection reason.</li>
-  <li>Contact the applicant to tell them their application has been rejected due to the parcel not meeting the action requirements.</li>
-</ol>
-
-
-
- 
-
+<a href="#" class="govuk-link">View SFI budget spreadsheet</a>
 
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
-        Task outcome
+         Is there enough budget left for the total yearly payment?
       </h2>
     </legend>
-      <div id="more-detail-hint" class="govuk-hint">Describe what you did to resolve this task
+
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="budget" name="budget" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="budget">
+          Yes
+        </label>
       </div>
-      <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="budget-2" name="budget" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="budget-2">
+          No
+        </label>
+      </div>
     </div>
-  </fieldset>
-</div>
+    </fieldset>
+  </div>
 
-
-  
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
-    Mark as resolved
+    Save and continue
   </button>
-  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Go back to tasks
-  </button>
+  <a class="govuk-link" href="tasklist-test">Go back to tasks</a>
 </div>
 
  
