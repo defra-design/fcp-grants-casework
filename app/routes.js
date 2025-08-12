@@ -63,4 +63,36 @@ router.get('/task3Agree1', function (req, res) {
    res.redirect('/FRPS-PB-D1/tasklist-agree');
 });
 
+// Target routes
+
+router.get('/readMoreT1', function (req, res) { 
+    req.session.data.readMore = 'Yes';
+   res.redirect('/FRPS-D1_target/notes#task1');
+});
+
+router.get('/task1T1', function (req, res) { 
+    req.session.data.customerCheck = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/task2aT1', function (req, res) { 
+    req.session.data.areaChecks = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/task2bT1', function (req, res) { 
+    req.session.data.intersectingData = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/task3T1', function (req, res) { 
+    req.session.data.budgetCheck = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/caselistTeam1', function (req, res) { 
+    req.session.data.caseAssigned = 'yes';
+   res.redirect('/FRPS-D1_target/caselist');
+});
+
 

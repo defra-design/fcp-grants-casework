@@ -55,13 +55,13 @@
             </a>
           </li> 
           <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="application-agree">
+            <a class="govuk-service-navigation__link" href="application">
               Application
             </a>
           </li>
 
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="land-agree">
+            <a class="govuk-service-navigation__link" href="land">
               Land
             </a>
           </li>
@@ -110,7 +110,7 @@
   {% if (data.customerCheck === 'yes') %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-1-agree" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task-1" aria-describedby="company-details-1-status">
         Check customer details 
       </a>
     </div>
@@ -122,7 +122,7 @@
   {% else %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-1-agree" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task-1" aria-describedby="company-details-1-status">
         Check customer details 
       </a>
     </div>
@@ -143,7 +143,7 @@
   {% if (data.areaChecks === 'yes') %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-2a-agree" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task-2a" aria-describedby="company-details-1-status">
         Available area checks
       </a>
     </div>
@@ -154,7 +154,7 @@
   {% elseif (data.customerCheck === 'yes') %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-2a-agree" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task-2a" aria-describedby="company-details-1-status">
         Available area checks
       </a>
     </div>
@@ -181,7 +181,7 @@
     {% if (data.intersectingData === 'yes') %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-2b-agree" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task-2b" aria-describedby="company-details-1-status">
         Intersecting data layer checks
       </a>
     </div>
@@ -192,7 +192,7 @@
   {% elseif (data.customerCheck === 'yes') %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-2b-agree" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task-2b" aria-describedby="company-details-1-status">
         Intersecting data layer checks
       </a>
     </div>
@@ -223,7 +223,7 @@
   {% if (data.budgetCheck === 'yes') %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-3-agree" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task-3" aria-describedby="company-details-1-status">
         Budget check
       </a>
     </div>
@@ -235,7 +235,7 @@
   {% elseif (data.customerCheck === 'yes' and data.intersectingData === 'yes' and data.areaChecks === 'yes' ) %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-3-agree" aria-describedby="company-details-1-status">
+      <a class="govuk-link govuk-task-list__link" href="task-3" aria-describedby="company-details-1-status">
         Budget check
       </a>
     </div>
