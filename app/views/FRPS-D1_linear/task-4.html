@@ -93,7 +93,7 @@
     </div>
   </div>
 </div>
-<form action="task-4" method="post">
+<form action="/task3T1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -103,46 +103,29 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Check budget
+        Make application recommendation
       </h1>
     </legend>
 
 
-<p>You must check there is enough budget left for the total yearly payment the customer has applied for.
 
-
-<tbody class="govuk-table__body">
-  <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Total yearly payment applied for</th>
-    <td class="govuk-table__cell">£1,000</td>
-  </tr>
-</tbody></p>
-
-<p><a href="#" class="govuk-link">View SFI budget spreadsheet</a></p>
 
 <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-         Decision
+         Recommended decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision3" type="radio" value="All is fine" data-aria-controls="conditional-decision2" {{ checked("decision3", "All is fine") }}>
-            <label class="govuk-label govuk-radios__label" for="eligible-2">
-              Confirm budget available
-            </label>
-          </div>
+
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="eligible-2" name="decision3" type="radio" value="Request more information" data-aria-controls="conditional-decision2" {{ checked("decision3", "Request more information") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
-              Request more information
+              Approve
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision2">
-            <p>Note (optional)</p>
-            <div id="more-detail-hint" class="govuk-hint">
-              All notes will be saved for auditing purposes
-            </div>
+            <p>Approval reason note</p>
+
             
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1`']}}</textarea>
           </div>
@@ -154,9 +137,7 @@
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
             <p>Rejection reason note</p>
-            <div id="more-detail-hint" class="govuk-hint">
-              e.g. Insufficient budget available
-            </div>
+
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
           </div>
         </div>
