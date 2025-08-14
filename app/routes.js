@@ -71,22 +71,44 @@ router.get('/readMoreT1', function (req, res) {
 });
 
 router.get('/task1T1', function (req, res) { 
-    req.session.data.customerCheck = 'yes';
+    req.session.data.detailsChecked = 'yes';
    res.redirect('/FRPS-D1_target/tasklist');
 });
 
-router.get('/task2aT1', function (req, res) { 
-    req.session.data.areaChecks = 'yes';
+
+
+router.get('/A3059Checked1', function (req, res) { 
+    req.session.data.A3059Checked = 'yes';
    res.redirect('/FRPS-D1_target/tasklist');
 });
 
-router.get('/task2bT1', function (req, res) { 
-    req.session.data.intersectingData = 'yes';
+router.get('/A3064Checked1', function (req, res) { 
+    req.session.data.A3064Checked = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/AMasterChecked1', function (req, res) { 
+    req.session.data.AMasterChecked = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/I3059Checked1', function (req, res) { 
+    req.session.data.I3059Checked = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/I3064Checked1', function (req, res) { 
+    req.session.data.I3064Checked = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/IMasterChecked1', function (req, res) { 
+    req.session.data.IMasterChecked = 'yes';
    res.redirect('/FRPS-D1_target/tasklist');
 });
 
 router.get('/task3T1', function (req, res) { 
-    req.session.data.budgetCheck = 'yes';
+    req.session.data.budgetChecked = 'yes';
    res.redirect('/FRPS-D1_target/tasklist');
 });
 

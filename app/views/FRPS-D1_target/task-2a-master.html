@@ -20,7 +20,7 @@
     <div class="govuk-width-container">
       {{ govukBackLink({
         text: "Back to applications",
-        href: "javascript:history.back()"
+        href: "caselist-team"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
      
@@ -34,7 +34,7 @@
 
     </div>
 
-  </div> 
+  </div>
   
 {% endblock %}
 
@@ -55,7 +55,7 @@
             </a>
           </li> 
           <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="application">
+            <a class="govuk-service-navigation__link" href="application-agree">
               Application
             </a>
           </li>
@@ -67,7 +67,7 @@
 
           </li> -->
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="land">
+            <a class="govuk-service-navigation__link" href="land-agree">
               Land
             </a>
           </li>
@@ -93,65 +93,56 @@
     </div>
   </div>
 </div>
-<form action="/I3059Checked1" method="post">
+<form action="/AMasterChecked1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
 
      
-<div class="govuk-form-group govuk-!-margin-top-8">
-   
+<div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
-   <span class="govuk-caption-l">Parcel ID SO3757 3059</span>  
-      <h1 class="govuk-heading-l">
-        Intersecting data layers check
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
+        Available area checks confirmation
       </h1>
+    </legend>
 
-    <h2 class="govuk-heading-m">Result</h2>
 
-    <p>Passed</p>
 
-    <h2 class="govuk-heading-m">Pass reason</h2>
 
-    <p>Parcel SO3757 3059 is at least 50% on moorland.<br>
 
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
 
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Parcel ID</th>
-          <td class="govuk-table__cell">SO3757 3059</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Parcel area</th>
-          <td class="govuk-table__cell">100 ha</td>
-        </tr>
-            <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Area on moorland</th>
-          <td class="govuk-table__cell">60 ha</td>
-        </tr>
-            <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Percentage on moorland</th>
-          <td class="govuk-table__cell">60%</td>
-        </tr>
-      </tbody>
-    </table>
-
-<p><a href="/public/images/Land_Calculation_Output.pdf">View detailed check data (PDF)</a></p>
-
-<h2 class="govuk-heading-m">What you need to do</h2>
-
-<ol class="govuk-list govuk-list--number">
-  <li>Go to Notes to add information for this check (if you need to).</li>
-  <li>Continue reviewing the application.</li>
-</ol>
-    <div class="govuk-button-group">
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-        Confirm and continue
-      </button>
-
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+         Checks review outcome
+      </h2>
+    </legend>
+    <p>Mark this task as complete when you have reviewed all available area checks.</p>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Note
+          </h2>
+        </legend>
+          <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
+          </div>
+          <textarea class="govuk-textarea" id="more-detail1" name="task2aNote" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
+        </div>
+      </fieldset>
     </div>
+    </fieldset>
+  </div>
+
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Mark as complete
+  </button>
+</div>
+
+ 
     </form>
 
   </div>

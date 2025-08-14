@@ -93,17 +93,20 @@
     </div>
   </div>
 </div>
-<form action="task-2b-pass3064" method="post">
+<form action="/I3064Checked1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+
+     
 <div class="govuk-form-group govuk-!-margin-top-8">
    
   <fieldset class="govuk-fieldset">
-   <span class="govuk-caption-l">Parcel ID SO3757 3059</span>  
+   <span class="govuk-caption-l">Parcel ID SO3757 3064</span>  
       <h1 class="govuk-heading-l">
         Intersecting data layers check
       </h1>
+
 
     <h2 class="govuk-heading-m">Result</h2>
 
@@ -137,56 +140,21 @@
     </table>
 
 
+
 <p><a href="/public/images/Land_Calculation_Output.pdf">View detailed check data (PDF)</a></p>
 
-<div class="govuk-form-group">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-         Decision
-        </legend>
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision" type="radio" value="All is fine" data-aria-controls="conditional-decision2" {{ checked("decision", "All is fine") }}>
-            <label class="govuk-label govuk-radios__label" for="eligible-2">
-              Confirm checks
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision" type="radio" value="Request more information" data-aria-controls="conditional-decision2" {{ checked("decision", "Request more information") }}>
-            <label class="govuk-label govuk-radios__label" for="eligible-2">
-              Request more information
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision2">
-            <p>Note (optional)</p>
-            <div id="more-detail-hint" class="govuk-hint">
-              All notes will be saved for auditing purposes
-            </div>
-            
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1`']}}</textarea>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decision", "Reject") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Reject
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
-            <p>Rejection reason note</p>
-            <div id="more-detail-hint" class="govuk-hint">
-              All notes will be saved for auditing purposes
-            </div>
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-    <div class="govuk-button-group">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Confirm and continue
-  </button>
+<h2 class="govuk-heading-m">What you need to do</h2>
 
-</div>
+<ol class="govuk-list govuk-list--number">
+  <li>Go to Notes to add information for this check (if you need to).</li>
+  <li>Continue reviewing the application.</li>
+</ol>
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Confirm and continue
+      </button>
+
+    </div>
     </form>
 
   </div>

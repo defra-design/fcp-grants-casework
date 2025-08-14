@@ -98,18 +98,16 @@
      
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
-    <div class="radio-flex-box">
+
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
       Tasks
         </h1>
       </legend>
       
-
-    </div>
-
-  <h2 class="govuk-heading-m">1. Review application</h2>
+         <h2 class="govuk-heading-m">1. Review application</h2>
   <ul class="govuk-task-list">
+  {% if (data.customerCheck === 'yes') %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="task-1" aria-describedby="company-details-1-status">
@@ -117,165 +115,150 @@
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status">   
-        {% if (data.detailsChecked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomlpete
-          </strong>
-        {% endif %}
+        Complete
     </div>
   </li>
+
+  {% else %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-1" aria-describedby="company-details-1-status">
+        Check customer details 
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    </div>
+  </li>
+  {% endif %}
 </ul>
 
-  <h2 class="govuk-heading-m">2. Review available area checks</h2>
-  <ul class="govuk-task-list">
-
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2a-pass3059" aria-describedby="company-details-1-status">
-          SO3757 3159: SFI available area check 
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.A3059Checked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomlpete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
-
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2a-pass3064" aria-describedby="company-details-1-status">
-          SO3757 3164: SFI available area check 
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.A3064Checked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomlpete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2a-master" aria-describedby="company-details-1-status">
-          Confirm available area checks are completed
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.AMasterChecked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomlpete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
-    
-  </ul>
        
 
 
-  <h2 class="govuk-heading-m">3. Review intersecting data layers</h2>
+  <h2 class="govuk-heading-m">2. Review intersecting data layers</h2>
   <ul class="govuk-task-list">
+  {% if (data.areaChecks === 'yes') %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-2a" aria-describedby="company-details-1-status">
+        Available area checks
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">   
+        Complete
+    </div>
+  </li>
+  {% elseif (data.customerCheck === 'yes') %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-2a" aria-describedby="company-details-1-status">
+        Available area checks
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">   
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    </div>
+  </li>
+  {% else %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
 
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2b-pass3059" aria-describedby="company-details-1-status">
-          SO3757 3159: SFI intersecting data layers check 
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.I3059Checked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomlpete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
+        Available area checks
 
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2b-pass3064" aria-describedby="company-details-1-status">
-          SO3757 3164: SFI intersecting data layers check 
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.I3064Checked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomlpete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2b-master" aria-describedby="company-details-1-status">
-          Confirm intersecting data layers checks are completed
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.IMasterChecked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomlpete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
-    
-  </ul>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">
+      <strong class="govuk-tag govuk-tag--grey">
+        Cannot start yet
+      </strong>
+    </div>
+  </li>
+  {% endif %}
+    {% if (data.intersectingData === 'yes') %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-2b" aria-describedby="company-details-1-status">
+        Intersecting data layer checks
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">   
+        Complete
+    </div>
+  </li>
+  {% elseif (data.customerCheck === 'yes') %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-2b" aria-describedby="company-details-1-status">
+        Intersecting data layer checks
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">   
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    </div>
+  </li>
+  {% else %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+        Intersecting data layer checks
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">
+      <strong class="govuk-tag govuk-tag--grey">
+        Cannot start yet
+      </strong>
+    </div>
+  </li>
+  {% endif %}
 
+</ul>
+  
 
-<h2 class="govuk-heading-m">4. Review supplement actions</h2>
-<ul class="govuk-task-list">
+<h2 class="govuk-heading-m">3. Review scheme budget</h2>
+  <ul class="govuk-task-list">
+  {% if (data.budgetCheck === 'yes') %}
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="task-3" aria-describedby="company-details-1-status">
         Budget check
       </a>
     </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.budgetChecked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomlpete
-          </strong>
-        {% endif %}
-      </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">   
+        Complete
+    </div>
   </li>
+
+  {% elseif (data.customerCheck === 'yes' and data.intersectingData === 'yes' and data.areaChecks === 'yes' ) %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-3" aria-describedby="company-details-1-status">
+        Budget check
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">   
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    </div>
+  </li>
+  {% else %}
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+        Budget check
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">
+      <strong class="govuk-tag govuk-tag--grey">
+        Cannot start yet
+      </strong>
+    </div>
+  </li>
+  {% endif %}
 </ul>
+
 
 <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
@@ -283,7 +266,7 @@
          Decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          {% if (data.detailsChecked === 'yes' and data.A3059Checked === 'yes' and data.A3064Checked === 'yes' and data.AMasterChecked === 'yes' and data.I3059Checked === 'yes' and data.I3064Checked === 'yes' and data.IMasterChecked === 'yes' and data.budgetChecked === 'yes' ) %}
+          {% if (data.customerCheck === 'yes' and data.intersectingData === 'yes' and data.areaChecks === 'yes' and data.budgetCheck === 'yes' ) %}
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
