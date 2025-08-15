@@ -118,3 +118,36 @@ router.get('/caselistTeam1', function (req, res) {
 });
 
 
+// D2 routes
+
+router.get('/readMoreT2', function (req, res) { 
+    req.session.data.readMore = 'Yes';
+   res.redirect('/FRPS-D2/notes#task1');
+});
+
+router.get('/task1T2', function (req, res) { 
+    req.session.data.detailsChecked = 'yes';
+   res.redirect('/FRPS-D2/tasklist');
+});
+
+
+router.get('/AMasterChecked2', function (req, res) { 
+    req.session.data.AMasterChecked = 'yes';
+   res.redirect('/FRPS-D2/tasklist');
+});
+
+
+router.get('/IMasterChecked2', function (req, res) { 
+    req.session.data.IMasterChecked = 'yes';
+   res.redirect('/FRPS-D2/tasklist');
+});
+
+router.get('/task3T2', function (req, res) { 
+    req.session.data.budgetChecked = 'yes';
+   res.redirect('/FRPS-D2/tasklist');
+});
+
+router.get('/caselistTeam2', function (req, res) { 
+    req.session.data.caseAssigned = 'yes';
+   res.redirect('/FRPS-D2/caselist');
+});
