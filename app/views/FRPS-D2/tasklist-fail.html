@@ -55,6 +55,11 @@
             </a>
           </li> 
           <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="calculations">
+              Calculations
+            </a>
+          </li>
+          <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="application">
               Application
             </a>
@@ -130,50 +135,38 @@
   </li>
 </ul>
 
-  <h2 class="govuk-heading-m">2. Review available area checks</h2>
+  <h2 class="govuk-heading-m">2. Fix calculation issues</h2>
+  <ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-2a-fail3059" aria-describedby="company-details-1-status">
+        SO3757 3159 has a failed available area check
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">   
+        {% if (data.failedChecked === 'yes') %}
+          <strong class="govuk-tag govuk-tag--grey">
+            complete
+          </strong>
+        {% else %}
+          <strong class="govuk-tag govuk-tag--blue">      
+            incomplete
+          </strong>
+        {% endif %}
+    </div>
+  </li>
+</ul>
+
+  <h2 class="govuk-heading-m">3. Review intersecting data layers</h2>
   <ul class="govuk-task-list">
 
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2a-pass3059" aria-describedby="company-details-1-status">
-          SO3757 3159: SFI available area check 
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.A3059Checked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomplete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
 
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2a-pass3064" aria-describedby="company-details-1-status">
-          SO3757 3164: SFI available area check 
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.A3064Checked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomplete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
+
+
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="task-2a-master" aria-describedby="company-details-1-status">
-          Confirm available area checks are completed
+          Available area checks
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
@@ -188,55 +181,10 @@
         {% endif %}
       </div>
     </li>
-    
-  </ul>
-       
-
-
-  <h2 class="govuk-heading-m">3. Review intersecting data layers checks</h2>
-  <ul class="govuk-task-list">
-
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2b-pass3059" aria-describedby="company-details-1-status">
-          SO3757 3159: SFI intersecting data layers check 
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.I3059Checked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomplete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
-
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2b-pass3064" aria-describedby="company-details-1-status">
-          SO3757 3164: SFI intersecting data layers check 
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.I3064Checked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomplete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="task-2b-master" aria-describedby="company-details-1-status">
-          Confirm intersecting data layers checks are completed
+          Intersecting data layers checks
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
@@ -255,7 +203,7 @@
   </ul>
 
 
-<h2 class="govuk-heading-m">4. Review budget</h2>
+<h2 class="govuk-heading-m">4. Review scheme budget</h2>
 <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
@@ -279,15 +227,15 @@
 
 <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" id="decision">
-         Actions
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+         Decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          {% if (data.detailsChecked === 'yes' and data.A3059Checked === 'yes' and data.A3064Checked === 'yes' and data.AMasterChecked === 'yes' and data.I3059Checked === 'yes' and data.I3064Checked === 'yes' and data.IMasterChecked === 'yes' and data.budgetChecked === 'yes' ) %}
+          {% if (data.detailsChecked === 'yes' and data.AMasterChecked === 'yes' and data.IMasterChecked === 'yes' and data.budgetChecked === 'yes' ) %}
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
-             Recommend for approval
+              Approve
             </label>
           </div>
           {% endif %}

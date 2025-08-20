@@ -50,10 +50,15 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist-test" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li> 
+          <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="calculations-fails">
+              Calculations
+            </a>
+          </li>
           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="application">
               Application
@@ -93,7 +98,7 @@
     </div>
   </div>
 </div>
-<form action="/I3064Checked1" method="post">
+<form action="/A3059Checked1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -102,67 +107,103 @@
 <div class="govuk-form-group govuk-!-margin-top-8">
    
   <fieldset class="govuk-fieldset">
-   <span class="govuk-caption-l">Parcel ID SO3757 3064</span>  
+   <span class="govuk-caption-l">Parcel ID SO3757 3059</span>  
       <h1 class="govuk-heading-l">
-        Intersecting data layers check
+        Available area check
       </h1>
-
 
     <h2 class="govuk-heading-m">Result</h2>
 
-    <p>Passed</p>
+    <p>Failed</p>
 
-    <h2 class="govuk-heading-m">Pass reason</h2>
+    <h2 class="govuk-heading-m">Fail reason</h2>
 
-    <p>Parcel SO3757 3059 is at least 50% on moorland.<br>
+    <ol class="govuk-list govuk-list--number">
+      <li>Applicant has applied for more than the total available area in the land parcel for this action.</li>
+      <li>The land details and calculation have changed after the application was submitted.</li>
+    </ol>
 
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
 
-      <tbody class="govuk-table__body">
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Parcel ID</th>
+      <td class="govuk-table__cell">SO3757 3059</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total size</th>
+      <td class="govuk-table__cell">100 ha</td>
+    </tr>  
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Land covers</th>
+      <td class="govuk-table__cell">SSI 40%, Heaps 20%, moorland 70%</td>
+    </tr>  
+
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Action applied for </th>
+      <td class="govuk-table__cell">Moderate livestock grazing on moorland - UPL1</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Eligible land covers for this action</th>
+      <td class="govuk-table__cell">Moorland 70%, SSI 40%, Heaps 20%</td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Existing actions</th>
+      <td class="govuk-table__cell">none</td>
+    </tr>
+
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Land parcel ID</th>
-          <td class="govuk-table__cell">SO3757 3059</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Action</th>
-          <td class="govuk-table__cell">Moderate livestock grazing on moorland - UPL1</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Land covers</th>
-          <td class="govuk-table__cell">Moorland, Permanent grassland</td>
-        </tr>  
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Total size</th>
-          <td class="govuk-table__cell">7 ha</td>
-        </tr>
-            <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Area on moorland</th>
-          <td class="govuk-table__cell">6 ha</td>
-        </tr>
-            <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Percentage on moorland</th>
-          <td class="govuk-table__cell">87%</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-
+      <th scope="row" class="govuk-table__header">Available area you can enter into this action</th>
+      <td class="govuk-table__cell">80 ha</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total available area for action </th>
+      <td class="govuk-table__cell">80 ha</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Available area applied for</th>
+      <td class="govuk-table__cell">90 ha (100%)</td>
+    </tr>
+  </tbody>
+</table>
 <p><a href="/public/images/Land_Calculation_Output.pdf">View detailed check data (PDF)</a></p>
 
-<h2 class="govuk-heading-m">What you need to do</h2>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+         Failure review outcome
+      </h2>
+    </legend>
+    <p>Record the action you have taken here and then Mark as fixed to rerun the calculation.</p>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Note
+          </h2>
+        </legend>
+          <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
+          </div>
+          <textarea class="govuk-textarea" id="more-detail1" name="task2aNote" rows="5" aria-describedby="more-detail-hint">{{ data['task2failNote']}}</textarea>
+        </div>
+      </fieldset>
+    </div>
+    </fieldset>
+  </div>
 
-<ol class="govuk-list govuk-list--number">
-  <li>Go to Notes to add information for this check (if you need to).</li>
-  <li>Continue reviewing the application.</li>
-</ol>
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
-    Confirm check
+    Mark as fixed
   </button>
-<a role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasklist#decision">Check issue found</a> 
-</div> 
+</div>
+
     </form>
 
   </div>

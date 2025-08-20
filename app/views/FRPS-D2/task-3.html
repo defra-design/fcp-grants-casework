@@ -50,7 +50,7 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="tasklist-test" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li>
@@ -116,47 +116,24 @@
 <p>You must check there is enough budget left for the total yearly payment the customer has applied for.
 
 
-<tbody class="govuk-table__body">
-  <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Total yearly payment applied for</th>
-    <td class="govuk-table__cell">£1,000</td>
-  </tr>
-</tbody></p>
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total yearly payment applied for</th>
+      <td class="govuk-table__cell">£1,000</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><a href="#" class="govuk-link">View SFI budget spreadsheet</a></p>
 
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-         Is there enough budget left for the total yearly payment?
-      </h2>
-    </legend>
-
-      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="budget" name="budget" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="budget">
-          Yes
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="budget-2" name="budget" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="budget-2">
-          No
-        </label>
-      </div>
-    </div>
-    </fieldset>
-  </div>
 
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
-    Save and continue
+    Confirm budget available
   </button>
-  <a class="govuk-link" href="tasklist-test">Go back to tasks</a>
+  <a role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasklist#decision">Insufficient budget available</a>
 </div>
-
  
     </form>
 
