@@ -162,12 +162,16 @@
 
 
 
+{% if (data.A3064Checked === 'yes') %}
+<div class="govuk-inset-text">This task was completed by A Jones on 12 Sept 2025 at 10:30am</div>
+{% else %}
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Confirm check
   </button>
 <a role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasklist#decision">Check issue found</a> 
 </div> 
+{% endif %}
     </form>
 
   </div>

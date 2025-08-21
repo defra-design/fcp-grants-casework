@@ -50,7 +50,7 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="tasklist-test" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li> 
@@ -121,13 +121,16 @@
 
 <p><a href="#" class="govuk-link">View SFI budget spreadsheet</a></p>
 
-
+{% if (data.budgetChecked === 'yes') %}
+<div class="govuk-inset-text">This task was completed by A Jones on 12 Sept 2025 at 10:30am</div>
+{% else %}
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Confirm budget available
   </button>
   <a role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasklist#decision">Insufficient budget available</a>
 </div>
+{% endif %}
 
 
  
