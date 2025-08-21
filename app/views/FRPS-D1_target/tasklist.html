@@ -172,7 +172,7 @@
     </li>
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2a-master" aria-describedby="company-details-1-status">
+        {% if (data.AMasterChecked === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-2a-master-done" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-2a-master" aria-describedby="company-details-1-status">{% endif %}
           Confirm available area checks are completed
         </a>
       </div>
