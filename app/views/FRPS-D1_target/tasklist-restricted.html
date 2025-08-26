@@ -276,11 +276,11 @@
       </div>
   </li>
 </ul>
-
-<div class="govuk-form-group">
+    {% if (data.detailsChecked === 'yes' and data.A3059Checked === 'yes' and data.A3064Checked === 'yes' and data.AMasterChecked === 'yes' and data.I3059Checked === 'yes' and data.I3064Checked === 'yes' and data.IMasterChecked === 'yes' and data.budgetChecked === 'yes' ) %}
+    <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
 
-          {% if (data.detailsChecked === 'yes' and data.A3059Checked === 'yes' and data.A3064Checked === 'yes' and data.AMasterChecked === 'yes' and data.I3059Checked === 'yes' and data.I3064Checked === 'yes' and data.IMasterChecked === 'yes' and data.budgetChecked === 'yes' ) %}
+          
 
              <h2 class="govuk-heading-m">Recommend for approval</h2>
 
@@ -292,17 +292,18 @@
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
 
 
-          {% endif %}
+         
 
       </fieldset>
     </div>
-
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save
+    </button> 
+    {% endif %}
   </fieldset>
 </div>
 
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Save
-</button>
+
     </form>
 
 
