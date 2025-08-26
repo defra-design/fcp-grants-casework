@@ -117,6 +117,11 @@ router.get('/caselistTeam1', function (req, res) {
    res.redirect('/FRPS-D1_target/caselist');
 });
 
+router.get('/A3059CheckedFull', function (req, res) { 
+    req.session.data.A3059Checked = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist-restricted');
+});
+
 
 // D2 routes
 
