@@ -115,7 +115,7 @@
 
 <h3 class="govuk-heading-s">Parcel ID: SO3757 3159 checks</h3>
 
-<details class="govuk-details govuk-!-margin-bottom-3">
+<details class="govuk-details govuk-!-margin-bottom-">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       Available area check         <strong class="govuk-tag govuk-tag--red-new margin-left-150"> Failed
@@ -184,6 +184,13 @@
   </tbody>
 </table>
 <p><a href="/public/images/Land_Calculation_Output.pdf">View detailed check data (PDF)</a></p>
+
+<h2 class="govuk-heading-m">Suggested action</h2>
+<ol class="govuk-list govuk-list--number">
+  <li>With reference to system X to make your own calculations</li>
+  <li>If the Rules engine check has the wrong calculation, contact <a href="#" class="govuk-link">@responsible_person</a></li>
+</ol>
+
   </div>
 </details>
 
@@ -235,6 +242,11 @@
     </table>
 
 <p><a href="/public/images/Land_Calculation_Output.pdf">View detailed check data (PDF)</a></p>
+<h2 class="govuk-heading-m">Suggested action</h2>
+<ol class="govuk-list govuk-list--number">
+  <li>With reference to system X to make your own calculations</li>
+  <li>If the Rules engine check has the wrong calculation, contact <a href="#" class="govuk-link">@responsible_person</a></li>
+</ol>
   </div>
 </details>
 
@@ -248,10 +260,14 @@
   <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h2 class="govuk-fieldset__heading">
-         Checks review outcome
+         Record outcome
       </h2>
     </legend>
-    <p>Mark this task as complete when you have carried out your available area checks.</p>
+    <p>Once you have completed investigations and implemented fixes:</p>
+    <ol class="govuk-list govuk-list--number">
+      <li>'Mark as fixed' if you want to rerun the rules</li>
+      <li>Reccomend the case for withdrawl if you find evidence of changes to other Defra data by the applicant, subsequent to submission of this applicantion</li>
+    </ol>
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -272,7 +288,10 @@
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Mark as complete
   </button>
+  <a href="/withdrawCase1" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">Recommend for withdrawl</a> 
 </div>
+
+
 
  
     </form>
