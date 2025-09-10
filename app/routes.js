@@ -156,3 +156,14 @@ router.get('/caselistTeam2', function (req, res) {
     req.session.data.caseAssigned = 'yes';
    res.redirect('/FRPS-D2/caselist');
 });
+
+router.get('/failsChecked2', function (req, res) { 
+    req.session.data.failedChecked = 'yes';
+   res.redirect('/FRPS-D2/tasklist');
+});
+
+
+router.get('/caselistF1', function (req, res) { 
+    req.session.data.failReview = 'yes';
+   res.redirect('/FRPS-D2/caselist');
+});
