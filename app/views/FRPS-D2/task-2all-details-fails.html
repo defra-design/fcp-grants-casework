@@ -100,7 +100,7 @@
     </div>
   </div>
 </div>
-<form action="task-2all-details-fails" method="post">
+<form action="/AMasterChecked2" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -117,26 +117,28 @@
 
 <h3 class="govuk-heading-s">Parcel ID: SO3757 3159 checks</h3>
 
-<details class="govuk-details govuk-!-margin-bottom-3">
+<details class="govuk-details govuk-!-margin-bottom-">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Available area check         <strong class="govuk-tag govuk-tag--green margin-left-150">
-        <svg class="tick-icon" width="20" height="20" viewBox="0 0 24 24" fill="green" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 16.2L4.8 12L3.4 13.4L9 19L21 7L19.6 5.6L9 16.2Z"/>
-        </svg>
-        Passed
-        </strong>
+      Available area check         <strong class="govuk-tag govuk-tag--red-new margin-left-150"> Failed
+      </strong>
     </span>
   </summary>
   <div class="govuk-details__text">
-        <h2 class="govuk-heading-m">Result</h2>
+         <h2 class="govuk-heading-m">Result</h2>
 
-    <p>Passed</p>
+    <p>Failed</p>
 
-    <h2 class="govuk-heading-m">Pass reason</h2>
+    <h2 class="govuk-heading-m">Fail reason</h2>
 
-    <p>Applicant has applied for the total available area in the land parcel for this action.</p>
-    <table class="govuk-table">
+    <ol class="govuk-list govuk-list--number">
+      <li>Applicant has applied for more than the total available area in the land parcel for this action.</li>
+      <li>The land details and calculation have changed after the application was submitted.</li>
+    </ol>
+
+
+
+<table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
 
   <tbody class="govuk-table__body">
@@ -150,7 +152,7 @@
     </tr>  
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Land covers</th>
-      <td class="govuk-table__cell">SSI 40%, Historic 10%, moorland 70%</td>
+      <td class="govuk-table__cell">SSI 40%, Heaps 20%, moorland 70%</td>
     </tr>  
 
 
@@ -161,7 +163,7 @@
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Eligible land covers for this action</th>
-      <td class="govuk-table__cell">Moorland 70%, SSI 40%</td>
+      <td class="govuk-table__cell">Moorland 70%, SSI 40%, Heaps 20%</td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -171,11 +173,11 @@
 
         <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Available area you can enter into this action</th>
-      <td class="govuk-table__cell">90 ha</td>
+      <td class="govuk-table__cell">80 ha</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Total available area for action </th>
-      <td class="govuk-table__cell">90 ha</td>
+      <td class="govuk-table__cell">80 ha</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Available area applied for</th>
@@ -184,6 +186,13 @@
   </tbody>
 </table>
 <p><a href="/public/images/Land_Calculation_Output.pdf">View detailed check data (PDF)</a></p>
+
+<h2 class="govuk-heading-m">Suggested action</h2>
+<ol class="govuk-list govuk-list--number">
+  <li>With reference to system X to make your own calculations</li>
+  <li>If the Rules engine check has the wrong calculation, contact <a href="#" class="govuk-link">@responsible_person</a></li>
+</ol>
+
   </div>
 </details>
 
@@ -311,22 +320,18 @@
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Intersecting data layer check         <strong class="govuk-tag govuk-tag--green margin-left-80">
-        <svg class="tick-icon" width="20" height="20" viewBox="0 0 24 24" fill="green" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 16.2L4.8 12L3.4 13.4L9 19L21 7L19.6 5.6L9 16.2Z"/>
-        </svg>
-        Passed
-        </strong>
+      Intersecting data layer check         <strong class="govuk-tag govuk-tag--red-new margin-left-80"> Failed
+      </strong>
     </span>
   </summary>
   <div class="govuk-details__text">
         <h2 class="govuk-heading-m">Result</h2>
 
-    <p>Passed</p>
+    <p>Failed</p>
 
-    <h2 class="govuk-heading-m">Pass reason</h2>
+    <h2 class="govuk-heading-m">Fail reason</h2>
 
-    <p>Parcel SO3757 3059 is at least 50% on moorland.<br>
+    <p>Parcel SO3757 3064 is not at least 50% on moorland.<br>
 
     <table class="govuk-table">
       <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
@@ -342,18 +347,24 @@
         </tr>
             <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Area on moorland</th>
-          <td class="govuk-table__cell">60 ha</td>
+          <td class="govuk-table__cell">45 ha</td>
         </tr>
             <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Percentage on moorland</th>
-          <td class="govuk-table__cell">60%</td>
+          <td class="govuk-table__cell">45%</td>
         </tr>
       </tbody>
     </table>
 
 <p><a href="/public/images/Land_Calculation_Output.pdf">View detailed check data (PDF)</a></p>
+<h2 class="govuk-heading-m">Suggested action</h2>
+<ol class="govuk-list govuk-list--number">
+  <li>With reference to system X to make your own calculations</li>
+  <li>If the Rules engine check has the wrong calculation, contact <a href="#" class="govuk-link">@responsible_person</a></li>
+</ol>
   </div>
 </details>
+
 
   <h3 class="govuk-heading-s">Parcel ID: SO3757 3169 checks</h3>
 <details class="govuk-details govuk-!-margin-bottom-3">
@@ -595,8 +606,7 @@
 
 
 
-
-      <h2 class="govuk-heading-m">
+     <h2 class="govuk-heading-m">
          Checks review outcome
       </h2>
 
@@ -616,7 +626,7 @@
         <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task2" type="radio" value="Complete"  {{ checked("decision-task2", "Complete") }}>
+            <input class="govuk-radios__input" id="contact" name="decision-task2f" type="radio" value="Complete"  {{ checked("decision-task2f", "Complete") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Mark as complete
             </label>
@@ -624,21 +634,21 @@
 
           
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision-task2" type="radio" value="RFI"  {{ checked("decision-task2", "RFI") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decision-task2f" type="radio" value="RFI"  {{ checked("decision-task2f", "RFI") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
               RFI option
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task2" type="radio" value="IR"  {{ checked("decision-task2", "IR") }}>
+            <input class="govuk-radios__input" id="contact" name="decision-task2f" type="radio" value="IR"  {{ checked("decision-task2f", "IR") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Internal review
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task2" type="radio" value="Failed"  {{ checked("decision-task2", "Failed") }}>
+            <input class="govuk-radios__input" id="contact" name="decision-task2f" type="radio" value="Failed"  {{ checked("decision-task2f", "Failed") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Mark as failed
             </label>
@@ -650,9 +660,6 @@
 <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
  Continue
 </button>
-  </fieldset>
-</div>
-
 
 
  

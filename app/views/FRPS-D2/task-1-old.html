@@ -50,29 +50,34 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist-test" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
-          </li>          
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="application">
-              Application
-            </a>
-          </li>
+          </li> 
           <!--
           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="calculations">
               Calculations
             </a>
           </li>
+          -->
+          <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="application">
+              Application
+            </a>
+          </li>
+          <!--
+          <li class="govuk-service-navigation__item-c2">
+            <a class="govuk-service-navigation__link" href="known-data">
+              Business details
+            </a>
 
- 
-
+          </li> -->
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="land">
               Land
             </a>
-          </li>          -->
+          </li>
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="timeline" aria-current="true">
               Timeline
@@ -83,24 +88,19 @@
               Notes
             </a>
           </li>
-<!-- 
+
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="agreement">
-              Agreement
-            </a>
-          </li> -->
 
         </ul>
       </nav>
     </div>
   </div>
 </div>
-<form action="/task3T2" method="post">
+<form action="/task1T2" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -110,80 +110,27 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Check budget
+        Check customer details
       </h1>
     </legend>
 
 
-<p>You must check there is enough budget left for the total yearly payment the customer has applied for.
+<ol class="govuk-list govuk-list--number">
+  <li>Go to <a href="application" class="govuk-link">Application</a> to view submitted customer details.</li>
+  <li>Check the submitted details match the details and permissions on the <a href="#" class="govuk-link">Rural Payments service (RPS)</a>.</li>
+  <li>Come back to this page and confirm if the details match.</li>
+</ol>
 
 
-<table class="govuk-table">
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Total yearly payment applied for</th>
-      <td class="govuk-table__cell">£1,000</td>
-    </tr>
-  </tbody>
-</table>
 
-<p><a href="#" class="govuk-link">View SFI budget spreadsheet</a></p>
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Confirm match
+  </button>
+  <a role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasklist#decision">Details do not match</a>
+</div>
 
 
-    <h2 class="govuk-heading-m">
-         Budget review outcome
-      </h2>
-
-    <p>Mark this task as complete when you have carried out your available area checks.</p>
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">
-            Note
-          </h2>
-        </legend>
-          <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
-          </div>
-          <textarea class="govuk-textarea" id="more-detail1" name="task2aNote" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
-
-
-        <div class="govuk-radios" data-module="govuk-radios">
-        
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task3" type="radio" value="Complete"  {{ checked("decision-task3", "Complete") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Mark as complete
-            </label>
-          </div>
-
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision-task3" type="radio" value="RFI"  {{ checked("decision-task3", "RFI") }}>
-            <label class="govuk-label govuk-radios__label" for="eligible-2">
-              RFI option
-            </label>
-          </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task3" type="radio" value="IR"  {{ checked("decision-task3", "IR") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Internal review
-            </label>
-          </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task3" type="radio" value="Failed"  {{ checked("decision-task3", "Failed") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Mark as failed
-            </label>
-          </div>
-          
-        </div>
-      </fieldset>
-    </div>
-<button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
- Continue
-</button>
  
     </form>
 

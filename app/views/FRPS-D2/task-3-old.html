@@ -50,13 +50,8 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
-            </a>
-          </li>          
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="application">
-              Application
             </a>
           </li>
           <!--
@@ -65,14 +60,24 @@
               Calculations
             </a>
           </li>
+          --> 
+          <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="application-data">
+              Application
+            </a>
+          </li>
+          <!--
+          <li class="govuk-service-navigation__item-c2">
+            <a class="govuk-service-navigation__link" href="known-data">
+              Business details
+            </a>
 
- 
-
+          </li> -->
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="land">
               Land
             </a>
-          </li>          -->
+          </li>
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="timeline" aria-current="true">
               Timeline
@@ -83,17 +88,12 @@
               Notes
             </a>
           </li>
-<!-- 
+
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="agreement">
-              Agreement
-            </a>
-          </li> -->
 
         </ul>
       </nav>
@@ -130,60 +130,12 @@
 <p><a href="#" class="govuk-link">View SFI budget spreadsheet</a></p>
 
 
-    <h2 class="govuk-heading-m">
-         Budget review outcome
-      </h2>
-
-    <p>Mark this task as complete when you have carried out your available area checks.</p>
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-          <h2 class="govuk-fieldset__heading">
-            Note
-          </h2>
-        </legend>
-          <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
-          </div>
-          <textarea class="govuk-textarea" id="more-detail1" name="task2aNote" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
-
-
-        <div class="govuk-radios" data-module="govuk-radios">
-        
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task3" type="radio" value="Complete"  {{ checked("decision-task3", "Complete") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Mark as complete
-            </label>
-          </div>
-
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision-task3" type="radio" value="RFI"  {{ checked("decision-task3", "RFI") }}>
-            <label class="govuk-label govuk-radios__label" for="eligible-2">
-              RFI option
-            </label>
-          </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task3" type="radio" value="IR"  {{ checked("decision-task3", "IR") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Internal review
-            </label>
-          </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task3" type="radio" value="Failed"  {{ checked("decision-task3", "Failed") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Mark as failed
-            </label>
-          </div>
-          
-        </div>
-      </fieldset>
-    </div>
-<button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
- Continue
-</button>
+<div class="govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Confirm budget available
+  </button>
+  <a role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button" href="tasklist#decision">Insufficient budget available</a>
+</div>
  
     </form>
 
