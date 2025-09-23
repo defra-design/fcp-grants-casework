@@ -131,44 +131,48 @@
     <p>Mark this task as complete when you have carried out your available area checks.</p>
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
           <h2 class="govuk-fieldset__heading">
             Note
           </h2>
         </legend>
           <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
           </div>
-          <textarea class="govuk-textarea" id="more-detail1" name="task2aNote" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
+          {% if (data.task1Note) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note2']}}</textarea>
+          {% else %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
+          {% endif %}
 
 
         <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task1" type="radio" value="Complete"  {{ checked("decision-task1", "Complete") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Accepted"  {{ checked("decisionTask1", "Accepted") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
-              Mark as complete
+              Accept
             </label>
           </div>
 
           
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision-task1" type="radio" value="RFI"  {{ checked("decision-task1", "RFI") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decisionTask1" type="radio" value="Information requested"  {{ checked("decisionTask1", "Information requested") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
-              RFI option
+              Request information from customer
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task1" type="radio" value="IR"  {{ checked("decision-task1", "IR") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Internal review"  {{ checked("decisionTask1", "Internal review") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
-              Internal review
+              Pause for internal review
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task1" type="radio" value="Failed"  {{ checked("decision-task1", "Failed") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Rejected"  {{ checked("decisionTask1", "Rejected") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
-              Mark as failed
+              Reject
             </label>
           </div>
           
@@ -178,6 +182,46 @@
 <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
  Continue
 </button>
+
+{% if (data.task1Note) %}
+<h2 class="govuk-heading-m">Note history</h2>
+
+<table class="govuk-table" data-module="moj-sortable-table">
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header custom-width-120" aria-sort="ascending">Date</th>
+      <th scope="col" class="govuk-table__header " aria-sort="none">Action</th>
+
+      <th scope="col" class="govuk-table__header notes-width">Note</th>
+
+      <th scope="col" class="govuk-table__header custom-width-110" aria-sort="none">Added by</th>
+
+    </tr>
+  </thead> 
+
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">25th Sept 2025</td>
+
+      <td class="govuk-table__cell">
+        {{ data['noteActionTask1']}}
+      </td>
+      <td class="govuk-table__cell">
+        {{ data['task1Note']}}
+      </td>
+
+      <td class="govuk-table__cell"> A Jones</td>
+
+
+    </tr>
+  </tbody>
+</table>
+
+{% endif %}
 
 
  

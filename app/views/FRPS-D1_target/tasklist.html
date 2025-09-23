@@ -124,60 +124,38 @@
         Check customer details 
       </a>
     </div>
-    <div class="govuk-task-list__status" id="company-details-1-status">   
-        {% if (data.detailsChecked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomplete
-          </strong>
-        {% endif %}
+    <div class="govuk-task-list__status" id="company-details-1-status"> 
+    {% if (data.decisionTask1) %}      
+      {% if (data.decisionTask1 === 'Accepted') %} {{ data['detailsStatus'] }} 
+      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatus'] }}</strong>
+      {% endif %}
+    {% else %}
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    {% endif %}
     </div>
   </li>
-  {% if (data.failReview === 'yes') %}
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2-fails" aria-describedby="company-details-1-status">
-          Review issues from rules checks
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">   
-          {% if (data.failedChecked === 'yes') %}
-            <strong class="govuk-tag govuk-tag--grey">
-              complete
-            </strong>
-          {% else %}
-            <strong class="govuk-tag govuk-tag--blue">      
-              incomplete
-            </strong>
-          {% endif %}
-      </div>
-    </li>
-  {% endif %}
 
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-2all-details-fails" aria-describedby="company-details-1-status">
+        Review land parcel rule checks
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">
+    {% if (data.decisionTask2f) %}    
+        {% if (data.decisionTask2f === 'Accepted') %} {{ data['calcsStatus'] }} 
+        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatus'] }}</strong>
+        {% endif %} 
+    {% else %}
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    {% endif %}
+    </div>
+  </li>
 
-
-
-    <li class="govuk-task-list__item govuk-task-list__item--with-link">
-      <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-2all-details" aria-describedby="company-details-1-status">
-          Review land parcel rule checks
-        </a>
-      </div>
-      <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.AMasterChecked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomplete
-          </strong>
-        {% endif %}
-      </div>
-    </li>
 
 
 
@@ -188,15 +166,15 @@
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-        {% if (data.budgetChecked === 'yes') %}
-          <strong class="govuk-tag govuk-tag--grey">
-            complete
-          </strong>
-        {% else %}
-          <strong class="govuk-tag govuk-tag--blue">      
-            incomplete
-          </strong>
+      {% if (data.decisionTask3) %}  
+        {% if (data.decisionTask3 === 'Accepted') %} {{ data['budgetStatus'] }} 
+        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatus'] }}</strong>
         {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
       </div>
   </li>
 </ul>
@@ -207,7 +185,7 @@
          Decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          {% if (data.detailsChecked === 'yes' and data.AMasterChecked === 'yes'  and data.budgetChecked === 'yes' ) %}
+          {% if (data.decisionTask1 === 'Accepted' and data.decisionTask2f === 'Accepted'  and data.decisionTask3 === 'Accepted' ) %}
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">

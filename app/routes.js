@@ -72,8 +72,109 @@ router.get('/readMoreT1', function (req, res) {
 
 router.get('/task1T1', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
-   res.redirect('/FRPS-D1_target/tasklist');
+    req.session.data.noteActionTask1 = req.session.data.decisionTask1;
+    switch (req.session.data.decisionTask1) {
+    case 'Accepted':
+        req.session.data.detailsTag = '';
+        req.session.data.detailsStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.detailsTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.detailsStatus = 'Information requested'   
+        break;
+    case 'Internal review':
+        req.session.data.detailsTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.detailsStatus = 'Internal review'   
+        break;
+    case 'Rejected':
+        req.session.data.detailsTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.detailsStatus = 'Rejected'   
+        break;
+    default:
+        req.session.data.detailsTag = 'govuk-tag';
+        req.session.data.detailsStatus = 'Incomplete'
+    };
+    res.redirect('/FRPS-D1_target/tasklist');
 });
+
+router.get('/task2T1', function (req, res) { 
+    req.session.data.detailsChecked = 'yes';
+    switch (req.session.data.decisionTask2) {
+    case 'Accepted':
+        req.session.data.calcsTag = '';
+        req.session.data.calcsStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.calcsTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.calcsStatus = 'Information requested'   
+        break;
+    case 'Internal review':
+        req.session.data.calcsTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.calcsStatus = 'Internal review'   
+        break;
+    case 'Rejected':
+        req.session.data.calcsTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.calcsStatus = 'Rejected'   
+        break;
+    default:
+        req.session.data.calcsTag = 'govuk-tag';
+        req.session.data.calcsStatus = 'Incomplete'   
+    };
+    res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/task2fT1', function (req, res) { 
+    req.session.data.detailsChecked = 'yes';
+    switch (req.session.data.decisionTask2f) {
+    case 'Accepted':
+        req.session.data.calcsTag = '';
+        req.session.data.calcsStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.calcsTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.calcsStatus = 'Information requested'   
+        break;
+    case 'Internal review':
+        req.session.data.calcsTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.calcsStatus = 'Internal review'   
+        break;
+    case 'Rejected':
+        req.session.data.calcsTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.calcsStatus = 'Rejected'   
+        break;
+    default:
+        dayName = 'Unknown';
+    };
+    res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/task3T1', function (req, res) { 
+    req.session.data.detailsChecked = 'yes';
+    switch (req.session.data.decisionTask3) {
+    case 'Accepted':
+        req.session.data.budgetTag = '';
+        req.session.data.budgetStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.budgetTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.budgetStatus = 'Information requested'   
+        break;
+    case 'Internal review':
+        req.session.data.budgetTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.budgetStatus = 'Internal review'   
+        break;
+    case 'Rejected':
+        req.session.data.budgetTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.budgetStatus = 'Rejected'   
+        break;
+    default:
+        req.session.data.budgetTag = 'govuk-tag';
+        req.session.data.budgetStatus = 'Incomplete'  
+    };
+    res.redirect('/FRPS-D1_target/tasklist');
+});
+
+
 
 
 
@@ -132,8 +233,27 @@ router.get('/readMoreT2', function (req, res) {
 
 router.get('/task1T2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
-   res.redirect('/FRPS-D2/tasklist');
+    switch (req.session.data.decision-task1) {
+    case 'Accepted':
+        detailsTag = 'govuk-tag--grey';
+        detailsStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        dayName = 'Tuesday';
+        break;
+    case 'Internal review':
+        dayName = 'Wednesday';
+        break;
+    case 'Rejected':
+        dayName = 'Wednesday';
+        break;
+    default:
+        dayName = 'Unknown';
+    };
+    res.redirect('/FRPS-D2/tasklist');
 });
+
+
 
 
 router.get('/AMasterChecked2', function (req, res) { 

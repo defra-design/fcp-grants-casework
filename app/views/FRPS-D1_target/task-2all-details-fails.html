@@ -100,7 +100,7 @@
     </div>
   </div>
 </div>
-<form action="/AMasterChecked1" method="post">
+<form action="/task2fT1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -611,7 +611,7 @@
       </h2>
 
     <p>Mark this task as complete when you have carried out your available area checks.</p>
-    <div class="govuk-form-group">
+ <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
@@ -620,37 +620,35 @@
         </legend>
           <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
           </div>
-          <textarea class="govuk-textarea" id="more-detail1" name="task2aNote" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
-
-
+          <textarea class="govuk-textarea" id="more-detail1" name="task2Note" rows="5" aria-describedby="more-detail-hint">{{ data['task2Note']}}</textarea>
         <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task2f" type="radio" value="Complete"  {{ checked("decision-task2f", "Complete") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask2f" type="radio" value="Accepted"  {{ checked("decisionTask2f", "Accepted") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
-              Mark as complete
+              Accept
             </label>
           </div>
 
           
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision-task2f" type="radio" value="RFI"  {{ checked("decision-task2f", "RFI") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decisionTask2f" type="radio" value="Information requested"  {{ checked("decisionTask2f", "Information requested") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
-              RFI option
+              Request information from customer
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task2f" type="radio" value="IR"  {{ checked("decision-task2f", "IR") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask2f" type="radio" value="Internal review"  {{ checked("decisionTask2f", "Internal review") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
-              Internal review
+              Pause for internal review
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision-task2f" type="radio" value="Failed"  {{ checked("decision-task2f", "Failed") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask2f" type="radio" value="Rejected"  {{ checked("decisionTask2f", "Rejected") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
-              Mark as failed
+              Reject
             </label>
           </div>
           
