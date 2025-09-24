@@ -99,6 +99,7 @@ router.get('/task1T1', function (req, res) {
 
 router.get('/task2T1', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+    req.session.data.noteActionTask2 = req.session.data.decisionTask2;
     switch (req.session.data.decisionTask2) {
     case 'Accepted':
         req.session.data.calcsTag = '';
@@ -125,6 +126,7 @@ router.get('/task2T1', function (req, res) {
 
 router.get('/task2fT1', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+    req.session.data.noteActionTask2f = req.session.data.decisionTask2f;
     switch (req.session.data.decisionTask2f) {
     case 'Accepted':
         req.session.data.calcsTag = '';
@@ -150,6 +152,7 @@ router.get('/task2fT1', function (req, res) {
 
 router.get('/task3T1', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+    req.session.data.noteActionTask3 = req.session.data.decisionTask3;
     switch (req.session.data.decisionTask3) {
     case 'Accepted':
         req.session.data.budgetTag = '';
