@@ -100,7 +100,7 @@
     </div>
   </div>
 </div>
-<form action="/task3T1" method="post">
+<form action="/task5T1" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -110,19 +110,15 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Check consent of planned activity on site of special scientific interest (SSSI) has been requested
+        Check payment amount
       </h1>
     </legend>
+<p>Check that the payment amount in the <a href="application" class="govuk-link">application</a> matches the calculation in the Find tool.</p>
 
 
-<p>You need to <a href="application" class="govuk-link">check the application</a> to see if any land parcels are on an SSSI</p>
 
 
-<h2 class="govuk-heading-m">If no land parcels in this application are on an SSSI</h2>
-<p>You can accept the details provided.</p>
 
-<h2 class="govuk-heading-m">If any land parcel is on an SSSI</h2>
-<p>Confirm if a request for planned activity on an SSSI has been made. Consent does not have to be confirmed, only requested.</p>
 
 
 
@@ -140,17 +136,17 @@
         </legend>
           <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
           </div>
-          {% if (data.task3Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task3Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task3Note2']}}</textarea>
+          {% if (data.task5Note) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task3Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task5Note2']}}</textarea>
           {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task3Note" rows="5" aria-describedby="more-detail-hint">{{ data['task3Note']}}</textarea>
+          <textarea class="govuk-textarea" id="more-detail1" name="task3Note" rows="5" aria-describedby="more-detail-hint">{{ data['task5Note']}}</textarea>
           {% endif %}
 
 
   <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask3" type="radio" value="Accepted"  {{ checked("decisionTask3", "Accepted") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask5" type="radio" value="Accepted"  {{ checked("decisionTask5", "Accepted") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Accept
             </label>
@@ -158,21 +154,21 @@
 
           
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decisionTask3" type="radio" value="Information requested"  {{ checked("decisionTask3", "Information requested") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decisionTask5" type="radio" value="Information requested"  {{ checked("decisionTask5", "Information requested") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
               Request information from customer
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask3" type="radio" value="Internal review"  {{ checked("decisionTask3", "Internal review") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask5" type="radio" value="Internal review"  {{ checked("decisionTask5", "Internal review") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Pause for internal review
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask3" type="radio" value="Rejected"  {{ checked("decisionTask3", "Rejected") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask5" type="radio" value="Rejected"  {{ checked("decisionTask5", "Rejected") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Reject
             </label>
@@ -184,7 +180,7 @@
 <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
  Continue
 </button>
-{% if (data.task3Note) %}
+{% if (data.task5Note) %}
 <h2 class="govuk-heading-m">Note history</h2>
 
 <table class="govuk-table" data-module="moj-sortable-table">
@@ -209,10 +205,10 @@
       <td class="govuk-table__cell">25th Sept 2025</td>
 
       <td class="govuk-table__cell">
-        {{ data['noteActionTask3']}}
+        {{ data['noteActionTask5']}}
       </td>
       <td class="govuk-table__cell">
-        {{ data['task3Note']}}
+        {{ data['task5Note']}}
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>

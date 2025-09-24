@@ -157,17 +157,72 @@
   </li>
 
 
-
-
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="task-3" aria-describedby="company-details-1-status">
-        Review scheme budget
+        Check if SSSI consent has been requested
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
       {% if (data.decisionTask3) %}  
-        {% if (data.decisionTask3 === 'Accepted') %} {{ data['budgetStatus'] }} 
+        {% if (data.decisionTask3 === 'Accepted') %} {{ data['sssiStatus'] }} 
+        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatus'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-4" aria-describedby="company-details-1-status">
+      Check if SAM consent has been granted
+      </a>
+    </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+      {% if (data.decisionTask4) %}  
+        {% if (data.decisionTask4 === 'Accepted') %} {{ data['samStatus'] }} 
+        {% else %}<strong class="{{ data['samTag'] }}">{{ data['samStatus'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-5" aria-describedby="company-details-1-status">
+        Check payment amount
+      </a>
+    </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+      {% if (data.decisionTask5) %}  
+        {% if (data.decisionTask5 === 'Accepted') %} {{ data['paymentStatus'] }} 
+        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatus'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">
+        Review scheme budget
+      </a>
+    </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+      {% if (data.decisionTask6) %}  
+        {% if (data.decisionTask6 === 'Accepted') %} {{ data['budgetStatus'] }} 
         {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatus'] }}</strong>
         {% endif %}
       {% else %}
@@ -177,6 +232,8 @@
       {% endif %}
       </div>
   </li>
+
+
 </ul>
 
 <div class="govuk-form-group">
@@ -185,7 +242,7 @@
          Decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          {% if (data.decisionTask1 === 'Accepted' and data.decisionTask2f === 'Accepted'  and data.decisionTask3 === 'Accepted' ) %}
+          {% if (data.decisionTask1 === 'Accepted' and data.decisionTask2f === 'Accepted'  and data.decisionTask3 === 'Accepted' and data.decisionTask4 === 'Accepted' and data.decisionTask5 === 'Accepted' and data.decisionTask6 === 'Accepted' ) %}
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">

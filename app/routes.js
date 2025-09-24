@@ -145,7 +145,8 @@ router.get('/task2fT1', function (req, res) {
         req.session.data.calcsStatus = 'Rejected'   
         break;
     default:
-        dayName = 'Unknown';
+        req.session.data.calcsTag = 'govuk-tag';
+        req.session.data.calcsStatus = 'Incomplete'
     };
     res.redirect('/FRPS-D1_target/tasklist');
 });
@@ -154,6 +155,87 @@ router.get('/task3T1', function (req, res) {
     req.session.data.detailsChecked = 'yes';
     req.session.data.noteActionTask3 = req.session.data.decisionTask3;
     switch (req.session.data.decisionTask3) {
+    case 'Accepted':
+        req.session.data.sssiTag = '';
+        req.session.data.sssiStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.sssiTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.sssiStatus = 'Information requested'   
+        break;
+    case 'Internal review':
+        req.session.data.sssiTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.sssiStatus = 'Internal review'   
+        break;
+    case 'Rejected':
+        req.session.data.sssiTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.sssiStatus = 'Rejected'   
+        break;
+    default:
+        req.session.data.sssiTag = 'govuk-tag';
+        req.session.data.sssiStatus = 'Incomplete'  
+    };
+    res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/task4T1', function (req, res) { 
+    req.session.data.detailsChecked = 'yes';
+    req.session.data.noteActionTask4 = req.session.data.decisionTask4;
+    switch (req.session.data.decisionTask4) {
+    case 'Accepted':
+        req.session.data.samTag = '';
+        req.session.data.samStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.samTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.samStatus = 'Information requested'   
+        break;
+    case 'Internal review':
+        req.session.data.samTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.samStatus = 'Internal review'   
+        break;
+    case 'Rejected':
+        req.session.data.samTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.samStatus = 'Rejected'   
+        break;
+    default:
+        req.session.data.samTag = 'govuk-tag';
+        req.session.data.samStatus = 'Incomplete'  
+    };
+    res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/task5T1', function (req, res) { 
+    req.session.data.detailsChecked = 'yes';
+    req.session.data.noteActionTask5 = req.session.data.decisionTask5;
+    switch (req.session.data.decisionTask5) {
+    case 'Accepted':
+        req.session.data.paymentTag = '';
+        req.session.data.paymentStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.paymentTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.paymentStatus = 'Information requested'   
+        break;
+    case 'Internal review':
+        req.session.data.paymentTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.paymentStatus = 'Internal review'   
+        break;
+    case 'Rejected':
+        req.session.data.paymentTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.paymentStatus = 'Rejected'   
+        break;
+    default:
+        req.session.data.paymentTag = 'govuk-tag';
+        req.session.data.paymentStatus = 'Incomplete'  
+    };
+    res.redirect('/FRPS-D1_target/tasklist');
+});
+
+router.get('/task6T1', function (req, res) { 
+    req.session.data.detailsChecked = 'yes';
+    req.session.data.noteActionTask6 = req.session.data.decisionTask6;
+    switch (req.session.data.decisionTask6) {
     case 'Accepted':
         req.session.data.budgetTag = '';
         req.session.data.budgetStatus = 'Accepted'       
@@ -176,6 +258,7 @@ router.get('/task3T1', function (req, res) {
     };
     res.redirect('/FRPS-D1_target/tasklist');
 });
+
 
 
 
