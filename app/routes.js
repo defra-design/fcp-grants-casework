@@ -82,13 +82,13 @@ router.get('/task1T1', function (req, res) {
         req.session.data.detailsTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
         req.session.data.detailsStatus = 'Information requested'   
         break;
-    case 'Internal review':
+    case 'Internal investigation':
         req.session.data.detailsTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.detailsStatus = 'Internal review'   
+        req.session.data.detailsStatus = 'Internal investigation'   
         break;
-    case 'Rejected':
+    case 'Cannot accept':
         req.session.data.detailsTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.detailsStatus = 'Rejected'   
+        req.session.data.detailsStatus = 'Not accepted'   
         break;
     default:
         req.session.data.detailsTag = 'govuk-tag';
@@ -109,13 +109,13 @@ router.get('/task2T1', function (req, res) {
         req.session.data.calcsTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
         req.session.data.calcsStatus = 'Information requested'   
         break;
-    case 'Internal review':
+    case 'Internal investigation':
         req.session.data.calcsTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.calcsStatus = 'Internal review'   
+        req.session.data.calcsStatus = 'Internal investigation'   
         break;
-    case 'Rejected':
+    case 'Cannot accept':
         req.session.data.calcsTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.calcsStatus = 'Rejected'   
+        req.session.data.calcsStatus = 'Not accepted'   
         break;
     default:
         req.session.data.calcsTag = 'govuk-tag';
@@ -136,13 +136,13 @@ router.get('/task2fT1', function (req, res) {
         req.session.data.calcsTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
         req.session.data.calcsStatus = 'Information requested'   
         break;
-    case 'Internal review':
+    case 'Internal investigation':
         req.session.data.calcsTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.calcsStatus = 'Internal review'   
+        req.session.data.calcsStatus = 'Internal investigation'   
         break;
-    case 'Rejected':
+    case 'Cannot accept':
         req.session.data.calcsTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.calcsStatus = 'Rejected'   
+        req.session.data.calcsStatus = 'Not accepted'   
         break;
     default:
         req.session.data.calcsTag = 'govuk-tag';
@@ -163,13 +163,13 @@ router.get('/task3T1', function (req, res) {
         req.session.data.sssiTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
         req.session.data.sssiStatus = 'Information requested'   
         break;
-    case 'Internal review':
+    case 'Internal investigation':
         req.session.data.sssiTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.sssiStatus = 'Internal review'   
+        req.session.data.sssiStatus = 'Internal investigation'   
         break;
-    case 'Rejected':
+    case 'Cannot accept':
         req.session.data.sssiTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.sssiStatus = 'Rejected'   
+        req.session.data.sssiStatus = 'Not accepted'   
         break;
     default:
         req.session.data.sssiTag = 'govuk-tag';
@@ -190,13 +190,13 @@ router.get('/task4T1', function (req, res) {
         req.session.data.samTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
         req.session.data.samStatus = 'Information requested'   
         break;
-    case 'Internal review':
+    case 'Internal investigation':
         req.session.data.samTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.samStatus = 'Internal review'   
+        req.session.data.samStatus = 'Internal investigation'   
         break;
-    case 'Rejected':
+    case 'Cannot accept':
         req.session.data.samTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.samStatus = 'Rejected'   
+        req.session.data.samStatus = 'Not accepted'   
         break;
     default:
         req.session.data.samTag = 'govuk-tag';
@@ -217,13 +217,13 @@ router.get('/task5T1', function (req, res) {
         req.session.data.paymentTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
         req.session.data.paymentStatus = 'Information requested'   
         break;
-    case 'Internal review':
+    case 'Internal investigation':
         req.session.data.paymentTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.paymentStatus = 'Internal review'   
+        req.session.data.paymentStatus = 'Internal investigation'   
         break;
-    case 'Rejected':
+    case 'Cannot accept':
         req.session.data.paymentTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.paymentStatus = 'Rejected'   
+        req.session.data.paymentStatus = 'Not accepted'   
         break;
     default:
         req.session.data.paymentTag = 'govuk-tag';
@@ -244,13 +244,13 @@ router.get('/task6T1', function (req, res) {
         req.session.data.budgetTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
         req.session.data.budgetStatus = 'Information requested'   
         break;
-    case 'Internal review':
+    case 'Internal investigation':
         req.session.data.budgetTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.budgetStatus = 'Internal review'   
+        req.session.data.budgetStatus = 'Internal investigation'   
         break;
-    case 'Rejected':
+    case 'Cannot accept':
         req.session.data.budgetTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.budgetStatus = 'Rejected'   
+        req.session.data.budgetStatus = 'Not accepted'   
         break;
     default:
         req.session.data.budgetTag = 'govuk-tag';
@@ -327,10 +327,10 @@ router.get('/task1T2', function (req, res) {
     case 'Information requested':
         dayName = 'Tuesday';
         break;
-    case 'Internal review':
+    case 'Internal investigation':
         dayName = 'Wednesday';
         break;
-    case 'Rejected':
+    case 'Not accepted':
         dayName = 'Wednesday';
         break;
     default:
