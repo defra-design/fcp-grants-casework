@@ -30,7 +30,7 @@
     </div>
     <div style="display: flex; justify-content: flex-end;">
       <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
-        Recalculate
+        Rerun rules
       </button>
     </div>
   </div>
@@ -123,36 +123,127 @@
     </div>
   </div>
 </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-1">Land parcel calculations</h1>
+    
+    <p >Rules check last run: 12:50am 12 Sept 2025</p>
+    <p> A line of text here just to offset the rest of the design and make it look better</p>
+  </div>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-third ">
-    <div class="govuk-form-group"><p><h3 class="govuk-heading-s govuk-!-margin-bottom-1 govuk-!-margin-top-7">Set version</h3>
-            <select class="govuk-select " id="sort" name="sort">
-              <option value="published" selected>12:50am 12 Sept 2025</option>
-              <option value="updated">11:00am 12 Sept 2025</option>
-              <option value="views">03:20pm 11 Sept 2025</option>
-            </select>
-               <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
-          Set
-        </button>
-          </p>
 
+    <div class="moj-filter" data-module="moj-filter">
+  <div class="moj-filter__header_grey">
+    <div class="moj-filter__header-title">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Filter</h2>
+    </div>
+    <div class="moj-filter__header-action">
+    </div>
+  </div>
+  <div class="moj-filter__content">
 
+    <div class="moj-filter__options">
+      <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+        Apply filters
+      </button>
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="keywords">
+          Run date
+        </label>
+      <select class="govuk-select " id="sort" name="sort">
+        <option value="published" selected>12:50am 12 Sept 2025</option>
+        <option value="updated">11:00am 12 Sept 2025</option>
+        <option value="views">03:20pm 11 Sept 2025</option>
+      </select>
       </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h3 class="govuk-fieldset__heading">
+            Listing ...
+          </h3>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              All checks
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+              Calculations with changes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+              Only fails
+            </label>
+          </div>
+
+        </div>
+      </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--
+   <h2 class="govuk-heading-m">Filters</h2>
+    <div class="govuk-form-group">
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Run date</h3>
+      <select class="govuk-select " id="sort" name="sort">
+        <option value="published" selected>12:50am 12 Sept 2025</option>
+        <option value="updated">11:00am 12 Sept 2025</option>
+        <option value="views">03:20pm 11 Sept 2025</option>
+      </select>
+    </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h3 class="govuk-fieldset__heading">
+            Listing ...
+          </h3>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+              All checks
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+              Calculations with changes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+              Only fails
+            </label>
+          </div>
+
+        </div>
+      </fieldset>
+    </div>
+               <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">Apply Filters
+        </button>
+        -->
+
+
+      
     </div>
   <div class="govuk-grid-column-two-thirds govuk-!-padding-left-4">
 <form action="test4" method="post">
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Land parcel calculations
-      </h1>
-    </legend>
-    <p>Rules check last run: 12:50am 12 Sept 2025</p>
-   
-
-
     <h2 class="govuk-heading-m">Parcel ID: SO3757 3159 checks</h2>
 
 <h3 class="govuk-heading-s">Action: CMOR1 checks</h3>
