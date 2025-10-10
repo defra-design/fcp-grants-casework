@@ -94,61 +94,53 @@
               Agreement
             </a>
           </li> -->
-          </li>
 
         </ul>
       </nav>
     </div>
   </div>
 </div>
-<form action="/task1T1" method="post">
+<form action="/task2T1" method="post">
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-
-     
+  <div class="govuk-grid-column-two-thirds">  
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Customer details review
+       Review land parcel calculations
       </h1>
     </legend>
-
-
-<ol class="govuk-list govuk-list--number">
-  <li>Go to <a href="application" class="govuk-link">Application</a> to view submitted customer details.</li>
-  <li>Check the submitted details match the details and permissions on the <a href="#" class="govuk-link">Rural Payments service (RPS)</a>.</li>
-  <li>Come back to this page and confirm if the details match.</li>
-</ol>
-
-
-
-    <h2 class="govuk-heading-m">
-         Customer detail review outcome
+    <ol class="govuk-list govuk-list--number">
+      <li>Go to <a href="calculations2">calculations</a> to view automated checks against the customer’s land parcels and actions</p></li>
+      <li>Check for failures and resolve these by:
+      <ul class="govuk-list govuk-list--bullet">
+        <li>requesting information from the customer</li>
+        <li>running the calculations again</li>
+      </ul>
+    </li>
+      <h2 class="govuk-heading-m">
+         Checks review outcome
       </h2>
 
-    
+    <p>Mark this task as complete when you have carried out your available area checks.</p>
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-          <h3 class="govuk-fieldset__heading">
+          <h2 class="govuk-fieldset__heading">
             Note
-          </h3>
+          </h2>
         </legend>
           <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
           </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note2']}}</textarea>
+          {% if (data.task2Note) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task2Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task2Note2']}}</textarea>
           {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
+          <textarea class="govuk-textarea" id="more-detail1" name="task2Note" rows="5" aria-describedby="more-detail-hint">{{ data['task2Note']}}</textarea>
           {% endif %}
-
-
         <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Accepted"  {{ checked("decisionTask1", "Accepted") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask2" type="radio" value="Accepted"  {{ checked("decisionTask2", "Accepted") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Accept
             </label>
@@ -156,21 +148,21 @@
 
           
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decisionTask1" type="radio" value="Information requested"  {{ checked("decisionTask1", "Information requested") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decisionTask2" type="radio" value="Information requested"  {{ checked("decisionTask2", "Information requested") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
               Request information from customer
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Internal investigation"  {{ checked("decisionTask1", "Internal investigation") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask2" type="radio" value="Internal investigation"  {{ checked("decisionTask2", "Internal investigation") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Pause for internal investigation
             </label>
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Cannot accept"  {{ checked("decisionTask1", "Cannot accept") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionTask2" type="radio" value="Cannot accept"  {{ checked("decisionTask2", "Cannot accept") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Cannot accept
             </label>
@@ -182,8 +174,9 @@
 <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
  Continue
 </button>
-
-{% if (data.task1Note) %}
+  </fieldset>
+</div>
+{% if (data.task2Note) %}
 <h2 class="govuk-heading-m">Note history</h2>
 
 <table class="govuk-table" data-module="moj-sortable-table">
@@ -208,10 +201,10 @@
       <td class="govuk-table__cell">25th Sept 2025</td>
 
       <td class="govuk-table__cell">
-        {{ data['noteActionTask1']}}
+        {{ data['noteActionTask2']}}
       </td>
       <td class="govuk-table__cell">
-        {{ data['task1Note']}}
+        {{ data['task2Note']}}
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>
