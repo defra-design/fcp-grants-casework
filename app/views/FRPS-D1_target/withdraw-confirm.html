@@ -105,7 +105,7 @@
   <fieldset class="govuk-fieldset" aria-describedby="message-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Withdraw grant funding agreement
+    Are you sure you want to withdraw agreement AD2456781?
       </h1>
     </legend>
     <div class="govuk-warning-text">
@@ -115,47 +115,25 @@
         This action cannot be undone
       </strong>
     </div>
-    <h2 class="govuk-heading-m">Agreement you are withdrawing</h2>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Status
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag">Active</strong>
-        </dd>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="confirmWithdraw" name="confirmWithdraw" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="confirmWithdraw">
+          Yes, I want to withdraw this agreement offer and notify the customer
+        </label>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Reference
-        </dt>
-        <dd class="govuk-summary-list__value">
-          AD2456781
-        </dd>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="confirmWithdraw-2" name="confirmWithdraw" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="confirmWithdraw-2">
+          No, I want the offer to be maintained 
+        </label>
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          14 Sept 2025
-        </dd>
-      </div>
-            <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Aggreement
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <a href="" class="govuk-link">View</a> 
-      <button class="gem-c-button govuk-button gem-c-button--secondary-quiet" type="button">Copy</button> 
-        </dd>
-      </div>
-    </dl>
+    </div>
 
 
 
-  <button type="submit" class="govuk-button govuk-!-margin-top-1 govuk-!-margin-bottom-5" data-module="govuk-button">
- Confirm withdrawal
+  <button type="submit" class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+ Confirm
 </button>
 
   
