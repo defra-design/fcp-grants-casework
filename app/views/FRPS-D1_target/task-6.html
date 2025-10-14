@@ -59,7 +59,7 @@
               Application
             </a>
           </li>
-          <!--
+
           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="calculations">
               Calculations
@@ -67,7 +67,7 @@
           </li>
 
  
-
+          <!--
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="land">
               Land
@@ -110,49 +110,32 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Review scheme budget 
+        Review scheme budget as a finance officer
       </h1>
     </legend>
 
-    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-       What is your job title? 
-      </h2>
-    </legend>
-    <div id="contact-hint" class="govuk-hint">
-      
-Task instructions are different, depending on your job title. 
+    <p>You cannot complete this task. </p>
+    <details class="govuk-details govuk-!-margin-bottom-3">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Who can complete this task 
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>Someone who is a:
 
-    </div>
-    <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-        <label class="govuk-label govuk-radios__label" for="contact">
-          I am a case worker
-        </label>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>FINANCE_OFFICER</li>
+          <li>CASE_WORKER and FINANCE_ADMIN</li>
+          <li>X, Y and Z</li>
+          <li>JAZZ_MUSICIAN and CLOWN</li>
+        </ul>
+        </p>
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-        <ol class="govuk-list govuk-list--number">
-          <li>Go to the <a href="caselist" class="govuk-link">application caselist</a></li>
-          <li>Assign this case to a finance officer</li>
-        </ol>
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-visually-hidden">Warning</span>
-            This task must be completed by a finance officer. Whoever completes this task will be logged in the <a href="timeline" class="govuk-link">timeline</a>.
-          </strong>
-        </div>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-        <label class="govuk-label govuk-radios__label" for="contact-2">
-          I am a finance officer
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+    </details>
+
+
+
         <p>You must check there is enough budget left for the total yearly payment the customer has applied for.
 
 
@@ -167,10 +150,7 @@ Task instructions are different, depending on your job title.
 
         <p><a href="#" class="govuk-link">View SFI budget spreadsheet</a></p>
 
-      </div>
-    </div>
-  </fieldset>
-</div>
+
 
 
 
