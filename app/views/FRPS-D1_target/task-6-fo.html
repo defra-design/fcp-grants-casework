@@ -114,23 +114,6 @@
       </h1>
     </legend>
 
-    <p>You cannot complete this task. </p>
-    <details class="govuk-details govuk-!-margin-top-0 govuk-!-margin-bottom-7">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Who can complete this task 
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p>Someone who is a:
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li>FINANCE_OFFICER</li>
-          <li>SENIOR_ADMIN</li>
-        </ul>
-        </p>
-      </div>
-    </details>
 
 
 
@@ -153,7 +136,63 @@
 
 
 
-    
+    <h2 class="govuk-heading-m">
+         Budget review outcome
+      </h2>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h2 class="govuk-fieldset__heading">
+            Note
+          </h2>
+        </legend>
+          <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
+          </div>
+          {% if (data.task6Note) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task3Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task6Note2']}}</textarea>
+          {% else %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task3Note" rows="5" aria-describedby="more-detail-hint">{{ data['task6Note']}}</textarea>
+          {% endif %}
+
+
+  <div class="govuk-radios" data-module="govuk-radios">
+        
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionTask6" type="radio" value="Accepted"  {{ checked("decisionTask6", "Accepted") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Accept
+            </label>
+          </div>
+
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="eligible-2" name="decisionTask6" type="radio" value="Information requested"  {{ checked("decisionTask6", "Information requested") }}>
+            <label class="govuk-label govuk-radios__label" for="eligible-2">
+              Request information from customer
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionTask6" type="radio" value="Internal investigation"  {{ checked("decisionTask6", "Internal investigation") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Pause for internal investigation
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionTask6" type="radio" value="Cannot accept"  {{ checked("decisionTask6", "Cannot accept") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Cannot accept
+            </label>
+          </div>
+          
+        </div>
+      </fieldset>
+    </div>
+<button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+ Continue
+</button>
 {% if (data.task6Note) %}
 <h2 class="govuk-heading-m">Note history</h2>
 
