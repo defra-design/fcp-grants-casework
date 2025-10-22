@@ -90,17 +90,20 @@
               Notes
             </a>
           </li>
-<!-- 
+          <!--
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
-          </li>
-          <li class="govuk-service-navigation__item-c2 ">
+          </li> -->
+          {% if (data.agreementStage) %} 
+           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
             </a>
-          </li> -->
+          </li>
+          {% else %} 
+          {% endif %} 
         </ul>
       </nav>
     </div>

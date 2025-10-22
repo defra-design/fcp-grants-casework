@@ -107,17 +107,20 @@
               Notes
             </a>
           </li>
-<!-- 
+          <!--
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
-          </li>
-          <li class="govuk-service-navigation__item-c2 ">
+          </li> -->
+          {% if (data.agreementStage) %} 
+           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
             </a>
-          </li> -->
+          </li>
+          {% else %} 
+          {% endif %} 
         </ul>
       </nav>
     </div>
@@ -167,36 +170,69 @@
 
     <h2 class="govuk-heading-m">Fail reason</h2>
 
-    <p>The total available area (4.53 ha) does not match the area applied for (4 ha). This can happen when land parcel data is updated after an application has been submitted. </p>
+    <p>The total available area (1.1506 ha) does not match the area applied for (1 ha). This can happen when land parcel data is updated after an application has been submitted.</p>
+<h2 class="govuk-heading-m">What to do</h2>
 
-<p>You may be able to fix this by:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>checking the land parcel data for errors and updating it </li>
-  <li>asking the customer to update the area applied for to 4.53 ha</li>
-</ul>
+<ol class="govuk-list govuk-list--number">
+  <li>Check the land parcel data for errors</li>
+  <li>If there are no errors, reject the application and ask the customer to reapply with the correct total available area</li>
+</ol>
 
-    <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
+<p>Date application submitted: 14 October 2025</br>
+Latest land parcel update: 21 October 2025 </p>
 
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Parcel ID</th>
-      <td class="govuk-table__cell">SO3757 3059</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Action code</th>
-      <td class="govuk-table__cell">CMOR1</td>
-    </tr>  
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Available area</th>
-      <td class="govuk-table__cell">4.53 ha</td>
-    </tr>  
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Applied for</th>
-      <td class="govuk-table__cell">4 ha</td>
-    </tr>
-  </tbody>
-</table>
+<h3 class="govuk-heading-s">Area applied for by customer</h3>
+<p>1 ha</p>
+
+<h3 class="govuk-heading-s">Total available area</h3>
+<p>1.1506 ha</p>
+
+  <h2 class="govuk-heading-m">Total available area calculation</h2>
+<p>Action code<br>
+CMOR1 </p>
+
+<p>Valid land covers for CMOR1 <br>
+Permanent grassland (130) <br>
+Permanent grassland (131)<br>
+Water/irrigation features (240)<br>
+Drain/ditch/dyke (241)<br>
+Water/irrigation features (240)<br>
+Pond (243), Rock (250)<br>
+Scree (251)<br>
+Rock (250)<br>
+Boulders (252)<br>
+Rock (250)<br>
+Rocky outcrop (253)<br>
+Heaps (270)<br>
+Heaps (271)</p>
+
+<p>Land covers for this land parcel <br>
+Arable land (110),  7.98900188 ha   <br>
+Hard standing (551), 0.0076 ha    <br>
+Permanent grassland (130), 3.1540 ha  
+</p>
+
+<p>Existing incompatible actions on this land parcel:<br>
+CHRW1, 10 ha<br>
+CHRW2, 8 ha<br>
+CHRW3, 7 ha</p>
+
+<p>Incompatible stacks<br>
+These will be subtracted from the total valid landcovers<br>
+Stack 1 - CHRW1 (10 ha), CHRW2 (8 ha), CHRW3 (7 ha): Total = 10 ha</p>
+
+<p>Do incompatible stacks overlap with valid land covers?<br>
+Yes</p>
+
+<p>Total land parcel area: 11.1506 ha<br>
+Total incompatible stacks: 10 ha<br>
+Total valid land covers: 3.1540 ha<br>
+Incompatible stacks on valid land covers: 2.0034 ha</p>
+
+<p>Total available area<br>
+1.1506 ha</p>
+
+
 
   </div>
 </details>
@@ -204,45 +240,38 @@
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      At least 51% of land parcel is moorland<strong class="govuk-tag govuk-tag--green margin-left-180">
-        <svg class="tick-icon" width="20" height="20" viewBox="0 0 24 24" fill="green" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 16.2L4.8 12L3.4 13.4L9 19L21 7L19.6 5.6L9 16.2Z"/>
-        </svg>
-        Passed
-        </strong>
+      At least 51% of land parcel is moorland<strong class="govuk-tag govuk-tag--red-new margin-left-180">Failed
+      </strong>
     </span>
   </summary>
   <div class="govuk-details__text">
         <h2 class="govuk-heading-m">Result</h2>
 
-    <p>Passed</p>
+    <p>Failed</p>
 
-    <h2 class="govuk-heading-m">Pass reason</h2>
+    <h2 class="govuk-heading-m">Fail reason</h2>
 
-    <p>Parcel SO3757 3059 is 60% moorland. The minimum amount required for CMOR1 is 51%.<br>
+    <p>CMOR1 requires at least 51% of an area to be moorland. Parcel SO3757 3059 is only 28.28% moorland. </p>
+    <h2 class="govuk-heading-m">What to do</h2>
 
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Check details</caption>
+<ol class="govuk-list govuk-list--number">
+  <li>Check the land parcel data for errors</li>
+  <li>If there are no errors, reject the application</li>
+</ol>
 
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Parcel ID</th>
-          <td class="govuk-table__cell">SO3757 3059</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Parcel area</th>
-          <td class="govuk-table__cell">100 ha</td>
-        </tr>
-            <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Area on moorland</th>
-          <td class="govuk-table__cell">60 ha</td>
-        </tr>
-            <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Percentage on moorland</th>
-          <td class="govuk-table__cell">60%</td>
-        </tr>
-      </tbody>
-    </table>
+<h2 class="govuk-heading-m">Moorland percentage </h2>
+<p>Parcel area <br>
+Taken from SITI Agri<br>
+11.1506 ha</p>
+
+<p>Area on moorland <br>
+Taken from SITI Agri data layer<br>
+3.1540 ha</p>
+
+<p>Percentage calculation <br>
+3.1540 / 11.1506 = 0.2828<br>
+0.2828 X 100 = 28.28%</p>
+
 
 
   </div>

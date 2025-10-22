@@ -373,3 +373,8 @@ router.get('/caselistF1', function (req, res) {
     req.session.data.failReview = 'yes';
    res.redirect('/FRPS-D2/caselist');
 });
+
+router.get('/agreementStage1', function (req, res) {
+    req.session.data.agreementStage = 'yes';
+   res.redirect('/FRPS-D1_target/caselist');
+});

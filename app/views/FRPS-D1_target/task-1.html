@@ -35,7 +35,7 @@
     </div>
 
   </div>
-  
+   
 {% endblock %}
 
 
@@ -50,7 +50,7 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
+            <a class="govuk-service-navigation__link" {% if (data.agreementStage === 'yes') %}href="tasklist-agree"{% else %}href="tasklist"{% endif %} aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li>          
@@ -83,17 +83,20 @@
               Notes
             </a>
           </li>
-<!-- 
+          <!--
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
-          </li>
-          <li class="govuk-service-navigation__item-c2 ">
+          </li> -->
+          {% if (data.agreementStage) %} 
+           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
             </a>
-          </li> -->
+          </li>
+          {% else %} 
+          {% endif %} 
           </li>
 
         </ul>
@@ -123,7 +126,30 @@
 </ol>
 
 
+{% if (data.agreementStage === 'yes') %} 
+<!--
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h3 class="govuk-fieldset__heading">
+            Add note
+          </h3>
+        </legend>
+        <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
+        </div>
+        {% if (data.task1Note) %}
+        <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note2']}}</textarea>
+        {% else %}
+        <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
+        {% endif %}
+      </fieldset>
+    </div>
 
+<a href="tasklist-agree" role="button" draggable="false" class="govuk-button">
+ Continue
+</a> -->
+
+{% else %} 
     <h2 class="govuk-heading-m">
          Customer detail review outcome
       </h2>
@@ -179,9 +205,10 @@
         </div>
       </fieldset>
     </div>
+
 <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
  Continue
-</button>
+</button>{% endif %}
 
 {% if (data.task1Note) %}
 <h2 class="govuk-heading-m">Note history</h2>

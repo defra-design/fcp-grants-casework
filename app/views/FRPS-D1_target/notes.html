@@ -38,7 +38,7 @@
   
 {% endblock %}
 
-
+ 
 {% block content %}
 <div class="govuk-service-navigation-white"
   data-module="govuk-service-navigation">
@@ -50,7 +50,7 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link"  href="tasklist" aria-current="true">
+            <a class="govuk-service-navigation__link"  {% if (data.agreementStage === 'yes') %}href="tasklist-agree"{% else %}href="tasklist"{% endif %} aria-current="true">
               Tasks
             </a>
           </li> 
@@ -88,16 +88,20 @@
               <strong class="govuk-service-navigation__active-fallback">Notes</strong>
             </a>
           </li>
-         <!-- <li class="govuk-service-navigation__item-c2">
+          <!--
+          <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
-          </li>
+          </li> -->
+          {% if (data.agreementStage) %} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
             </a>
-          </li> -->
+          </li>
+          {% else %} 
+          {% endif %} 
 
 
         </ul>
