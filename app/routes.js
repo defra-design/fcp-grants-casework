@@ -374,7 +374,92 @@ router.get('/caselistF1', function (req, res) {
    res.redirect('/FRPS-D2/caselist');
 });
 
+// Agreement routes
+
 router.get('/agreementStage1', function (req, res) {
     req.session.data.agreementStage = 'yes';
    res.redirect('/FRPS-D1_target/caselist');
 });
+
+router.get('/task1AgT1', function (req, res) { 
+    req.session.data.AgreeChecked = 'yes';
+    req.session.data.noteActionAgreeTask1 = req.session.data.decisionTask1;
+    switch (req.session.data.decisionAgreeTask1) {
+    case 'Accepted':
+        req.session.data.agreeTag = '';
+        req.session.data.agreeStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.agreeTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.agreeStatus = 'Information requested'   
+        break;
+    case 'Internal investigation':
+        req.session.data.agreeTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.agreeStatus = 'Internal investigation'   
+        break;
+    case 'Cannot accept':
+        req.session.data.agreeTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.agreeStatus = 'Not accepted'   
+        break;
+    default:
+        req.session.data.agreeTag = 'govuk-tag';
+        req.session.data.agreeStatus = 'Incomplete'
+    };
+    res.redirect('/FRPS-D1_target/tasklist-agree');
+});
+
+router.get('/task2AgT1', function (req, res) { 
+    req.session.data.AgreeSChecked = 'yes';
+    req.session.data.noteActionAgreeTask2 = req.session.data.decisionAgreeTask2;
+    switch (req.session.data.decisionAgreeTask2) {
+    case 'Accepted':
+        req.session.data.agreeSTag = '';
+        req.session.data.agreeSStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.agreeSTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.agreeSStatus = 'Information requested'   
+        break;
+    case 'Internal investigation':
+        req.session.data.agreeSTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.agreeSStatus = 'Internal investigation'   
+        break;
+    case 'Cannot accept':
+        req.session.data.agreeSTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.agreeSStatus = 'Not accepted'   
+        break;
+    default:
+        req.session.data.agreeSTag = 'govuk-tag';
+        req.session.data.agreeSStatus = 'Incomplete'
+    };
+    res.redirect('/FRPS-D1_target/tasklist-agree');
+});
+
+
+router.get('/task3AgT1', function (req, res) { 
+    req.session.data.detailsChecked = 'yes';
+    req.session.data.noteActionAgreeTask3Ag = req.session.data.decisionAgreeTask3;
+    switch (req.session.data.decisionAgreeTask3) {
+    case 'Accepted':
+        req.session.data.agreeCTag = '';
+        req.session.data.agreeCStatus = 'Accepted'       
+    break;
+    case 'Information requested':
+        req.session.data.agreeCTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
+        req.session.data.agreeCStatus = 'Information requested'   
+        break;
+    case 'Internal investigation':
+        req.session.data.agreeCTag = 'govuk-tag govuk-tag--yellow custom-width-220';
+        req.session.data.agreeCStatus = 'Internal investigation'   
+        break;
+    case 'Cannot accept':
+        req.session.data.agreeCTag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.agreeCStatus = 'Not accepted'   
+        break;
+    default:
+        req.session.data.agreeCTag = 'govuk-tag';
+        req.session.data.agreeCStatus = 'Incomplete'
+    };
+    res.redirect('/FRPS-D1_target/tasklist-agree');
+});
+

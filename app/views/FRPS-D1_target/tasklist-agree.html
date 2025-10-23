@@ -206,7 +206,7 @@ Accepted
   <ul class="govuk-task-list">
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-1" aria-describedby="company-details-1-status">
+        <a class="govuk-link govuk-task-list__link" href="task-1Ag" aria-describedby="company-details-1-status">
           Check customer agreement 
         </a>
       </div>
@@ -225,14 +225,33 @@ Accepted
 
      <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
-        <a class="govuk-link govuk-task-list__link" href="task-1" aria-describedby="company-details-1-status">
+        <a class="govuk-link govuk-task-list__link" href="task-2Ag" aria-describedby="company-details-1-status">
           Send customer agreement 
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionAgreeSTask1) %}      
-        {% if (data.decisionAgreeSTask1 === 'Accepted') %} {{ data['agreeSStatus'] }} 
-        {% else %}<strong class="{{ data['agreeTag'] }}">{{ data['agreeSStatus'] }}</strong>
+      {% if (data.decisionAgreeTask2) %}      
+        {% if (data.decisionAgreeTask2 === 'Accepted') %} {{ data['agreeSStatus'] }} 
+        {% else %}<strong class="{{ data['agreeSTag'] }}">{{ data['agreeSStatus'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+    </li>
+
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="task-3Ag" aria-describedby="company-details-1-status">
+          Agreement complete task
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status"> 
+      {% if (data.decisionAgreeTask3) %}      
+        {% if (data.decisionAgreeTask3 === 'Accepted') %} {{ data['agreeCStatus'] }} 
+        {% else %}<strong class="{{ data['agreeCTag'] }}">{{ data['agreeCStatus'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -249,9 +268,9 @@ Accepted
          Decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          {% if (data.decisionTask1 === 'Accepted' and data.decisionTask2f === 'Accepted'  and data.decisionTask3 === 'Accepted' and data.decisionTask4 === 'Accepted' and data.decisionTask5 === 'Accepted' and data.decisionTask6 === 'Accepted' ) %}
+          {% if (data.decisionAgreeTask1 === 'Accepted' and data.decisionAgreeTask2 === 'Accepted'  and data.decisionAgreeTask3 === 'Accepted') %}
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Approve
             </label>
@@ -265,7 +284,7 @@ Accepted
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision" type="radio" value="Request more informationRequest more information" data-aria-controls="conditional-decision2" {{ checked("decision", "Request more information") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decisionAg" type="radio" value="Request more informationRequest more information" data-aria-controls="conditional-decision2" {{ checked("decision", "Request more information") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
               Put on hold
             </label>
@@ -279,7 +298,7 @@ Accepted
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decision", "Reject") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decision", "Reject") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Reject
             </label>
@@ -292,6 +311,19 @@ Accepted
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
           </div>
         </div>
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decision", "Withdraw") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Withdraw
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
+            <p>Rejection reason note</p>
+            <div id="more-detail-hint" class="govuk-hint">
+              All notes will be saved for auditing purposes
+            </div>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
+          </div>
       </fieldset>
     </div>
 
