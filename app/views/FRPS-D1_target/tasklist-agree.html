@@ -200,12 +200,12 @@ Accepted
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="task-1Ag" aria-describedby="company-details-1-status">
-          Check customer agreement 
+          Check funding agreement
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
       {% if (data.decisionAgreeTask1) %}      
-        {% if (data.decisionAgreeTask1 === 'Accepted') %} {{ data['agreeStatus'] }} 
+        {% if (data.decisionAgreeTask1 === 'Confirmed') %} {{ data['agreeStatus'] }} 
         {% else %}<strong class="{{ data['agreeTag'] }}">{{ data['agreeStatus'] }}</strong>
         {% endif %}
       {% else %}
@@ -219,12 +219,12 @@ Accepted
      <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="task-2Ag" aria-describedby="company-details-1-status">
-          Send customer agreement 
+          Notify customer that agreement is ready
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
       {% if (data.decisionAgreeTask2) %}      
-        {% if (data.decisionAgreeTask2 === 'Accepted') %} {{ data['agreeSStatus'] }} 
+        {% if (data.decisionAgreeTask2 === 'Confirmed') %} {{ data['agreeSStatus'] }} 
         {% else %}<strong class="{{ data['agreeSTag'] }}">{{ data['agreeSStatus'] }}</strong>
         {% endif %}
       {% else %}
@@ -262,7 +262,7 @@ Accepted
          Decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          {% if (data.decisionAgreeTask1 === 'Accepted' and data.decisionAgreeTask2 === 'Accepted') %}
+          {% if (data.decisionAgreeTask1 === 'Confirmed' and data.decisionAgreeTask2 === 'Confirmed') %}
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decisionAg", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">

@@ -391,21 +391,14 @@ router.get('/task1AgT1', function (req, res) {
     req.session.data.AgreeChecked = 'yes';
     req.session.data.noteActionAgreeTask1 = req.session.data.decisionTask1;
     switch (req.session.data.decisionAgreeTask1) {
-    case 'Accepted':
+    case 'Confirm':
         req.session.data.agreeTag = '';
-        req.session.data.agreeStatus = 'Accepted'       
+        req.session.data.agreeStatus = 'Confirmed'       
     break;
-    case 'Information requested':
-        req.session.data.agreeTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
-        req.session.data.agreeStatus = 'Information requested'   
-        break;
-    case 'Internal investigation':
-        req.session.data.agreeTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.agreeStatus = 'Internal investigation'   
-        break;
-    case 'Cannot accept':
+
+    case 'There’s a problem':
         req.session.data.agreeTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.agreeStatus = 'Not accepted'   
+        req.session.data.agreeStatus = 'There’s a problem'   
         break;
     default:
         req.session.data.agreeTag = 'govuk-tag';
@@ -418,21 +411,13 @@ router.get('/task2AgT1', function (req, res) {
     req.session.data.AgreeSChecked = 'yes';
     req.session.data.noteActionAgreeTask2 = req.session.data.decisionAgreeTask2;
     switch (req.session.data.decisionAgreeTask2) {
-    case 'Accepted':
+    case 'Confirm':
         req.session.data.agreeSTag = '';
-        req.session.data.agreeSStatus = 'Accepted'       
+        req.session.data.agreeSStatus = 'Confirmed'       
     break;
-    case 'Information requested':
-        req.session.data.agreeSTag = 'govuk-tag  govuk-tag--yellow custom-width-220';
-        req.session.data.agreeSStatus = 'Information requested'   
-        break;
-    case 'Internal investigation':
-        req.session.data.agreeSTag = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.agreeSStatus = 'Internal investigation'   
-        break;
-    case 'Cannot accept':
+    case 'There’s a problem':
         req.session.data.agreeSTag = 'govuk-tag govuk-tag--red-status';
-        req.session.data.agreeSStatus = 'Not accepted'   
+        req.session.data.agreeSStatus = 'There’s a problem'   
         break;
     default:
         req.session.data.agreeSTag = 'govuk-tag';

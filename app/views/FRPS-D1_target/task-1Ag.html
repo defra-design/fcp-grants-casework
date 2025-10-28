@@ -119,13 +119,11 @@
     </legend>
 
 
-    <p>Check that the <a href="aggreement" class="govuk-link">agreement</a> is accurate. </p>
+    <p>Check the <a href="aggreement" class="govuk-link">agreement</a> is accurate. </p>
 
 
 
-    <h2 class="govuk-heading-m">
-         Agreement review outcome
-      </h2>
+
 
     
     <div class="govuk-form-group">
@@ -147,34 +145,19 @@
         <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAgreeTask1" type="radio" value="Accepted"  {{ checked("decisionAgreeTask1", "Accepted") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAgreeTask1" type="radio" value="Confirm"  {{ checked("decisionAgreeTask1", "Confirm") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
-              Accept
+              Confirm
             </label>
           </div>
 
           
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decisionAgreeTask1" type="radio" value="Information requested"  {{ checked("decisionAgreeTask1", "Information requested") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decisionAgreeTask1" type="radio" value="There’s a problem"  {{ checked("decisionAgreeTask1", "There’s a problem") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
-              Request information from customer
+              There’s a problem
             </label>
-          </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAgreeTask1" type="radio" value="Internal investigation"  {{ checked("decisionAgreeTask1", "Internal investigation") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Pause for internal investigation
-            </label>
-          </div>
-
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAgreeTask1" type="radio" value="Cannot accept"  {{ checked("decisionAgreeTask1", "Cannot accept") }}>
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Cannot accept
-            </label>
-          </div>
-          
+          </div>        
         </div>
       </fieldset>
     </div>
