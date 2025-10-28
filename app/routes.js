@@ -29,8 +29,9 @@ router.get('/failTest1', function (req, res) {
 router.get('/app-approve1', function (req, res) {
   if (req.session.data.decision === 'Approve') {
     req.session.data.caseApproved = 'yes';
+    req.session.data.agreementStage = 'yes';
     }
-   res.redirect('/FRPS-PB-D1/caselist-team');
+   res.redirect('/FRPS-D1_target/caselist');
 });
 
 router.get('/review-Passed2', function (req, res) { 
@@ -307,6 +308,11 @@ router.get('/caselistTeam1', function (req, res) {
 router.get('/A3059CheckedFull', function (req, res) { 
     req.session.data.A3059Checked = 'yes';
    res.redirect('/FRPS-D1_target/tasklist-restricted');
+});
+
+router.get('/setUserFo1', function (req, res) {
+    req.session.data.financeOfficer = 'yes';
+   res.redirect('/FRPS-D1_target/tasklist');
 });
 
 

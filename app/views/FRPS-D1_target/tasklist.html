@@ -144,8 +144,8 @@
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status">
-    {% if (data.decisionTask2f) %}    
-        {% if (data.decisionTask2f === 'Accepted') %} {{ data['calcsStatus'] }} 
+    {% if (data.decisionTask2) %}    
+        {% if (data.decisionTask2 === 'Accepted') %} {{ data['calcsStatus'] }} 
         {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatus'] }}</strong>
         {% endif %} 
     {% else %}
@@ -175,7 +175,7 @@
       {% endif %}
       </div>
   </li>
-
+<!--
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="task-4" aria-describedby="company-details-1-status">
@@ -194,6 +194,7 @@
       {% endif %}
       </div>
   </li>
+  -->
 
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
@@ -216,7 +217,7 @@
 
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      <a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">
+      {% if (data.financeOfficer === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-6-fo" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">{% endif %}
         Review scheme budget as a finance officer
       </a>
     </div>
@@ -242,7 +243,7 @@
          Decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          {% if (data.decisionTask1 === 'Accepted' and data.decisionTask2f === 'Accepted'  and data.decisionTask3 === 'Accepted' and data.decisionTask4 === 'Accepted' and data.decisionTask5 === 'Accepted' and data.decisionTask6 === 'Accepted' ) %}
+          {% if (data.decisionTask1 === 'Accepted' and data.decisionTask2 === 'Accepted'  and data.decisionTask3 === 'Accepted'  and data.decisionTask5 === 'Accepted' and data.decisionTask6 === 'Accepted' ) %}
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
@@ -313,4 +314,25 @@
 
 
 
+{% endblock %}
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+       {
+         href: "/setUserFo1",
+         text: "Set user finance officer"
+       },
+       {
+         href: "/manage-prototype",
+         text: "Manage your prototype"
+       },
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
 {% endblock %}
