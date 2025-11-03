@@ -139,7 +139,7 @@
 
       {% if (data.caseStage === 'start') %}
 
-      <p>When you are ready to start working this case click start below</p>
+      <p>You cannot complete any tasks until you start the case.</p>
 
       <a href="caselist" role="button" draggable="false" class="govuk-button">
   Start
@@ -249,13 +249,13 @@
 
       {% elseif (data.caseStage === 'review') %}
 
-      <p>paragraph of review stage text</p>
+      <p>You cannot approve the application until all tasks have been accepted.</p>
 
       <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
       <a class="govuk-link govuk-task-list__link" href="task-1" aria-describedby="company-details-1-status">
-        Check customer details 
+        Application review tasks
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status"> 
@@ -408,13 +408,13 @@
 
       {% elseif (data.caseStage === 'agree') %}
 
-<p> pre agreement phase text here</p>
-  <h2 class="govuk-heading-m">Agreement review tasks</h2>
+<p>Draft agreement is live and can be accepted by the customer.</p>
+  <h2 class="govuk-heading-m">Draft agreement review tasks</h2>
   <ul class="govuk-task-list">
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="task-1Ag" aria-describedby="company-details-1-status">
-          Check funding agreement
+          Check draft funding agreement
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
@@ -433,7 +433,7 @@
      <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="task-2Ag" aria-describedby="company-details-1-status">
-          Notify customer that agreement is ready
+          Notify customer that draft agreement is ready
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
