@@ -129,10 +129,10 @@
 <p><a href="" class="govuk-link">View SSSI request spreadsheet</a></p>
 
 
-    {% if (data.agreementStage === 'yes') %} 
+      {% if (data.caseStage === 'review') %} 
 
 
-{% else %} 
+
 
     <h2 class="govuk-heading-m">
          Record check outcome
@@ -230,6 +230,7 @@
     </tr>
   </tbody>
 </table>
+{% else %} 
 
 {% endif %}
  

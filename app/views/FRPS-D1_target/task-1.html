@@ -126,30 +126,10 @@
 </ol>
 
 
-{% if (data.agreementStage === 'yes') %} 
-<!--
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-          <h3 class="govuk-fieldset__heading">
-            Add note
-          </h3>
-        </legend>
-        <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
-        </div>
-        {% if (data.task1Note) %}
-        <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note2']}}</textarea>
-        {% else %}
-        <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint">{{ data['task1Note']}}</textarea>
-        {% endif %}
-      </fieldset>
-    </div>
+{% if (data.caseStage === 'review') %} 
 
-<a href="tasklist-agree" role="button" draggable="false" class="govuk-button">
- Continue
-</a> -->
 
-{% else %} 
+
     <h2 class="govuk-heading-m">
          Customer detail review outcome
       </h2>
@@ -247,6 +227,7 @@
     </tr>
   </tbody>
 </table>
+{% else %} 
 
 {% endif %}
 

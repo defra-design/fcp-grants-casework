@@ -312,8 +312,14 @@ router.get('/A3059CheckedFull', function (req, res) {
 
 router.get('/setUserFo1', function (req, res) {
     req.session.data.financeOfficer = 'yes';
-   res.redirect('/FRPS-D1_target/tasklist');
+   res.redirect('/FRPS-D1_target/tasklist-stage');
 });
+
+router.get('/setAgreeSign1', function (req, res) {
+    req.session.data.caseStage = 'pay';
+   res.redirect('/FRPS-D1_target/tasklist-stage');
+});
+
 
 
 // D2 routes
@@ -404,7 +410,7 @@ router.get('/task1AgT1', function (req, res) {
         req.session.data.agreeTag = 'govuk-tag';
         req.session.data.agreeStatus = 'Incomplete'
     };
-    res.redirect('/FRPS-D1_target/tasklist-agree');
+    res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
 router.get('/task2AgT1', function (req, res) { 
@@ -423,7 +429,7 @@ router.get('/task2AgT1', function (req, res) {
         req.session.data.agreeSTag = 'govuk-tag';
         req.session.data.agreeSStatus = 'Incomplete'
     };
-    res.redirect('/FRPS-D1_target/tasklist-agree');
+    res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
 
@@ -452,5 +458,28 @@ router.get('/task3AgT1', function (req, res) {
         req.session.data.agreeCStatus = 'Incomplete'
     };
     res.redirect('/FRPS-D1_target/tasklist-agree');
+});
+
+router.get('/tasklistStage1', function (req, res) { 
+    req.session.data.stageCount = (req.session.data.stageCount || 0) + 1;
+    console.log (req.session.data.stageCount);
+    switch (req.session.data.stageCount) {
+    case 1:
+        req.session.data.caseStage = 'start';     
+    break;
+    case 2:
+    req.session.data.caseStage = 'review';     
+    break;
+    case 3:
+    req.session.data.caseStage = 'agree';     
+    break;
+    case 4:
+    req.session.data.caseStage = 'pay';     
+    break;
+
+    default:
+        req.session.data.caseStage = 'start';
+    };
+    res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 

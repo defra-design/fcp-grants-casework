@@ -123,10 +123,10 @@
       </li>
     </ol>
 
-    {% if (data.agreementStage === 'yes') %} 
+    {% if (data.caseStage === 'review') %} 
 
 
-{% else %} 
+
       <h2 class="govuk-heading-m">
          Checks review outcome
       </h2>
@@ -223,6 +223,7 @@
     </tr>
   </tbody>
 </table>
+{% else %} 
 
 {% endif %}
 

@@ -125,10 +125,10 @@
 <p>Contact Historic England by email at <a href="mailto:saminfo@historicengland.org" class="govuk-link">saminfo@historicengland.org</a> to confirm if consent has been granted. </p>
 
 
-    {% if (data.agreementStage === 'yes') %} 
+    {% if (data.caseStage === 'review') %} 
 
 
-{% else %} 
+
 
     <h2 class="govuk-heading-m">
          Record check outcome
@@ -226,6 +226,7 @@
     </tr>
   </tbody>
 </table>
+{% else %} 
 
 {% endif %}
  
