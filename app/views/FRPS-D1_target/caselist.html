@@ -76,18 +76,14 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell">{% if (data.agreementStage === 'yes') %}<a href="/tasklistStage1">{% else %}<a href="/tasklistStage1">{% endif %}100300</a></td>
+              <td class="govuk-table__cell"><a href="/tasklistStage1">100300</a></td>
               <td class="govuk-table__cell">Berkshire Estate Limited</td>
               <td class="govuk-table__cell">112849012</td>
               <td class="govuk-table__cell">10 Sept 2025</td>
               <td class="govuk-table__cell">
-                {% if (data.caseApproved === 'yes') %}<strong class="govuk-tag govuk-tag--green">Approved</strong>
+                {% if (data.caseStage) %}<strong class="{{ data['caseStatusTag']}}">{{ data['caseStatus']}}</strong>
                 {% else %}
-                  {% if (data.caseAssigned === 'yes') %}
-                    <strong class="govuk-tag govuk-tag--blue">In progress</strong>
-                  {% else %}
                     <strong class="govuk-tag govuk-tag--grey">Received</strong>
-                  {% endif %}
                 {% endif %}
               </td>
               {% if (data.caseAssigned === 'yes') %}

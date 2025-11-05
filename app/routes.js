@@ -316,8 +316,7 @@ router.get('/setUserFo1', function (req, res) {
 });
 
 router.get('/setAgreeSign1', function (req, res) {
-    req.session.data.caseStage = 'pay';
-   res.redirect('/FRPS-D1_target/tasklist-stage');
+   res.redirect('/tasklistStage1');
 });
 
 
@@ -419,6 +418,7 @@ router.get('/task2AgT1', function (req, res) {
     switch (req.session.data.decisionAgreeTask2) {
     case 'Confirm':
         req.session.data.agreeSTag = '';
+        req.session.data.caseStatus = 'Agreement offered';
         req.session.data.agreeSStatus = 'Confirmed'       
     break;
     case 'There’s a problem':
@@ -465,16 +465,24 @@ router.get('/tasklistStage1', function (req, res) {
     console.log (req.session.data.stageCount);
     switch (req.session.data.stageCount) {
     case 1:
-        req.session.data.caseStage = 'start';     
+        req.session.data.caseStage = 'start'; 
+        req.session.data.caseStatus = 'Application received';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--grey'; 
     break;
     case 2:
-    req.session.data.caseStage = 'review';     
+        req.session.data.caseStage = 'review';   
+        req.session.data.caseStatus = 'In review';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue'; 
     break;
     case 3:
-    req.session.data.caseStage = 'agree';     
+        req.session.data.caseStage = 'agree';
+        req.session.data.caseStatus = 'Agreement drafted';       
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue'; 
     break;
     case 4:
-    req.session.data.caseStage = 'pay';     
+        req.session.data.caseStage = 'pay'; 
+        req.session.data.caseStatus = 'Agreement accepted';      
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue';     
     break;
 
     default:
