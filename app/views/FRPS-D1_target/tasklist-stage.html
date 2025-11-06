@@ -28,7 +28,7 @@
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
-        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>  In progress</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
       </div>
 
 
@@ -100,7 +100,7 @@
     </div>
   </div>
 </div>
-<form action="/app-approve1" method="post">
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
      
@@ -116,7 +116,7 @@
 
     </div>
 
-{% if (data.decisionAgreeTask1 === 'Confirm' and data.decisionAgreeTask2 === 'Confirm') and (data.caseStage === 'agree') %}
+{% if ( data.caseStatus === 'Agreement offered' and data.caseStage === 'agree') %}
 
 
 
@@ -141,9 +141,7 @@
 
       <p>You cannot complete any tasks until you start the case.</p>
 
-      <a href="caselist" role="button" draggable="false" class="govuk-button">
-  Start
-</a>
+
 
       <ul class="govuk-task-list">
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -245,10 +243,12 @@
 </ul>
 
 
-
+      <a href="/tasklistStage1" role="button" draggable="false" class="govuk-button">
+  Start
+</a>
 
       {% elseif (data.caseStage === 'review') %}
-
+<form action="/app-approve1" method="post">
       <p>You cannot approve the application until all tasks have been accepted.</p>
       <h2 class="govuk-heading-m">Application review tasks</h2>
       <ul class="govuk-task-list">
@@ -400,6 +400,19 @@
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
           </div>
         </div>
+                <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decision", "Withdraw") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Withdraw
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
+            <p>Rejection reason note</p>
+            <div id="more-detail-hint" class="govuk-hint">
+              All notes will be saved for auditing purposes
+            </div>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
+          </div>
       </fieldset>
     </div>
 <button type="submit" class="govuk-button" data-module="govuk-button">
@@ -407,7 +420,7 @@
 </button>
 
       {% elseif (data.caseStage === 'agree') %}
-
+<form action="/tasklistStage1" method="post">
 <p>Draft agreement is live and can be accepted by the customer.</p>
   <h2 class="govuk-heading-m">Draft agreement review tasks</h2>
   <ul class="govuk-task-list">
@@ -456,6 +469,25 @@
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
          Decision
         </legend>
+{% if (data.AgreeSChecked) %} 
+
+{% else %}
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Agreement sent" data-aria-controls="conditional-decision3" {{ checked("decisionAg", "Agreement sent") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Agreement sent
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
+            <p>Rejection reason note</p>
+            <div id="more-detail-hint" class="govuk-hint">
+              All notes will be saved for auditing purposes
+            </div>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail2']}}</textarea>
+          </div>
+        </div>
+         {% endif %}
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decisionAg", "Reject") }}>
@@ -529,12 +561,8 @@
          text: "Set user finance officer"
        },
       {
-         href: "/setAgreeSign1",
+         href: "/tasklistStage1",
          text: "Set agreement signed"
-       },
-       {
-         href: "/manage-prototype",
-         text: "Manage your prototype"
        },
        {
          href: "/manage-prototype/clear-data",

@@ -31,7 +31,7 @@ router.get('/app-approve1', function (req, res) {
     req.session.data.caseApproved = 'yes';
     req.session.data.agreementStage = 'yes';
     }
-   res.redirect('/FRPS-D1_target/caselist');
+   res.redirect('/tasklistStage1');
 });
 
 router.get('/review-Passed2', function (req, res) { 
@@ -316,6 +316,7 @@ router.get('/setUserFo1', function (req, res) {
 });
 
 router.get('/setAgreeSign1', function (req, res) {
+    req.session.data.caseStatus = 'Agreement accepted';  
    res.redirect('/tasklistStage1');
 });
 
@@ -413,7 +414,7 @@ router.get('/task1AgT1', function (req, res) {
 });
 
 router.get('/task2AgT1', function (req, res) { 
-    req.session.data.AgreeSChecked = 'yes';
+
     req.session.data.noteActionAgreeTask2 = req.session.data.decisionAgreeTask2;
     switch (req.session.data.decisionAgreeTask2) {
     case 'Confirm':
@@ -468,7 +469,7 @@ router.get('/tasklistStage1', function (req, res) {
         req.session.data.caseStage = 'start'; 
         req.session.data.caseStatus = 'Application received';    
         req.session.data.caseStatusTag = 'govuk-tag govuk-tag--grey'; 
-    break;
+    return res.redirect('/FRPS-D1_target/caselist');
     case 2:
         req.session.data.caseStage = 'review';   
         req.session.data.caseStatus = 'In review';    
@@ -480,11 +481,16 @@ router.get('/tasklistStage1', function (req, res) {
         req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue'; 
     break;
     case 4:
-        req.session.data.caseStage = 'pay'; 
-        req.session.data.caseStatus = 'Agreement accepted';      
+        req.session.data.caseStage = 'agree'; 
+        req.session.data.caseStatus = 'Agreement offered';  
+        req.session.data.AgreeSChecked = 'yes';    
         req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue';     
     break;
-
+    case 4:
+        req.session.data.caseStage = 'pay'; 
+        req.session.data.caseStatus = 'Agreement offered';   
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue';     
+    break;
     default:
         req.session.data.caseStage = 'start';
     };
