@@ -510,7 +510,7 @@ router.get('/tasklistStage1', function (req, res) {
     case 5:
         req.session.data.caseStage = 'pay'; 
         req.session.data.caseStatus = 'Agreement accepted';   
-        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue';     
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--green';     
     break;
     default:
         req.session.data.caseStage = 'start';

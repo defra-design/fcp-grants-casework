@@ -534,10 +534,20 @@
     </div>
 
     <form action="confirmation" method="post">
+    <div class="govuk-form-group">
     <p>You can still withdraw the agreement until the customer has accepted or rejected.</p>
       <h2 class="govuk-heading-m">Agreement with customer for review</h2>
       <p>There are no tasks to complete. </p>
-      <h2 class="govuk-heading-m">You can still withdraw this agreement</h2>
+
+      <h2 class="govuk-heading-m">You can still withdraw this agreement </h2>
+      <p>You may want to withdraw this agreement if:
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the customer needs to update their application </li>
+        <li>the customer has not responded to the agreement offer within 10 working days</li>
+        <li>there is an error in the agreement</li>
+      </ul></p>
+
+      <h3 class="govuk-heading-s">Reason for withdrawal</h3>
       <div id="more-detail-hint" class="govuk-hint">
         You must include an explanation for auditing purposes. 
       </div>
@@ -545,6 +555,7 @@
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Withdraw
     </button>
+  </div>
 
 
     {% elseif (data.caseStage === 'pay') %}
