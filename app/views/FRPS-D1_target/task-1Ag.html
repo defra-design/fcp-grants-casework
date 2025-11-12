@@ -17,22 +17,36 @@
     </div>
   </header> 
   <div class="lg-div"> 
-    <div class="govuk-width-container">
+   
+<div class="govuk-width-container">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
       {{ govukBackLink({
         text: "Back to applications",
         href: "caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+        Rerun rules
+      </button>
+    </div>
+  </div>
+
+
      
-      <div style="display: flex; gap: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>12849012</p></div>       
+        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
         <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
       </div>
 
 
     </div>
+
+  </div>
 
   </div>
    
@@ -50,7 +64,7 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" {% if (data.agreementStage === 'yes') %}href="tasklist-agree"{% else %}href="tasklist"{% endif %} aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist-stage" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li>          
@@ -128,42 +142,48 @@
     
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-          <h3 class="govuk-fieldset__heading">
-            Note
-          </h3>
-        </legend>
-          <div id="more-detail-hint" class="govuk-hint">All notes will be saved for auditing purposes
-          </div>
-          {% if (data.task1ANote) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint">{{ data['task1ANote2']}}</textarea>
-          {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint">{{ data['task1ANote']}}</textarea>
-          {% endif %}
-
-
         <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAgreeTask1" type="radio" value="Confirm"  {{ checked("decisionAgreeTask1", "Confirm") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAgreeTask1" type="radio" value="Confirm" data-aria-controls="conditional-decision1">
             <label class="govuk-label govuk-radios__label" for="contact">
               Confirm
             </label>
           </div>
-
-          
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision1">
+            <h3 class="govuk-heading-s">Explain this outcome</h3>
+            <div id="more-detail-hint" class="govuk-hint">
+              You must include an explanation for auditing purposes. 
+            </div>
+          {% if (data.task1ANote) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task1ANote2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% else %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task1ANote" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% endif %} 
+          </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decisionAgreeTask1" type="radio" value="There’s a problem"  {{ checked("decisionAgreeTask1", "There’s a problem") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decisionAgreeTask1" type="radio" value="There’s a problem"  data-aria-controls="conditional-decision2">
             <label class="govuk-label govuk-radios__label" for="eligible-2">
               There’s a problem
             </label>
-          </div>        
+          </div>  
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision2">
+            <h3 class="govuk-heading-s">Explain this outcome</h3>
+            <div id="more-detail-hint" class="govuk-hint">
+              You must include an explanation for auditing purposes. 
+            </div>
+          {% if (data.task1ANote) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task1ANote2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% else %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task1ANote" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% endif %} 
+          </div>     
         </div>
       </fieldset>
     </div>
 
 <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
- Continue
+ Confirm
 </button>
 
 {% if (data.task1ANote) %}
@@ -194,7 +214,7 @@
         {{ data['noteActionAgreeTask1']}}
       </td>
       <td class="govuk-table__cell">
-        {{ data['task1ANote']}}
+        {{ data['filteredNote1A']}}
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>

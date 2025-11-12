@@ -6,6 +6,19 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+function stripEmptyAndNulls(input) {
+  if (Array.isArray(input)) {
+    return input.filter(value => value !== null && value !== '');
+  }
+  if (input === null || input === '') {
+    return '';
+  }
+  throw new Error("Input must be an array or an empty/null value.");
+}
+
+
+
+
 // Add your routes here
 
 router.get('/question1', function (req, res) {
@@ -95,6 +108,7 @@ router.get('/task1T1', function (req, res) {
         req.session.data.detailsTag = 'govuk-tag';
         req.session.data.detailsStatus = 'Incomplete'
     };
+    req.session.data.filteredNote1 = stripEmptyAndNulls(req.session.data.task1Note);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
@@ -122,6 +136,7 @@ router.get('/task2T1', function (req, res) {
         req.session.data.calcsTag = 'govuk-tag';
         req.session.data.calcsStatus = 'Incomplete'   
     };
+    req.session.data.filteredNote2 = stripEmptyAndNulls(req.session.data.task2Note);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
@@ -149,6 +164,7 @@ router.get('/task2fT1', function (req, res) {
         req.session.data.calcsTag = 'govuk-tag';
         req.session.data.calcsStatus = 'Incomplete'
     };
+    req.session.data.filteredNote2 = stripEmptyAndNulls(req.session.data.task2Note);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
@@ -176,6 +192,7 @@ router.get('/task3T1', function (req, res) {
         req.session.data.sssiTag = 'govuk-tag';
         req.session.data.sssiStatus = 'Incomplete'  
     };
+    req.session.data.filteredNote3 = stripEmptyAndNulls(req.session.data.task3Note);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
@@ -203,6 +220,7 @@ router.get('/task4T1', function (req, res) {
         req.session.data.samTag = 'govuk-tag';
         req.session.data.samStatus = 'Incomplete'  
     };
+    req.session.data.filteredNote4 = stripEmptyAndNulls(req.session.data.task4Note);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
@@ -230,6 +248,7 @@ router.get('/task5T1', function (req, res) {
         req.session.data.paymentTag = 'govuk-tag';
         req.session.data.paymentStatus = 'Incomplete'  
     };
+    req.session.data.filteredNote5 = stripEmptyAndNulls(req.session.data.task5Note);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
@@ -257,6 +276,7 @@ router.get('/task6T1', function (req, res) {
         req.session.data.budgetTag = 'govuk-tag';
         req.session.data.budgetStatus = 'Incomplete'  
     };
+    req.session.data.filteredNote6 = stripEmptyAndNulls(req.session.data.task6Note);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
@@ -410,6 +430,7 @@ router.get('/task1AgT1', function (req, res) {
         req.session.data.agreeTag = 'govuk-tag';
         req.session.data.agreeStatus = 'Incomplete'
     };
+    req.session.data.filteredNote1A = stripEmptyAndNulls(req.session.data.task1ANote);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
@@ -429,6 +450,7 @@ router.get('/task2AgT1', function (req, res) {
         req.session.data.agreeSTag = 'govuk-tag';
         req.session.data.agreeSStatus = 'Incomplete'
     };
+    req.session.data.filteredNote2A = stripEmptyAndNulls(req.session.data.task2ANote);
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 

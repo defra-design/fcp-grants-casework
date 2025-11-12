@@ -17,17 +17,29 @@
     </div>
   </header> 
   <div class="lg-div"> 
-    <div class="govuk-width-container">
+   
+<div class="govuk-width-container">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
       {{ govukBackLink({
         text: "Back to applications",
         href: "caselist-team"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+        Rerun rules
+      </button>
+    </div>
+  </div>
+
+
      
-      <div style="display: flex; gap: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>12849012</p></div>       
+        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
         <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
       </div>
 
@@ -35,7 +47,7 @@
     </div>
 
   </div>
-  
+
 {% endblock %} 
 
 
@@ -50,7 +62,7 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" {% if (data.agreementStage === 'yes') %}href="tasklist-agree"{% else %}href="tasklist"{% endif %} aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist-stage" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li>          
@@ -61,7 +73,7 @@
           </li>
 
           <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="calculations">
+            <a class="govuk-service-navigation__link" href="calculations2">
               Calculations
             </a>
           </li>

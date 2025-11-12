@@ -17,14 +17,26 @@
     </div>
   </header> 
   <div class="lg-div"> 
-    <div class="govuk-width-container">
+   
+<div class="govuk-width-container">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
       {{ govukBackLink({
         text: "Back to applications",
         href: "caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+        Rerun rules
+      </button>
+    </div>
+  </div>
+
+
      
-      <div style="display: flex; gap: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
@@ -35,7 +47,7 @@
     </div>
 
   </div>
-  
+
 {% endblock %}
 
 
@@ -138,7 +150,7 @@
       {% endif %}
     {% else %}
       <strong class="govuk-tag govuk-tag--grey">
-        Cannot start yet
+        Ready to start
       </strong>
     {% endif %}
     </div>
@@ -157,7 +169,7 @@
         {% endif %} 
     {% else %}
       <strong class="govuk-tag govuk-tag--grey">
-        Cannot start yet
+        Ready to start
       </strong>
     {% endif %}
     </div>
@@ -177,7 +189,7 @@
         {% endif %}
       {% else %}
       <strong class="govuk-tag govuk-tag--grey">
-        Cannot start yet
+        Ready to start
       </strong>
       {% endif %}
       </div>
@@ -195,7 +207,7 @@
         {% endif %}
       {% else %}
       <strong class="govuk-tag govuk-tag--grey">
-        Cannot start yet
+        Ready to start
       </strong>
       {% endif %}
       </div>
@@ -214,7 +226,7 @@
         {% endif %}
       {% else %}
       <strong class="govuk-tag govuk-tag--grey">
-        Cannot start yet
+        Ready to start
       </strong>
       {% endif %}
       </div>
@@ -525,6 +537,11 @@
     <p>You can still withdraw the agreement until the customer has accepted or rejected.</p>
       <h2 class="govuk-heading-m">Agreement with customer for review</h2>
       <p>There are no tasks to complete. </p>
+      <h2 class="govuk-heading-m">You can still withdraw this agreement</h2>
+      <div id="more-detail-hint" class="govuk-hint">
+        You must include an explanation for auditing purposes. 
+      </div>
+      <textarea class="govuk-textarea" id="more-detail1" name="case4Note" rows="5" aria-describedby="more-detail-hint"></textarea>    
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Withdraw
     </button>

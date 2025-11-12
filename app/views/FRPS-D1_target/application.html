@@ -17,14 +17,26 @@
     </div>
   </header> 
   <div class="lg-div"> 
-    <div class="govuk-width-container">
+   
+<div class="govuk-width-container">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
       {{ govukBackLink({
         text: "Back to applications",
         href: "caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+        Rerun rules
+      </button>
+    </div>
+  </div>
+
+
      
-      <div style="display: flex; gap: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
@@ -35,6 +47,7 @@
     </div>
 
   </div>
+
   
 {% endblock %}
 
@@ -50,7 +63,7 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist-stage" aria-current="true">
               Tasks
             </a>
           </li>
@@ -606,18 +619,45 @@
     <div class="govuk-accordion__section-header">
       <h2 class="govuk-accordion__section-heading">
         <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-          Total yearly payment
-        </span>
+          Payment
       </h2>
     </div>
+
     <div id="accordion-default-content-3" class="govuk-accordion__section-content">
         <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Agreement total payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £65,550.00 over 6 years
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Total yearly payment
             </dt>
             <dd class="govuk-summary-list__value">
-              £323.17
+              £10,925
+            </dd>
+          </div>
+        </dl>
+        <h2 class="govuk-heading-m">Funded action payment detail</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              UPL1 annual payment 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £17,500 (50 ha x £350 per ha)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              CMOR1 annual payment
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £5,000 (N/A)
             </dd>
           </div>
         </dl>

@@ -17,14 +17,26 @@
     </div>
   </header> 
   <div class="lg-div"> 
-    <div class="govuk-width-container">
+   
+<div class="govuk-width-container">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist-team"
+        href: "caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
+    </div>
+    <div style="display: flex; justify-content: flex-end;">
+      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
+        Rerun rules
+      </button>
+    </div>
+  </div>
+
+
      
-      <div style="display: flex; gap: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
@@ -50,7 +62,7 @@
         </button>
                 <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link"  href="tasklist" aria-current="true">
+            <a class="govuk-service-navigation__link"  href="tasklist-stage" aria-current="true">
               Tasks
             </a>
           </li> 
@@ -121,7 +133,7 @@
           Agreement status
         </dt>
         <dd class="govuk-summary-list__value">
-          <strong class="govuk-tag">Agreement offered</strong>
+          <strong class="govuk-tag">Agreement drafted</strong>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
