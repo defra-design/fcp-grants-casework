@@ -29,7 +29,7 @@
     </div>
     <div style="display: flex; justify-content: flex-end;">
       <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
-        Rerun rules
+        Run calculations again
       </button>
     </div>
   </div>
@@ -355,7 +355,7 @@
         <div class="govuk-radios" data-module="govuk-radios">
           {% if (data.decisionTask1 === 'Accepted' and data.decisionTask2 === 'Accepted'  and data.decisionTask3 === 'Accepted'  and data.decisionTask5 === 'Accepted' and data.decisionTask6 === 'Accepted' ) %}
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
+            <input class="govuk-radios__input" id="contact" name="decision1" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Approve
             </label>
@@ -366,10 +366,10 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include a note explaining this decision for audit purposes. 
             </div>
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision" type="radio" value="Request more informationRequest more information" data-aria-controls="conditional-decision2" {{ checked("decision", "Request more information") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decision1" type="radio" value="Put on hold" data-aria-controls="conditional-decision2" {{ checked("decision", "Put on hold") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
               Put on hold
             </label>
@@ -380,10 +380,10 @@
               You must include a note explaining this decision for audit purposes. 
             </div>
             
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1`']}}</textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decision", "Reject") }}>
+            <input class="govuk-radios__input" id="contact" name="decision1" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decision", "Reject") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Reject
             </label>
@@ -393,10 +393,10 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include a note explaining this decision for audit purposes. 
             </div>
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
            <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision" type="radio" value="Withdraw" data-aria-controls="conditional-decision4" {{ checked("decision", "Withdraw") }}>
+            <input class="govuk-radios__input" id="contact" name="decision1" type="radio" value="Withdraw" data-aria-controls="conditional-decision4" {{ checked("decision", "Withdraw") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Withdraw
             </label>
@@ -406,18 +406,18 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include a note explaining this decision for audit purposes. 
             </div>
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail1" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail1']}}</textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         </div>
       </fieldset>
     </div>
     <br>
 <button type="submit" class="govuk-button" data-module="govuk-button">
-  Save
+  Confirm
 </button>
 
       {% elseif (data.caseStage === 'agree') %}
-<form action="/tasklistStage1" method="post">
+<form action="/aggSent1" method="post">
 <p>Draft agreement is live and can be accepted by the customer.</p>
   <h2 class="govuk-heading-m">Draft agreement review tasks</h2>
   <ul class="govuk-task-list">
@@ -466,38 +466,39 @@
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
          Decision
         </legend>
-{% if (data.AgreeSChecked) %} 
+        {% if (data.decisionAgreeTask2) %} 
 
-{% else %}
+
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Agreement sent" data-aria-controls="conditional-decision3" {{ checked("decisionAg", "Agreement sent") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Agreement sent" data-aria-controls="conditional-decision1" {{ checked("decisionAg", "Agreement sent") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Agreement sent
             </label>
           </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision1">
             <p>Rejection reason note</p>
             <div id="more-detail-hint" class="govuk-hint">
               You must include a note explaining this decision for audit purposes. 
             </div>
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail2']}}</textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         </div>
+        {% else %}
          {% endif %}
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decisionAg", "Reject") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Reject" data-aria-controls="conditional-decision2" {{ checked("decisionAg", "Reject") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Reject
             </label>
           </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision2">
             <p>Rejection reason note</p>
             <div id="more-detail-hint" class="govuk-hint">
               You must include a note explaining this decision for audit purposes. 
             </div>
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail2']}}</textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         </div>
         <div class="govuk-radios__item">
@@ -511,13 +512,47 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include a note explaining this decision for audit purposes. 
             </div>
-            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint">{{ data['moreDetail2']}}</textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
       </fieldset>
     </div>
     <button type="submit" class="govuk-button" data-module="govuk-button">
-      Save
+      Confirm
     </button>
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header custom-width-120" aria-sort="ascending">Date</th>
+      <th scope="col" class="govuk-table__header " aria-sort="none">Decision</th>
+
+      <th scope="col" class="govuk-table__header notes-width">Note</th>
+
+      <th scope="col" class="govuk-table__header custom-width-110" aria-sort="none">Added by</th>
+
+    </tr>
+  </thead> 
+
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">25th Sept 2025</td>
+
+      <td class="govuk-table__cell">
+        {{ data['decision1']}}
+      </td>
+      <td class="govuk-table__cell">
+        {{ data['filteredReviewNote']}}
+      </td>
+
+      <td class="govuk-table__cell"> A Jones</td>
+
+
+    </tr>
+  </tbody>
+</table>
 
     {% elseif (data.caseStage === 'agree2') %}
 
@@ -559,13 +594,110 @@
       Withdraw
     </button>
   </div>
+    <table class="govuk-table" data-module="moj-sortable-table">
 
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header custom-width-120" aria-sort="ascending">Date</th>
+      <th scope="col" class="govuk-table__header " aria-sort="none">Decision</th>
+
+      <th scope="col" class="govuk-table__header notes-width">Note</th>
+
+      <th scope="col" class="govuk-table__header custom-width-110" aria-sort="none">Added by</th>
+
+    </tr>
+  </thead> 
+
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">25th Sept 2025</td>
+
+      <td class="govuk-table__cell">
+        {{ data['decision1']}}
+      </td>
+      <td class="govuk-table__cell">
+        {{ data['filteredReviewNote']}}
+      </td>
+
+      <td class="govuk-table__cell"> A Jones</td>
+
+
+    </tr>
+      <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">26th Sept 2025</td>
+
+      <td class="govuk-table__cell">
+        {{ data['decisionAg']}}
+      </td>
+      <td class="govuk-table__cell">
+        {{ data['filteredAggNote']}}
+      </td>
+
+      <td class="govuk-table__cell"> A Jones</td>
+
+
+    </tr>
+  </tbody>
+</table>
 
     {% elseif (data.caseStage === 'pay') %}
       
     <h2 class="govuk-heading-m">Post-agreement monitoring and compliance tasks</h2>
     <p>There are no tasks to complete yet.</p>
 
+    <table class="govuk-table" data-module="moj-sortable-table">
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header custom-width-120" aria-sort="ascending">Date</th>
+      <th scope="col" class="govuk-table__header " aria-sort="none">Decision</th>
+
+      <th scope="col" class="govuk-table__header notes-width">Note</th>
+
+      <th scope="col" class="govuk-table__header custom-width-110" aria-sort="none">Added by</th>
+
+    </tr>
+  </thead> 
+
+  <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">25th Sept 2025</td>
+
+      <td class="govuk-table__cell">
+        {{ data['decision1']}}
+      </td>
+      <td class="govuk-table__cell">
+        {{ data['filteredReviewNote']}}
+      </td>
+
+      <td class="govuk-table__cell"> A Jones</td>
+
+
+    </tr>
+      <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">26th Sept 2025</td>
+
+      <td class="govuk-table__cell">
+        {{ data['decisionAg']}}
+      </td>
+      <td class="govuk-table__cell">
+        {{ data['filteredAggNote']}}
+      </td>
+
+      <td class="govuk-table__cell"> A Jones</td>
+
+
+    </tr>
+  </tbody>
+</table>
 
     {% endif %}
   </fieldset>

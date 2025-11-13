@@ -29,7 +29,7 @@
     </div>
     <div style="display: flex; justify-content: flex-end;">
       <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
-        Rerun rules
+        Run calculations again
       </button>
     </div>
   </div>
@@ -147,7 +147,7 @@
 
 
     <h2 class="govuk-heading-m">
-         Record check outcome
+         Outcome
       </h2>
 
 
@@ -244,7 +244,8 @@
 
 <button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
  Confirm
-</button>{% endif %}
+</button><br>
+<a href="tasklist-stage" class="govuk-link">Cancel and return</a>{% endif %}
 {% if (data.task3Note) %}
 <h2 class="govuk-heading-m">Note history</h2>
 

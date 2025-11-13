@@ -44,6 +44,12 @@ router.get('/app-approve1', function (req, res) {
     req.session.data.caseApproved = 'yes';
     req.session.data.agreementStage = 'yes';
     }
+   req.session.data.filteredReviewNote = stripEmptyAndNulls(req.session.data.reviewNote); 
+   res.redirect('/tasklistStage1');
+});
+
+router.get('/aggSent1', function (req, res) {
+   req.session.data.filteredAggNote = stripEmptyAndNulls(req.session.data.moreDetail2); 
    res.redirect('/tasklistStage1');
 });
 
