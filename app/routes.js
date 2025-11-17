@@ -39,18 +39,51 @@ router.get('/failTest1', function (req, res) {
   res.redirect('/FRPS-PB-D1/home');
 });
 
-router.get('/app-approve1', function (req, res) {
-  if (req.session.data.decision === 'Approve') {
-    req.session.data.caseApproved = 'yes';
-    req.session.data.agreementStage = 'yes';
-    }
-   req.session.data.filteredReviewNote = stripEmptyAndNulls(req.session.data.reviewNote); 
-   res.redirect('/tasklistStage1');
+
+router.get('/app-approve1', function (req, res) { 
+    switch (req.session.data.decision1) {
+    case 'Approve':
+        req.session.data.caseApproved = 'yes';
+        req.session.data.agreementStage = 'yes';
+       req.session.data.filteredReviewNote = stripEmptyAndNulls(req.session.data.reviewNote); 
+    return res.redirect('/tasklistStage1');    
+    case 'Reject':
+        req.session.data.caseStage = 'reject'; 
+        req.session.data.caseStatus = 'Rejected';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--red';  
+        break;
+    case 'Withdraw':
+        req.session.data.caseStage = 'withdraw'; 
+        req.session.data.caseStatus = 'Withdrawn';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--orange';    
+        break;
+    case 'Put on hold':
+        req.session.data.caseStage = 'on-hold'; 
+        req.session.data.caseStatus = 'On hold';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--yellow';    
+        break;
+    };
+    res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
-router.get('/aggSent1', function (req, res) {
-   req.session.data.filteredAggNote = stripEmptyAndNulls(req.session.data.moreDetail2); 
-   res.redirect('/tasklistStage1');
+
+router.get('/aggSent1', function (req, res) { 
+    switch (req.session.data.decisionAg) {
+    case 'Agreement sent':
+        req.session.data.filteredAggNote = stripEmptyAndNulls(req.session.data.moreDetail2);
+    return res.redirect('/tasklistStage1');    
+    case 'Reject':
+        req.session.data.caseStage = 'reject'; 
+        req.session.data.caseStatus = 'Rejected';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--red';  
+        break;
+    case 'Withdraw':
+        req.session.data.caseStage = 'withdraw'; 
+        req.session.data.caseStatus = 'Withdrawn';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--orange';    
+        break;
+    };
+    res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
 router.get('/review-Passed2', function (req, res) { 

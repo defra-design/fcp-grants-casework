@@ -230,7 +230,7 @@
           <textarea class="govuk-textarea" id="more-detail1" name="task6Note" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% endif %} 
           </div>
-          <div class="govuk-radios__item">
+          <!--<div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decisionTask6" type="radio" value="Note" data-aria-controls="conditional-decision5" >
             <label class="govuk-label govuk-radios__label" for="contact">
               Just add a note
@@ -242,7 +242,7 @@
           {% else %}
           <textarea class="govuk-textarea" id="more-detail1" name="task6Note" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% endif %} 
-          </div>
+          </div> -->
         </div>
       </fieldset>
     </div>
@@ -252,7 +252,7 @@
 </button><br>
 <a href="tasklist-stage" class="govuk-link">Cancel and return</a>
 {% if (data.task6Note) %}
-<h2 class="govuk-heading-m">Note history</h2>
+<h2 class="govuk-heading-m">Outcome history</h2>
 
 <table class="govuk-table" data-module="moj-sortable-table">
 
@@ -261,7 +261,7 @@
     <tr class="govuk-table__row">
 
       <th scope="col" class="govuk-table__header custom-width-120" aria-sort="ascending">Date</th>
-      <th scope="col" class="govuk-table__header " aria-sort="none">Action</th>
+      <th scope="col" class="govuk-table__header " aria-sort="none">Outcome</th>
 
       <th scope="col" class="govuk-table__header notes-width">Note</th>
 

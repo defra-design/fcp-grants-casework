@@ -519,7 +519,7 @@
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Confirm
     </button>
-    <table class="govuk-table" data-module="moj-sortable-table">
+    <!--<table class="govuk-table" data-module="moj-sortable-table">
 
 
   <thead class="govuk-table__head">
@@ -552,7 +552,7 @@
 
     </tr>
   </tbody>
-</table>
+</table> -->
 
     {% elseif (data.caseStage === 'agree2') %}
 
@@ -594,6 +594,7 @@
       Withdraw
     </button>
   </div>
+  <!--
     <table class="govuk-table" data-module="moj-sortable-table">
 
 
@@ -642,14 +643,14 @@
 
     </tr>
   </tbody>
-</table>
+</table> -->
 
     {% elseif (data.caseStage === 'pay') %}
       
     <h2 class="govuk-heading-m">Post-agreement monitoring and compliance tasks</h2>
     <p>There are no tasks to complete yet.</p>
 
-    <table class="govuk-table" data-module="moj-sortable-table">
+   <!-- <table class="govuk-table" data-module="moj-sortable-table">
 
 
   <thead class="govuk-table__head">
@@ -697,9 +698,22 @@
 
     </tr>
   </tbody>
-</table>
+</table> -->
 
-    {% endif %}
+
+       {% elseif (data.caseStage === 'withdrawn') %}
+      
+    <h2 class="govuk-heading-m">Application withdrawn</h2>
+    <p>There are no tasks to complete.</p>
+
+       {% elseif (data.caseStage === 'reject') %}
+      
+    <h2 class="govuk-heading-m">Application rejected</h2>
+    <p>There are no tasks to complete.</p>
+
+
+
+        {% endif %}
   </fieldset>
 </div>
 
