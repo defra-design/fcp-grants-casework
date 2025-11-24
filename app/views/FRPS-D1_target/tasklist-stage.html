@@ -416,6 +416,116 @@
   Confirm
 </button>
 
+{% elseif (data.caseStage === 'on-hold') %}
+<form action="/resume1" method="post">
+      <p>You cannot do any work on tasks whilst the case is on hold.</p>
+      <h2 class="govuk-heading-m">Application review tasks</h2>
+      <ul class="govuk-task-list">
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-1" aria-describedby="company-details-1-status">
+        Check customer details
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status"> 
+    {% if (data.decisionTask1) %}      
+      {% if (data.decisionTask1 === 'Accepted') %} {{ data['detailsStatus'] }} 
+      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatus'] }}</strong>
+      {% endif %}
+    {% else %}
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    {% endif %}
+    </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-2" aria-describedby="company-details-1-status">
+        Review land parcel rule checks
+      </a>
+    </div>
+    <div class="govuk-task-list__status" id="company-details-1-status">
+    {% if (data.decisionTask2) %}    
+        {% if (data.decisionTask2 === 'Accepted') %} {{ data['calcsStatus'] }} 
+        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatus'] }}</strong>
+        {% endif %} 
+    {% else %}
+      <strong class="govuk-tag govuk-tag--blue">
+        Incomplete
+      </strong>
+    {% endif %}
+    </div>
+  </li>
+
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-3" aria-describedby="company-details-1-status">
+        Check if SSSI consent has been requested
+      </a>
+    </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+      {% if (data.decisionTask3) %}  
+        {% if (data.decisionTask3 === 'Accepted') %} {{ data['sssiStatus'] }} 
+        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatus'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      <a class="govuk-link govuk-task-list__link" href="task-5" aria-describedby="company-details-1-status">
+        Check payment amount
+      </a>
+    </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+      {% if (data.decisionTask5) %}  
+        {% if (data.decisionTask5 === 'Accepted') %} {{ data['paymentStatus'] }} 
+        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatus'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+  </li>
+
+  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+    <div class="govuk-task-list__name-and-hint">
+      {% if (data.financeOfficer === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-6-fo" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">{% endif %}
+        Review scheme budget as a finance officer
+      </a>
+    </div>
+      <div class="govuk-task-list__status" id="company-details-1-status">
+      {% if (data.decisionTask6) %}  
+        {% if (data.decisionTask6 === 'Accepted') %} {{ data['budgetStatus'] }} 
+        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatus'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+  </li>
+
+
+</ul>
+
+
+    <br>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Resume
+</button>
+
       {% elseif (data.caseStage === 'agree') %}
 <form action="/aggSent1" method="post">
 <p>Draft agreement is live and can be accepted by the customer.</p>

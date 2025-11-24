@@ -66,6 +66,14 @@ router.get('/app-approve1', function (req, res) {
     res.redirect('/FRPS-D1_target/tasklist-stage');
 });
 
+router.get('/resume1', function (req, res) {
+    req.session.data.caseStage = 'review';
+    req.session.data.caseStatus = 'In review';    
+    req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue'; 
+  res.redirect('/FRPS-D1_target/tasklist-stage');
+});
+
+
 
 router.get('/aggSent1', function (req, res) { 
     switch (req.session.data.decisionAg) {
