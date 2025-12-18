@@ -723,7 +723,7 @@ router.get('/task2T2Am', function (req, res) {
         req.session.data.amend2Tag = 'govuk-tag';
         req.session.data.amend2Status = 'Incomplete'
     };
-    req.session.data.filteredNoteAm2 = stripEmptyAndNulls(req.session.data.task2AmNote);
+    req.session.data.filteredNoteAm2 = stripEmptyAndNulls(req.session.data.taskAm2Note);
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
