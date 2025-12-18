@@ -20,7 +20,7 @@
   
 {% endblock %}
 
-{% block content %} 
+{% block content %}
 
 
 <form action="assignment" method="post">
@@ -76,14 +76,18 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage">100300</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100300</a></td>
               <td class="govuk-table__cell">Berkshire Estate Limited</td>
               <td class="govuk-table__cell">112849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
               <td class="govuk-table__cell">
-                {% if (data.caseStage) %}<strong class="{{ data['caseStatusTag']}}">{{ data['caseStatus']}}</strong>
+                {% if (data.caseApproved === 'yes') %}<strong class="govuk-tag govuk-tag--green">Approved</strong>
                 {% else %}
-                    <strong class="govuk-tag govuk-tag--grey">Application Application received</strong>
+                  {% if (data.caseAssigned === 'yes') %}
+                    <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                  {% else %}
+                    <strong class="govuk-tag govuk-tag--grey">Received</strong>
+                  {% endif %}
                 {% endif %}
               </td>
               {% if (data.caseAssigned === 'yes') %}
@@ -104,13 +108,13 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100301</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100301</a></td>
               <td class="govuk-table__cell">DAVID ROGER-HOGGS</td>
               <td class="govuk-table__cell">112849000</td>
-              <td class="govuk-table__cell">11 Oct 2025</td>
+              <td class="govuk-table__cell">11 Sept 2025</td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--grey">
-                Application received
+                Received
               </strong>
               </td>
               <td class="govuk-table__cell">Not assigned</td>
@@ -129,12 +133,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100302</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100302</a></td>
               <td class="govuk-table__cell">Alton Farms</td>
               <td class="govuk-table__cell">112841023</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
-                Application received
+                Received
               </strong>
               </td>
               <td class="govuk-table__cell">Not assigned</td>
@@ -152,12 +156,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100303</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100303</a></td>
               <td class="govuk-table__cell">M TUCKER & PARTNERS</td>
               <td class="govuk-table__cell">112841024</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                In review
+                In progress
               </strong>
               </td>
               <td class="govuk-table__cell">M Walker</td>
@@ -174,12 +178,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100304</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100304</a></td>
               <td class="govuk-table__cell">SF RICHARDS & SONS</td>
               <td class="govuk-table__cell">113849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                In review 
+                In progress 
               </strong>
               </td>
               <td class="govuk-table__cell">M Walker</td>
@@ -196,12 +200,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100305</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100305</a></td>
               <td class="govuk-table__cell">MESSRS J WICKHAM</td>
               <td class="govuk-table__cell">110049012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                In review 
+                In progress 
               </strong>
               </td>
               <td class="govuk-table__cell">M Walker</td>
@@ -218,12 +222,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100306</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100306</a></td>
               <td class="govuk-table__cell">T and F Farms</td>
               <td class="govuk-table__cell">102849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                In review
+                In progress
               </strong>
               </td>
               <td class="govuk-table__cell">E Carter</td>
@@ -240,12 +244,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100307</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100307</a></td>
               <td class="govuk-table__cell">J RENNER AND SONS</td>
               <td class="govuk-table__cell">012849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                In review 
+                In progress 
               </strong>
               </td>
               <td class="govuk-table__cell">E Carter</td>
@@ -262,10 +266,10 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100308</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100308</a></td>
               <td class="govuk-table__cell">North Sussex Farm Partnership</td>
               <td class="govuk-table__cell">112850012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
                 On hold
               </strong>
@@ -284,10 +288,10 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100309</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100309</a></td>
               <td class="govuk-table__cell">Harvest Horizon</td>
               <td class="govuk-table__cell">112846012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
                 On hold 
               </strong>
@@ -307,12 +311,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100310</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100310</a></td>
               <td class="govuk-table__cell">J F HODGES</td>
               <td class="govuk-table__cell">112849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                Agreement drafted
+              <td class="govuk-table__cell">10 Sept 2025</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Approved 
               </strong>
               </td>
               <td class="govuk-table__cell">E Carter</td>
@@ -330,12 +334,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100311</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100311</a></td>
               <td class="govuk-table__cell">Fresh Fields Farm</td>
               <td class="govuk-table__cell">112849019</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                Agreement drafted
+              <td class="govuk-table__cell">10 Sept 2025</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                Approved
               </strong>
               </td>
               <td class="govuk-table__cell">E Carter</td>
@@ -353,11 +357,11 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100312</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100312</a></td>
               <td class="govuk-table__cell">Greater Massingham Farm</td>
               <td class="govuk-table__cell">022849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">
+              <td class="govuk-table__cell">10 Sept 2025</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--mid-grey">
                 Rejected
               </strong>
               </td>
@@ -380,11 +384,11 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100313</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100313</a></td>
               <td class="govuk-table__cell">CE FAIRFAX & PARTNERS</td>
               <td class="govuk-table__cell">003849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">
+              <td class="govuk-table__cell">10 Sept 2025</td>
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--mid-grey">
                 Rejected
               </strong>
               </td>
@@ -406,10 +410,10 @@
               </div> 
               </td>
 
-             <td class="govuk-table__cell"><a href="tasklist-stage1">100314</a></td>
+             <td class="govuk-table__cell"><a href="tasklist">100314</a></td>
               <td class="govuk-table__cell">VW RICHARDS & PARTNERS</td>
               <td class="govuk-table__cell">187849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--orange">
                 Withdrawn
               </strong>
@@ -432,13 +436,13 @@
               </div> 
               </td>
 
-             <td class="govuk-table__cell"><a href="tasklist-stage1">100315</a></td>
+             <td class="govuk-table__cell"><a href="tasklist">100315</a></td>
               <td class="govuk-table__cell">GRAHAM & SONS</td>
               <td class="govuk-table__cell">188849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
 
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                Agreement offered
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+                Agreement sent
               </strong>
               </td>
               <td class="govuk-table__cell">J Jones</td>
@@ -457,13 +461,13 @@
               </div> 
               </td>
 
-             <td class="govuk-table__cell"><a href="tasklist-stage1">100316</a></td>
+             <td class="govuk-table__cell"><a href="tasklist">100316</a></td>
               <td class="govuk-table__cell">Sunrise Agriculture</td>
               <td class="govuk-table__cell">112865012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
 
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                Agreement offered
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
+                Agreement sent
               </strong>
               </td>
               <td class="govuk-table__cell">J Jones</td>
@@ -483,12 +487,12 @@
               </div> 
               </td>
 
-             <td class="govuk-table__cell"><a href="tasklist-stage1">100317</a></td>
+             <td class="govuk-table__cell"><a href="tasklist">100317</a></td>
               <td class="govuk-table__cell">Buttermere Farm Ltd</td>
               <td class="govuk-table__cell">116549012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
 
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--light-green">
                 Agreement accepted
               </strong>
               </td>
@@ -509,12 +513,12 @@
               </div> 
               </td>
 
-             <td class="govuk-table__cell"><a href="tasklist-stage1">100318</a></td>
+             <td class="govuk-table__cell"><a href="tasklist">100318</a></td>
               <td class="govuk-table__cell">Moors Farm Ltd</td>
               <td class="govuk-table__cell">612849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
 
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--light-green">
                 Agreement accepted
               </strong>
               </td>
@@ -535,12 +539,12 @@
               </div> 
               </td>
 
-             <td class="govuk-table__cell"><a href="tasklist-stage1">100319</a></td>
+             <td class="govuk-table__cell"><a href="tasklist">100319</a></td>
               <td class="govuk-table__cell">Ennerdale Farm Ltd</td>
               <td class="govuk-table__cell">712849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
 
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--light-green">
                 Agreement accepted
               </strong>
               </td>
@@ -560,12 +564,12 @@
               </div> 
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage1">100320</a></td>
+              <td class="govuk-table__cell"><a href="tasklist">100320</a></td>
               <td class="govuk-table__cell">Eskdale Farm Ltd</td>
               <td class="govuk-table__cell">912849012</td>
-              <td class="govuk-table__cell">10 Oct 2025</td>
+              <td class="govuk-table__cell">10 Sept 2025</td>
     
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--light-green">
                 Agreement accepted
               </strong>
               </td>

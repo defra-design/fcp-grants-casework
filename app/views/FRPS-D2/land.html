@@ -15,20 +15,21 @@
           </a>
       </div>
     </div>
-  </header> 
+  </header>
   <div class="lg-div"> 
     <div class="govuk-width-container">
-      {{ govukBackLink({ 
+      {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist-team"
+        href: "javascript:history.back()"
       }) }}
-      <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
+      <h2 class="govuk-heading-m">Valley Farm</h2>
      
       <div style="display: flex; gap: 20px;">
-        <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
-        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>  In progress</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">SBI:</strong> 112849012</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Reference:</strong>   1781288</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Grant: </strong>WM R3</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Date received:</strong>  1 Jul 2024</p></div>        
+        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>  Not started</p></div>
       </div>
 
 
@@ -52,54 +53,52 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link"  href="tasklist" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist-stage" aria-current="true">
               Tasks
             </a>
           </li>
-          <!--
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="calculations">
-              Calculations
-            </a>
-          </li>
-          -->           
+
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="application">
               Application
             </a>
           </li>
-          <!--
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="known-data">
-              Business details
-            </a>
-
-          </li> -->
-          <li class="govuk-service-navigation__item-c2 govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="land">
-              <strong class="govuk-service-navigation__active-fallback">Land</strong>
+          
+          <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="calculations2">
+              Calculations
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="timeline">
-              Timeline
+
+          <li class="govuk-service-navigation__item-c2 govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="land">
+             <strong class="govuk-service-navigation__active-fallback">Land</strong>
             </a>
-          </li>          
+          </li>
+          <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
+             Timeline
+            </a>
+          </li>
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="notes">
               Notes
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="#">
+    
+          <li class="govuk-service-navigation__item-c2">
+            <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
-          </li>
-          <!-- <li class="govuk-service-navigation__item-c2 ">
+          </li> 
+          {% if (data.agreementStage) %} 
+           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
             </a>
-          </li> -->
+          </li>
+          {% else %} 
+          {% endif %} 
         </ul>
       </nav>
     </div>
@@ -116,552 +115,37 @@
     Land details
       </h1>
     </legend>
-
-    <p><strong>Source</strong>: Rural Payments service.<br>
-    <strong>Last updated</strong>: 12 Spet 2024 by G Aplin</p>
-
-  <div class="govuk-notification-banner govuk-notification-banner--fail" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      ! Issue !
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      Land details have changed since application
-    </h3>
-    <p class="govuk-body">A variation request is required.</p>
-  </div>
-</div>
-
-<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Parcel ID SO3757 3059
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
-      <h2 class="govuk-heading-s">Overview</h2>
-<table class="govuk-table">
+    <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Parcel and area</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel ID</th>
-      <th scope="col" class="govuk-table__header">Total size</th>
+      <th scope="col" class="govuk-table__header">Parcel</th>
+      <th scope="col" class="govuk-table__header">Area</th>
+      <th scope="col" class="govuk-table__header">Intersections</th>
       <th scope="col" class="govuk-table__header">Percentage holding</th>
-      <th scope="col" class="govuk-table__header">Land covers</th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SO3757 3059</th>
-      <td class="govuk-table__cell">100 ha</td>
-      <td class="govuk-table__cell">100%</td>
-      <td class="govuk-table__cell">Arable, Permanent grassland</td>
+      <th scope="row" class="govuk-table__header">SU5407 8566</th>
+      <td class="govuk-table__cell">1.9165 ha</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">-</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">SU5407 8726</th>
+      <td class="govuk-table__cell">0.5654 ha</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">-</td>
+    </tr>
+      <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">SU5407 8878</th>
+      <td class="govuk-table__cell">2.1723 ha</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">-</td>
     </tr>
   </tbody>
 </table>
-
-<h2 class="govuk-heading-s">Sub-heading: Existing actions on parcel</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Action</th>
-      <th scope="col" class="govuk-table__header">Action type</th>
-      <th scope="col" class="govuk-table__header">Scheme</th>
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Application year</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW1: Assess and record hedgerow condition</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Hannah's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW2: Manage hedgerows</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Tash's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-  </tbody>
-</table>
-
-
-<h2 class="govuk-heading-s">Intersections</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Intersection type</th>
-      <th scope="col" class="govuk-table__header">Percentage</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SSSI</th>
-      <td class="govuk-table__cell">75%</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-  </div>
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          Parcel ID SO3757 3064
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-2" class="govuk-accordion__section-content">
-      <h2 class="govuk-heading-s">Overview</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel ID</th>
-      <th scope="col" class="govuk-table__header">Total size</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-      <th scope="col" class="govuk-table__header">Land covers</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SO3757 3064</th>
-      <td class="govuk-table__cell">100 ha</td>
-      <td class="govuk-table__cell">100%</td>
-      <td class="govuk-table__cell">Arable, Permanent grassland</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 class="govuk-heading-s">Sub-heading: Existing actions on parcel</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Action</th>
-      <th scope="col" class="govuk-table__header">Action type</th>
-      <th scope="col" class="govuk-table__header">Scheme</th>
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Application year</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW1: Assess and record hedgerow condition</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Hannah's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW2: Manage hedgerows</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Tash's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-  </div>
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-          Parcel ID SO3757 3069
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-3" class="govuk-accordion__section-content">
-      <h2 class="govuk-heading-s">Overview</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel ID</th>
-      <th scope="col" class="govuk-table__header">Total size</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-      <th scope="col" class="govuk-table__header">Land covers</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SO3757 3069</th>
-      <td class="govuk-table__cell">100 ha</td>
-      <td class="govuk-table__cell">100%</td>
-      <td class="govuk-table__cell">Arable, Permanent grassland</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 class="govuk-heading-s">Sub-heading: Existing actions on parcel</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Action</th>
-      <th scope="col" class="govuk-table__header">Action type</th>
-      <th scope="col" class="govuk-table__header">Scheme</th>
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Application year</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW1: Assess and record hedgerow condition</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Hannah's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW2: Manage hedgerows</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Tash's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-  </div>
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-          Parcel ID SO3757 3072
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-4" class="govuk-accordion__section-content">
-      <h2 class="govuk-heading-s">Overview</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel ID</th>
-      <th scope="col" class="govuk-table__header">Total size</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-      <th scope="col" class="govuk-table__header">Land covers</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SO3757 3072</th>
-      <td class="govuk-table__cell">100 ha</td>
-      <td class="govuk-table__cell">100%</td>
-      <td class="govuk-table__cell">Arable, Permanent grassland</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 class="govuk-heading-s">Sub-heading: Existing actions on parcel</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Action</th>
-      <th scope="col" class="govuk-table__header">Action type</th>
-      <th scope="col" class="govuk-table__header">Scheme</th>
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Application year</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW1: Assess and record hedgerow condition</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Hannah's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW2: Manage hedgerows</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Tash's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-  </div>
-</div>
-
-<!--
-<h1 class="govuk-heading-m">Parcel ID SO3757 3059</h1>
-
-<h2 class="govuk-heading-s">Overview</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel ID</th>
-      <th scope="col" class="govuk-table__header">Total size</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-      <th scope="col" class="govuk-table__header">Land covers</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SO3757 3059</th>
-      <td class="govuk-table__cell">100 ha</td>
-      <td class="govuk-table__cell">100%</td>
-      <td class="govuk-table__cell">Arable, Permanent grassland</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 class="govuk-heading-s">Sub-heading: Existing actions on parcel</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Action</th>
-      <th scope="col" class="govuk-table__header">Action type</th>
-      <th scope="col" class="govuk-table__header">Scheme</th>
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Application year</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW1: Assess and record hedgerow condition</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Hannah's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW2: Manage hedgerows</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Tash's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-  </tbody>
-</table>
-
-
-<h2 class="govuk-heading-s">Intersections</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Intersection type</th>
-      <th scope="col" class="govuk-table__header">Percentage</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SSSI</th>
-      <td class="govuk-table__cell">75%</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 class="govuk-heading-m">Parcel ID SO3757 3064</h1>
-
-<h2 class="govuk-heading-s">Overview</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel ID</th>
-      <th scope="col" class="govuk-table__header">Total size</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-      <th scope="col" class="govuk-table__header">Land covers</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SO3757 3064</th>
-      <td class="govuk-table__cell">100 ha</td>
-      <td class="govuk-table__cell">100%</td>
-      <td class="govuk-table__cell">Arable, Permanent grassland</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 class="govuk-heading-s">Sub-heading: Existing actions on parcel</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Action</th>
-      <th scope="col" class="govuk-table__header">Action type</th>
-      <th scope="col" class="govuk-table__header">Scheme</th>
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Application year</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW1: Assess and record hedgerow condition</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Hannah's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW2: Manage hedgerows</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Tash's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-  </tbody>
-</table>
-
-
-<h2 class="govuk-heading-s">Intersections</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Intersection type</th>
-      <th scope="col" class="govuk-table__header">Percentage</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SSSI</th>
-      <td class="govuk-table__cell">75%</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 class="govuk-heading-m">Parcel ID SO3757 3069</h1>
-
-<h2 class="govuk-heading-s">Overview</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel ID</th>
-      <th scope="col" class="govuk-table__header">Total size</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-      <th scope="col" class="govuk-table__header">Land covers</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SO3757 3069</th>
-      <td class="govuk-table__cell">100 ha</td>
-      <td class="govuk-table__cell">100%</td>
-      <td class="govuk-table__cell">Arable, Permanent grassland</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 class="govuk-heading-s">Sub-heading: Existing actions on parcel</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Action</th>
-      <th scope="col" class="govuk-table__header">Action type</th>
-      <th scope="col" class="govuk-table__header">Scheme</th>
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Application year</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW1: Assess and record hedgerow condition</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Hannah's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW2: Manage hedgerows</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Tash's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-  </tbody>
-</table>
-
-
-<h2 class="govuk-heading-s">Intersections</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Intersection type</th>
-      <th scope="col" class="govuk-table__header">Percentage</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SSSI</th>
-      <td class="govuk-table__cell">75%</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 class="govuk-heading-m">Parcel ID SO3757 3072</h1>
-
-<h2 class="govuk-heading-s">Overview</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel ID</th>
-      <th scope="col" class="govuk-table__header">Total size</th>
-      <th scope="col" class="govuk-table__header">Percentage holding</th>
-      <th scope="col" class="govuk-table__header">Land covers</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SO3757 3059</th>
-      <td class="govuk-table__cell">100 ha</td>
-      <td class="govuk-table__cell">100%</td>
-      <td class="govuk-table__cell">Arable, Permanent grassland</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 class="govuk-heading-s">Sub-heading: Existing actions on parcel</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Action</th>
-      <th scope="col" class="govuk-table__header">Action type</th>
-      <th scope="col" class="govuk-table__header">Scheme</th>
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Application year</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW1: Assess and record hedgerow condition</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Hannah's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">CHRW2: Manage hedgerows</th>
-      <td class="govuk-table__cell">Static</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Tash's funding agreement</td>
-      <td class="govuk-table__cell">2024</td>
-    </tr>
-  </tbody>
-</table>
-
-
-<h2 class="govuk-heading-s">Intersections</h2>
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Intersection type</th>
-      <th scope="col" class="govuk-table__header">Percentage</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">SSSI</th>
-      <td class="govuk-table__cell">75%</td>
-    </tr>
-  </tbody>
-</table> -->
 
 
 

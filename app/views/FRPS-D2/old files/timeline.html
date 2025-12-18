@@ -20,7 +20,7 @@
     <div class="govuk-width-container">
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist-my"
+        href: "caselist-team"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
      
@@ -28,7 +28,7 @@
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
-        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>  In progress</p></div>
       </div>
 
 
@@ -37,7 +37,7 @@
   </div>
   
 {% endblock %} 
- 
+
 
 {% block content %}
 <div class="govuk-service-navigation-white"
@@ -50,28 +50,34 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="tasklist-stage" aria-current="true">
+            <a class="govuk-service-navigation__link" href="tasklist" aria-current="true">
               Tasks
             </a>
           </li>
-
+          <!--
+          <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="calculations">
+              Calculations
+            </a>
+          </li>
+          --> 
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="application">
               Application
             </a>
           </li>
-          
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="calculations2">
-              Calculations
+          <!--
+          <li class="govuk-service-navigation__item-c2">
+            <a class="govuk-service-navigation__link" href="known-data">
+              Business details
             </a>
-          </li>
 
+          </li> 
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="land">
             Land
             </a>
-          </li>
+          </li>-->
           <li class="govuk-service-navigation__item-c2 govuk-service-navigation__item--active">
             <a class="govuk-service-navigation__link" href="#" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Timeline</strong>
@@ -82,20 +88,17 @@
               Notes
             </a>
           </li>
-    
+          <!--
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
-          </li> 
-          {% if (data.agreementStage) %} 
+          </li>
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
             </a>
-          </li>
-          {% else %} 
-          {% endif %} 
+          </li> -->
         </ul>
       </nav>
     </div>

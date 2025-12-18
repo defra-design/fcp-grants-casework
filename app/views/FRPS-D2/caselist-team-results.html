@@ -23,9 +23,8 @@
 {% block content %}
 
 
-<form action="task1" method="post">
-
-      <div class="moj-search">
+<form action="tasklist" method="post">
+ <div class="moj-search">
 
         <div class="govuk-form-group">
         <h2 class="govuk-heading-m">Search for cases</h2>
@@ -34,7 +33,7 @@
             You can search by project ID, business name, status or assignee.
           </div>
 
-          <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+          <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint" value="WM R3">
 
         </div>
 
@@ -71,7 +70,7 @@
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type1-1" name="type1" type="checkbox" value="1" checked>
+              <input class="govuk-checkboxes__input" id="type1-1" name="type1" type="checkbox" value="1" >
               <label class="govuk-label govuk-checkboxes__label" for="type1-1">
                 Adding Value (AV)
               </label>
@@ -79,7 +78,7 @@
             </div>
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type1-2" name="type1" type="checkbox" value="2" checked>
+              <input class="govuk-checkboxes__input" id="type1-2" name="type1" type="checkbox" value="2" >
               <label class="govuk-label govuk-checkboxes__label" for="type1-2">
                 Calf Housing for Health and Welfare (CHHW)
               </label>
@@ -133,7 +132,7 @@
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2-1" name="type2" type="checkbox" value="1" checked>
+              <input class="govuk-checkboxes__input" id="type2-1" name="type2" type="checkbox" value="1">
               <label class="govuk-label govuk-checkboxes__label" for="type2-1">
                 EOI
               </label>
@@ -141,7 +140,7 @@
             </div>
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type2-2" name="type2" type="checkbox" value="2" checked>
+              <input class="govuk-checkboxes__input" id="type2-2" name="type2" type="checkbox" value="2">
               <label class="govuk-label govuk-checkboxes__label" for="type2-2">
                 ECR
               </label>
@@ -173,7 +172,7 @@
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type3-1" name="type3" type="checkbox" value="1" checked>
+              <input class="govuk-checkboxes__input" id="type3-1" name="type3" type="checkbox" value="1">
               <label class="govuk-label govuk-checkboxes__label" for="type3-1">
                 Approved 
               </label>
@@ -181,7 +180,7 @@
             </div>
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type3-2" name="type3" type="checkbox" value="2" checked>
+              <input class="govuk-checkboxes__input" id="type3-2" name="type3" type="checkbox" value="2">
               <label class="govuk-label govuk-checkboxes__label" for="type3-2">
                 Approved for invite
               </label>
@@ -202,7 +201,7 @@
               </label>
             </div>
                         <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type3-5" name="type3" type="checkbox" value="5" checked>
+              <input class="govuk-checkboxes__input" id="type3-5" name="type3" type="checkbox" value="5" >
               <label class="govuk-label govuk-checkboxes__label" for="type3-5">
                 Not started
               </label>
@@ -231,7 +230,7 @@
               </label>
             </div>
                         <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type3-9" name="type3" type="checkbox" value="9" checked>
+              <input class="govuk-checkboxes__input" id="type3-9" name="type3" type="checkbox" value="9">
               <label class="govuk-label govuk-checkboxes__label" for="type3-9">
                 In tech review
               </label>
@@ -239,7 +238,7 @@
             </div>
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type3-10" name="type3" type="checkbox" value="10" checked>
+              <input class="govuk-checkboxes__input" id="type3-10" name="type3" type="checkbox" value="10">
               <label class="govuk-label govuk-checkboxes__label" for="type3-10">
                 Second QC
               </label>
@@ -273,7 +272,7 @@
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+              <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1">
               <label class="govuk-label govuk-checkboxes__label" for="type">
                 Unassigned (4)
               </label>
@@ -281,7 +280,7 @@
             </div>
 
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+              <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
               <label class="govuk-label govuk-checkboxes__label" for="type-2">
                 R Singh (5)
               </label>
@@ -296,7 +295,7 @@
 
             </div>
             <div class="govuk-checkboxes__item custom-width">
-              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+              <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3" checked>
               <label class="govuk-label govuk-checkboxes__label" for="type-3">
                 M Walker (5)
               </label>
@@ -315,38 +314,68 @@
         </button>
   </div>
 </details>
+  <div class="moj-filter__header">
 
+    <div class="moj-filter__header-title">
+      <h2 class="govuk-heading-m">Active search and filters</h2>
+    </div>
 
+    <div class="moj-filter__header-action">
 
+    </div>
+
+  </div>
+  <div class="moj-filter__selected">
+    <div class="moj-filter-container">
+      <h3 class="govuk-heading-s govuk-!-margin-top-2 govuk-!-margin-bottom-2">Search:</h3>
+      <ul class="moj-filter-tags">
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span>WM R3</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-s govuk-!-margin-top-2 govuk-!-margin-bottom-2">Filters:</h3> 
+      <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-2">Status:</p> 
+      <ul class="moj-filter-tags">
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span>On hold</a></li>
+      </ul>
+
+      <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-2">Assignee:</p> 
+      <ul class="moj-filter-tags">
+        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span>M Walker</a></li>
+      </ul>
+    </div> 
+  </div>
+  <br>
 
   <div class="govuk-tabs" data-module="govuk-tabs">
   <ul class="govuk-tabs__list">
-    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-        Your applications (5)
-    </li>
     <li class="govuk-tabs__list-item">
-      <a href="caselist-team">
-        Team applications (16)
+      <a  href="caselist-my">
+        Your applications (5)
       </a>
     </li>
+    <li class="govuk-tabs__list-item  govuk-tabs__list-item--selected">
+
+        Team applications (16)
+
+    </li>
     <li class="govuk-tabs__list-item">
-      <a href="caselist-all">
+      <a  href="caselist-all">
         All applications (50)
       </a>
     </li>
   </ul>
-  <div class="govuk-tabs__panel" id="my-cases">
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="my-cases">
+  
+  </div>
+  <div class="govuk-tabs__panel" id="caselist-team">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full-width govuk-!-margin-left-3 govuk-!-margin-right-3">
        
       <div class="govuk-form-group">
         <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
-  Reassign case
-</button>
-
-          
+          Reassign case
+        </button>          
         <table class="govuk-table" data-module="moj-sortable-table" data-id-prefix="cases-">
-
 
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -357,10 +386,11 @@
 
               <th scope="col" class="govuk-table__header" aria-sort="ascending">Ref</th>
               <th scope="col" class="govuk-table__header" aria-sort="none">Grant</th>
-              <th scope="col" class="govuk-table__header" aria-sort="none">Business</th>
+              <th scope="col" class="govuk-table__header custom-width-110" aria-sort="none">Business</th>
               <th scope="col" class="govuk-table__header" aria-sort="none">Priority</th>
               <th scope="col" class="govuk-table__header govuk-table__header--date" aria-sort="none">Stage</th>
-              <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+              <th scope="col" class="govuk-table__header custom-width" aria-sort="none">Status</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Assignee</th>
               <th scope="col" class="govuk-table__header" aria-sort="none">Flag</th>
 
             </tr>
@@ -368,130 +398,105 @@
 
           <tbody class="govuk-table__body">
 
-          <tr class="govuk-table__row">
+                 <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                 <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                  <input type="checkbox" class="govuk-checkboxes__input" id="cases-1781288">
-                  <label class="govuk-label govuk-checkboxes__label" for="cases-1781288">
-                    <span class="govuk-visually-hidden">Select 1781288</span>
+                  <input type="checkbox" class="govuk-checkboxes__input" id="cases-178000">
+                  <label class="govuk-label govuk-checkboxes__label" for="cases-178000">
+                    <span class="govuk-visually-hidden">Select 178000</span>
                   </label>
                 </div>
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage">1781288</a></td>
+              <td class="govuk-table__cell"><a href="task1">178000</a></td>
               <td class="govuk-table__cell">WM R3</td>
-              <td class="govuk-table__cell">Valley Farm</td>
-              <td class="govuk-table__cell">Critical<br>5 days left</td>
-              <td class="govuk-table__cell">Full appraisal </td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
-                On hold
-              </strong><br><strong class="govuk-tag govuk-tag--neutral">RFI sent</strong>
-              </td>
-              <td class="govuk-table__cell">!NM</td>
- 
-
-            </tr>
-                      <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                  <input type="checkbox" class="govuk-checkboxes__input" id="cases-1781454">
-                  <label class="govuk-label govuk-checkboxes__label" for="cases-1781454">
-                    <span class="govuk-visually-hidden">Select 1781454</span>
-                  </label>
-                </div>
-              </td>
-
-              <td class="govuk-table__cell"><a href="tasklist-stage">1781454</a></td>
-              <td class="govuk-table__cell">WM R3</td>
-              <td class="govuk-table__cell">Harvest Horizon</td>
-              <td class="govuk-table__cell">Critical<br>5 days left</td>
+              <td class="govuk-table__cell">T and F Farms</td>
+              <td class="govuk-table__cell">Critical<br>6 days left</td>
               <td class="govuk-table__cell">Full appraisal </td>
               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
                 On hold
               </strong><br><strong class="govuk-tag govuk-tag--neutral">RFI overdue</strong>
               </td>
-              <td class="govuk-table__cell">FR</td>
-
-
-            </tr>
-                      <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                  <input type="checkbox" class="govuk-checkboxes__input" id="cases-1781669">
-                  <label class="govuk-label govuk-checkboxes__label" for="cases-1781669">
-                    <span class="govuk-visually-hidden">Select 1781669</span>
-                  </label>
-                </div>
-              </td>
-
-              <td class="govuk-table__cell"><a href="tasklist-stage">1781669</a></td>
-              <td class="govuk-table__cell">WM R3</td>
-              <td class="govuk-table__cell">Fresh Fields Farm</td>
-              <td class="govuk-table__cell">Medium <br>7 weeks left </td>
-              <td class="govuk-table__cell">ECR</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                QC 
-              </strong>
-              </td>
+              <td class="govuk-table__cell">M Walker</td>
               <td class="govuk-table__cell"> </td>
 
 
             </tr>
-                      <tr class="govuk-table__row">
+                             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
                 <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                  <input type="checkbox" class="govuk-checkboxes__input" id="cases-1782319">
-                  <label class="govuk-label govuk-checkboxes__label" for="cases-1782319">
-                    <span class="govuk-visually-hidden">Select 1782319</span>
+                  <input type="checkbox" class="govuk-checkboxes__input" id="cases-1781000">
+                  <label class="govuk-label govuk-checkboxes__label" for="cases-1781000">
+                    <span class="govuk-visually-hidden">Select 1781000</span>
                   </label>
                 </div>
               </td>
 
-              <td class="govuk-table__cell"><a href="tasklist-stage">1782319</a></td>
+              <td class="govuk-table__cell"><a href="task1">1781000</a></td>
               <td class="govuk-table__cell">WM R3</td>
-              <td class="govuk-table__cell">Alton Farms</td>
-              <td class="govuk-table__cell">Medium <br>7 weeks left </td>
-              <td class="govuk-table__cell">ECR</td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
-                In review 
-              </strong>
+              <td class="govuk-table__cell">J RENNER AND SONS</td>
+              <td class="govuk-table__cell">Critical<br>6 days left</td>
+              <td class="govuk-table__cell">Full appraisal </td>
+               <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
+                On hold
+              </strong> </strong><br><strong class="govuk-tag govuk-tag--neutral">RFI sent</strong>
               </td>
+              <td class="govuk-table__cell">M Walker</td>
               <td class="govuk-table__cell"> </td>
 
 
             </tr>
-                      <tr class="govuk-table__row">
-              <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
-                <div class="govuk-checkboxes__item govuk-checkboxes--small">
-                  <input type="checkbox" class="govuk-checkboxes__input" id="cases-1782319">
-                  <label class="govuk-label govuk-checkboxes__label" for="cases-1782319">
-                    <span class="govuk-visually-hidden">Select 1782319</span>
-                  </label>
-                </div>
-              </td>
-
-              <td class="govuk-table__cell"><a href="tasklist-stage">1782319</a></td>
-              <td class="govuk-table__cell">WM R3</td>
-              <td class="govuk-table__cell">Alton Farms</td>
-              <td class="govuk-table__cell">Medium <br>7 weeks left</td>
-              <td class="govuk-table__cell">ECR </td>
-              <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--grey">
-                Not started
-              </strong>
-              </td>
-              <td class="govuk-table__cell"> </td>
 
 
-            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+  <!--
+  <nav class="govuk-pagination" aria-label="Pagination">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">
+        Previous<span class="govuk-visually-hidden"> page</span>
+      </span>
+    </a>
   </div>
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="team-cases">
-    
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+        3
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
   </div>
+</nav>
+-->
+  </div>
+
+
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="all-cases">
     
   </div>

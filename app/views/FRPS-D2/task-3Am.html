@@ -117,7 +117,7 @@
     </div>
   </div>
 </div>
-<form action="/task1T2" method="post">
+<form action="/task3T2Am" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -127,19 +127,15 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Customer details review
+       Send instructions to the applicant
       </h1>
     </legend>
 
 
-<ol class="govuk-list govuk-list--number">
-  <li>Go to <a href="application" class="govuk-link">Application</a> to view submitted customer details.</li>
-  <li>Check the submitted details match the details and permissions on the <a href="#" class="govuk-link">Rural Payments service (RPS)</a>.</li>
-  <li>Come back to this page and confirm if the details match.</li>
-</ol>
+  <p>Using the CRM system, send the message you have drafted to the applicant.</p>
 
 
-{% if (data.caseStage === 'review') %} 
+
 
 
 
@@ -153,9 +149,9 @@
         <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Accepted" data-aria-controls="conditional-decision1" >
+            <input class="govuk-radios__input" id="contact" name="decisionTaskAm3" type="radio" value="Confirm" data-aria-controls="conditional-decision1" >
             <label class="govuk-label govuk-radios__label" for="contact">
-              Accept
+              Confirm message sent
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision1">
@@ -163,17 +159,17 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes. 
             </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% if (data.task3AmNote) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task3AmNote2" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="more-detail1" name="task3AmNote" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% endif %} 
          </div>
           
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decisionTask1" type="radio" value="Information requested" data-aria-controls="conditional-decision2" >
+            <input class="govuk-radios__input" id="eligible-2" name="decisionTaskAm3" type="radio" value="There’s a problem" data-aria-controls="conditional-decision2" >
             <label class="govuk-label govuk-radios__label" for="eligible-2">
-              Request information from customer
+             Could not send message
             </label>
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision2">
@@ -181,47 +177,12 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes. 
             </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
-          {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint"></textarea>
-          {% endif %} 
+            {% if (data.task3AmNote) %}
+            <textarea class="govuk-textarea" id="more-detail1" name="task3AmNote2" rows="5" aria-describedby="more-detail-hint"></textarea>
+            {% else %}
+            <textarea class="govuk-textarea" id="more-detail1" name="task3AmNote" rows="5" aria-describedby="more-detail-hint"></textarea>
+            {% endif %} 
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Internal investigation" data-aria-controls="conditional-decision3" >
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Pause for internal investigation
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
-            <h3 class="govuk-heading-s">Explain this outcome</h3>
-            <div id="more-detail-hint" class="govuk-hint">
-              You must include an explanation for auditing purposes. 
-            </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
-          {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint"></textarea>
-          {% endif %} 
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Cannot accept" data-aria-controls="conditional-decision4" >
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Cannot accept
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision4">
-            <h3 class="govuk-heading-s">Explain this outcome</h3>
-            <div id="more-detail-hint" class="govuk-hint">
-              You must include an explanation for auditing purposes. 
-            </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
-          {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint"></textarea>
-          {% endif %} 
-          </div>
-
         </div>
       </fieldset>
     </div>
@@ -230,9 +191,9 @@
  Confirm
 </button><br>
 <a href="tasklist-stage" class="govuk-link">Cancel and return</a>
-{% endif %}
 
-{% if (data.task1Note) %}
+
+{% if (data.task3AmNote) %}
 </fieldset>
 </div>
 </div>
@@ -266,10 +227,10 @@
       <td class="govuk-table__cell">25th Sept 2025</td>
 
       <td class="govuk-table__cell">
-        {{ data['noteActionTask1']}}
+        {{ data['noteActionTaskAm3']}}
       </td>
       <td class="govuk-table__cell">
-        {{ data['filteredNote1']}}
+        {{ data['filteredNoteAm3']}}
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>

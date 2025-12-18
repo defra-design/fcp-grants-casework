@@ -17,39 +17,28 @@
     </div>
   </header> 
   <div class="lg-div"> 
-   
-<div class="govuk-width-container">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <div>
+    <div class="govuk-width-container">
       {{ govukBackLink({
-        text: "Back to applications",
+        text: "Back to applications", 
         href: "caselist-team"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
-    </div>
-    <div style="display: flex; justify-content: flex-end;">
-      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
-        Rerun rules
-      </button>
-    </div>
-  </div>
-
-
      
-      <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; gap: 20px;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
-        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>  In progress</p></div>
       </div>
 
 
     </div>
 
   </div>
+  
 {% endblock %}
 
- 
+
 {% block content %}
 <div class="govuk-service-navigation-white"
   data-module="govuk-service-navigation">
@@ -61,23 +50,23 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link"  href="tasklist-stage" aria-current="true">
+            <a class="govuk-service-navigation__link"  href="tasklist" aria-current="true">
               Tasks
             </a>
           </li> 
-
-
+          <!--
+          <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="calculations">
+              Calculations
+            </a>
+          </li>
+          -->
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="application-data">
               Application
             </a>
           </li>
- 
-          <li class="govuk-service-navigation__item-c2 ">
-            <a class="govuk-service-navigation__link" href="calculations2">
-              Calculations
-            </a>
-          </li>         <!--
+          <!--
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="known-data">
               Business details
@@ -99,20 +88,16 @@
               <strong class="govuk-service-navigation__active-fallback">Notes</strong>
             </a>
           </li>
-          <!--
-          <li class="govuk-service-navigation__item-c2">
+         <!-- <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
-          </li> -->
-          {% if (data.agreementStage) %} 
+          </li>
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
             </a>
-          </li>
-          {% else %} 
-          {% endif %} 
+          </li> -->
 
 
         </ul>
@@ -188,7 +173,7 @@
         Task<a href="#task1"></a>
       </td>
       <td class="govuk-table__cell">
-        Sent Sally an email to check if she wanted to apply for full eligible area for land parcel SO3757 ID0120 on 12 September. Sally {% if (data.readMore === 'Yes') %}  responded on 12 September (see 'customer contact') and said yes. Checked in LIPIS, and updated map in Siti Agri with full eligible area to 3.5125 ha. {% else %} ... <br> <a href="/readMoreT1">read full text</a>{% endif %}
+        Sent Sally an email to check if she wanted to apply for full eligible area for land parcel SO3757 ID0120 on 12 September. Sally {% if (data.readMore === 'Yes') %}  responded on 12 September (see 'customer contact') and said yes. Checked in LIPIS, and updated map in Siti Agri with full eligible area to 3.5125 ha. {% else %} ... <br> <a href="/readMoreT2">read full text</a>{% endif %}
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>

@@ -17,30 +17,18 @@
     </div>
   </header> 
   <div class="lg-div"> 
-   
-<div class="govuk-width-container">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <div>
+    <div class="govuk-width-container">
       {{ govukBackLink({
-        text: "Back to applications",
+        text: "Back to applications", 
         href: "caselist-team"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
-    </div>
-    <div style="display: flex; justify-content: flex-end;">
-      <button type="submit" class="govuk-button moj-search__button" data-module="govuk-button">
-        Rerun rules
-      </button>
-    </div>
-  </div>
-
-
      
-      <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; gap: 20px;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
-        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>  In progress</p></div>
       </div>
 
 
@@ -48,7 +36,7 @@
 
   </div>
   
-{% endblock %} 
+{% endblock %}
 
 
 {% block content %}
@@ -62,12 +50,19 @@
         </button>
         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link"  href="tasklist-stage" aria-current="true">
+            <a class="govuk-service-navigation__link"  href="tasklist" aria-current="true">
               Tasks
             </a>
           </li> 
+          <!--
+          <li class="govuk-service-navigation__item-c2 ">
+            <a class="govuk-service-navigation__link" href="calculations">
+              Calculations
+            </a>
+          </li>
+          -->
           <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="application-data">
+            <a class="govuk-service-navigation__link" href="application">
               Application
             </a>
           </li>
@@ -87,104 +82,81 @@
             <a class="govuk-service-navigation__link" href="timeline">
               Timeline
             </a>
-          </li>          
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="notes">
-              Notes
+          </li>
+          <li class="govuk-service-navigation__item-c2  govuk-service-navigation__item--active">
+            <a class="govuk-service-navigation__link" href="#">
+              <strong class="govuk-service-navigation__active-fallback">Notes</strong>
             </a>
           </li>
-          <!--
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="messages">
               Customer contact
             </a>
-          </li> -->
-          {% if (data.agreementStage) %} 
-           <li class="govuk-service-navigation__item-c2 ">
+          </li>
+          <!-- <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
             </a>
-          </li>
-          {% else %} 
-          {% endif %} 
+          </li> -->
+
+
         </ul>
       </nav>
     </div>
   </div>
 </div>
 <form action="test3" method="post">
+    <div class="govuk-tabs govuk-!-margin-top-6" data-module="govuk-tabs">
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item">
+      <a href="notes">
+        Notes
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        Add a note
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="Notes">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
      
-<div class="govuk-form-group govuk-!-margin-bottom-0">
-  <fieldset class="govuk-fieldset" aria-describedby="message-hint">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Customer contact
+    Add a notes
       </h1>
     </legend>
-    <div class="govuk-inset-text">Use CRM to contact the applicant.</div>
 
-    <table class="govuk-table" >
+    
 
+  <div id="more-detail-hint" class="govuk-hint">
+              All notes will be saved for auditing purposes
+            </div> 
 
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-
-      <th scope="col" class="govuk-table__header reduced-width ">Subject </th>
-
-      <th scope="col" class="govuk-table__header">Date sent</th>
-
-      <th scope="col" class="govuk-table__header" >Action </th>
-
-    </tr>
-  </thead> 
-
-  <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">SSSI consent check reply</td>
-
-      <td class="govuk-table__cell">
-        13 Sept 2025
-      </td>
-
-      <td class="govuk-table__cell"><a href="" class="govuk-link">View</a></td>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+  Save
+</button>
 
 
-    </tr>
 
-    <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">SSSI consent check for SFI application - ref 100300</td>
-
-      <td class="govuk-table__cell">
-        12 Sept 2025
-      </td>
-
-      <td class="govuk-table__cell"><a href="" class="govuk-link">View</a></td>
-
-    </tr>
-
-
-  </tbody>
-</table>
-
-    </div>
-  </div>
-
+</fieldset>
 </div>
 
 
 
 
 
+  </div>
 
 
     </form>
 
-  </div>
 
+</div>
 </div>
 
 

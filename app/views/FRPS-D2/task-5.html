@@ -16,7 +16,7 @@
       </div>
     </div>
   </header> 
-  <div class="lg-div"> 
+    <div class="lg-div"> 
    
 <div class="govuk-width-container">
   <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -47,7 +47,6 @@
     </div>
 
   </div>
-
    
 {% endblock %}
 
@@ -72,15 +71,14 @@
               Application
             </a>
           </li>
-
+        
           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="calculations2">
               Calculations
             </a>
           </li>
 
- 
-          
+
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="land">
               Land
@@ -110,14 +108,13 @@
           </li>
           {% else %} 
           {% endif %} 
-          </li>
 
         </ul>
       </nav>
     </div>
   </div>
 </div>
-<form action="/task1T2" method="post">
+<form action="/task5T2" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -127,19 +124,31 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-        Customer details review
+        Check payment amount
       </h1>
     </legend>
 
 
-<ol class="govuk-list govuk-list--number">
-  <li>Go to <a href="application" class="govuk-link">Application</a> to view submitted customer details.</li>
-  <li>Check the submitted details match the details and permissions on the <a href="#" class="govuk-link">Rural Payments service (RPS)</a>.</li>
-  <li>Come back to this page and confirm if the details match.</li>
-</ol>
+
+    <p>To check payment amount:
+      <ol class="govuk-list govuk-list--number">
+        <li>Check the payment section of the <a href="application" class="govuk-link">application</a> and make a note of the:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>hectares per funded action</li>
+            <li>annual payments per funded action</li>
+            <li>per hectare payment rate per funded action</li>
+          </ul>
+        </li>
+        <li>Search how much the funded action pays per hectare on <a href="https://www.gov.uk/find-funding-for-land-or-farms" class="govuk-link">Find funding for land or farms</a> - check it matches the rate in the application</li>
+        <li>Multiply the total hectares for each funded action by the payment rate per hectare</li>
+        <li>Check your figure matches the total yearly payment in the application </li>
+      </ol>
+    </p>
+
+    <div class="govuk-inset-text">Payment amounts are rounded to two decimal places per line. This can lead to small differences with manual checks.</div>
 
 
-{% if (data.caseStage === 'review') %} 
+    {% if (data.caseStage === 'review') %} 
 
 
 
@@ -147,13 +156,14 @@
          Outcome
       </h2>
 
-    
+
+
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
         <div class="govuk-radios" data-module="govuk-radios">
         
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Accepted" data-aria-controls="conditional-decision1" >
+            <input class="govuk-radios__input" id="contact" name="decisionTask5" type="radio" value="Accepted" data-aria-controls="conditional-decision1" >
             <label class="govuk-label govuk-radios__label" for="contact">
               Accept
             </label>
@@ -163,15 +173,15 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes. 
             </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% if (data.task5Note) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task5Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="more-detail1" name="task5Note" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% endif %} 
          </div>
           
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decisionTask1" type="radio" value="Information requested" data-aria-controls="conditional-decision2" >
+            <input class="govuk-radios__input" id="eligible-2" name="decisionTask5" type="radio" value="Information requested" data-aria-controls="conditional-decision2" >
             <label class="govuk-label govuk-radios__label" for="eligible-2">
               Request information from customer
             </label>
@@ -181,14 +191,14 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes. 
             </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% if (data.task5Note) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task5Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="more-detail1" name="task5Note" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% endif %} 
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Internal investigation" data-aria-controls="conditional-decision3" >
+            <input class="govuk-radios__input" id="contact" name="decisionTask5" type="radio" value="Internal investigation" data-aria-controls="conditional-decision3" >
             <label class="govuk-label govuk-radios__label" for="contact">
               Pause for internal investigation
             </label>
@@ -198,14 +208,14 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes. 
             </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% if (data.task5Note) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task5Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="more-detail1" name="task5Note" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% endif %} 
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionTask1" type="radio" value="Cannot accept" data-aria-controls="conditional-decision4" >
+            <input class="govuk-radios__input" id="contact" name="decisionTask5" type="radio" value="Cannot accept" data-aria-controls="conditional-decision4" >
             <label class="govuk-label govuk-radios__label" for="contact">
               Cannot accept
             </label>
@@ -215,10 +225,10 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes. 
             </div>
-          {% if (data.task1Note) %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          {% if (data.task5Note) %}
+          <textarea class="govuk-textarea" id="more-detail1" name="task5Note2" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% else %}
-          <textarea class="govuk-textarea" id="more-detail1" name="task1Note" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="more-detail1" name="task5Note" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% endif %} 
           </div>
 
@@ -226,23 +236,12 @@
       </fieldset>
     </div>
 
-<button type="submit" class="govuk-button govuk-!-margin-top-0 govuk-button govuk-!-margin-bottom-3" data-module="govuk-button">
+<button type="submit" class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
  Confirm
 </button><br>
-<a href="tasklist-stage" class="govuk-link">Cancel and return</a>
-{% endif %}
-
-{% if (data.task1Note) %}
-</fieldset>
-</div>
-</div>
-</div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full-width">
-
-
-<h2 class="govuk-heading-m govuk-!-margin-top-4">Outcome history</h2>
+<a href="tasklist-stage" class="govuk-link">Cancel and return</a>{% endif %}
+{% if (data.task5Note) %}
+<h2 class="govuk-heading-m">Outcome history</h2>
 
 <table class="govuk-table" data-module="moj-sortable-table">
 
@@ -250,8 +249,8 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
-      <th scope="col" class="govuk-table__header custom-width-180" aria-sort="ascending">Date</th>
-      <th scope="col" class="govuk-table__header custom-width-230 " aria-sort="none">Outcome</th>
+      <th scope="col" class="govuk-table__header custom-width-120" aria-sort="ascending">Date</th>
+      <th scope="col" class="govuk-table__header " aria-sort="none">Outcome</th>
 
       <th scope="col" class="govuk-table__header notes-width">Note</th>
 
@@ -266,10 +265,10 @@
       <td class="govuk-table__cell">25th Sept 2025</td>
 
       <td class="govuk-table__cell">
-        {{ data['noteActionTask1']}}
+        {{ data['noteActionTask5']}}
       </td>
       <td class="govuk-table__cell">
-        {{ data['filteredNote1']}}
+        {{ data['filteredNote5']}}
       </td>
 
       <td class="govuk-table__cell"> A Jones</td>
@@ -278,11 +277,11 @@
     </tr>
   </tbody>
 </table>
+
 {% else %} 
 
+
 {% endif %}
-
-
  
     </form>
 
