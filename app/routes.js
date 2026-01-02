@@ -409,6 +409,11 @@ router.get('/app-approve2', function (req, res) {
         req.session.data.caseStatus = 'Amending';    
         req.session.data.caseStatusTag = 'govuk-tag govuk-tag--orange';  
         break;
+    case 'Return':
+        req.session.data.caseStage = 'return'; 
+        req.session.data.caseStatus = 'Returned to customer';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--orange';  
+        break;
     case 'Withdraw':
         req.session.data.caseStage = 'withdraw'; 
         req.session.data.caseStatus = 'Withdrawn';    
@@ -432,6 +437,11 @@ router.get('/resume2', function (req, res) {
 
 router.get('/amend1', function (req, res) { 
     switch (req.session.data.decisionAm) {
+    case 'Amendment sent':
+        req.session.data.caseStage = 'amendment_sent';   
+        req.session.data.caseStatus = 'Amendment sent';    
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue'; 
+    break;
     case 'Amendment recinded':
         req.session.data.caseStage = 'review';   
         req.session.data.caseStatus = 'In review';    
@@ -449,6 +459,14 @@ router.get('/amend1', function (req, res) {
         req.session.data.caseStatusTag = 'govuk-tag govuk-tag--orange';    
         break;
     };
+    res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+router.get('/amend2', function (req, res) { 
+
+    req.session.data.caseStage = 'amendment_submitted';   
+    req.session.data.caseStatus = 'Case close by amendment';    
+    req.session.data.caseStatusTag = 'govuk-tag govuk-tag--orange'; 
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
