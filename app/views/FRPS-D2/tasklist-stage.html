@@ -655,6 +655,15 @@
     </button>
 
     {% elseif (data.caseStage === 'amend') %}
+
+<h2 class="govuk-heading-m">Amending application</h2>
+
+      <p>Application 100300 has now been withdrawn. </p>
+      <p>A new application will be submitted after amendments have been made in Grants-UI</p>
+      <p><a href="#" class="govuk-link">Amend this application in Grants-UI (opens in new tab)</a>.</p>
+
+<!--
+
 <form action="/Amend1" method="post">
 <p>The application can be amended.</p>
   <h2 class="govuk-heading-m">Amened application tasks</h2>
@@ -770,6 +779,9 @@
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Confirm
     </button>
+
+    -->
+
     <!--<table class="govuk-table" data-module="moj-sortable-table">
 
 
@@ -1086,6 +1098,123 @@
     </tr>
   </tbody>
 </table> -->
+
+{% elseif (data.caseStage === '5month') %}
+<form action="/5month1" method="post">
+<p>The application can be amended.</p>
+  <h2 class="govuk-heading-m">Amened application tasks</h2>
+  <ul class="govuk-task-list">
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="task-1Am" aria-describedby="company-details-1-status">
+          Amend application (100300)  
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status"> 
+      {% if (data.decisionTaskAm1) %}      
+        {% if (data.decisionTaskAm1 === 'Confirm') %} {{ data['amend1Status'] }} 
+        {% else %}<strong class="{{ data['amend1Tag'] }}">{{ data['amend1Status'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+    </li>
+
+
+
+    <li class="govuk-task-list__item govuk-task-list__item--with-link">
+      <div class="govuk-task-list__name-and-hint">
+        <a class="govuk-link govuk-task-list__link" href="task-3Am" aria-describedby="company-details-1-status">
+          Tell customer about amendments
+        </a>
+      </div>
+      <div class="govuk-task-list__status" id="company-details-1-status"> 
+      {% if (data.decisionTaskAm3) %}      
+        {% if (data.decisionTaskAm3 === 'Confirm') %} {{ data['amend3Status'] }} 
+        {% else %}<strong class="{{ data['amend3Tag'] }}">{{ data['amend3Status'] }}</strong>
+        {% endif %}
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue">
+          Incomplete
+        </strong>
+      {% endif %}
+      </div>
+    </li>
+
+  </ul>
+
+<div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+         Decision
+        </legend>
+
+
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          {% if (data.decisionTaskAm1 === 'Confirm' and data.decisionTaskAm3 === 'Confirm') %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Amendment sent" data-aria-controls="conditional-decision1" {{ checked("decision", "Amendment sent") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Amendment tasks completed
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision1">
+            <p>Explain this decision</p>
+            <div id="more-detail-hint" class="govuk-hint">
+              You must include an explanation for auditing purposes.
+            </div>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+          {% endif %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Amendment recinded" data-aria-controls="conditional-decision1a" {{ checked("decisionAm", "Amendment recinded") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Cancel amendments 
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision1a">
+            <p>Explain this decision</p>
+            <div id="more-detail-hint" class="govuk-hint">
+              You must include an explanation for auditing purposes.
+            </div>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Reject" data-aria-controls="conditional-decision2" {{ checked("decisionAm", "Reject") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Reject
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision2">
+            <p>Explain this decision</p>
+            <div id="more-detail-hint" class="govuk-hint">
+              You must include an explanation for auditing purposes.
+            </div>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        </div>
+        <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decisionAm", "Withdraw") }}>
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Withdraw
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-decision3">
+            <p>Explain this decision</p>
+            <div id="more-detail-hint" class="govuk-hint">
+              You must include an explanation for auditing purposes.
+            </div>
+            <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+      </fieldset>
+    </div>
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Confirm
+    </button>
 
     {% elseif (data.caseStage === 'pay') %}
       
