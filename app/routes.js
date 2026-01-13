@@ -402,18 +402,18 @@ router.get('/app-approve2', function (req, res) {
     case 'Reject':
         req.session.data.caseStage = 'reject'; 
         req.session.data.caseStatus = 'Rejected';    
-        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--red';  
-        break;
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--red'; 
+         break;
     case 'Amend':
         req.session.data.caseStage = 'amend'; 
         req.session.data.caseStatus = 'Amending';    
         req.session.data.caseStatusTag = 'govuk-tag govuk-tag--orange';  
-        break;
+        return res.redirect('/FRPS-D2/amend-confirm'); 
     case 'Return':
         req.session.data.caseStage = 'return'; 
         req.session.data.caseStatus = 'Returned to customer';    
         req.session.data.caseStatusTag = 'govuk-tag govuk-tag--orange';  
-        break;
+        return res.redirect('/FRPS-D2/return-confirm');  
     case 'Withdraw':
         req.session.data.caseStage = 'withdraw'; 
         req.session.data.caseStatus = 'Withdrawn';    
@@ -434,6 +434,31 @@ router.get('/resume2', function (req, res) {
     req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue'; 
   res.redirect('/FRPS-D2/tasklist-stage');
 });
+
+router.get('/amendReturn1', function (req, res) {
+    req.session.data.caseStage = 'review';
+    req.session.data.caseStatus = 'In review';    
+    req.session.data.caseStatusTag = 'govuk-tag govuk-tag--blue'; 
+  res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+router.get('/returnConf1', function (req, res) {
+  if (req.session.data.rConf === 'yes') {
+    res.redirect('/FRPS-D2/tasklist-stage');
+    }
+  else 
+    res.redirect('/amendReturn1');
+});
+
+router.get('/amendConf1', function (req, res) {
+  if (req.session.data.aConf === 'yes') {
+    res.redirect('/FRPS-D2/tasklist-stage');
+    }
+  else 
+    res.redirect('/amendReturn1');
+});
+
+
 
 router.get('/amend1', function (req, res) { 
     switch (req.session.data.decisionAm) {
