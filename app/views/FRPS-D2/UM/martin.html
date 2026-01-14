@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+  <header class="defra-internal-header" role="banner">
+    <div class="govuk-width-container">
+      <div class="defra-logo">
+          <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" title="Go to the Defra Design Library homepage" class="defra-logo__link">
+            <span class="c-defra-logo__title govuk-visually-hidden">Department for Environment Food &amp; Rural Affairs</span>
+          </a>
+      </div>
+
+      <div class="defra-internal-service-name">
+          <a href="/" title="Go to the homepage" class="defra-internal-service-name__link">
+            Manage rural grant applications
+          </a>
+      </div>
+    </div>
+  </header>
+  
+{% endblock %}
+
+{% block content %}
+
+<form action="update-roles" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <h1 class="govuk-heading-l">Martin Smith details </h1>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              martin.smith@defra.gov.uk
+            </dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Last login
+            </dt>
+            <dd class="govuk-summary-list__value">
+              14 December 2025, 18:45
+            </dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Identity provider (IDP) roles
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Role 1, Role 2, Role 3
+            </dd>
+
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Manage grants roles
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Role 1, Role 2, Role 3
+            </dd>
+          </div>
+        </dl>
+
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Update roles
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+{% endblock %}

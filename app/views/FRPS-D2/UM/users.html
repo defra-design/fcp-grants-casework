@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+  <header class="defra-internal-header" role="banner">
+    <div class="govuk-width-container">
+      <div class="defra-logo">
+          <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" title="Go to the Defra Design Library homepage" class="defra-logo__link">
+            <span class="c-defra-logo__title govuk-visually-hidden">Department for Environment Food &amp; Rural Affairs</span>
+          </a>
+      </div>
+
+      <div class="defra-internal-service-name">
+          <a href="/" title="Go to the homepage" class="defra-internal-service-name__link">
+            Manage rural grant applications
+          </a>
+      </div>
+    </div>
+  </header>
+  
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-l">Users</h1>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Email</th>
+      <th scope="col" class="govuk-table__header">Last login</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a class="govuk-link" href="martin">Martin Smith</a></th>
+      <td class="govuk-table__cell">martin.smith@defra.gov.uk</td>
+      <td class="govuk-table__cell">14 Dec 2025, 18:45</td>
+    </tr>
+    <tr class="govuk-table__row"><a class="govuk-link" href="martin">Mark Stead</a></th>
+      <td class="govuk-table__cell">mark.stead@defra.gov.uk</td>
+      <td class="govuk-table__cell">14 Dec 2025, 18:45</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
