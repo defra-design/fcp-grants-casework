@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+  <header class="defra-internal-header" role="banner">
+    <div class="govuk-width-container">
+      <div class="defra-logo">
+          <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" title="Go to the Defra Design Library homepage" class="defra-logo__link">
+            <span class="c-defra-logo__title govuk-visually-hidden">Department for Environment Food &amp; Rural Affairs</span>
+          </a>
+      </div>
+
+      <div class="defra-internal-service-name">
+          <a href="/" title="Go to the homepage" class="defra-internal-service-name__link">
+            Manage rural grant applications
+          </a>
+      </div>
+    </div>
+  </header>
+  
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-l">Update PMF-READ</h1>
+<h3 class="govuk-heading-s govuk-!-margin-bottom-0">Code</h3>
+<p>PMF-READ</p>
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-date-input__label govuk-label--s" for="dob-year">
+    Description 
+  </label>
+  <input class="govuk-input govuk-date-input__input govuk-input--width-20" id="description" name="description" type="text" value="Pigs Might Fly read only">
+</div>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h3 class="govuk-fieldset__heading">
+        Assignable 
+      </h3>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked>
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<button type="submit" class="govuk-button govuk-!-margin-top-0 govuk-button govuk-!-margin-bottom-3" data-module="govuk-button">
+ Confirm
+</button><br>
+<a href="roles" class="govuk-link">Cancel without update</a>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

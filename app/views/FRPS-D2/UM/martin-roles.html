@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+  <header class="defra-internal-header" role="banner">
+    <div class="govuk-width-container">
+      <div class="defra-logo">
+          <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs" title="Go to the Defra Design Library homepage" class="defra-logo__link">
+            <span class="c-defra-logo__title govuk-visually-hidden">Department for Environment Food &amp; Rural Affairs</span>
+          </a>
+      </div>
+
+      <div class="defra-internal-service-name">
+          <a href="/" title="Go to the homepage" class="defra-internal-service-name__link">
+            Manage rural grant applications
+          </a>
+      </div>
+    </div>
+  </header>
+  
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-l">Martin Smith roles</h1>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header"></th>
+      <th scope="col" class="govuk-table__header">Role</th>
+      <th scope="col" class="govuk-table__header">Description</th>
+      <th scope="col" class="govuk-table__header">Start date</th>
+      <th scope="col" class="govuk-table__header">End date</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+          <input type="checkbox" class="govuk-checkboxes__input" id="PMF-READ" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="PMF-READ">
+            <span class="govuk-visually-hidden">Select PMF-READ</span>
+          </label>
+        </div>
+      </td>
+      <th scope="row" class="govuk-table__header">PMF-READ</th>
+      <td class="govuk-table__cell">Pigs Might Fly read only</td>
+      <td class="govuk-table__cell"><div class="moj-datepicker" data-module="moj-date-picker">
+          <div class="govuk-form-group govuk-!-margin-bottom-0">
+            <div id="date-hint" class="govuk-hint">
+              For example, 17/5/2024.
+            </div>
+            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+          </div>
+        </div>
+      </td>
+      <td class="govuk-table__cell"><div class="moj-datepicker" data-module="moj-date-picker">
+          <div class="govuk-form-group govuk-!-margin-bottom-0">
+            <div id="date-hint" class="govuk-hint">
+              For example, 17/5/2024.
+            </div>
+            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+          </div>
+        </div>
+      </td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small">
+          <input type="checkbox" class="govuk-checkboxes__input" id="PMF-WRITE" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="PMF-WRITE">
+            <span class="govuk-visually-hidden">Select PMF-WRITE</span>
+          </label>
+        </div>
+      </td>
+      <th scope="row" class="govuk-table__header">PMF-WRITE</th>
+      <td class="govuk-table__cell">Pigs Might Fly read only</td>
+      <td class="govuk-table__cell"><div class="moj-datepicker" data-module="moj-date-picker">
+          <div class="govuk-form-group govuk-!-margin-bottom-0">
+            <div id="date-hint" class="govuk-hint">
+              For example, 17/5/2024.
+            </div>
+            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" >
+          </div>
+        </div>
+      </td>
+      <td class="govuk-table__cell"><div class="moj-datepicker" data-module="moj-date-picker">
+          <div class="govuk-form-group govuk-!-margin-bottom-0">
+            <div id="date-hint" class="govuk-hint">
+              For example, 17/5/2024.
+            </div>
+            <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off">
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
