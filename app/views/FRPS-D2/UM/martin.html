@@ -22,6 +22,20 @@
 
 {% block content %}
 
+<nav class="govuk-breadcrumbs govuk-!-margin-top-0 govuk-!-margin-bottom-5" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="users-and-roles">User management</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="users">Users</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      Martin Smith
+    </li>
+  </ol>
+</nav>
+
 <form action="martin-roles" method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -52,7 +66,9 @@
               Identity provider (IDP) roles
             </dt>
             <dd class="govuk-summary-list__value">
-              Role 1, Role 2, Role 3
+              Role 1,<br>
+              Role 2,<br>
+              Role 3
             </dd>
 
           </div>
@@ -61,7 +77,25 @@
               Manage grants roles
             </dt>
             <dd class="govuk-summary-list__value">
-              Role 1, Role 2, Role 3
+              PMF_READ,<br>
+              PMF_WRITE,<br>
+              PMF_WRITE2,<BR>
+              ABD_ABC,<br>
+              ABD_ABC1,<br>              
+              ABD_ABC2,<br>              
+              ABD_ABC3,<br>
+              DCA_FRV,<br>
+              DCA_FRV3,<br>              
+              DCA_FRV4,<br>              
+              DCA_FRV7,<br>              
+              BN_TAG_CHECKER,<br>
+              BN_TAG_CHECKER2,<br>              
+              BN_TAG_CHECKER4,<br>              
+              BN_TAG_CHECKER5,<br>
+              BN_TAG_CHECKER6,<br>
+              BN_TAG_CHECKER11,<br>              
+              BN_TAG_CHECKER12,<br>              
+              BN_TAG_CHECKER21,<br>
             </dd>
           </div>
         </dl>
