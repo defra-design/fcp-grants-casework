@@ -504,8 +504,43 @@
   margin-left: 10px;
   color: #999;
 }
+.moj-header__navigation-link-black:link, .moj-header__navigation-link-black:visited, .moj-header__navigation-link-black:active {
+    color: rgb(42.4, 10.6, 5.6);
+    text-decoration: none;
+}
 
 
+
+
+.header-account-nav {
+    /* Aligns the links within this specific container to the top/start */
+    align-self: flex-start; 
+    /* The links need to be stacked, so we set their container to flex-direction: column */
+    display: flex;
+    flex-direction: column;
+    text-align: right; /* Right align the text itself */
+    margin-top: 30px;
+}
+
+.header-nav-link:link, .header-nav-link:visited, .header-nav-link:active  {
+    /* Add styling specific to your links, such as removing underline, changing color */
+    color: #000; /* Use black text color to match the original style */
+    text-decoration: underline;
+    margin-bottom: 5px; /* Small gap between the stacked links */
+}
+
+.defra-internal-header .defra-logo-nav {
+    min-width: 220px;
+    margin-bottom: 15px;
+}
+
+/* Ensure the user details and link sit inline and align correctly */
+.user-details-line {
+    display: flex;
+    align-items: center;
+    /* Pushes content of this specific line to the right edge of its parent container */
+    justify-content: flex-end; 
+}
 
 
 
