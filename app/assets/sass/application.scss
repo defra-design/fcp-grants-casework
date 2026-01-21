@@ -72,7 +72,7 @@
   .defra-logo__link::before {
     content: '';
     display: table-cell;
-    background: url("/public/images/Department_for_Environment,_Food_and_Rural_Affairs_logo.png") no-repeat;
+    background: url("/public/images/Department_for_Environment_Food_and_Rural_Affairs_logo.png") no-repeat;
     background-size: 100% 100%;
     width: 138px;
     height: 75px;
@@ -511,16 +511,14 @@
 
 
 
-
-.header-account-nav {
-    /* Aligns the links within this specific container to the top/start */
-    align-self: flex-start; 
-    /* The links need to be stacked, so we set their container to flex-direction: column */
-    display: flex;
-    flex-direction: column;
-    text-align: right; /* Right align the text itself */
-    margin-top: 30px;
+.header-account-nav { 
+    display: flex;  
+    flex-direction: column; 
+    align-items: flex-end;  
+    margin-left: auto;
+    align-self: end;
 }
+
 
 .header-nav-link:link, .header-nav-link:visited, .header-nav-link:active  {
     /* Add styling specific to your links, such as removing underline, changing color */
@@ -542,7 +540,42 @@
     justify-content: flex-end; 
 }
 
+/* front end defra header classes */
 
+.defra-header {
+  border-bottom: 8px solid #00a33b;
+  padding: govuk-spacing(4) 0;
+}
+
+.defra-header__inner {
+  margin: 0 auto;
+  max-width: 960px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.defra-header__logo-link {
+  display: flex;
+  align-items: center;
+  gap: 167px;
+  border-left: 2px solid #00a33b;
+  width: auto;
+  height: 75px;
+  text-decoration: none;
+  padding-left: 2px;
+}
+
+.defra-header__logo-link img {
+  width: 146px;
+  height: auto;
+}
+
+.defra-header__service-name {
+  font-size: 24px;
+  font-weight: 400;
+  color: #0b0c0c;
+}
 
 
 
