@@ -883,3 +883,189 @@ router.get('/tasklistStage2', function (req, res) {
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
+// 5 Month routes
+
+router.get('/5month1', function (req, res) {
+    req.session.data.caseStatus = '5 month checks';  
+    req.session.data.caseStage = '5month';  
+    res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+router.get('/task5m1', function (req, res) { 
+    req.session.data.noteActionTask1m = req.session.data.decisionTask1m;
+    switch (req.session.data.decisionTask1m) {
+    case 'No action needed':
+        req.session.data.month5_1Tag = '';
+        req.session.data.month5_1Status = 'No action needed'       
+    break;
+
+    case 'Escalate':
+        req.session.data.month5_1Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_1Status = 'Escalate'   
+    break;
+    case 'Information requested':
+        req.session.data.month5_1Tag = 'govuk-tag govuk-tag--yellow'; 
+        req.session.data.month5_1Status = 'Information requested'       
+    break;
+
+    case 'Cannot accept':
+        req.session.data.month5_1Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_1Status = 'Cannot accept'   
+    break;
+    default:
+        req.session.data.month5_1Tag = 'govuk-tag';
+        req.session.data.month5_1Status = 'Incomplete'
+    };
+    req.session.data.filteredNote1m = stripEmptyAndNulls(req.session.data.task1mNote);
+    res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+router.get('/task5m2', function (req, res) { 
+    req.session.data.noteActionTask2m = req.session.data.decisionTask2m;
+    switch (req.session.data.decisionTask2m) {
+    case 'No action needed':
+        req.session.data.month5_2Tag = '';
+        req.session.data.month5_2Status = 'No action needed'       
+    break;
+
+    case 'Escalate':
+        req.session.data.month5_2Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_2Status = 'Escalate'   
+    break;
+    case 'Information requested':
+        req.session.data.month5_2Tag = 'govuk-tag govuk-tag--yellow'; 
+        req.session.data.month5_2Status = 'Information requested'       
+    break;
+
+    case 'Cannot accept':
+        req.session.data.month5_2Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_2Status = 'Cannot accept'   
+    break;
+    default:
+        req.session.data.month5_2Tag = 'govuk-tag';
+        req.session.data.month5_2Status = 'Incomplete'
+    };
+    req.session.data.filteredNote2m = stripEmptyAndNulls(req.session.data.task2mNote);
+    res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+router.get('/task5m3', function (req, res) { 
+    req.session.data.noteActionTask3m = req.session.data.decisionTask3m;
+    switch (req.session.data.decisionTask3m) {
+    case 'No action needed':
+        req.session.data.month5_3Tag = '';
+        req.session.data.month5_3Status = 'No action needed'       
+    break;
+
+    case 'Escalate':
+        req.session.data.month5_3Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_3Status = 'Escalate'   
+    break;
+    case 'Information requested':
+        req.session.data.month5_3Tag = 'govuk-tag govuk-tag--yellow'; 
+        req.session.data.month5_3Status = 'Information requested'       
+    break;
+
+    case 'Cannot accept':
+        req.session.data.month5_3Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_3Status = 'Cannot accept'   
+    break;
+    default:
+        req.session.data.month5_3Tag = 'govuk-tag';
+        req.session.data.month5_3Status = 'Incomplete'
+    };
+    req.session.data.filteredNote3m = stripEmptyAndNulls(req.session.data.task3mNote);
+    res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+router.get('/task5m4', function (req, res) { 
+    req.session.data.noteActionTask4m = req.session.data.decisionTask4m;
+    switch (req.session.data.decisionTask4m) {
+    case 'No action needed':
+        req.session.data.month5_4Tag = '';
+        req.session.data.month5_4Status = 'No action needed'       
+    break;
+
+    case 'Escalate':
+        req.session.data.month5_4Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_4Status = 'Escalate'   
+    break;
+    case 'Information requested':
+        req.session.data.month5_4Tag = 'govuk-tag govuk-tag--yellow'; 
+        req.session.data.month5_4Status = 'Information requested'       
+    break;
+
+    case 'Cannot accept':
+        req.session.data.month5_4Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_4Status = 'Cannot accept'   
+    break;
+    default:
+        req.session.data.month5_4Tag = 'govuk-tag';
+        req.session.data.month5_4Status = 'Incomplete'
+    };
+    req.session.data.filteredNote4m = stripEmptyAndNulls(req.session.data.task4mNote);
+    res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+
+router.get('/task5m5', function (req, res) { 
+    req.session.data.noteActionTask5m = req.session.data.decisionTask5m;
+    switch (req.session.data.decisionTask5m) {
+    case 'No action needed':
+        req.session.data.month5_5Tag = '';
+        req.session.data.month5_5Status = 'No action needed'       
+    break;
+
+    case 'Escalate':
+        req.session.data.month5_5Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_5Status = 'Escalate'   
+    break;
+    case 'Information requested':
+        req.session.data.month5_5Tag = 'govuk-tag govuk-tag--yellow'; 
+        req.session.data.month5_5Status = 'Information requested'       
+    break;
+
+    case 'Cannot accept':
+        req.session.data.month5_5Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_5Status = 'Cannot accept'   
+    break;
+    default:
+        req.session.data.month5_5Tag = 'govuk-tag';
+        req.session.data.month5_5Status = 'Incomplete'
+    };
+    req.session.data.filteredNote5m = stripEmptyAndNulls(req.session.data.task5mNote);
+    res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+
+router.get('/task5m6', function (req, res) { 
+    req.session.data.noteActionTask6m = req.session.data.decisionTask6m;
+    switch (req.session.data.decisionTask6m) {
+    case 'No action needed':
+        req.session.data.month5_6Tag = '';
+        req.session.data.month5_6Status = 'No action needed'       
+    break;
+
+    case 'Escalate':
+        req.session.data.month5_6Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_6Status = 'Escalate'   
+    break;
+    case 'Information requested':
+        req.session.data.month5_6Tag = 'govuk-tag govuk-tag--yellow'; 
+        req.session.data.month5_6Status = 'Information requested'       
+    break;
+
+    case 'Cannot accept':
+        req.session.data.month5_6Tag = 'govuk-tag govuk-tag--red-status';
+        req.session.data.month5_6Status = 'Cannot accept'   
+    break;
+    default:
+        req.session.data.month5_6Tag = 'govuk-tag';
+        req.session.data.month5_6Status = 'Incomplete'
+    };
+    req.session.data.filteredNote6m = stripEmptyAndNulls(req.session.data.task6mNote);
+    res.redirect('/FRPS-D2/tasklist-stage');
+});
+
+
+
