@@ -61,31 +61,27 @@
         <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
           Menu
         </button>
-        <ul class="govuk-service-navigation__list" id="navigation">
+         <ul class="govuk-service-navigation__list" id="navigation">
           <li class="govuk-service-navigation__item-c govuk-service-navigation__item--active">
-            <a class="govuk-service-navigation__link" href="tasklist-stage" aria-current="true">
+            <a class="govuk-service-navigation__link" href="#" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
-          </li>          
+          </li>  
+          {% if (data.caseStage === '5month') %}
+          {% else %} 
           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="application">
               Application
             </a>
           </li>
+          {% endif %}        
+
 
           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="calculations2">
               Calculations
             </a>
-          </li>
-
- 
-          
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="land">
-              Land
-            </a>
-          </li>          
+          </li>       
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="timeline" aria-current="true">
               Timeline
@@ -96,13 +92,7 @@
               Notes
             </a>
           </li>
-          
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="messages">
-              Customer contact
-            </a>
-          </li>
-          {% if (data.agreementStage) %} 
+          {% if (data.agreementStage) or (data.caseStage === '5month')%} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement

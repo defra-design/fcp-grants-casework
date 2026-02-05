@@ -66,21 +66,20 @@
               Tasks
             </a>
           </li> 
-          <li class="govuk-service-navigation__item-c2">
+          {% if (data.caseStage === '5month') %}
+          {% else %} 
+          <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="application">
               Application
             </a>
           </li>
+          {% endif %}   
           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="calculations2">
               Calculations
             </a>
           </li> 
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="land">
-              Land
-            </a>
-          </li>
+
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="timeline">
               Timeline
@@ -91,11 +90,7 @@
               Notes
             </a>
           </li>
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="messages">
-              Customer contact
-            </a>
-          </li> 
+
 
           <li class="govuk-service-navigation__item-c2 govuk-service-navigation__item--active">
             <a class="govuk-service-navigation__link" href="#">
