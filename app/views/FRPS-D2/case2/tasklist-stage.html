@@ -40,7 +40,7 @@
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
-        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatusC2']}}</p></div>
       </div>
 
 
@@ -66,7 +66,7 @@
               <strong class="govuk-service-navigation__active-fallback">Tasks</strong>
             </a>
           </li>  
-          {% if (data.caseStage === '5month') %}
+          {% if (data.caseStageC2 === '5month') %}
           {% else %} 
           <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="application">
@@ -91,7 +91,7 @@
               Notes
             </a>
           </li>
-          {% if (data.agreementStage) or (data.caseStage === '5month')%} 
+          {% if (data.agreementStage) or (data.caseStageC2 === '5month')%} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
@@ -123,7 +123,7 @@
 
 
 
-      {% if (data.caseStage === 'start') %}
+      {% if (data.caseStageC2 === 'start') %}
 
       <p>You cannot complete any tasks until you start the case.</p>
 
@@ -137,9 +137,9 @@
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status"> 
-    {% if (data.decisionTask1) %}      
-      {% if (data.decisionTask1 === 'Accepted') %} {{ data['detailsStatus'] }} 
-      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatus'] }}</strong>
+    {% if (data.decisionTask1C2) %}      
+      {% if (data.decisionTask1C2 === 'Accepted') %} {{ data['detailsStatusC2'] }} 
+      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatusC2'] }}</strong>
       {% endif %}
     {% else %}
       <strong class="govuk-tag govuk-tag--grey">
@@ -156,9 +156,9 @@
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status">
-    {% if (data.decisionTask2) %}    
-        {% if (data.decisionTask2 === 'Accepted') %} {{ data['calcsStatus'] }} 
-        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatus'] }}</strong>
+    {% if (data.decisionTask2C2) %}    
+        {% if (data.decisionTask2C2 === 'Accepted') %} {{ data['calcsStatusC2'] }} 
+        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatusC2'] }}</strong>
         {% endif %} 
     {% else %}
       <strong class="govuk-tag govuk-tag--grey">
@@ -176,9 +176,9 @@
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask3) %}  
-        {% if (data.decisionTask3 === 'Accepted') %} {{ data['sssiStatus'] }} 
-        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatus'] }}</strong>
+      {% if (data.decisionTask3C2) %}  
+        {% if (data.decisionTask3C2 === 'Accepted') %} {{ data['sssiStatusC2'] }} 
+        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatusC2'] }}</strong>
         {% endif %}
       {% else %}
       <strong class="govuk-tag govuk-tag--grey">
@@ -194,9 +194,9 @@
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask5) %}  
-        {% if (data.decisionTask5 === 'Accepted') %} {{ data['paymentStatus'] }} 
-        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatus'] }}</strong>
+      {% if (data.decisionTask5C2) %}  
+        {% if (data.decisionTask5C2 === 'Accepted') %} {{ data['paymentStatusC2'] }} 
+        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatusC2'] }}</strong>
         {% endif %}
       {% else %}
       <strong class="govuk-tag govuk-tag--grey">
@@ -208,14 +208,14 @@
 
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      {% if (data.financeOfficer === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-6-fo" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">{% endif %}
+      {% if (data.financeOfficerC2 === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-6-fo" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">{% endif %}
         Review scheme budget as a finance officer
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask6) %}  
-        {% if (data.decisionTask6 === 'Accepted') %} {{ data['budgetStatus'] }} 
-        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatus'] }}</strong>
+      {% if (data.decisionTask6C2) %}  
+        {% if (data.decisionTask6C2 === 'Accepted') %} {{ data['budgetStatusC2'] }} 
+        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatusC2'] }}</strong>
         {% endif %}
       {% else %}
       <strong class="govuk-tag govuk-tag--grey">
@@ -229,12 +229,12 @@
 </ul>
 
 
-      <a href="/tasklistStage2" role="button" draggable="false" class="govuk-button">
+      <a href="/tasklistStage2C2" role="button" draggable="false" class="govuk-button">
   Start
 </a>
 
-      {% elseif (data.caseStage === 'review') %}
-<form action="/app-approve2" method="post">
+      {% elseif (data.caseStageC2 === 'review') %}
+<form action="/app-approve2C2" method="post">
       <p>You cannot approve the application until all tasks have been accepted.</p>
       <h2 class="govuk-heading-m">Application review tasks</h2>
       <ul class="govuk-task-list">
@@ -245,9 +245,9 @@
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status"> 
-    {% if (data.decisionTask1) %}      
-      {% if (data.decisionTask1 === 'Accepted') %} {{ data['detailsStatus'] }} 
-      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatus'] }}</strong>
+    {% if (data.decisionTask1C2) %}      
+      {% if (data.decisionTask1C2 === 'Accepted') %} {{ data['detailsStatusC2'] }} 
+      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatusC2'] }}</strong>
       {% endif %}
     {% else %}
       <strong class="govuk-tag govuk-tag--blue">
@@ -264,9 +264,9 @@
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status">
-    {% if (data.decisionTask2) %}    
-        {% if (data.decisionTask2 === 'Accepted') %} {{ data['calcsStatus'] }} 
-        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatus'] }}</strong>
+    {% if (data.decisionTask2C2) %}    
+        {% if (data.decisionTask2C2 === 'Accepted') %} {{ data['calcsStatusC2'] }} 
+        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatusC2'] }}</strong>
         {% endif %} 
     {% else %}
       <strong class="govuk-tag govuk-tag--blue">
@@ -284,9 +284,9 @@
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask3) %}  
-        {% if (data.decisionTask3 === 'Accepted') %} {{ data['sssiStatus'] }} 
-        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatus'] }}</strong>
+      {% if (data.decisionTask3C2) %}  
+        {% if (data.decisionTask3C2 === 'Accepted') %} {{ data['sssiStatusC2'] }} 
+        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -303,9 +303,9 @@
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask5) %}  
-        {% if (data.decisionTask5 === 'Accepted') %} {{ data['paymentStatus'] }} 
-        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatus'] }}</strong>
+      {% if (data.decisionTask5C2) %}  
+        {% if (data.decisionTask5C2 === 'Accepted') %} {{ data['paymentStatusC2'] }} 
+        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -317,14 +317,14 @@
 
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      {% if (data.financeOfficer === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-6-fo" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">{% endif %}
+      {% if (data.financeOfficerC2 === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-6-fo" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">{% endif %}
         Review scheme budget as a finance officer
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask6) %}  
-        {% if (data.decisionTask6 === 'Accepted') %} {{ data['budgetStatus'] }} 
-        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatus'] }}</strong>
+      {% if (data.decisionTask6C2) %}  
+        {% if (data.decisionTask6C2 === 'Accepted') %} {{ data['budgetStatusC2'] }} 
+        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -343,9 +343,9 @@
          Decision
         </legend>
         <div class="govuk-radios" data-module="govuk-radios">
-          {% if (data.decisionTask1 === 'Accepted' and data.decisionTask2 === 'Accepted'  and data.decisionTask3 === 'Accepted'  and data.decisionTask5 === 'Accepted' and data.decisionTask6 === 'Accepted' ) %}
+          {% if (data.decisionTask1C2 === 'Accepted' and data.decisionTask2C2 === 'Accepted'  and data.decisionTask3C2 === 'Accepted'  and data.decisionTask5C2 === 'Accepted' and data.decisionTask6C2 === 'Accepted' ) %}
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision1" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision", "Approve") }}>
+            <input class="govuk-radios__input" id="contact" name="decision1C2" type="radio" value="Approve" data-aria-controls="conditional-decision1" {{ checked("decision1C2", "Approve") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Approve
             </label>
@@ -356,10 +356,10 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes.
             </div>
-            <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="reviewNoteC2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision1" type="radio" value="Put on hold" data-aria-controls="conditional-decision2" {{ checked("decision", "Put on hold") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decision1C2" type="radio" value="Put on hold" data-aria-controls="conditional-decision2" {{ checked("decision1C2", "Put on hold") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
               Put on hold
             </label>
@@ -370,10 +370,10 @@
               You must include an explanation for auditing purposes.
             </div>
             
-            <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="reviewNoteC2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="eligible-2" name="decision1" type="radio" value="Return" data-aria-controls="conditional-decision2b" {{ checked("decision", "Return") }}>
+            <input class="govuk-radios__input" id="eligible-2" name="decision1C2" type="radio" value="Return" data-aria-controls="conditional-decision2b" {{ checked("decision1C2", "Return") }}>
             <label class="govuk-label govuk-radios__label" for="eligible-2">
                Return to customer
             </label>
@@ -384,10 +384,10 @@
               You must include a reason for returning to customer.
             </div>
             
-            <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="reviewNoteC2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision1" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decision", "Reject") }}>
+            <input class="govuk-radios__input" id="contact" name="decision1C2" type="radio" value="Reject" data-aria-controls="conditional-decision3" {{ checked("decision1C2", "Reject") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Reject
             </label>
@@ -397,10 +397,10 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes.
             </div>
-          <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="more-detail1" name="reviewNoteC2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
            <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision1" type="radio" value="Withdraw" data-aria-controls="conditional-decision4" {{ checked("decision", "Withdraw") }}>
+            <input class="govuk-radios__input" id="contact" name="decision1C2" type="radio" value="Withdraw" data-aria-controls="conditional-decision4" {{ checked("decision1C2", "Withdraw") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Withdraw
             </label>
@@ -410,7 +410,7 @@
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes.
             </div>            
-            <textarea class="govuk-textarea" id="more-detail1" name="reviewNote" rows="5" aria-describedby="more-detail-hint"></textarea>
+            <textarea class="govuk-textarea" id="more-detail1" name="reviewNoteC2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         </div>
       </fieldset>
@@ -420,7 +420,7 @@
   Confirm
 </button>
 
-{% elseif (data.caseStage === 'on-hold') %}
+{% elseif (data.caseStageC2 === 'on-hold') %}
 <form action="/resume2" method="post">
       <p>You cannot do any work on tasks whilst the case is on hold.</p>
       <h2 class="govuk-heading-m">Application review tasks</h2>
@@ -432,9 +432,9 @@
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status"> 
-    {% if (data.decisionTask1) %}      
-      {% if (data.decisionTask1 === 'Accepted') %} {{ data['detailsStatus'] }} 
-      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatus'] }}</strong>
+    {% if (data.decisionTask1C2) %}      
+      {% if (data.decisionTask1C2 === 'Accepted') %} {{ data['detailsStatusC2'] }} 
+      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatusC2'] }}</strong>
       {% endif %}
     {% else %}
       <strong class="govuk-tag govuk-tag--blue">
@@ -451,9 +451,9 @@
       </a>
     </div>
     <div class="govuk-task-list__status" id="company-details-1-status">
-    {% if (data.decisionTask2) %}    
-        {% if (data.decisionTask2 === 'Accepted') %} {{ data['calcsStatus'] }} 
-        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatus'] }}</strong>
+    {% if (data.decisionTask2C2) %}    
+        {% if (data.decisionTask2C2 === 'Accepted') %} {{ data['calcsStatusC2'] }} 
+        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatusC2'] }}</strong>
         {% endif %} 
     {% else %}
       <strong class="govuk-tag govuk-tag--blue">
@@ -471,9 +471,9 @@
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask3) %}  
-        {% if (data.decisionTask3 === 'Accepted') %} {{ data['sssiStatus'] }} 
-        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatus'] }}</strong>
+      {% if (data.decisionTask3C2) %}  
+        {% if (data.decisionTask3C2 === 'Accepted') %} {{ data['sssiStatusC2'] }} 
+        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -490,9 +490,9 @@
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask5) %}  
-        {% if (data.decisionTask5 === 'Accepted') %} {{ data['paymentStatus'] }} 
-        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatus'] }}</strong>
+      {% if (data.decisionTask5C2) %}  
+        {% if (data.decisionTask5C2 === 'Accepted') %} {{ data['paymentStatusC2'] }} 
+        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -504,14 +504,14 @@
 
   <li class="govuk-task-list__item govuk-task-list__item--with-link">
     <div class="govuk-task-list__name-and-hint">
-      {% if (data.financeOfficer === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-6-fo" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">{% endif %}
+      {% if (data.financeOfficerC2 === 'yes') %}<a class="govuk-link govuk-task-list__link" href="task-6-fo" aria-describedby="company-details-1-status">{% else %}<a class="govuk-link govuk-task-list__link" href="task-6" aria-describedby="company-details-1-status">{% endif %}
         Review scheme budget as a finance officer
       </a>
     </div>
       <div class="govuk-task-list__status" id="company-details-1-status">
-      {% if (data.decisionTask6) %}  
-        {% if (data.decisionTask6 === 'Accepted') %} {{ data['budgetStatus'] }} 
-        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatus'] }}</strong>
+      {% if (data.decisionTask6C2) %}  
+        {% if (data.decisionTask6C2 === 'Accepted') %} {{ data['budgetStatusC2'] }} 
+        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -530,8 +530,8 @@
   Resume
 </button>
 
-      {% elseif (data.caseStage === 'agree') %}
-<form action="/aggSent2" method="post">
+      {% elseif (data.caseStageC2 === 'agree') %}
+<form action="/aggSent2C2" method="post">
 <p>Draft agreement is live and can be accepted by the customer.</p>
   <h2 class="govuk-heading-m">Draft agreement review tasks</h2>
   <ul class="govuk-task-list">
@@ -542,9 +542,9 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionAgreeTask1) %}      
-        {% if (data.decisionAgreeTask1 === 'Confirm') %} {{ data['agreeStatus'] }} 
-        {% else %}<strong class="{{ data['agreeTag'] }}">{{ data['agreeStatus'] }}</strong>
+      {% if (data.decisionAgreeTask1C2) %}      
+        {% if (data.decisionAgreeTask1C2 === 'Confirm') %} {{ data['agreeStatusC2'] }} 
+        {% else %}<strong class="{{ data['agreeTag'] }}">{{ data['agreeStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -561,9 +561,9 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionAgreeTask2) %}      
-        {% if (data.decisionAgreeTask2 === 'Confirm') %} {{ data['agreeSStatus'] }} 
-        {% else %}<strong class="{{ data['agreeSTag'] }}">{{ data['agreeSStatus'] }}</strong>
+      {% if (data.decisionAgreeTask2C2) %}      
+        {% if (data.decisionAgreeTask2C2 === 'Confirm') %} {{ data['agreeSStatusC2'] }} 
+        {% else %}<strong class="{{ data['agreeSTag'] }}">{{ data['agreeSStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -580,12 +580,12 @@
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
          Decision
         </legend>
-        {% if (data.decisionAgreeTask2) %} 
+        {% if (data.decisionAgreeTask2C2) %} 
 
 
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Agreement sent" data-aria-controls="conditional-decision1" {{ checked("decisionAg", "Agreement sent") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAgC2" type="radio" value="Agreement sent" data-aria-controls="conditional-decision1" {{ checked("decisionAgC2", "Agreement sent") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Agreement sent
             </label>
@@ -602,7 +602,7 @@
          {% endif %}
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Reject" data-aria-controls="conditional-decision2" {{ checked("decisionAg", "Reject") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAgC2" type="radio" value="Reject" data-aria-controls="conditional-decision2" {{ checked("decisionAgC2", "Reject") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Reject
             </label>
@@ -616,7 +616,7 @@
           </div>
         </div>
         <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAg" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decisionAg", "Withdraw") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAgC2" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decisionAgC2", "Withdraw") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Withdraw
             </label>
@@ -634,7 +634,7 @@
       Confirm
     </button>
 
-    {% elseif (data.caseStage === 'amend') %}
+    {% elseif (data.caseStageC2 === 'amend') %}
 
 <h2 class="govuk-heading-m">Amending application</h2>
 
@@ -656,8 +656,8 @@
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
       {% if (data.decisionTaskAm1) %}      
-        {% if (data.decisionTaskAm1 === 'Confirm') %} {{ data['amend1Status'] }} 
-        {% else %}<strong class="{{ data['amend1Tag'] }}">{{ data['amend1Status'] }}</strong>
+        {% if (data.decisionTaskAm1 === 'Confirm') %} {{ data['amend1StatusC2'] }} 
+        {% else %}<strong class="{{ data['amend1Tag'] }}">{{ data['amend1StatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -677,8 +677,8 @@
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
       {% if (data.decisionTaskAm3) %}      
-        {% if (data.decisionTaskAm3 === 'Confirm') %} {{ data['amend3Status'] }} 
-        {% else %}<strong class="{{ data['amend3Tag'] }}">{{ data['amend3Status'] }}</strong>
+        {% if (data.decisionTaskAm3 === 'Confirm') %} {{ data['amend3StatusC2'] }} 
+        {% else %}<strong class="{{ data['amend3Tag'] }}">{{ data['amend3StatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -701,7 +701,7 @@
         <div class="govuk-radios" data-module="govuk-radios">
           {% if (data.decisionTaskAm1 === 'Confirm' and data.decisionTaskAm3 === 'Confirm') %}
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Amendment sent" data-aria-controls="conditional-decision1" {{ checked("decision", "Amendment sent") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAmC2" type="radio" value="Amendment sent" data-aria-controls="conditional-decision1" {{ checked("decision1C2", "Amendment sent") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Amendment tasks completed
             </label>
@@ -715,7 +715,7 @@
           </div>
           {% endif %}
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Amendment recinded" data-aria-controls="conditional-decision1a" {{ checked("decisionAm", "Amendment recinded") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAmC2" type="radio" value="Amendment recinded" data-aria-controls="conditional-decision1a" {{ checked("decisionAmC2", "Amendment recinded") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Cancel amendments 
             </label>
@@ -728,7 +728,7 @@
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Reject" data-aria-controls="conditional-decision2" {{ checked("decisionAm", "Reject") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAmC2" type="radio" value="Reject" data-aria-controls="conditional-decision2" {{ checked("decisionAmC2", "Reject") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Reject
             </label>
@@ -742,7 +742,7 @@
           </div>
         </div>
         <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decisionAm", "Withdraw") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAmC2" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decisionAmC2", "Withdraw") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Withdraw
             </label>
@@ -796,14 +796,9 @@
     </tr>
   </tbody>
 </table> -->
-{% elseif (data.caseStage === 'return') %}
+{% elseif (data.caseStageC2 === 'return') %}
 
 <h2 class="govuk-heading-m">Application returned to customer for amending</h2>
-
-
-        
-        
-       
 
       <p>Application 100300 has been cancelled. However, you can still review the notes and timeline for this application.</p>
 <p> A new, linked application will be submitted after amendments have been made by the customer.</p>
@@ -811,7 +806,7 @@
 
 
 
-    {% elseif (data.caseStage === 'amendment_sent') %}
+    {% elseif (data.caseStageC2 === 'amendment_sent') %}
 
     <div role="region" class="moj-alert moj-alert--success moj-alert--with-heading" aria-label="success: File uploaded successfully" data-module="moj-alert">
       <div>
@@ -845,7 +840,7 @@
         <div class="govuk-radios" data-module="govuk-radios">
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Amendment recinded" data-aria-controls="conditional-decision1" {{ checked("decisionAm", "Amendment recinded") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAmC2" type="radio" value="Amendment recinded" data-aria-controls="conditional-decision1" {{ checked("decisionAmC2", "Amendment recinded") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Remove from Amendment state
             </label>
@@ -861,7 +856,7 @@
 
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Reject" data-aria-controls="conditional-decision2" {{ checked("decisionAm", "Reject") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAmC2" type="radio" value="Reject" data-aria-controls="conditional-decision2" {{ checked("decisionAmC2", "Reject") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Reject
             </label>
@@ -875,7 +870,7 @@
           </div>
         </div>
         <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decisionAm" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decisionAm", "Withdraw") }}>
+            <input class="govuk-radios__input" id="contact" name="decisionAmC2" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decisionAmC2", "Withdraw") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Withdraw
             </label>
@@ -894,7 +889,7 @@
     </button>
   </div>
 
-    {% elseif (data.caseStage === 'agree2') %}
+    {% elseif (data.caseStageC2 === 'agree2') %}
 
     <div role="region" class="moj-alert moj-alert--success moj-alert--with-heading" aria-label="success: File uploaded successfully" data-module="moj-alert">
       <div>
@@ -972,7 +967,7 @@
       <td class="govuk-table__cell">26th Sept 2025</td>
 
       <td class="govuk-table__cell">
-        {{ data['decisionAg']}}
+        {{ data['decisionAgC2']}}
       </td>
       <td class="govuk-table__cell">
         {{ data['filteredAggNote']}}
@@ -985,7 +980,7 @@
   </tbody>
 </table> -->
 
-{% elseif (data.caseStage === '5month') %}
+{% elseif (data.caseStageC2 === '5month') %}
 <form action="/month5_1" method="post">
 <p>Agreement is live. However, you need to check the land parcel calculations have not changed.
 </p>
@@ -998,9 +993,9 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionTask1m) %}      
-        {% if (data.decisionTask1m === 'No action needed') %} {{ data['month5_1Status'] }} 
-        {% else %}<strong class="{{ data['month5_1Tag'] }}">{{ data['month5_1Status'] }}</strong>
+      {% if (data.decisionTask1mC2) %}      
+        {% if (data.decisionTask1mC2 === 'No action needed') %} {{ data['month5_1StatusC2'] }} 
+        {% else %}<strong class="{{ data['month5_1Tag'] }}">{{ data['month5_1StatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -1017,9 +1012,9 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionTask2m) %}      
-        {% if (data.decisionTask2m === 'No action needed') %} {{ data['month5_2Status'] }} 
-        {% else %}<strong class="{{ data['month5_2Tag'] }}">{{ data['month5_2Status'] }}</strong>
+      {% if (data.decisionTask2mC2) %}      
+        {% if (data.decisionTask2mC2 === 'No action needed') %} {{ data['month5_2StatusC2'] }} 
+        {% else %}<strong class="{{ data['month5_2Tag'] }}">{{ data['month5_2StatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -1035,9 +1030,9 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionTask3m) %}      
-        {% if (data.decisionTask3m === 'No action needed') %} {{ data['month5_3Status'] }} 
-        {% else %}<strong class="{{ data['month5_3Tag'] }}">{{ data['month5_3Status'] }}</strong>
+      {% if (data.decisionTask3mC2) %}      
+        {% if (data.decisionTask3mC2 === 'No action needed') %} {{ data['month5_3StatusC2'] }} 
+        {% else %}<strong class="{{ data['month5_3Tag'] }}">{{ data['month5_3StatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -1053,9 +1048,9 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionTask4m) %}      
-        {% if (data.decisionTask4m === 'No action needed') %} {{ data['month5_4Status'] }} 
-        {% else %}<strong class="{{ data['month5_4Tag'] }}">{{ data['month5_4Status'] }}</strong>
+      {% if (data.decisionTask4mC2) %}      
+        {% if (data.decisionTask4mC2 === 'No action needed') %} {{ data['month5_4StatusC2'] }} 
+        {% else %}<strong class="{{ data['month5_4Tag'] }}">{{ data['month5_4StatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -1071,9 +1066,9 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionTask5m) %}      
-        {% if (data.decisionTask5m === 'No action needed') %} {{ data['month5_5Status'] }} 
-        {% else %}<strong class="{{ data['month5_5Tag'] }}">{{ data['month5_5Status'] }}</strong>
+      {% if (data.decisionTask5mC2) %}      
+        {% if (data.decisionTask5mC2 === 'No action needed') %} {{ data['month5_5StatusC2'] }} 
+        {% else %}<strong class="{{ data['month5_5Tag'] }}">{{ data['month5_5StatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -1089,9 +1084,9 @@
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
-      {% if (data.decisionTask6m) %}      
-        {% if (data.decisionTask6m === 'No action needed') %} {{ data['month5_6Status'] }} 
-        {% else %}<strong class="{{ data['month5_6Tag'] }}">{{ data['month5_6Status'] }}</strong>
+      {% if (data.decisionTask6mC2) %}      
+        {% if (data.decisionTask6mC2 === 'No action needed') %} {{ data['month5_6StatusC2'] }} 
+        {% else %}<strong class="{{ data['month5_6Tag'] }}">{{ data['month5_6StatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -1112,7 +1107,7 @@
 
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision5m" type="radio" value="No action" data-aria-controls="conditional-decision1" {{ checked("decision", "No action") }}>
+            <input class="govuk-radios__input" id="contact" name="decision5mC2" type="radio" value="No action" data-aria-controls="conditional-decision1" {{ checked("decision5mC2", "No action") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               No action needed
             </label>
@@ -1126,7 +1121,7 @@
           </div>
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision5m" type="radio" value="On hold" data-aria-controls="conditional-decision1a" {{ checked("decisionAm", "On hold") }}>
+            <input class="govuk-radios__input" id="contact" name="decision5mC2" type="radio" value="On hold" data-aria-controls="conditional-decision1a" {{ checked("decision5mC2", "On hold") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Put on hold
             </label>
@@ -1139,7 +1134,7 @@
             <textarea class="govuk-textarea" id="more-detail1" name="moreDetail3" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="decision5m" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decisionAm", "Withdraw") }}>
+            <input class="govuk-radios__input" id="contact" name="decision5mC2" type="radio" value="Withdraw" data-aria-controls="conditional-decision3" {{ checked("decision5mC2", "Withdraw") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
               Withdraw agreement
             </label>
@@ -1157,7 +1152,7 @@
       Confirm
     </button>
 
-    {% elseif (data.caseStage === 'pay') %}
+    {% elseif (data.caseStageC2 === 'pay') %}
       
     <h2 class="govuk-heading-m">Post-agreement monitoring and compliance tasks</h2>
     <p>There are no tasks to complete yet.</p>
@@ -1199,7 +1194,7 @@
       <td class="govuk-table__cell">26th Sept 2025</td>
 
       <td class="govuk-table__cell">
-        {{ data['decisionAg']}}
+        {{ data['decisionAgC2']}}
       </td>
       <td class="govuk-table__cell">
         {{ data['filteredAggNote']}}
@@ -1213,23 +1208,20 @@
 </table> -->
 
 
-       {% elseif (data.caseStage === 'withdraw') %}
+       {% elseif (data.caseStageC2 === 'withdraw') %}
       
         <h2 class="govuk-heading-m">Application withdrawn</h2>
         <p>There are no tasks to complete.</p>
 
-       {% elseif (data.caseStage === 'reject') %}
+       {% elseif (data.caseStageC2 === 'reject') %}
       
         <h2 class="govuk-heading-m">Application rejected</h2>
         <p>There are no tasks to complete.</p>
        
-       {% elseif (data.caseStage === 'amendment_submitted') %}
+       {% elseif (data.caseStageC2 === 'amendment_submitted') %}
       
         <h2 class="govuk-heading-m">This case with closed due to an amendment being submitted</h2>
         <p>There are no tasks to complete.</p>
-
-
-
 
         {% endif %}
   </fieldset>
@@ -1260,15 +1252,15 @@
    meta: {
      items: [
        {
-         href: "/setUserFo2",
+         href: "/setUserFo2C2",
          text: "Set user finance officer"
        },
       {
-         href: "/tasklistStage2",
+         href: "/tasklistStage2C2",
          text: "Set agreement signed"
        },
       {
-         href: "/amend2",
+         href: "/amend2C2",
          text: "Set amendment signed"
        },
        {
