@@ -499,7 +499,7 @@ router.get('/amend2', function (req, res) {
 router.get('/aggSent2', function (req, res) { 
     switch (req.session.data.decisionAg) {
     case 'Agreement sent':
-        req.session.data.filteredAggNote = stripEmptyAndNulls(req.session.data.moreDetail2);
+        req.session.data.filteredAggNote = stripEmptyAndNulls(req.session.data.agreeNotetask1AgT2);
     return res.redirect('/tasklistStage2');    
     case 'Reject':
         req.session.data.caseStage = 'reject'; 
@@ -519,7 +519,14 @@ router.get('/aggSent2', function (req, res) {
 
 router.get('/task1T2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
-    req.session.data.noteActionTask1 = req.session.data.decisionTask1;
+    if (req.session.data.noteActionTask1) {
+        req.session.data.filteredNote1_2 = stripEmptyAndNulls(req.session.data.task1Note2);
+    }
+    else {
+        req.session.data.noteActionTask1 = req.session.data.decisionTask1;
+        req.session.data.filteredNote1 = stripEmptyAndNulls(req.session.data.task1Note);
+    }
+
     switch (req.session.data.decisionTask1) {
     case 'Accepted':
         req.session.data.detailsTag = '';
@@ -541,13 +548,20 @@ router.get('/task1T2', function (req, res) {
         req.session.data.detailsTag = 'govuk-tag';
         req.session.data.detailsStatus = 'Incomplete'
     };
-    req.session.data.filteredNote1 = stripEmptyAndNulls(req.session.data.task1Note);
+
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
 router.get('/task2T2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+    if (req.session.data.noteActionTask2) {
+        req.session.data.filteredNote2_2 = stripEmptyAndNulls(req.session.data.task2Note2);
+    }
+    else {
     req.session.data.noteActionTask2 = req.session.data.decisionTask2;
+    req.session.data.filteredNote2 = stripEmptyAndNulls(req.session.data.task2Note);
+    }
+
     switch (req.session.data.decisionTask2) {
     case 'Accepted':
         req.session.data.calcsTag = '';
@@ -569,13 +583,21 @@ router.get('/task2T2', function (req, res) {
         req.session.data.calcsTag = 'govuk-tag';
         req.session.data.calcsStatus = 'Incomplete'   
     };
-    req.session.data.filteredNote2 = stripEmptyAndNulls(req.session.data.task2Note);
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
 router.get('/task2fT2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
-    req.session.data.noteActionTask2f = req.session.data.decisionTask2f;
+
+    if (req.session.data.noteActionTask2f) {
+        req.session.data.filteredNote2f_2 = stripEmptyAndNulls(req.session.data.task2fNote2);
+    }
+    else {
+    req.session.datanoteActionTask2f = req.session.data.decisionTask2f;
+    req.session.data.filteredNote2f = stripEmptyAndNulls(req.session.data.task2fNote);
+    }
+
+
     switch (req.session.data.decisionTask2f) {
     case 'Accepted':
         req.session.data.calcsTag = '';
@@ -603,7 +625,15 @@ router.get('/task2fT2', function (req, res) {
 
 router.get('/task3T2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+
+    if (req.session.data.noteActionTask3) {
+        req.session.data.filteredNote3_2 = stripEmptyAndNulls(req.session.data.task3Note2);
+    }
+    else {
     req.session.data.noteActionTask3 = req.session.data.decisionTask3;
+    req.session.data.filteredNote3 = stripEmptyAndNulls(req.session.data.task3Note);
+    }
+
     switch (req.session.data.decisionTask3) {
     case 'Accepted':
         req.session.data.sssiTag = '';
@@ -631,7 +661,11 @@ router.get('/task3T2', function (req, res) {
 
 router.get('/task4T2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+    if (req.session.data.noteActionTask4) {
+    }
+    else
     req.session.data.noteActionTask4 = req.session.data.decisionTask4;
+
     switch (req.session.data.decisionTask4) {
     case 'Accepted':
         req.session.data.samTag = '';
@@ -659,7 +693,15 @@ router.get('/task4T2', function (req, res) {
 
 router.get('/task5T2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+
+    if (req.session.data.noteActionTask5) {
+    req.session.data.filteredNote5_2 = stripEmptyAndNulls(req.session.data.task5Note2);
+    }
+    else {
     req.session.data.noteActionTask5 = req.session.data.decisionTask5;
+    req.session.data.filteredNote5 = stripEmptyAndNulls(req.session.data.task5Note);
+    }
+
     switch (req.session.data.decisionTask5) {
     case 'Accepted':
         req.session.data.paymentTag = '';
@@ -687,7 +729,15 @@ router.get('/task5T2', function (req, res) {
 
 router.get('/task6T2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+
+    if (req.session.data.noteActionTask6) {
+        req.session.data.filteredNote6_2 = stripEmptyAndNulls(req.session.data.task6Note2);
+    }
+    else {
     req.session.data.noteActionTask6 = req.session.data.decisionTask6;
+    req.session.data.filteredNote6 = stripEmptyAndNulls(req.session.data.task6Note);
+    }
+
     switch (req.session.data.decisionTask6) {
     case 'Accepted':
         req.session.data.budgetTag = '';
@@ -731,7 +781,10 @@ router.get('/setUserFo2', function (req, res) {
 // Amendment routes 2
 
 router.get('/task1T2Am', function (req, res) { 
-    req.session.data.noteActionTaskAm1 = req.session.data.decisionTaskAm1;
+    if (req.session.data.noteActionTaskAm1) {
+    }
+    else
+    req.session.data.noteActionTaskAm1 = req.session.data.decisionTaskAm1;   
     switch (req.session.data.decisionTaskAm1) {
     case 'Confirm':
         req.session.data.amend1Tag = '';
@@ -751,7 +804,10 @@ router.get('/task1T2Am', function (req, res) {
 });
 
 router.get('/task2T2Am', function (req, res) { 
-    req.session.data.noteActionTaskAm2 = req.session.data.decisionTaskAm2;
+    if (req.session.data.noteActionTaskAm2) {
+    }
+    else
+    req.session.data.noteActionTaskAm2 = req.session.data.decisionTaskAm2;       
     switch (req.session.data.decisionTaskAm2) {
     case 'Confirm':
         req.session.data.amend2Tag = '';
@@ -771,7 +827,11 @@ router.get('/task2T2Am', function (req, res) {
 });
 
 router.get('/task3T2Am', function (req, res) { 
+    if (req.session.data.noteActionTaskAm3) {
+    }
+    else
     req.session.data.noteActionTaskAm3 = req.session.data.decisionTaskAm3;
+
     switch (req.session.data.decisionTaskAm3) {
     case 'Confirm':
         req.session.data.amend3Tag = '';
@@ -801,7 +861,15 @@ router.get('/agreementStage2', function (req, res) {
 
 router.get('/task1AgT2', function (req, res) { 
     req.session.data.AgreeChecked = 'yes';
-    req.session.data.noteActionAgreeTask1 = req.session.data.decisionTask1;
+
+    if (req.session.data.noteActionAgreeTask1) {
+        req.session.data.filteredNote1A_2 = stripEmptyAndNulls(req.session.data.task1ANote2);  
+    }
+    else {
+        req.session.data.noteActionAgreeTask1  = req.session.data.decisionAgreeTask1 ; 
+        req.session.data.filteredNote1A = stripEmptyAndNulls(req.session.data.task1ANote);  
+    }
+
     switch (req.session.data.decisionAgreeTask1) {
     case 'Confirm':
         req.session.data.agreeTag = '';
@@ -816,13 +884,19 @@ router.get('/task1AgT2', function (req, res) {
         req.session.data.agreeTag = 'govuk-tag';
         req.session.data.agreeStatus = 'Incomplete'
     };
-    req.session.data.filteredNote1A = stripEmptyAndNulls(req.session.data.task1ANote);
+
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
 router.get('/task2AgT2', function (req, res) { 
+    if (req.session.data.noteActionAgreeTask2) {
+        req.session.data.filteredNote2A_2 = stripEmptyAndNulls(req.session.data.task2ANote2); 
+    }
+    else {
+        req.session.data.noteActionAgreeTask2 = req.session.data.decisionAgreeTask2;
+        req.session.data.filteredNote2A = stripEmptyAndNulls(req.session.data.task2ANote); 
+    }
 
-    req.session.data.noteActionAgreeTask2 = req.session.data.decisionAgreeTask2;
     switch (req.session.data.decisionAgreeTask2) {
     case 'Confirm':
         req.session.data.agreeSTag = '';
@@ -836,7 +910,6 @@ router.get('/task2AgT2', function (req, res) {
         req.session.data.agreeSTag = 'govuk-tag';
         req.session.data.agreeSStatus = 'Incomplete'
     };
-    req.session.data.filteredNote2A = stripEmptyAndNulls(req.session.data.task2ANote);
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
@@ -892,7 +965,11 @@ router.get('/5month1', function (req, res) {
 });
 
 router.get('/task5m1', function (req, res) { 
-    req.session.data.noteActionTask1m = req.session.data.decisionTask1m;
+    if (req.session.data.noteActionTask1m) {
+    }
+    else
+    req.session.data.noteActionTask1m = req.session.data.decisionTask1m;  
+
     switch (req.session.data.decisionTask1m) {
     case 'No action needed':
         req.session.data.month5_1Tag = '';
@@ -921,7 +998,11 @@ router.get('/task5m1', function (req, res) {
 });
 
 router.get('/task5m2', function (req, res) { 
+    if (req.session.data.noteActionTask2m) {
+    }
+    else
     req.session.data.noteActionTask2m = req.session.data.decisionTask2m;
+
     switch (req.session.data.decisionTask2m) {
     case 'No action needed':
         req.session.data.month5_2Tag = '';
@@ -950,6 +1031,9 @@ router.get('/task5m2', function (req, res) {
 });
 
 router.get('/task5m3', function (req, res) { 
+    if (req.session.data.noteActionTask3m) {
+    }
+    else
     req.session.data.noteActionTask3m = req.session.data.decisionTask3m;
     switch (req.session.data.decisionTask3m) {
     case 'No action needed':
@@ -979,7 +1063,11 @@ router.get('/task5m3', function (req, res) {
 });
 
 router.get('/task5m4', function (req, res) { 
-    req.session.data.noteActionTask4m = req.session.data.decisionTask4m;
+    if (req.session.data.noteActionTask4m) {
+    }
+    else
+    req.session.data.noteActionTask4m = req.session.data.decisionTask4m;    
+
     switch (req.session.data.decisionTask4m) {
     case 'No action needed':
         req.session.data.month5_4Tag = '';
@@ -1009,6 +1097,9 @@ router.get('/task5m4', function (req, res) {
 
 
 router.get('/task5m5', function (req, res) { 
+    if (req.session.data.noteActionTask5m) {
+    }
+    else
     req.session.data.noteActionTask5m = req.session.data.decisionTask5m;
     switch (req.session.data.decisionTask5m) {
     case 'No action needed':
@@ -1039,6 +1130,9 @@ router.get('/task5m5', function (req, res) {
 
 
 router.get('/task5m6', function (req, res) { 
+    if (req.session.data.noteActionTask6m) {
+    }
+    else
     req.session.data.noteActionTask6m = req.session.data.decisionTask6m;
     switch (req.session.data.decisionTask6m) {
     case 'No action needed':
@@ -1201,7 +1295,11 @@ router.get('/aggSent2C2', function (req, res) {
 
 router.get('/task1T2C2', function (req, res) { 
     req.session.data.detailsCheckedC2 = 'yes';
+      if (req.session.data.noteActionTask1C2) {
+    }
+    else
     req.session.data.noteActionTask1C2 = req.session.data.decisionTask1C2;
+
     switch (req.session.data.decisionTask1C2) {
     case 'Accepted':
         req.session.data.detailsTagC2 = '';
@@ -1229,6 +1327,9 @@ router.get('/task1T2C2', function (req, res) {
 
 router.get('/task2T2C2', function (req, res) { 
     req.session.data.detailsCheckedC2 = 'yes';
+    if (req.session.data.noteActionTask2C2) {
+    }
+    else
     req.session.data.noteActionTask2C2 = req.session.data.decisionTask2C2;
     switch (req.session.data.decisionTask2C2) {
     case 'Accepted':
@@ -1257,6 +1358,9 @@ router.get('/task2T2C2', function (req, res) {
 
 router.get('/task2fT2C2', function (req, res) { 
     req.session.data.detailsCheckedC2 = 'yes';
+    if (req.session.data.noteActionTask2fC2) {
+    }
+    else
     req.session.data.noteActionTask2fC2 = req.session.data.decisionTask2fC2;
     switch (req.session.data.decisionTask2fC2) {
     case 'Accepted':
@@ -1285,6 +1389,9 @@ router.get('/task2fT2C2', function (req, res) {
 
 router.get('/task3T2C2', function (req, res) { 
     req.session.data.detailsCheckedC2 = 'yes';
+    if (req.session.data.noteActionTask3C2) {
+    }
+    else
     req.session.data.noteActionTask3C2 = req.session.data.decisionTask3C2;
     switch (req.session.data.decisionTask3C2) {
     case 'Accepted':
@@ -1313,6 +1420,9 @@ router.get('/task3T2C2', function (req, res) {
 
 router.get('/task4T2C2', function (req, res) { 
     req.session.data.detailsCheckedC2 = 'yes';
+    if (req.session.data.noteActionTask4C2) {
+    }
+    else
     req.session.data.noteActionTask4C2 = req.session.data.decisionTask4C2;
     switch (req.session.data.decisionTask4C2) {
     case 'Accepted':
@@ -1341,6 +1451,9 @@ router.get('/task4T2C2', function (req, res) {
 
 router.get('/task5T2C2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+    if (req.session.data.noteActionTask5C2) {
+    }
+    else
     req.session.data.noteActionTask5C2 = req.session.data.decisionTask5C2;
     switch (req.session.data.decisionTask5C2) {
     case 'Accepted':
@@ -1369,6 +1482,9 @@ router.get('/task5T2C2', function (req, res) {
 
 router.get('/task6T2C2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+    if (req.session.data.noteActionTask6C2) {
+    }
+    else
     req.session.data.noteActionTask6C2 = req.session.data.decisionTask6C2;
     switch (req.session.data.decisionTask6C2) {
     case 'Accepted':
@@ -1413,6 +1529,9 @@ router.get('/setUserFo2C2', function (req, res) {
 // Amendment routes 2
 
 router.get('/task1T2AmC2', function (req, res) { 
+    if (req.session.data.noteActionTaskAm1C2) {
+    }
+    else
     req.session.data.noteActionTaskAm1C2 = req.session.data.decisionTaskAm1C2;
     switch (req.session.data.decisionTaskAm1C2) {
     case 'Confirm':
@@ -1433,6 +1552,9 @@ router.get('/task1T2AmC2', function (req, res) {
 });
 
 router.get('/task2T2AmC2', function (req, res) { 
+    if (req.session.data.noteActionTaskAm2C2) {
+    }
+    else
     req.session.data.noteActionTaskAm2C2 = req.session.data.decisionTaskAm2C2;
     switch (req.session.data.decisionTaskAm2C2) {
     case 'Confirm':
@@ -1453,6 +1575,9 @@ router.get('/task2T2AmC2', function (req, res) {
 });
 
 router.get('/task3T2AmC2', function (req, res) { 
+    if (req.session.data.noteActionTaskAm3C2) {
+    }
+    else
     req.session.data.noteActionTaskAm3C2 = req.session.data.decisionTaskAm3C2;
     switch (req.session.data.decisionTaskAm3C2) {
     case 'Confirm':
@@ -1483,6 +1608,9 @@ router.get('/agreementStage2C2', function (req, res) {
 
 router.get('/task1AgT2C2', function (req, res) { 
     req.session.data.AgreeCheckedC2 = 'yes';
+    if (req.session.data.noteActionAgreeTask1C2) {
+    }
+    else
     req.session.data.noteActionAgreeTask1C2 = req.session.data.decisionTask1C2;
     switch (req.session.data.decisionAgreeTask1C2) {
     case 'Confirm':
@@ -1503,7 +1631,9 @@ router.get('/task1AgT2C2', function (req, res) {
 });
 
 router.get('/task2AgT2C2', function (req, res) { 
-
+    if (req.session.data.noteActionAgreeTask2C2) {
+    }
+    else
     req.session.data.noteActionAgreeTask2C2 = req.session.data.decisionAgreeTask2C2;
     switch (req.session.data.decisionAgreeTask2C2) {
     case 'Confirm':
@@ -1574,6 +1704,9 @@ router.get('/5month1C2', function (req, res) {
 });
 
 router.get('/task5m1C2', function (req, res) { 
+    if (req.session.data.noteActionTask1mC2) {
+    }
+    else
     req.session.data.noteActionTask1mC2 = req.session.data.decisionTask1mC2;
     switch (req.session.data.decisionTask1mC2) {
     case 'No action needed':
@@ -1603,6 +1736,9 @@ router.get('/task5m1C2', function (req, res) {
 });
 
 router.get('/task5m2C2', function (req, res) { 
+    if (req.session.data.noteActionTask1mC2) {
+    }
+    else
     req.session.data.noteActionTask2mC2 = req.session.data.decisionTask2mC2;
     switch (req.session.data.decisionTask2mC2) {
     case 'No action needed':
@@ -1632,6 +1768,9 @@ router.get('/task5m2C2', function (req, res) {
 });
 
 router.get('/task5m3C2', function (req, res) { 
+    if (req.session.data.noteActionTask3mC2) {
+    }
+    else
     req.session.data.noteActionTask3mC2 = req.session.data.decisionTask3mC2;
     switch (req.session.data.decisionTask3mC2) {
     case 'No action needed':
@@ -1661,6 +1800,9 @@ router.get('/task5m3C2', function (req, res) {
 });
 
 router.get('/task5m4C2', function (req, res) { 
+    if (req.session.data.noteActionTask4mC2) {
+    }
+    else
     req.session.data.noteActionTask4mC2 = req.session.data.decisionTask4mC2;
     switch (req.session.data.decisionTask4mC2) {
     case 'No action needed':
@@ -1691,6 +1833,9 @@ router.get('/task5m4C2', function (req, res) {
 
 
 router.get('/task5m5C2', function (req, res) { 
+    if (req.session.data.noteActionTask5mC2) {
+    }
+    else
     req.session.data.noteActionTask5mC2 = req.session.data.decisionTask5mC2;
     switch (req.session.data.decisionTask5mC2) {
     case 'No action needed':
@@ -1721,6 +1866,9 @@ router.get('/task5m5C2', function (req, res) {
 
 
 router.get('/task5m6C2', function (req, res) { 
+    if (req.session.data.noteActionTask6mC2) {
+    }
+    else
     req.session.data.noteActionTask6mC2 = req.session.data.decisionTask6mC2;
     switch (req.session.data.decisionTask6mC2) {
     case 'No action needed':
