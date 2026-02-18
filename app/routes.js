@@ -1190,6 +1190,12 @@ router.get('/task5m6', function (req, res) {
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
+router.get('/calcs1', function (req, res) {
+    req.session.data.recalc = 'yes'; 
+  res.redirect('/FRPS-D2/calculations');
+});
+
+
 
 
 // D2 case2 routes

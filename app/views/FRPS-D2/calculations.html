@@ -115,7 +115,28 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-1">Land parcel calculations</h1>
     
+    {% if (data.recalc) %} 
+
+        <div role="region" class="moj-alert moj-alert--success moj-alert--with-heading" aria-label="success: File uploaded successfully" data-module="moj-alert">
+      <div>
+        <svg class="moj-alert__icon" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" height="30" width="30">
+          <path d="M11.2869 24.6726L2.00415 15.3899L4.62189 12.7722L11.2869 19.4186L25.3781 5.32739L27.9958 7.96369L11.2869 24.6726Z" fill="currentColor" />
+        </svg>
+      </div>
+      <div class="moj-alert__content">
+        <h2 class="moj-alert__heading">Calculations successfully rerun
+        </h2>All calculations were successfully rerun at 12:50am today 
+      </div>
+      <div class="moj-alert__action">
+        <button class="moj-alert__dismiss" hidden>Dismiss</button>
+      </div>
+    </div>
+
+    {% else %}
     <p >Rules check last run: 12:50am 12 Sept 2025</p>
+
+    {% endif %}
+
     <p> A line of text here just to offset the rest of the design and make it look better</p>
   </div>
 </div>
