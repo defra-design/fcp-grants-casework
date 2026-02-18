@@ -1225,7 +1225,7 @@
        
        {% elseif (data.caseStage === 'amendment_submitted') %}
       
-        <h2 class="govuk-heading-m">This case with closed due to an amendment being submitted</h2>
+        <h2 class="govuk-heading-m">This case was closed due to an amendment being submitted</h2>
         <p>There are no tasks to complete.</p>
 
 
@@ -1261,15 +1261,19 @@
      items: [
        {
          href: "/setUserFo2",
-         text: "Set user finance officer"
+         text: "Am Finance officer"
        },
       {
          href: "/tasklistStage2",
-         text: "Set agreement signed"
+         text: "Agreement signed"
        },
       {
          href: "/amend2",
-         text: "Set amendment signed"
+         text: "Amendment submitted"
+       },
+      {
+         href: "/5month1",
+         text: "5 months"
        },
        {
          href: "/manage-prototype/clear-data",

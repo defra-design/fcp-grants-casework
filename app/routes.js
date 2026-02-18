@@ -499,7 +499,7 @@ router.get('/amend2', function (req, res) {
 router.get('/aggSent2', function (req, res) { 
     switch (req.session.data.decisionAg) {
     case 'Agreement sent':
-        req.session.data.filteredAggNote = stripEmptyAndNulls(req.session.data.agreeNotetask1AgT2);
+        req.session.data.filteredAggNote = stripEmptyAndNulls(req.session.data.agreeNote);
     return res.redirect('/tasklistStage2');    
     case 'Reject':
         req.session.data.caseStage = 'reject'; 
@@ -965,10 +965,14 @@ router.get('/5month1', function (req, res) {
 });
 
 router.get('/task5m1', function (req, res) { 
+
     if (req.session.data.noteActionTask1m) {
+        req.session.data.filteredNote1m_2 = stripEmptyAndNulls(req.session.data.task1mNote2); 
     }
-    else
-    req.session.data.noteActionTask1m = req.session.data.decisionTask1m;  
+    else {
+        req.session.data.noteActionTask1m = req.session.data.decisionTask1m
+        req.session.data.filteredNote1m = stripEmptyAndNulls(req.session.data.task1mNote);
+    } 
 
     switch (req.session.data.decisionTask1m) {
     case 'No action needed':
@@ -993,14 +997,20 @@ router.get('/task5m1', function (req, res) {
         req.session.data.month5_1Tag = 'govuk-tag';
         req.session.data.month5_1Status = 'Incomplete'
     };
-    req.session.data.filteredNote1m = stripEmptyAndNulls(req.session.data.task1mNote);
+
     res.redirect('/FRPS-D2/tasklist-stage');
 });
 
 router.get('/task5m2', function (req, res) { 
+
     if (req.session.data.noteActionTask2m) {
+        req.session.data.filteredNote2m_2 = stripEmptyAndNulls(req.session.data.task2mNote2); 
     }
-    else
+    else {
+        req.session.data.noteActionTask2m = req.session.data.decisionTask2m
+        req.session.data.filteredNote2m = stripEmptyAndNulls(req.session.data.task2mNote);
+    } 
+
     req.session.data.noteActionTask2m = req.session.data.decisionTask2m;
 
     switch (req.session.data.decisionTask2m) {
@@ -1031,10 +1041,15 @@ router.get('/task5m2', function (req, res) {
 });
 
 router.get('/task5m3', function (req, res) { 
+
     if (req.session.data.noteActionTask3m) {
+        req.session.data.filteredNote3m_2 = stripEmptyAndNulls(req.session.data.task3mNote2); 
     }
-    else
-    req.session.data.noteActionTask3m = req.session.data.decisionTask3m;
+    else {
+        req.session.data.noteActionTask3m = req.session.data.decisionTask3m
+        req.session.data.filteredNote3m = stripEmptyAndNulls(req.session.data.task3mNote);
+    } 
+
     switch (req.session.data.decisionTask3m) {
     case 'No action needed':
         req.session.data.month5_3Tag = '';
@@ -1063,10 +1078,15 @@ router.get('/task5m3', function (req, res) {
 });
 
 router.get('/task5m4', function (req, res) { 
+
     if (req.session.data.noteActionTask4m) {
+        req.session.data.filteredNote4m_2 = stripEmptyAndNulls(req.session.data.task4mNote2); 
     }
-    else
-    req.session.data.noteActionTask4m = req.session.data.decisionTask4m;    
+    else {
+        req.session.data.noteActionTask4m = req.session.data.decisionTask4m
+        req.session.data.filteredNote4m = stripEmptyAndNulls(req.session.data.task4mNote);
+    } 
+ 
 
     switch (req.session.data.decisionTask4m) {
     case 'No action needed':
@@ -1097,10 +1117,15 @@ router.get('/task5m4', function (req, res) {
 
 
 router.get('/task5m5', function (req, res) { 
+
     if (req.session.data.noteActionTask5m) {
+        req.session.data.filteredNote5m_2 = stripEmptyAndNulls(req.session.data.task5mNote2); 
     }
-    else
-    req.session.data.noteActionTask5m = req.session.data.decisionTask5m;
+    else {
+        req.session.data.noteActionTask5m = req.session.data.decisionTask5m
+        req.session.data.filteredNote5m = stripEmptyAndNulls(req.session.data.task5mNote);
+    } 
+
     switch (req.session.data.decisionTask5m) {
     case 'No action needed':
         req.session.data.month5_5Tag = '';
@@ -1131,9 +1156,13 @@ router.get('/task5m5', function (req, res) {
 
 router.get('/task5m6', function (req, res) { 
     if (req.session.data.noteActionTask6m) {
+        req.session.data.filteredNote6m_2 = stripEmptyAndNulls(req.session.data.task6mNote2); 
     }
-    else
-    req.session.data.noteActionTask6m = req.session.data.decisionTask6m;
+    else {
+        req.session.data.noteActionTask6m = req.session.data.decisionTask6m
+        req.session.data.filteredNote6m = stripEmptyAndNulls(req.session.data.task6mNote);
+    } 
+
     switch (req.session.data.decisionTask6m) {
     case 'No action needed':
         req.session.data.month5_6Tag = '';
