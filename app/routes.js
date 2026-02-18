@@ -1192,7 +1192,7 @@ router.get('/task5m6', function (req, res) {
 
 router.get('/calcs1', function (req, res) {
     req.session.data.recalc = 'yes'; 
-  res.redirect('/FRPS-D2/calculations');
+  res.redirect('/FRPS-D2/calculations2');
 });
 
 
