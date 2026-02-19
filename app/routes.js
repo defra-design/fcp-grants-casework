@@ -928,7 +928,7 @@ router.get('/tasklistStage2', function (req, res) {
         req.session.data.caseStage = 'start'; 
         req.session.data.caseStatus = 'Application received';    
         req.session.data.caseStatusTag = 'govuk-tag govuk-tag--grey'; 
-    return res.redirect('/FRPS-D2/caselist-my');
+    return res.redirect('/FRPS-D2/caselist');
     case 2:
         req.session.data.caseStage = 'review';   
         req.session.data.caseStatus = 'In review';    
@@ -1193,6 +1193,11 @@ router.get('/task5m6', function (req, res) {
 router.get('/calcs1', function (req, res) {
     req.session.data.recalc = 'yes'; 
   res.redirect('/FRPS-D2/calculations2');
+});
+
+router.get('/caselink1', function (req, res) {
+    req.session.data.showLinks = 'yes'; 
+  res.redirect('/FRPS-D2/caselist');
 });
 
 
