@@ -1200,7 +1200,10 @@ router.get('/caselink1', function (req, res) {
   res.redirect('/FRPS-D2/caselist');
 });
 
-
+router.get('/setLinked1', function (req, res) {
+    req.session.data.linkedCase = 'yes'; 
+  res.redirect('/tasklistStage2');
+});
 
 
 // D2 case2 routes
