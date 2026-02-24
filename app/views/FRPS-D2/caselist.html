@@ -53,7 +53,7 @@
                 Select
               </th>
 
-              {% if (data.linkedCase) %}<th scope="col" class="govuk-table__header"><image src="/public/images/link-icon.png" height=16></th> {% endif %}
+              {% if (data.linkedCase) %}<th scope="col" class="govuk-table__header custom-width-table-small"><image src="/public/images/link-icon.png" height=16></th> {% endif %}
               <th scope="col" class="govuk-table__header" aria-sort="none">ID</th>
               <th scope="col" class="govuk-table__header" aria-sort="none">Business</th>
               <th scope="col" class="govuk-table__header" aria-sort="none">SBI</th>
@@ -76,7 +76,7 @@
                 </div>
               </div> 
               </td>
-              {% if (data.linkedCase) %}<td class="govuk-table__cell"><a href="/caselink1"><image src="/public/images/link-icon.png" height=16></a></td>{% endif %}
+              {% if (data.linkedCase) %}<td class="govuk-table__cell"><a href="/caselink1"><!--<image src="/public/images/warning-triangle.png" height=20> --><image src="/public/images/link-icon.png" class="bottom-pad" height=16></a></td>{% endif %}
               <td class="govuk-table__cell"><a href="tasklist-stage">100300</a></td>
               <td class="govuk-table__cell">Berkshire Estate Limited</td>
               <td class="govuk-table__cell">112849012</td>
