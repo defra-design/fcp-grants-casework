@@ -1210,6 +1210,10 @@ router.get('/setLinked1', function (req, res) {
 
 
 
+router.get('/case100287', function (req, res) {
+    req.session.data.caseStageC2 = 'return'; 
+  res.redirect('/FRPS-D2/case2/tasklist-stage');
+});
 
 router.get('/app-approve2C2', function (req, res) { 
     switch (req.session.data.decision1C2) {

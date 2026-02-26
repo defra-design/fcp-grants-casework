@@ -108,417 +108,45 @@
      
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
+
+    {% if (data.linkedCase) %}
+
+<table class="govuk-table govuk-!-margin-top-4">
+  <caption class="govuk-table__caption govuk-table__caption--L">Timeline history</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Case ID</th>
+      <th scope="col" class="govuk-table__header">Date received</th>      
+      <th scope="col" class="govuk-table__header">Date ended</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">100300</td>
+      <td class="govuk-table__cell">11 Feb 2026</td>
+      <td class="govuk-table__cell"> - </td>
+      <td class="govuk-table__cell">{{ data['caseStatus']}}</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/case100287">100287</a></td>
+      <td class="govuk-table__cell">03 Feb 2026</td>
+      <td class="govuk-table__cell">03 Feb 2026</td>
+      <td class="govuk-table__cell">Returned to customer</td>
+    </tr>
+  </tbody>
+</table>
+{% endif %}
+
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Timeline
-      </h1>
-    </legend>
+    Timeline {% if (data.linkedCase) %} (multiple cases) {% endif %}  </h1>
     
-<!--
-<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-          Case ID: 100300
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-3" class="govuk-accordion__section-content"> -->
+    </legend>
+<h2 class="govuk-heading-s">Timeline for 100300</h2>
 <div class="moj-timeline">
 
-
-  {% if (data.decisionAg ) %} 
-
-    <div class="moj-timeline__item">
-
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Agreement stage decision: {{ data['decisionAg']}}</h2>
-
-        <p class="moj-timeline__byline">by A Jones </p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 17:02am</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        <a class="govuk-link" href="notes#agree">View note</a>
-        
-      </div>
-
-    </div>
-
-  {% endif %}
-
-  {% if (data.task2ANote2 ) %} 
-
-    <div class="moj-timeline__item">
-
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Task - Notify customer that draft agreement is ready - {{ data['decisionAgreeTask2']}}</h2>
-
-        <p class="moj-timeline__byline">by J Smith</p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 13:45am</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        <a class="govuk-link" href="notes#review">View note</a>
-        
-      </div>
-
-    </div>
-
-  {% endif %}
-
-  {% if (data.noteActionAgreeTask2 ) %} 
-
-    <div class="moj-timeline__item">
-
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Task - Notify customer that draft agreement is ready - {{ data['noteActionAgreeTask2']}}</h2>
-
-        <p class="moj-timeline__byline">by J Smith</p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 13:30am</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        <a class="govuk-link" href="notes#review">View note</a>
-        
-      </div>
-
-    </div>
-
-  {% endif %}
-
-
-  {% if (data.task1ANote2 ) %} 
-
-    <div class="moj-timeline__item">
-
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Task - Check draft funding agreement - {{ data['decisionAgreeTask1']}}</h2>
-
-        <p class="moj-timeline__byline">by A Jones </p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 12:30am<</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        <a class="govuk-link" href="notes#review">View note</a>
-        
-      </div>
-
-    </div>
-
-  {% endif %}
-
-  {% if (data.noteActionAgreeTask1 ) %} 
-
-    <div class="moj-timeline__item">
-
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Task - Check draft funding agreement - {{ data['noteActionAgreeTask1']}}</h2>
-
-        <p class="moj-timeline__byline">by A Jones </p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 12:15am<</time>
-      </p>
-
-      <div class="moj-timeline__description">
-        <a class="govuk-link" href="notes#review">View note</a>
-        
-      </div>
-
-    </div>
-
-  {% endif %}
-
-{% if (data.decision1 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application stage decision: {{ data['decision1']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 11:12am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-{% if (data.task6Note2 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Review scheme budget as a finance officer - {{ data['decisionTask6']}}</h2>
-
-      <p class="moj-timeline__byline">by J Smith</p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 11:04am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-{% if (data.noteActionTask6 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Review scheme budget as a finance officer - {{ data['noteActionTask6']}}</h2>
-
-      <p class="moj-timeline__byline">by J Smith</p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 11:02am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-
-{% if (data.task5Note2 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Check payment amount - {{ data['decisionTask5']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:52am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-{% if (data.noteActionTask5 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Check payment amount - {{ data['noteActionTask5']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:42am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-{% if (data.task3Note2 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Check if any land parcels are within an SSSI - {{ data['decisionTask3']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:38am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-{% if (data.noteActionTask3 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Check if any land parcels are within an SSSI - {{ data['noteActionTask3']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:36am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-{% if (data.task2Note2 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Review land parcel rule calculations - {{ data['decisionTask2']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:34am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-{% if (data.noteActionTask2 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Review land parcel rule calculations - {{ data['noteActionTask2']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:32am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-{% if (data.task1Note2 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Check customer details s - {{ data['decisionTask1']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:30am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-{% if (data.noteActionTask1 ) %} 
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - Check customer details - {{ data['noteActionTask1']}}</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:30am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
-
-  </div>
-
-{% endif %}
-
-
-
-
-
-
-  {% if (data.decision5m ) %} 
+   {% if (data.decision5m ) %} 
 
     <div class="moj-timeline__item">
 
@@ -828,6 +456,449 @@
     </div>
 
   {% endif %}
+
+
+  {% if (data.decisionAg ) %} 
+
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Agreement stage decision: {{ data['decisionAg']}}</h2>
+
+        <p class="moj-timeline__byline">by A Jones </p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 17:02am</time>
+      </p>
+
+      <div class="moj-timeline__description">
+        <a class="govuk-link" href="notes#agree">View note</a>
+        
+      </div>
+
+    </div>
+
+  {% endif %}
+
+  {% if (data.task2ANote2 ) %} 
+
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Task - Notify customer that draft agreement is ready - {{ data['decisionAgreeTask2']}}</h2>
+
+        <p class="moj-timeline__byline">by J Smith</p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 13:45am</time>
+      </p>
+
+      <div class="moj-timeline__description">
+        <a class="govuk-link" href="notes#review">View note</a>
+        
+      </div>
+
+    </div>
+
+  {% endif %}
+
+  {% if (data.noteActionAgreeTask2 ) %} 
+
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Task - Notify customer that draft agreement is ready - {{ data['noteActionAgreeTask2']}}</h2>
+
+        <p class="moj-timeline__byline">by J Smith</p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 13:30am</time>
+      </p>
+
+      <div class="moj-timeline__description">
+        <a class="govuk-link" href="notes#review">View note</a>
+        
+      </div>
+
+    </div>
+
+  {% endif %}
+
+
+  {% if (data.task1ANote2 ) %} 
+
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Task - Check draft funding agreement - {{ data['decisionAgreeTask1']}}</h2>
+
+        <p class="moj-timeline__byline">by A Jones </p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 12:30am<</time>
+      </p>
+
+      <div class="moj-timeline__description">
+        <a class="govuk-link" href="notes#review">View note</a>
+        
+      </div>
+
+    </div>
+
+  {% endif %}
+
+  {% if (data.noteActionAgreeTask1 ) %} 
+
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Task - Check draft funding agreement - {{ data['noteActionAgreeTask1']}}</h2>
+
+        <p class="moj-timeline__byline">by A Jones </p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-06-14T14:01:00.000Z">14 Sept 2025 at 12:15am<</time>
+      </p>
+
+      <div class="moj-timeline__description">
+        <a class="govuk-link" href="notes#review">View note</a>
+        
+      </div>
+
+    </div>
+
+  {% endif %}
+
+
+
+
+{% if (data.decision1 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Application stage decision: {{ data['decision1']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 11:12am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% if (data.task6Note2 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Review scheme budget as a finance officer - {{ data['decisionTask6']}}</h2>
+
+      <p class="moj-timeline__byline">by J Smith</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 11:04am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% if (data.noteActionTask6 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Review scheme budget as a finance officer - {{ data['noteActionTask6']}}</h2>
+
+      <p class="moj-timeline__byline">by J Smith</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 11:02am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+
+{% if (data.task5Note2 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Check payment amount - {{ data['decisionTask5']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 10:52am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% if (data.noteActionTask5 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Check payment amount - {{ data['noteActionTask5']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 10:42am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% if (data.task3Note2 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Check if any land parcels are within an SSSI - {{ data['decisionTask3']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 10:38am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% if (data.noteActionTask3 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Check if any land parcels are within an SSSI - {{ data['noteActionTask3']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 10:36am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+{% if (data.task2Note2 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Review land parcel rule calculations - {{ data['decisionTask2']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 10:34am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% if (data.noteActionTask2 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Review land parcel rule calculations - {{ data['noteActionTask2']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 10:32am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% if (data.task1Note2 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Check customer details s - {{ data['decisionTask1']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 10:30am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% if (data.noteActionTask1 ) %} 
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Check customer details - {{ data['noteActionTask1']}}</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">12 Feb 2026 at 10:30am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+{% endif %}
+
+  {% if data.caseStatus === 'start' %} 
+
+  {% else %}
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Not started stage: Start</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">11 Feb 2026 at 16:31pm</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+  {% endif %}
+
+
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Case received</h2>
+
+      <p class="moj-timeline__byline">by System</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">11 Feb 2026 at 09:43am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+
+
+
+
+
+ 
     
 
 

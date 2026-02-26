@@ -15,7 +15,7 @@
           </a>
       </div>
     </div>
-  </header> 
+  </header>  
   <div class="lg-div"> 
     <div class="govuk-width-container">
       <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -35,7 +35,7 @@
      
       <div style="display: flex; gap: 20px;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100287</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
         <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
       </div>
@@ -76,11 +76,7 @@
             </a>
           </li>
 
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="land">
-            Land
-            </a>
-          </li>
+
           <li class="govuk-service-navigation__item-c2 govuk-service-navigation__item--active">
             <a class="govuk-service-navigation__link" href="#" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Timeline</strong>
@@ -92,11 +88,7 @@
             </a>
           </li>
     
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="messages">
-              Customer contact
-            </a>
-          </li> 
+
           {% if (data.agreementStage) %} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
@@ -119,94 +111,73 @@
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Timeline
+    Timeline  (multiple cases)
       </h1>
     </legend>
     
-
-<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-          Case ID: 100300
-        </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+<table class="govuk-table govuk-!-margin-top-4">
+  <caption class="govuk-table__caption govuk-table__caption--L">Timeline history</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Case ID</th>
+      <th scope="col" class="govuk-table__header">Date received</th>      
+      <th scope="col" class="govuk-table__header">Date ended</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="../tasklist-stage">100300</a></td>
+      <td class="govuk-table__cell">11 Feb 2026</td>
+      <td class="govuk-table__cell"> - </td>
+      <td class="govuk-table__cell">{{ data['caseStatus']}}</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">100287</td>
+      <td class="govuk-table__cell">03 Feb 2026</td>
+      <td class="govuk-table__cell">03 Feb 2026</td>
+      <td class="govuk-table__cell">Returned to customer</td>
+    </tr>
+  </tbody>
+</table>
 <div class="moj-timeline">
-              <div class="moj-timeline__item">
 
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application approved</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10:30am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes2">View note</a>
-      
-    </div>
-
-  </div>
-
-
-        <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - ID0120: 50% moorland intersection on chosen land - resolved</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 10am</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes2">View note</a>
-      
-    </div>
-
-  </div>
-
-
-    <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - ID0120: SFI available area check -  completed</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 9am</time>
-    </p>
-
-  </div>
-  
   <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">General note added </h2>
+      <h2 class="moj-timeline__title">Application stage decision: Returned to customer</h2>
 
       <p class="moj-timeline__byline">by A Jones </p>
 
     </div>
 
     <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">10 Sept 2025 at 4:02pm</time>
+      <time datetime="2019-06-14T14:01:00.000Z">03 Feb  2026 at 11:12am</time>
     </p>
 
     <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes2">View note</a>
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
+
+
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Task - Check if any land parcels are within an SSSI - Accepted</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">03 Feb  2026 at 10:30am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
       
     </div>
 
@@ -215,239 +186,82 @@
   <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application assigned to A Jones </h2>
+      <h2 class="moj-timeline__title">Task - Review land parcel rule checks - Accepted</h2>
 
       <p class="moj-timeline__byline">by A Jones </p>
 
     </div>
 
     <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">10 Sept 2025 at 4pm</time>
+      <time datetime="2019-06-14T14:01:00.000Z">03 Feb  2026 at 10:30am</time>
     </p>
 
     <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes2">View note</a>
+      <a class="govuk-link" href="notes#review">View note</a>
       
     </div>
 
   </div>
-
-
 
   <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application received</h2>
+      <h2 class="moj-timeline__title">Task - Check customer details - Accepted</h2>
 
-      <p class="moj-timeline__byline"> by System</p>
+      <p class="moj-timeline__byline">by A Jones </p>
 
     </div>
 
     <p class="moj-timeline__date">
-      <time datetime="2019-05-28T10:45:00.000Z">10 Sept 2025 at 1:15pm</time>
+      <time datetime="2019-06-14T14:01:00.000Z">03 Feb  2026 at 10:30am</time>
     </p>
+
     <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
       
+    </div>
+
+  </div>
+  <div class="moj-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Not started stage: Start</h2>
+
+      <p class="moj-timeline__byline">by A Jones </p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">03 Feb 2026 at 16:31pm</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
       
     </div>
 
   </div>
 
+  <div class="moj-timeline__item">
 
+    <div class="moj-timeline__header">
+      <h2 class="moj-timeline__title">Case received</h2>
 
- 
+      <p class="moj-timeline__byline">by System</p>
+
+    </div>
+
+    <p class="moj-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">02 Feb 2026 at 09:43am</time>
+    </p>
+
+    <div class="moj-timeline__description">
+      <a class="govuk-link" href="notes#review">View note</a>
+      
+    </div>
+
+  </div>
 </div>
-    </div>
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-          Case ID: 100287
-        </span>
-      </h2>
-    </div>
-
-    <div id="accordion-default-content-1" class="govuk-accordion__section-content">
-
-<div class="moj-timeline">
-    <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - ID0120: SFI available area check -  completed</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 9am</time>
-    </p>
-
-  </div>
-  
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">General note added </h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">10 Sept 2025 at 4:02pm</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes2">View note</a>
-      
-    </div>
-
-  </div>
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application assigned to A Jones </h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">10 Sept 2025 at 4pm</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes2">View note</a>
-      
-    </div>
-
-  </div>
-
-
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application received</h2>
-
-      <p class="moj-timeline__byline"> by System</p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-05-28T10:45:00.000Z">10 Sept 2025 at 1:15pm</time>
-    </p>
-    <div class="moj-timeline__description">
-      
-      
-    </div>
-
-  </div>
-
-
-
- 
-</div>
-    </div>
-  </div>
-  <div class="govuk-accordion__section">
-    <div class="govuk-accordion__section-header">
-      <h2 class="govuk-accordion__section-heading">
-        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-          Case ID: 100114
-          </span>
-      </h2>
-    </div>
-    <div id="accordion-default-content-2" class="govuk-accordion__section-content">
-
-<div class="moj-timeline">
-    <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Task - ID0120: SFI available area check -  completed</h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">12 Sept 2025 at 9am</time>
-    </p>
-
-  </div>
-  
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">General note added </h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">10 Sept 2025 at 4:02pm</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes2">View note</a>
-      
-    </div>
-
-  </div>
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application assigned to A Jones </h2>
-
-      <p class="moj-timeline__byline">by A Jones </p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-06-14T14:01:00.000Z">10 Sept 2025 at 4pm</time>
-    </p>
-
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes2">View note</a>
-      
-    </div>
-
-  </div>
-
-
-
-  <div class="moj-timeline__item">
-
-    <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Application received</h2>
-
-      <p class="moj-timeline__byline"> by System</p>
-
-    </div>
-
-    <p class="moj-timeline__date">
-      <time datetime="2019-05-28T10:45:00.000Z">10 Sept 2025 at 1:15pm</time>
-    </p>
-    <div class="moj-timeline__description">
-      
-      
-    </div>
-
-  </div>
-
-
-
- 
-</div>
-
-    </div>
-  </div>
-  
-  </div>
 
     
 
