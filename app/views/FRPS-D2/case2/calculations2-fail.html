@@ -15,16 +15,16 @@
           </a>
       </div>
     </div>
-  </header> 
+  </header>  
  
-  <div class="lg-div"> 
+  <div class="lg-div">  
    
 <div class="govuk-width-container">
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <div>
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist"
+        href: "../caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
     </div>
@@ -39,9 +39,9 @@
      
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
-        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100297</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112841024</p></div>       
+        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatusC2']}}</p></div>
       </div>
 
 
@@ -130,28 +130,7 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-1">Land parcel calculations</h1>
     
-    {% if (data.recalc) %} 
-
-        <div role="region" class="moj-alert moj-alert--success moj-alert--with-heading" aria-label="success: File uploaded successfully" data-module="moj-alert">
-      <div>
-        <svg class="moj-alert__icon" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" height="30" width="30">
-          <path d="M11.2869 24.6726L2.00415 15.3899L4.62189 12.7722L11.2869 19.4186L25.3781 5.32739L27.9958 7.96369L11.2869 24.6726Z" fill="currentColor" />
-        </svg>
-      </div>
-      <div class="moj-alert__content">
-        <h2 class="moj-alert__heading">Calculations successfully rerun
-        </h2>All calculations were successfully rerun at 14:25pm today 
-      </div>
-      <div class="moj-alert__action">
-        <button class="moj-alert__dismiss" hidden>Dismiss</button>
-      </div>
-    </div>
-
-    {% else %}
     <p >Rules check last run: 14:25pm 14 Sept 2025</p>
-
-    {% endif %}
-
 
 
     <!--   <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
@@ -223,28 +202,30 @@
 <details class="govuk-details govuk-!-margin-bottom-3">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Total available area matches area applied for         <strong class="govuk-tag govuk-tag--green margin-left-130">
-        <svg class="tick-icon" width="20" height="20" viewBox="0 0 24 24" fill="green" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 16.2L4.8 12L3.4 13.4L9 19L21 7L19.6 5.6L9 16.2Z"/>
-        </svg>
-        Passed
-        </strong>
+      Total available area matches area applied for         <strong class="govuk-tag govuk-tag--red-new margin-left-130">Failed
+      </strong>
     </span>
   </summary>
   <div class="govuk-details__text">
         <h2 class="govuk-heading-m">Result</h2>
 
-    <p>Passed</p>
+    <p>Failed</p>
 
-    <h2 class="govuk-heading-m">Pass reason</h2>
+    <h2 class="govuk-heading-m">Fail reason</h2>
 
-    <p>The total available area (1.1506 ha) matches the area applied for (1.1506 ha). </p>
+    <p>The total available area (1.1506 ha) does not match the area applied for (1 ha). This can happen when land parcel data is updated after an application has been submitted.</p>
+<h2 class="govuk-heading-m">What to do</h2>
+
+<ol class="govuk-list govuk-list--number">
+  <li>Check the land parcel data for errors</li>
+  <li>If there are no errors, reject the application and ask the customer to reapply with the correct total available area</li>
+</ol>
 
 <p>Date application submitted: 14 October 2025</br>
 Latest land parcel update: 21 October 2025 </p>
 
 <h3 class="govuk-heading-s">Area applied for by customer</h3>
-<p>1.1506 ha</p>
+<p>1 ha</p>
 
 <h3 class="govuk-heading-s">Total available area</h3>
 <p>1.1506 ha</p>
@@ -315,24 +296,23 @@ Incompatible stacks on valid land covers: 2.0034 ha</p>
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      At least 51% of land parcel is moorland<strong class="govuk-tag govuk-tag--green margin-left-177">
-        <svg class="tick-icon" width="20" height="20" viewBox="0 0 24 24" fill="green" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 16.2L4.8 12L3.4 13.4L9 19L21 7L19.6 5.6L9 16.2Z"/>
-        </svg>
-        Passed
-        </strong>
+      At least 51% of land parcel is moorland<strong class="govuk-tag govuk-tag--red-new margin-left-180">Failed
+      </strong>
     </span>
   </summary>
   <div class="govuk-details__text">
         <h2 class="govuk-heading-m">Result</h2>
 
-    <p>Passed</p>
+    <p>Failed</p>
 
-    <h2 class="govuk-heading-m">Pass reason</h2>
+    <h2 class="govuk-heading-m">Fail reason</h2>
 
     <p>CMOR1 requires at least 51% of an area to be moorland. Parcel SO3757 3059 is only 28.28% moorland. </p>
+    <h2 class="govuk-heading-m">What to do</h2>
 
-<li>If there are no errors, reject the application</li>
+<ol class="govuk-list govuk-list--number">
+  <li>Check the land parcel data for errors</li>
+  <li>If there are no errors, reject the application</li>
 </ol>
 
 <h2 class="govuk-heading-m">Moorland percentage </h2>
@@ -342,11 +322,11 @@ Taken from SITI Agri<br>
 
 <p>Area on moorland <br>
 Taken from SITI Agri data layer<br>
-6.1540 ha</p>
+3.1540 ha</p>
 
 <p>Percentage calculation <br>
-6.1540 / 11.1506 = 0.5516<br>
-0.5516 X 100 = 55.16%</p>
+3.1540 / 11.1506 = 0.2828<br>
+0.2828 X 100 = 28.28%</p>
 
 
 

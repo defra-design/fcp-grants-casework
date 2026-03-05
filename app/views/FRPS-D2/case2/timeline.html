@@ -16,13 +16,13 @@
       </div>
     </div>
   </header>  
-  <div class="lg-div">  
+  <div class="lg-div">   
     <div class="govuk-width-container">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
           {{ govukBackLink({
             text: "Back to applications",
-            href: "caselist-my"
+            href: "../caselist"
           }) }}
           <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
         </div>
@@ -35,8 +35,8 @@
      
       <div style="display: flex; gap: 20px;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100287</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
+        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100297</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112841024</p></div>       
         <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatusC2']}}</p></div>
       </div>
 
@@ -80,7 +80,7 @@
           <li class="govuk-service-navigation__item-c2 govuk-service-navigation__item--active">
             <a class="govuk-service-navigation__link" href="#" aria-current="true">
               <strong class="govuk-service-navigation__active-fallback">Timeline {% if (data.linkedCase) %} (2){% endif %}</strong>
-            </a>
+            </a> 
           </li>
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="notes">
@@ -111,9 +111,10 @@
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Timeline  (multiple cases)
+    Timeline  {% if (data.linkedCase) %} (multiple cases) {% endif %} 
       </h1>
     </legend>
+     {% if (data.linkedCase) %}
     
 <table class="govuk-table govuk-!-margin-top-4">
   <caption class="govuk-table__caption govuk-table__caption--L">Timeline history</caption>
@@ -127,19 +128,20 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../tasklist-stage">100287</a></td>
+      <td class="govuk-table__cell"><a href="../timeline">100300</a></td>
       <td class="govuk-table__cell">11 Feb 2026</td>
       <td class="govuk-table__cell"> - </td>
       <td class="govuk-table__cell">Returned to customer</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">100287</td>
+      <td class="govuk-table__cell">100297</td>
       <td class="govuk-table__cell">03 Feb 2026</td>
       <td class="govuk-table__cell">03 Feb 2026</td>
       <td class="govuk-table__cell">Returned to customer</td>
     </tr>
   </tbody>
 </table>
+{% endif %} 
 <div class="moj-timeline">
 
 
@@ -850,7 +852,7 @@
   <div class="moj-timeline__item">
 
     <div class="moj-timeline__header">
-      <h2 class="moj-timeline__title">Not started stage: Start</h2>
+      <h2 class="moj-timeline__title">Not started: Start</h2>
 
       <p class="moj-timeline__byline">by A Jones </p>
 
@@ -860,10 +862,6 @@
       <time datetime="2019-06-14T14:01:00.000Z">11 Feb 2026 at 16:31pm</time>
     </p>
 
-    <div class="moj-timeline__description">
-      <a class="govuk-link" href="notes#review">View note</a>
-      
-    </div>
 
   </div>
   {% endif %}

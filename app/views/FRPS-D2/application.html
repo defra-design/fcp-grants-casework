@@ -14,7 +14,7 @@
             Manage rural grant applications
           </a>
       </div>
-    </div>
+    </div> 
   </header> 
   <div class="lg-div"> 
    
@@ -23,7 +23,7 @@
     <div>
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist-my"
+        href: "caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
     </div>
@@ -39,7 +39,7 @@
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
         <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
+        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112841024</p></div>       
         <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
       </div>
 
@@ -84,7 +84,7 @@
 
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="timeline" aria-current="true">
-              Timeline
+              Timeline {% if (data.linkedCase) %} (2){% endif %}
             </a>
           </li>
           <li class="govuk-service-navigation__item-c2">
@@ -255,7 +255,7 @@
           SBI number
         </dt>
         <dd class="govuk-summary-list__value">
-          112849012
+          112841024
         </dd>
       </div>
       <div class="govuk-summary-list__row">

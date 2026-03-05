@@ -16,14 +16,14 @@
       </div>
     </div>
   </header> 
-  <div class="lg-div">  
+  <div class="lg-div">    
    
 <div class="govuk-width-container">
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <div>
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist-my"
+        href: "../caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
     </div>
@@ -38,8 +38,8 @@
      
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100287</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
+        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100297</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112841024</p></div>       
         <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatusC2']}}</p></div>
       </div>
 
@@ -117,7 +117,7 @@
     </div>
   </div>
 </div>
-<form action="/returnConf1" method="post">
+<form action="/returnConf1C2" method="post">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -140,7 +140,7 @@
   <div class="govuk-form-group">
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="conf" name="rConf" type="radio" value="yes" aria-describedby="conf-item-hint">
+        <input class="govuk-radios__input" id="conf" name="rConfC2" type="radio" value="yes" aria-describedby="conf-item-hint">
         <label class="govuk-label govuk-radios__label" for="conf">
           Yes, I want to return this application to the customer 
         </label>
@@ -149,7 +149,7 @@
         </div>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="conf-2" name="rConf" type="radio" value="no" aria-describedby="conf-2-item-hint">
+        <input class="govuk-radios__input" id="conf-2" name="rConfC2" type="radio" value="no" aria-describedby="conf-2-item-hint">
         <label class="govuk-label govuk-radios__label" for="conf-2">
            No, I do not want to return this application to the customer 
         </label>

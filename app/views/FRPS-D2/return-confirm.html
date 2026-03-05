@@ -16,7 +16,7 @@
       </div>
     </div>
   </header> 
-  <div class="lg-div"> 
+  <div class="lg-div">  
    
 <div class="govuk-width-container">
   <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -81,14 +81,10 @@
 
  
           
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="land">
-              Land
-            </a>
-          </li>          
+         
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="timeline" aria-current="true">
-              Timeline
+              Timeline {% if (data.linkedCase) %} (2){% endif %}
             </a>
           </li>
           <li class="govuk-service-navigation__item-c2">
@@ -97,11 +93,7 @@
             </a>
           </li>
           
-          <li class="govuk-service-navigation__item-c2">
-            <a class="govuk-service-navigation__link" href="messages">
-              Customer contact
-            </a>
-          </li>
+
           {% if (data.agreementStage) %} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">

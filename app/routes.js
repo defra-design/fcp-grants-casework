@@ -1208,9 +1208,13 @@ router.get('/setLinked1', function (req, res) {
 
 // D2 case2 routes
 
+router.get('/case2-1', function (req, res) {
+    req.session.data.case297 = 'yes'; 
+  res.redirect('/FRPS-D2/caselist');
+});
 
 
-router.get('/case100287', function (req, res) {
+router.get('/case100297', function (req, res) {
     req.session.data.caseStageC2 = 'return'; 
   res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
@@ -1231,12 +1235,13 @@ router.get('/app-approve2C2', function (req, res) {
         req.session.data.caseStageC2 = 'amend'; 
         req.session.data.caseStatusC2 = 'Amending';    
         req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--orange';  
-        return res.redirect('/FRPS-D2/amend-confirm'); 
+        return res.redirect('/FRPS-D2/case2/amend-confirm'); 
     case 'Return':
         req.session.data.caseStageC2 = 'return'; 
         req.session.data.caseStatusC2 = 'Returned to customer';    
         req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--orange';  
-        return res.redirect('/FRPS-D2/return-confirm');  
+        req.session.data.linkedCase = 'yes';
+        return res.redirect('/FRPS-D2/case2/return-confirm');  
     case 'Withdraw':
         req.session.data.caseStageC2 = 'withdraw'; 
         req.session.data.caseStatusC2 = 'Withdrawn';    
@@ -1714,7 +1719,6 @@ router.get('/tasklistStage2C2', function (req, res) {
         req.session.data.caseStageC2 = 'start'; 
         req.session.data.caseStatusC2 = 'Application received';    
         req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--grey'; 
-    return res.redirect('/FRPS-D2/case2/caselist-my');
     case 2:
         req.session.data.caseStageC2 = 'review';   
         req.session.data.caseStatusC2 = 'In review';    

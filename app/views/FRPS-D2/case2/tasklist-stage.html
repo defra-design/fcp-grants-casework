@@ -16,14 +16,14 @@
       </div>
     </div>
   </header> 
-  <div class="lg-div">   
+  <div class="lg-div">    
    
 <div class="govuk-width-container">
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <div>
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist-my"
+        href: "../caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
     </div>
@@ -38,8 +38,8 @@
      
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100287</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
+        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100297</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112841024</p></div>       
         <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatusC2']}}</p></div>
       </div>
 
@@ -73,7 +73,7 @@
               Application
             </a>
           </li>
-          {% endif %}        
+          {% endif %}         
 
 
           <li class="govuk-service-navigation__item-c2 ">
@@ -233,7 +233,8 @@
   Start
 </a>
 
-      {% elseif (data.caseStageC2 === 'review') %}
+{% elseif (data.caseStageC2 === 'review') %}
+
 <form action="/app-approve2C2" method="post">
       <p>You cannot approve the application until all tasks have been accepted.</p>
       <h2 class="govuk-heading-m">Application review tasks</h2>
@@ -247,7 +248,7 @@
     <div class="govuk-task-list__status" id="company-details-1-status"> 
     {% if (data.decisionTask1C2) %}      
       {% if (data.decisionTask1C2 === 'Accepted') %} {{ data['detailsStatusC2'] }} 
-      {% else %}<strong class="{{ data['detailsTag'] }}">{{ data['detailsStatusC2'] }}</strong>
+      {% else %}<strong class="{{ data['detailsTagC2'] }}">{{ data['detailsStatusC2'] }}</strong>
       {% endif %}
     {% else %}
       <strong class="govuk-tag govuk-tag--blue">
@@ -266,7 +267,7 @@
     <div class="govuk-task-list__status" id="company-details-1-status">
     {% if (data.decisionTask2C2) %}    
         {% if (data.decisionTask2C2 === 'Accepted') %} {{ data['calcsStatusC2'] }} 
-        {% else %}<strong class="{{ data['calcsTag'] }}">{{ data['calcsStatusC2'] }}</strong>
+        {% else %}<strong class="{{ data['calcsTagC2'] }}">{{ data['calcsStatusC2'] }}</strong>
         {% endif %} 
     {% else %}
       <strong class="govuk-tag govuk-tag--blue">
@@ -286,7 +287,7 @@
       <div class="govuk-task-list__status" id="company-details-1-status">
       {% if (data.decisionTask3C2) %}  
         {% if (data.decisionTask3C2 === 'Accepted') %} {{ data['sssiStatusC2'] }} 
-        {% else %}<strong class="{{ data['sssiTag'] }}">{{ data['sssiStatusC2'] }}</strong>
+        {% else %}<strong class="{{ data['sssiTagC2'] }}">{{ data['sssiStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -305,7 +306,7 @@
       <div class="govuk-task-list__status" id="company-details-1-status">
       {% if (data.decisionTask5C2) %}  
         {% if (data.decisionTask5C2 === 'Accepted') %} {{ data['paymentStatusC2'] }} 
-        {% else %}<strong class="{{ data['paymentTag'] }}">{{ data['paymentStatusC2'] }}</strong>
+        {% else %}<strong class="{{ data['paymentTagC2'] }}">{{ data['paymentStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -324,7 +325,7 @@
       <div class="govuk-task-list__status" id="company-details-1-status">
       {% if (data.decisionTask6C2) %}  
         {% if (data.decisionTask6C2 === 'Accepted') %} {{ data['budgetStatusC2'] }} 
-        {% else %}<strong class="{{ data['budgetTag'] }}">{{ data['budgetStatusC2'] }}</strong>
+        {% else %}<strong class="{{ data['budgetTagC2'] }}">{{ data['budgetStatusC2'] }}</strong>
         {% endif %}
       {% else %}
         <strong class="govuk-tag govuk-tag--blue">
@@ -638,7 +639,7 @@
 
 <h2 class="govuk-heading-m">Amending application</h2>
 
-      <p>Application 100287 has now been withdrawn. </p>
+      <p>Application 100297 has now been withdrawn. </p>
       <p>A new application will be submitted after amendments have been made in Grants-UI</p>
       <p><a href="#" class="govuk-link">Amend this application in Grants-UI (opens in new tab)</a>.</p>
 
@@ -651,7 +652,7 @@
     <li class="govuk-task-list__item govuk-task-list__item--with-link">
       <div class="govuk-task-list__name-and-hint">
         <a class="govuk-link govuk-task-list__link" href="task-1Am" aria-describedby="company-details-1-status">
-          Amend application (100287)  
+          Amend application (100297)  
         </a>
       </div>
       <div class="govuk-task-list__status" id="company-details-1-status"> 
@@ -800,7 +801,7 @@
 
 <h2 class="govuk-heading-m">Application returned to customer for amending</h2>
 
-      <p>Application 100287 has been cancelled. However, you can still review the notes and timeline for this application.</p>
+      <p>Application 100297 has been cancelled. However, you can still review the notes and timeline for this application.</p>
 <p> A new, linked application will be submitted after amendments have been made by the customer.</p>
 <p>All review tasks will need to be started again once the amended application is submitted. </p>
 
