@@ -22,7 +22,7 @@
         <div>
           {{ govukBackLink({
             text: "Back to applications",
-            href: "caselist-my"
+            href: "caselist"
           }) }}
           <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
         </div>
@@ -40,7 +40,7 @@
         <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
       </div>
 
-
+ 
     </div>
 
   </div>
@@ -846,7 +846,7 @@
 
 {% endif %}
 
-  {% if data.caseStatus === 'start' %} 
+  {% if data.caseStage === 'start' %} 
 
   {% else %}
 

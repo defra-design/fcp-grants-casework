@@ -15,7 +15,7 @@
           </a>
       </div>
     </div>
-  </header>  
+  </header>   
  
   <div class="lg-div">  
    
@@ -113,7 +113,7 @@
               Customer contact
             </a>
           </li> -->
-          {% if (data.agreementStage) %} 
+          {% if (data.agreementStageC2) or (data.caseStage === '5monthC2')%} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
@@ -309,10 +309,9 @@ Incompatible stacks on valid land covers: 2.0034 ha</p>
 
     <h2 class="govuk-heading-m">Pass reason</h2>
 
-    <p>CMOR1 requires at least 51% of an area to be moorland. Parcel SO3757 3059 is only 28.28% moorland. </p>
+    <p>CMOR1 requires at least 51% of an area to be moorland. Parcel SO3757 3059 has 55.16% moorland. </p>
 
-<li>If there are no errors, reject the application</li>
-</ol>
+
 
 <h2 class="govuk-heading-m">Moorland percentage </h2>
 <p>Parcel area <br>

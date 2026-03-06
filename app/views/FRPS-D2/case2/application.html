@@ -14,7 +14,7 @@
             Manage rural grant applications
           </a>
       </div>
-    </div>
+    </div> 
   </header>     
   <div class="lg-div"> 
    
@@ -93,7 +93,7 @@
             </a>
           </li>
 
-          {% if (data.agreementStage) %} 
+          {% if (data.agreementStageC2) or (data.caseStage === '5monthC2')%} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement

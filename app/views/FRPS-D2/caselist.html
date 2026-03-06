@@ -77,9 +77,9 @@
               </div> 
               </td>
               {% if (data.linkedCase) %}<td class="govuk-table__cell"><image src="/public/images/link-icon.png" class="bottom-pad" height=20></td>{% endif %}
-              <td class="govuk-table__cell"><a href="tasklist-stage">100300</a></td>
+              <td class="govuk-table__cell">{% if (data.caseStage) %}<a href="tasklist-stage">{% else %}<a href="/tasklistStage2">{% endif %}100300</a></td>
               <td class="govuk-table__cell">Berkshire Estate Limited</td>
-              <td class="govuk-table__cell">112841024</td>
+              <td class="govuk-table__cell">112849012</td>
               <td class="govuk-table__cell">10 Oct 2025</td>
               <td class="govuk-table__cell">
                 {% if (data.caseStage) %}<strong class="{{ data['caseStatusTag']}}">{{ data['caseStatus']}}</strong>
@@ -156,7 +156,7 @@
               </div> 
               </td>
               {% if (data.linkedCase) %}<td class="govuk-table__cell"><image src="/public/images/link-icon.png" class="bottom-pad" height=20></td>{% endif %}
-              <td class="govuk-table__cell"><a href="/tasklistStage2C2">100297</a></td>
+              <td class="govuk-table__cell"><a href="case2/tasklist-stage">100297</a></td>
               <td class="govuk-table__cell">Berkshire Estate Limited</td>
               <td class="govuk-table__cell">112841024</td>
               <td class="govuk-table__cell">10 Oct 2025</td>

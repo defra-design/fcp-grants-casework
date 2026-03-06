@@ -922,13 +922,13 @@ router.get('/setAgreeSign2', function (req, res) {
 
 router.get('/tasklistStage2', function (req, res) { 
     req.session.data.stageCount = (req.session.data.stageCount || 0) + 1;
-    console.log (req.session.data.stageCount);
+
     switch (req.session.data.stageCount) {
     case 1:
         req.session.data.caseStage = 'start'; 
         req.session.data.caseStatus = 'Application received';    
-        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--grey'; 
-    return res.redirect('/FRPS-D2/caselist');
+        req.session.data.caseStatusTag = 'govuk-tag govuk-tag--grey';
+    break;
     case 2:
         req.session.data.caseStage = 'review';   
         req.session.data.caseStatus = 'In review';    
@@ -1202,7 +1202,7 @@ router.get('/caselink1', function (req, res) {
 
 router.get('/setLinked1', function (req, res) {
     req.session.data.linkedCase = 'yes'; 
-  res.redirect('/tasklistStage2');
+  res.redirect('/FRPS-D2/caselist');
 });
 
 
@@ -1234,13 +1234,14 @@ router.get('/app-approve2C2', function (req, res) {
     case 'Amend':
         req.session.data.caseStageC2 = 'amend'; 
         req.session.data.caseStatusC2 = 'Amending';    
-        req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--orange';  
+        req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--orange'; 
+        req.session.data.filteredReviewNoteC2 = stripEmptyAndNulls(req.session.data.reviewNoteC2); 
         return res.redirect('/FRPS-D2/case2/amend-confirm'); 
     case 'Return':
         req.session.data.caseStageC2 = 'return'; 
         req.session.data.caseStatusC2 = 'Returned to customer';    
         req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--orange';  
-        req.session.data.linkedCase = 'yes';
+        req.session.data.filteredReviewNoteC2 = stripEmptyAndNulls(req.session.data.reviewNoteC2);
         return res.redirect('/FRPS-D2/case2/return-confirm');  
     case 'Withdraw':
         req.session.data.caseStageC2 = 'withdraw'; 
@@ -1253,6 +1254,7 @@ router.get('/app-approve2C2', function (req, res) {
         req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--yellow';    
         break;
     };
+
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
@@ -1327,7 +1329,7 @@ router.get('/amend2C2', function (req, res) {
 router.get('/aggSent2C2', function (req, res) { 
     switch (req.session.data.decisionAgC2) {
     case 'Agreement sent':
-        req.session.data.filteredAggNote = stripEmptyAndNulls(req.session.data.moreDetail2);
+        req.session.data.filteredAggNoteC2 = stripEmptyAndNulls(req.session.data.agreeNoteC2);
     return res.redirect('/tasklistStage2C2');    
     case 'Reject':
         req.session.data.caseStageC2 = 'reject'; 
@@ -1346,11 +1348,16 @@ router.get('/aggSent2C2', function (req, res) {
 
 
 router.get('/task1T2C2', function (req, res) { 
-    req.session.data.detailsCheckedC2 = 'yes';
-      if (req.session.data.noteActionTask1C2) {
+
+    if (req.session.data.noteActionTask1C2) {
+        req.session.data.filteredNote1_2C2 = stripEmptyAndNulls(req.session.data.task1Note2C2);
     }
-    else
-    req.session.data.noteActionTask1C2 = req.session.data.decisionTask1C2;
+    else {
+        req.session.data.noteActionTask1C2 = req.session.data.decisionTask1C2;
+        req.session.data.filteredNote1C2 = stripEmptyAndNulls(req.session.data.task1NoteC2);
+    }
+    
+    req.session.data.detailsCheckedC2 = 'yes';
 
     switch (req.session.data.decisionTask1C2) {
     case 'Accepted':
@@ -1373,16 +1380,19 @@ router.get('/task1T2C2', function (req, res) {
         req.session.data.detailsTagC2 = 'govuk-tag';
         req.session.data.detailsStatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNote1C2 = stripEmptyAndNulls(req.session.data.task1NoteC2);
+
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 router.get('/task2T2C2', function (req, res) { 
     req.session.data.detailsCheckedC2 = 'yes';
     if (req.session.data.noteActionTask2C2) {
+        req.session.data.filteredNote2_2C2 = stripEmptyAndNulls(req.session.data.task2Note2C2);
     }
-    else
-    req.session.data.noteActionTask2C2 = req.session.data.decisionTask2C2;
+    else {
+        req.session.data.noteActionTask2C2 = req.session.data.decisionTask2C2;
+        req.session.data.filteredNote2C2 = stripEmptyAndNulls(req.session.data.task2NoteC2);
+    }
     switch (req.session.data.decisionTask2C2) {
     case 'Accepted':
         req.session.data.calcsTagC2 = '';
@@ -1404,47 +1414,21 @@ router.get('/task2T2C2', function (req, res) {
         req.session.data.calcsTagC2 = 'govuk-tag';
         req.session.data.calcsStatusC2 = 'Incomplete'   
     };
-    req.session.data.filteredNote2C2 = stripEmptyAndNulls(req.session.data.task2NoteC2);
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
-router.get('/task2fT2C2', function (req, res) { 
-    req.session.data.detailsCheckedC2 = 'yes';
-    if (req.session.data.noteActionTask2fC2) {
-    }
-    else
-    req.session.data.noteActionTask2fC2 = req.session.data.decisionTask2fC2;
-    switch (req.session.data.decisionTask2fC2) {
-    case 'Accepted':
-        req.session.data.calcsTagC2 = '';
-        req.session.data.calcsStatusC2 = 'Accepted'       
-    break;
-    case 'Information requested':
-        req.session.data.calcsTagC2 = 'govuk-tag  govuk-tag--yellow custom-width-220';
-        req.session.data.calcsStatusC2 = 'Information requested'   
-        break;
-    case 'Internal investigation':
-        req.session.data.calcsTagC2 = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.calcsStatusC2 = 'Internal investigation'   
-        break;
-    case 'Cannot accept':
-        req.session.data.calcsTagC2 = 'govuk-tag govuk-tag--red-status';
-        req.session.data.calcsStatusC2 = 'Not accepted'   
-        break;
-    default:
-        req.session.data.calcsTagC2 = 'govuk-tag';
-        req.session.data.calcsStatusC2 = 'Incomplete'
-    };
-    req.session.data.filteredNote2C2 = stripEmptyAndNulls(req.session.data.task2NoteC2);
-    res.redirect('/FRPS-D2/case2/tasklist-stage');
-});
+
 
 router.get('/task3T2C2', function (req, res) { 
     req.session.data.detailsCheckedC2 = 'yes';
     if (req.session.data.noteActionTask3C2) {
+        req.session.data.filteredNote3_2C2 = stripEmptyAndNulls(req.session.data.task3Note2C2);
     }
-    else
-    req.session.data.noteActionTask3C2 = req.session.data.decisionTask3C2;
+    else {
+        req.session.data.noteActionTask3C2 = req.session.data.decisionTask3C2;
+        req.session.data.filteredNote3C2 = stripEmptyAndNulls(req.session.data.task3NoteC2);
+    }
+    
     switch (req.session.data.decisionTask3C2) {
     case 'Accepted':
         req.session.data.sssiTagC2 = '';
@@ -1465,48 +1449,23 @@ router.get('/task3T2C2', function (req, res) {
     default:
         req.session.data.sssiTagC2 = 'govuk-tag';
         req.session.data.sssiStatusC2 = 'Incomplete'  
-    };
-    req.session.data.filteredNote3C2 = stripEmptyAndNulls(req.session.data.task3NoteC2);
+    };;
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
-router.get('/task4T2C2', function (req, res) { 
-    req.session.data.detailsCheckedC2 = 'yes';
-    if (req.session.data.noteActionTask4C2) {
-    }
-    else
-    req.session.data.noteActionTask4C2 = req.session.data.decisionTask4C2;
-    switch (req.session.data.decisionTask4C2) {
-    case 'Accepted':
-        req.session.data.samTagC2 = '';
-        req.session.data.samStatusC2 = 'Accepted'       
-    break;
-    case 'Information requested':
-        req.session.data.samTagC2 = 'govuk-tag  govuk-tag--yellow custom-width-220';
-        req.session.data.samStatusC2 = 'Information requested'   
-        break;
-    case 'Internal investigation':
-        req.session.data.samTagC2 = 'govuk-tag govuk-tag--yellow custom-width-220';
-        req.session.data.samStatusC2 = 'Internal investigation'   
-        break;
-    case 'Cannot accept':
-        req.session.data.samTagC2 = 'govuk-tag govuk-tag--red-status';
-        req.session.data.samStatusC2 = 'Not accepted'   
-        break;
-    default:
-        req.session.data.samTagC2 = 'govuk-tag';
-        req.session.data.samStatusC2 = 'Incomplete'  
-    };
-    req.session.data.filteredNote4 = stripEmptyAndNulls(req.session.data.task4Note);
-    res.redirect('/FRPS-D2/case2/tasklist-stage');
-});
+
 
 router.get('/task5T2C2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+
     if (req.session.data.noteActionTask5C2) {
+        req.session.data.filteredNote5_2C2 = stripEmptyAndNulls(req.session.data.task5Note2C2);
     }
-    else
-    req.session.data.noteActionTask5C2 = req.session.data.decisionTask5C2;
+    else {
+        req.session.data.noteActionTask5C2 = req.session.data.decisionTask5C2;
+        req.session.data.filteredNote5C2 = stripEmptyAndNulls(req.session.data.task5NoteC2);
+    }
+
     switch (req.session.data.decisionTask5C2) {
     case 'Accepted':
         req.session.data.paymentTagC2 = '';
@@ -1528,16 +1487,20 @@ router.get('/task5T2C2', function (req, res) {
         req.session.data.paymentTagC2 = 'govuk-tag';
         req.session.data.paymentStatusC2 = 'Incomplete'  
     };
-    req.session.data.filteredNote5C2 = stripEmptyAndNulls(req.session.data.task5NoteC2);
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 router.get('/task6T2C2', function (req, res) { 
     req.session.data.detailsChecked = 'yes';
+
     if (req.session.data.noteActionTask6C2) {
+        req.session.data.filteredNote6_2C2 = stripEmptyAndNulls(req.session.data.task6Note2C2);
     }
-    else
-    req.session.data.noteActionTask6C2 = req.session.data.decisionTask6C2;
+    else {
+        req.session.data.noteActionTask6C2 = req.session.data.decisionTask6C2;
+        req.session.data.filteredNote6C2 = stripEmptyAndNulls(req.session.data.task6NoteC2);
+    }
+
     switch (req.session.data.decisionTask6C2) {
     case 'Accepted':
         req.session.data.budgetTagC2 = '';
@@ -1559,7 +1522,6 @@ router.get('/task6T2C2', function (req, res) {
         req.session.data.budgetTagC2 = 'govuk-tag';
         req.session.data.budgetStatusC2 = 'Incomplete'  
     };
-    req.session.data.filteredNote6C2 = stripEmptyAndNulls(req.session.data.task6NoteC2);
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
@@ -1581,10 +1543,15 @@ router.get('/setUserFo2C2', function (req, res) {
 // Amendment routes 2
 
 router.get('/task1T2AmC2', function (req, res) { 
+
     if (req.session.data.noteActionTaskAm1C2) {
+        req.session.data.filteredNoteAm1_2C2 = stripEmptyAndNulls(req.session.data.task1_2AmNoteC2);
     }
-    else
-    req.session.data.noteActionTaskAm1C2 = req.session.data.decisionTaskAm1C2;
+    else {
+        req.session.data.noteActionTaskAm1C2 = req.session.data.decisionTaskAm1C2;;
+        req.session.data.filteredNoteAm1C2 = stripEmptyAndNulls(req.session.data.task1AmNoteC2);
+    }
+
     switch (req.session.data.decisionTaskAm1C2) {
     case 'Confirm':
         req.session.data.amend1TagC2 = '';
@@ -1599,15 +1566,17 @@ router.get('/task1T2AmC2', function (req, res) {
         req.session.data.amend1TagC2 = 'govuk-tag';
         req.session.data.amend1StatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNoteAm1C2 = stripEmptyAndNulls(req.session.data.task1AmNoteC2);
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 router.get('/task2T2AmC2', function (req, res) { 
     if (req.session.data.noteActionTaskAm2C2) {
+        req.session.data.filteredNoteAm2_2C2 = stripEmptyAndNulls(req.session.data.task2_2AmNoteC2);
     }
-    else
-    req.session.data.noteActionTaskAm2C2 = req.session.data.decisionTaskAm2C2;
+    else {
+        req.session.data.noteActionTaskAm2C2 = req.session.data.decisionTaskAm2C2;;
+        req.session.data.filteredNoteAm2C2 = stripEmptyAndNulls(req.session.data.task2AmNoteC2);
+    }
     switch (req.session.data.decisionTaskAm2C2) {
     case 'Confirm':
         req.session.data.amend2TagC2 = '';
@@ -1622,7 +1591,6 @@ router.get('/task2T2AmC2', function (req, res) {
         req.session.data.amend2TagC2 = 'govuk-tag';
         req.session.data.amend2StatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNoteAm2C2 = stripEmptyAndNulls(req.session.data.taskAm2NoteC2);
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
@@ -1660,10 +1628,16 @@ router.get('/agreementStage2C2', function (req, res) {
 
 router.get('/task1AgT2C2', function (req, res) { 
     req.session.data.AgreeCheckedC2 = 'yes';
+
+
     if (req.session.data.noteActionAgreeTask1C2) {
+        req.session.data.filteredNote1A_2C2 = stripEmptyAndNulls(req.session.data.task1ANote2C2);
     }
-    else
-    req.session.data.noteActionAgreeTask1C2 = req.session.data.decisionTask1C2;
+    else {
+        req.session.data.noteActionAgreeTask1C2 = req.session.data.decisionAgreeTask1C2;
+        req.session.data.filteredNote1AC2 = stripEmptyAndNulls(req.session.data.task1ANoteC2);;
+    }
+
     switch (req.session.data.decisionAgreeTask1C2) {
     case 'Confirm':
         req.session.data.agreeTagC2 = '';
@@ -1678,15 +1652,18 @@ router.get('/task1AgT2C2', function (req, res) {
         req.session.data.agreeTagC2 = 'govuk-tag';
         req.session.data.agreeStatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNote1AC2 = stripEmptyAndNulls(req.session.data.task1ANoteC2);
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 router.get('/task2AgT2C2', function (req, res) { 
     if (req.session.data.noteActionAgreeTask2C2) {
+        req.session.data.filteredNote2A_2C2 = stripEmptyAndNulls(req.session.data.task2ANote2C2);
     }
-    else
-    req.session.data.noteActionAgreeTask2C2 = req.session.data.decisionAgreeTask2C2;
+    else {
+        req.session.data.noteActionAgreeTask2C2 = req.session.data.decisionAgreeTask2C2;
+        req.session.data.filteredNoteA2C2 = stripEmptyAndNulls(req.session.data.task2ANoteC2);;
+    }
+
     switch (req.session.data.decisionAgreeTask2C2) {
     case 'Confirm':
         req.session.data.agreeSTagC2 = '';
@@ -1710,6 +1687,14 @@ router.get('/setAgreeSign2C2', function (req, res) {
    res.redirect('/tasklistStage2C2');
 });
 
+router.get('/startC2', function (req, res) {
+        req.session.data.caseStageC2 = 'start'; 
+        req.session.data.caseStatusC2 = 'Application received';    
+        req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--grey';
+        req.session.data.stageCountC2 = 1
+        return res.redirect('/FRPS-D2/caselist'); 
+        });
+
 
 router.get('/tasklistStage2C2', function (req, res) { 
     req.session.data.stageCountC2 = (req.session.data.stageCountC2 || 0) + 1;
@@ -1718,7 +1703,8 @@ router.get('/tasklistStage2C2', function (req, res) {
     case 1:
         req.session.data.caseStageC2 = 'start'; 
         req.session.data.caseStatusC2 = 'Application received';    
-        req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--grey'; 
+        req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--grey';
+        return res.redirect('/FRPS-D2/caselist'); 
     case 2:
         req.session.data.caseStageC2 = 'review';   
         req.session.data.caseStatusC2 = 'In review';    
@@ -1755,10 +1741,14 @@ router.get('/5month1C2', function (req, res) {
 });
 
 router.get('/task5m1C2', function (req, res) { 
+
     if (req.session.data.noteActionTask1mC2) {
+    req.session.data.filteredNote1m_2C2 = stripEmptyAndNulls(req.session.data.task1mNote2C2);
     }
     else
     req.session.data.noteActionTask1mC2 = req.session.data.decisionTask1mC2;
+    req.session.data.filteredNote1mC2 = stripEmptyAndNulls(req.session.data.task1mNoteC2);
+
     switch (req.session.data.decisionTask1mC2) {
     case 'No action needed':
         req.session.data.month5_1TagC2 = '';
@@ -1782,15 +1772,17 @@ router.get('/task5m1C2', function (req, res) {
         req.session.data.month5_1TagC2 = 'govuk-tag';
         req.session.data.month5_1StatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNote1mC2 = stripEmptyAndNulls(req.session.data.task1mNoteC2);
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 router.get('/task5m2C2', function (req, res) { 
-    if (req.session.data.noteActionTask1mC2) {
+    if (req.session.data.noteActionTask2mC2) {
+    req.session.data.filteredNote2m_2C2 = stripEmptyAndNulls(req.session.data.task2mNote2C2);
     }
     else
     req.session.data.noteActionTask2mC2 = req.session.data.decisionTask2mC2;
+    req.session.data.filteredNote2mC2 = stripEmptyAndNulls(req.session.data.task2mNoteC2);
+
     switch (req.session.data.decisionTask2mC2) {
     case 'No action needed':
         req.session.data.month5_2TagC2 = '';
@@ -1814,15 +1806,18 @@ router.get('/task5m2C2', function (req, res) {
         req.session.data.month5_2TagC2 = 'govuk-tag';
         req.session.data.month5_2StatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNote2mC2 = stripEmptyAndNulls(req.session.data.task2mNoteC2);
+
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 router.get('/task5m3C2', function (req, res) { 
     if (req.session.data.noteActionTask3mC2) {
+    req.session.data.filteredNote3m_2C2 = stripEmptyAndNulls(req.session.data.task3mNote2C2);
     }
     else
     req.session.data.noteActionTask3mC2 = req.session.data.decisionTask3mC2;
+    req.session.data.filteredNote3mC2 = stripEmptyAndNulls(req.session.data.task3mNoteC2);
+
     switch (req.session.data.decisionTask3mC2) {
     case 'No action needed':
         req.session.data.month5_3TagC2 = '';
@@ -1846,15 +1841,18 @@ router.get('/task5m3C2', function (req, res) {
         req.session.data.month5_3TagC2 = 'govuk-tag';
         req.session.data.month5_3StatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNote3mC2 = stripEmptyAndNulls(req.session.data.task3mNoteC2);
+
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 router.get('/task5m4C2', function (req, res) { 
     if (req.session.data.noteActionTask4mC2) {
+    req.session.data.filteredNote4m_2C2 = stripEmptyAndNulls(req.session.data.task4mNote2C2);
     }
     else
     req.session.data.noteActionTask4mC2 = req.session.data.decisionTask4mC2;
+    req.session.data.filteredNote4mC2 = stripEmptyAndNulls(req.session.data.task4mNoteC2);
+
     switch (req.session.data.decisionTask4mC2) {
     case 'No action needed':
         req.session.data.month5_4TagC2 = '';
@@ -1878,16 +1876,19 @@ router.get('/task5m4C2', function (req, res) {
         req.session.data.month5_4TagC2 = 'govuk-tag';
         req.session.data.month5_4StatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNote4mC2 = stripEmptyAndNulls(req.session.data.task4mNoteC2);
+
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 
 router.get('/task5m5C2', function (req, res) { 
     if (req.session.data.noteActionTask5mC2) {
+    req.session.data.filteredNote5m_2C2 = stripEmptyAndNulls(req.session.data.task5mNote2C2);
     }
     else
     req.session.data.noteActionTask5mC2 = req.session.data.decisionTask5mC2;
+    req.session.data.filteredNote5mC2 = stripEmptyAndNulls(req.session.data.task5mNoteC2);
+
     switch (req.session.data.decisionTask5mC2) {
     case 'No action needed':
         req.session.data.month5_5TagC2 = '';
@@ -1911,16 +1912,19 @@ router.get('/task5m5C2', function (req, res) {
         req.session.data.month5_5TagC2 = 'govuk-tag';
         req.session.data.month5_5StatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNote5mC2 = stripEmptyAndNulls(req.session.data.task5mNoteC2);
+
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
 
 router.get('/task5m6C2', function (req, res) { 
     if (req.session.data.noteActionTask6mC2) {
+    req.session.data.filteredNote6m_2C2 = stripEmptyAndNulls(req.session.data.task6mNote2C2);
     }
     else
     req.session.data.noteActionTask6mC2 = req.session.data.decisionTask6mC2;
+    req.session.data.filteredNote6mC2 = stripEmptyAndNulls(req.session.data.task6mNoteC2);
+
     switch (req.session.data.decisionTask6mC2) {
     case 'No action needed':
         req.session.data.month5_6TagC2 = '';
@@ -1944,7 +1948,7 @@ router.get('/task5m6C2', function (req, res) {
         req.session.data.month5_6TagC2 = 'govuk-tag';
         req.session.data.month5_6StatusC2 = 'Incomplete'
     };
-    req.session.data.filteredNote6mC2 = stripEmptyAndNulls(req.session.data.task6mNoteC2);
+
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 

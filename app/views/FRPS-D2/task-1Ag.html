@@ -23,7 +23,7 @@
     <div>
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist-my"
+        href: "caselist"
       }) }}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
     </div>
@@ -34,7 +34,7 @@
     </div>
   </div>
 
-
+ 
      
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
@@ -160,7 +160,7 @@
             <h3 class="govuk-heading-s">Explain this outcome</h3>
             <div id="more-detail-hint" class="govuk-hint">
               You must include an explanation for auditing purposes. 
-            </div>
+            </div> 
           {% if (data.task1ANote) %}
           <textarea class="govuk-textarea" id="more-detail1" name="task1ANote2" rows="5" aria-describedby="more-detail-hint"></textarea>
           {% else %}
