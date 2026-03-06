@@ -21,10 +21,19 @@
 <div class="govuk-width-container">
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <div>
+    {% if (data.caseStageC2 === 'return') %}
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist"
+        href: "/setLinked1"
+      }) }}    
+    {% else %}
+
+      {{ govukBackLink({
+        text: "Back to applications",
+        href: "../caselist"
       }) }}
+
+     {% endif %}
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
     </div>
     <div style="display: flex; justify-content: flex-end;">

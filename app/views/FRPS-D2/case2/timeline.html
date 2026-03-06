@@ -19,11 +19,19 @@
   <div class="lg-div">   
     <div class="govuk-width-container">
       <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          {{ govukBackLink({
-            text: "Back to applications",
-            href: "../caselist"
-          }) }}
+    {% if (data.caseStageC2 === 'return') %}
+      {{ govukBackLink({
+        text: "Back to applications",
+        href: "/setLinked1"
+      }) }}    
+    {% else %}
+
+      {{ govukBackLink({
+        text: "Back to applications",
+        href: "../caselist"
+      }) }}
+
+     {% endif %}
           <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
         </div>
         <div style="display: flex; justify-content: flex-end;">
@@ -89,7 +97,7 @@
           </li>
     
 
-          {% if (data.agreementStageC2) or (data.caseStage === '5monthC2')%} 
+          {% if (data.agreementStageC2) or (data.caseStageC2 === '5month')%} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
