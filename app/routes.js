@@ -1205,6 +1205,12 @@ router.get('/setLinked1', function (req, res) {
   res.redirect('/FRPS-D2/caselist');
 });
 
+router.get('/setPay1', function (req, res) {
+    req.session.data.caseStageC2 = 'pay'; 
+  res.redirect('/FRPS-D2/case2/tasklist-stage');
+});
+
+
 
 // D2 case2 routes
 
@@ -1280,6 +1286,17 @@ router.get('/returnConf1C2', function (req, res) {
     res.redirect('/amendReturn1C2');
 });
 
+router.get('/terminateConf1C2', function (req, res) {
+  if (req.session.data.tConfC2 === 'yes') {
+        req.session.data.caseStageC2 = 'terminate';   
+        req.session.data.caseStatusC2 = 'Terminated';    
+        req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--red'; 
+    res.redirect('/FRPS-D2/case2/tasklist-stage');
+    }
+  else 
+    res.redirect('/FRPS-D2/case2/tasklist-stage');
+});
+
 router.get('/amendConf1C2', function (req, res) {
   if (req.session.data.aConfC2 === 'yes') {
     res.redirect('/FRPS-D2/case2/tasklist-stage');
@@ -1344,6 +1361,87 @@ router.get('/aggSent2C2', function (req, res) {
     };
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
+
+
+router.get('/terminate1C2', function (req, res) { 
+
+    req.session.data.caseStageC2 = 'pending-termination';   
+    req.session.data.caseStatusC2 = 'Preparing to terminate';    
+    req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--orange'; 
+    res.redirect('/FRPS-D2/case2/tasklist-stage');
+});
+
+router.get('/terminatePrepC2', function (req, res) { 
+    switch (req.session.data.decisionTrC2) {
+    case 'Terminate agreement':
+        req.session.data.filteredTrNoteC2 = stripEmptyAndNulls(req.session.data.terminateNoteC2);
+    return res.redirect('/FRPS-D2/case2/terminate-confirm');  
+    case 'End termination process':
+        req.session.data.caseStageC2 = 'pay'; 
+        req.session.data.caseStatusC2 = 'Agreement accepted';    
+        req.session.data.caseStatusTagC2 = 'govuk-tag govuk-tag--green';
+        console.log (req.session.data.caseStageC2);
+    return res.redirect('/FRPS-D2/case2/tasklist-stage');
+    };
+    
+});
+
+router.get('/task1TrT2C2', function (req, res) { 
+    req.session.data.terminateCheckedC2 = 'yes';
+
+
+    if (req.session.data.noteActionTerminateTask1C2) {
+        req.session.data.filteredNote1Tr_2C2 = stripEmptyAndNulls(req.session.data.task1TrNote2C2);
+    }
+    else {
+        req.session.data.noteActionTerminateTask1C2 = req.session.data.decisionTerminateTask1C2;
+        req.session.data.filteredNote1TrC2 = stripEmptyAndNulls(req.session.data.task1TrNoteC2);;
+    }
+
+    switch (req.session.data.decisionTerminateTask1C2) {
+    case 'Confirm':
+        req.session.data.terminate1TagC2 = '';
+        req.session.data.terminate1StatusC2 = 'Confirmed'       
+    break;
+
+    case 'There’s a problem':
+        req.session.data.terminate1TagC2 = 'govuk-tag govuk-tag--red-status';
+        req.session.data.terminate1StatusC2 = 'There’s a problem'   
+        break;
+    default:
+        req.session.data.terminateTagC2 = 'govuk-tag';
+        req.session.data.terminateStatusC2 = 'Incomplete'
+    };
+    res.redirect('/FRPS-D2/case2/tasklist-stage');
+});
+
+router.get('/task2TrT2C2', function (req, res) { 
+    if (req.session.data.noteActionTerminateTask2C2) {
+        req.session.data.filteredNote2Tr_2C2 = stripEmptyAndNulls(req.session.data.task2TrNote2C2);
+    }
+    else {
+        req.session.data.noteActionTerminateTask2C2 = req.session.data.decisionTerminateTask2C2;
+        req.session.data.filteredNoteTr2C2 = stripEmptyAndNulls(req.session.data.task2TrNoteC2);;
+    }
+
+    switch (req.session.data.decisionTerminateTask2C2) {
+    case 'Confirm':
+        req.session.data.terminate2TagC2 = '';
+        req.session.data.terminate2StatusC2 = 'Confirmed'       
+    break;
+    case 'There’s a problem':
+        req.session.data.terminate2TagC2 = 'govuk-tag govuk-tag--red-status';
+        req.session.data.terminate2StatusC2 = 'There’s a problem'   
+        break;
+    default:
+        req.session.data.terminate2TagC2 = 'govuk-tag';
+        req.session.data.terminate2StatusC2 = 'Incomplete'
+    };
+    req.session.data.filteredNote2TrC2 = stripEmptyAndNulls(req.session.data.task2TrNoteC2);
+    res.redirect('/FRPS-D2/case2/tasklist-stage');
+});
+
+
 
 
 
