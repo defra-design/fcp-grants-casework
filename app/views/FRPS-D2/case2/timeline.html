@@ -125,27 +125,30 @@
      {% if (data.linkedCase) %}
     
 <table class="govuk-table govuk-!-margin-top-4">
-  <caption class="govuk-table__caption govuk-table__caption--L">Timeline history</caption>
+
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Case ID</th>
       <th scope="col" class="govuk-table__header">Date received</th>      
       <th scope="col" class="govuk-table__header">Date ended</th>
       <th scope="col" class="govuk-table__header">Status</th>
+      <th></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="../timeline">100300</a></td>
+      <td class="govuk-table__cell">100300</td>
       <td class="govuk-table__cell">14 Feb 2026</td>
       <td class="govuk-table__cell"> - </td>
       <td class="govuk-table__cell">{{ data['caseStatus']}}</td>
+      <td class="govuk-table__cell"><a href="../timeline">View case</a></td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">100297</td>
       <td class="govuk-table__cell">10 Feb 2026</td>
       <td class="govuk-table__cell">13 Feb 2026</td>
-      <td class="govuk-table__cell">{{ data['caseStatusC2']}}</td>
+      <td class="govuk-table__cell">{{ data['caseStatusC2'] | default ('Returned to customer')}}</td>
+      <td class="govuk-table__cell"><strong>This case</strong></td>
     </tr>
   </tbody>
 </table>

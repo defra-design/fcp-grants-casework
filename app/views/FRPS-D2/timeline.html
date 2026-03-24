@@ -118,16 +118,27 @@
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="regKeeper-hint">
 
-    {% if (data.linkedCase) %}
+ 
 
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
+    Timeline {% if (data.linkedCase) %} (multiple cases) {% endif %}  </h1>
+    
+    </legend>
+
+       {% if (data.linkedCase) %}
+
+
+<!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-0">Timeline history</h2> -->
 <table class="govuk-table govuk-!-margin-top-4">
-  <caption class="govuk-table__caption govuk-table__caption--L">Timeline history</caption>
+
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Case ID</th>
       <th scope="col" class="govuk-table__header">Date received</th>      
       <th scope="col" class="govuk-table__header">Date ended</th>
       <th scope="col" class="govuk-table__header">Status</th>
+      <th></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
@@ -136,22 +147,18 @@
       <td class="govuk-table__cell">14 Feb 2026</td>
       <td class="govuk-table__cell"> - </td>
       <td class="govuk-table__cell">{{ data['caseStatus']}}</td>
+      <td class="govuk-table__cell"><strong>This case</strong></td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="case2/timeline">100297</a></td>
+      <td class="govuk-table__cell">100297</td>
       <td class="govuk-table__cell">10 Feb 2026</td>
       <td class="govuk-table__cell">13 Feb 2026</td>
-      <td class="govuk-table__cell">{{ data['caseStatusC2']}}</td>
+      <td class="govuk-table__cell">{{ data['caseStatusC2'] | default ('Returned to customer')}}</td>
+      <td class="govuk-table__cell"><a href="case2/timeline">View case</a></td>
     </tr>
   </tbody>
 </table>
 {% endif %}
-
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading govuk-!-margin-top-8">
-    Timeline {% if (data.linkedCase) %} (multiple cases) {% endif %}  </h1>
-    
-    </legend>
 <h2 class="govuk-heading-s">Timeline for 100300</h2>
 <div class="moj-timeline">
 
