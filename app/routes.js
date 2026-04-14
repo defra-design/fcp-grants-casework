@@ -2050,6 +2050,13 @@ router.get('/task5m6C2', function (req, res) {
     res.redirect('/FRPS-D2/case2/tasklist-stage');
 });
 
+// caselist search
+
+router.get('/caselistResults1', function (req, res) {
+    req.session.data.linkedCase = 'yes';   
+    req.session.data.caseResults = 'yes';  
+    res.redirect('/FRPS-D2/caselist');
+});
 
 
 

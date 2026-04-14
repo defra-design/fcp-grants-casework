@@ -23,9 +23,29 @@
 {% block content %} 
 
 
-<form action="assignment" method="post">
 
 
+
+<form action="/caselistResults1" method="post">
+
+      <div class="moj-search govuk-!-margin-bottom-6">
+
+        <div class="govuk-form-group">
+        <h2 class="govuk-heading-m">Search for cases</h2>
+
+          <div id="search-hint" class="govuk-hint moj-search__hint ">
+            You can search by case ID or SBI.
+          </div>
+
+          {% if not data.caseResults %}<input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint"> {% else %} <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint" value="112849012">{% endif %}
+
+        </div>
+
+        <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+          Search
+        </button>
+
+    </div>
   <div class="govuk-tabs" data-module="govuk-tabs">
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
@@ -41,9 +61,9 @@
     <div class="govuk-grid-column-full-width govuk-!-margin-left-3 govuk-!-margin-right-3">
        
       <div class="govuk-form-group">
-        <button type="submit" class="govuk-button" data-module="govuk-button">
+        <a href="assignment" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
          Assign
-        </button>          
+        </a>          
         <table class="govuk-table" data-module="moj-sortable-table" data-id-prefix="cases-">
 
           <thead class="govuk-table__head">
@@ -94,7 +114,7 @@
               {% endif %}
             </tr>
 
-
+          {% if not data.caseResults %}
             <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
               <div class="govuk-radios" data-module="govuk-radios">
@@ -121,7 +141,7 @@
             </tr>
 
             </tr>
-                      <tr class="govuk-table__row">
+            <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item govuk-!-margin-top-2">
@@ -143,8 +163,9 @@
               </td>
               <td class="govuk-table__cell">Not assigned</td>
             </tr>
-{% endif %}
-                 <tr class="govuk-table__row">
+            {% endif %}
+          {% endif %}
+            <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item govuk-!-margin-top-2">
@@ -169,7 +190,8 @@
               </td>
               <td class="govuk-table__cell">M Walker</td>
             </tr>
-                             <tr class="govuk-table__row">
+          {% if not data.caseResults %}
+            <tr class="govuk-table__row">
               <td class="govuk-table__cell govuk-!-padding-left-1 govuk-!-padding-top-0 govuk-!-padding-bottom-0">
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item govuk-!-margin-top-2">
@@ -581,12 +603,15 @@
  
 
             </tr> 
+          {% endif %}
 
           </tbody>
         </table>
       </div>
     </div>
   </div>
+
+  {% if not data.caseResults %}
     <nav class="govuk-pagination govuk-!-margin-bottom-3" aria-label="Pagination">
   <div class="govuk-pagination__prev">
     <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
@@ -610,6 +635,7 @@
     </a>
   </div>
 </nav>
+{% endif %}
 
   <!--
   <nav class="govuk-pagination" aria-label="Pagination">

@@ -812,10 +812,11 @@
 <h2 class="govuk-heading-m">Application returned to customer for amending</h2>
 
       <p>Application 100297 has been closed and returned to the customer. However, you can still review the notes and timeline for this application.</p>
-    <p> A new, linked application will be submitted after amendments have been made by the customer.</p>
+
   {% if (data.linkedCase) %}
     <p>The latest version of this case is <a href="../tasklist-stage">100300</a>.
   {% else %}
+      <p> A new, linked application will be submitted after amendments have been made by the customer.</p>
     <p>All review tasks will need to be started again once the amended application is submitted. </p>
   {% endif %}
 
@@ -1314,9 +1315,7 @@
             <textarea class="govuk-textarea" id="more-detail1" name="terminateNoteC2" rows="5" aria-describedby="more-detail-hint"></textarea>
           </div>
         </div>
-        {% else %}
-         {% endif %}
-        <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="decisionTrC2" type="radio" value="End termination process" data-aria-controls="conditional-decision2" {{ checked("decisionTrC2", "End termination process") }}>
             <label class="govuk-label govuk-radios__label" for="contact">
@@ -1336,6 +1335,14 @@
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Confirm
     </button>
+        {% else %}
+        <p>Your cannot terminate the case until you have completed all tasks</p>
+            <a href="end-terminate" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Cancel termination
+    </a>
+
+         {% endif %}
+
 
     {% elseif (data.caseStageC2 === 'terminate') %}
 

@@ -16,15 +16,24 @@
       </div>
     </div>
   </header> 
-  <div class="lg-div">   
+  <div class="lg-div">     
    
 <div class="govuk-width-container">
   <div style="display: flex; justify-content: space-between; align-items: center;">
-    <div>
+      <div>
+    {% if (data.caseStageC2 === 'return') %}
       {{ govukBackLink({
         text: "Back to applications",
-        href: "caselist"
+        href: "/setLinked1"
+      }) }}    
+    {% else %}
+
+      {{ govukBackLink({
+        text: "Back to applications",
+        href: "../caselist"
       }) }}
+    {% endif %} 
+     
       <h2 class="govuk-heading-m">Berkshire Estate Limited</h2>
     </div>
     <div style="display: flex; justify-content: flex-end;">
@@ -34,13 +43,13 @@
     </div>
   </div>
 
- 
+
      
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <div><p><strong class="govuk-!-margin-right-1">Scheme :</strong> SFI expanded offer 2025</p></div>
-        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100300</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Application ID:</strong>100297</p></div>
         <div><p><strong class="govuk-!-margin-right-1">SBI: </strong>112849012</p></div>       
-        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatus']}}</p></div>
+        <div><p><strong class="govuk-!-margin-right-1">Status:</strong>{{ data['caseStatusC2']}}</p></div>
       </div>
 
 
@@ -81,7 +90,7 @@
 
  
           
-         
+        
           <li class="govuk-service-navigation__item-c2">
             <a class="govuk-service-navigation__link" href="timeline" aria-current="true">
               Timeline {% if (data.linkedCase) %} (2){% endif %}
@@ -94,7 +103,7 @@
           </li>
           
 
-          {% if (data.agreementStage) %} 
+          {% if (data.agreementStageC2) or (data.caseStageC2 === '5month')%} 
            <li class="govuk-service-navigation__item-c2 ">
             <a class="govuk-service-navigation__link" href="agreement">
               Agreement
@@ -124,11 +133,10 @@
     </legend>
 
 
-<p>Returning this application will:
+<p>Amending an application will:
   <ul class="govuk-list govuk-list--bullet">
-    <li>close this current application making it view only</li>
-    <li>create a new identical application for the customer to review, amend and re-submit</li>
-    <li>require casework to be started from scratch on the newly submitted case</li>
+    <li>remove the current application</li>
+    <li>allow the customer to submit a new, amended application </li>
   </ul>
   <div class="govuk-form-group">
     <div class="govuk-radios" data-module="govuk-radios">
@@ -138,6 +146,9 @@
         <label class="govuk-label govuk-radios__label" for="contact">
           Yes
         </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-conf1">
+          <p>You will need to start all tasks again in the new application.</p>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="conf-2" name="rConfC2" type="radio" value="no" aria-describedby="conf-2-item-hint">
@@ -151,7 +162,6 @@
     </div>
   </div>
 </p>
-
 
 <button type="submit" class="govuk-button govuk-!-margin-top-0 govuk-button govuk-!-margin-bottom-3" data-module="govuk-button">
  Confirm
